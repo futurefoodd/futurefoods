@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@import "@coreui/coreui/scss/coreui";
+
+/* SCSS HEX */
+$battleship-gray: #999A94ff;
+$silver: #BCBAB2ff;
+$avocado: #5D792Dff;
+$dark-slate-gray: #364A42ff;
+$apple-green: #AAAC25ff;
+
+
+/* SCSS RGB */
+$battleship-gray: rgba(153, 154, 148, 1);
+$silver: rgba(188, 186, 178, 1);
+$avocado: rgba(93, 121, 45, 1);
+$dark-slate-gray: rgba(54, 74, 66, 1);
+$apple-green: rgba(170, 172, 37, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-right: linear-gradient(90deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-bottom: linear-gradient(180deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-left: linear-gradient(270deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-top-right: linear-gradient(45deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-bottom-right: linear-gradient(135deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-top-left: linear-gradient(225deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-bottom-left: linear-gradient(315deg, #999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+$gradient-radial: radial-gradient(#999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #AAAC25ff);
+
+
+* { box-sizing: border-box; font-family:Jost, Roboto, sans-serif;}
+
+
+.navbar_ {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    // display: flex;
+    // justify-content: space-between;
+  }

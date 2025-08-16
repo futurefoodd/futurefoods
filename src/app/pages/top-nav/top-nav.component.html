@@ -1,0 +1,27 @@
+<!-- Navigation Bar -->
+<nav class="navbar_">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon" routerLink="/">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#5D792D"/>
+          </svg>
+          <span>Fuel Up Nutrition</span>
+        </div>
+      </div>
+      <div class="nav-menu" [class.active]="isMenuOpen">
+        <a routerLink="/" class="nav-link">Home</a>
+        <a routerLink="/products" class="nav-link">Products</a>
+        <a routerLink="/about" class="nav-link">About</a>
+        <a routerLink="/contact" class="nav-link">Contact</a>
+        <a [routerLink]="'/cart'" class="cart-icon">
+          <img width="30" src="cart.png" alt="cart">
+        </a>
+      </div>
+      <div class="nav-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>

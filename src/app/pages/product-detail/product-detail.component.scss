@@ -1,0 +1,362 @@
+
+:host {
+  /* Define CSS variables for your color palette */
+  --battleship-gray: #999A94;
+  --silver: #BCBAB2;
+  --avocado: #5D792D;
+  --dark-slate-gray: #364A42;
+  --apple-green: #AAAC25;
+}
+
+/* Main container styles */
+.product-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  font-family: 'Inter', sans-serif;
+//   color: var(--dark-slate-gray);
+  background-color: #ffffff;
+//   border-radius: 1rem;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top:130px;
+}
+.product-container div:nth-of-type(1) {
+  flex-basis: 60%;
+}
+
+@media (min-width: 768px) {
+  .product-container {
+    flex-direction: row;
+  }
+}
+
+/* Image section styling */
+.product-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Details section styling */
+.product-details-content {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-slate-gray);
+  margin: 0;
+}
+
+.product-price {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--avocado);
+  margin: 0;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark-slate-gray);
+}
+
+/* Button styling */
+.add-to-cart-btn {
+  background-color: var(--apple-green);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .add-to-cart-btn {
+    width: auto;
+  }
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--avocado);
+  transform: translateY(-2px);
+}
+
+/* Additional details section */
+.additional-details {
+  margin-top: 1rem;
+}
+
+.additional-details h3 {
+  border-bottom: 2px solid var(--battleship-gray);
+  padding-bottom: 0.5rem;
+  color: var(--dark-slate-gray);
+  font-size: 1.25rem;
+}
+
+.additional-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.additional-details li {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  max-width:680px
+}
+
+.column {
+  flex: 50%; /* Default to 2 columns */
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+img {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+img:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  margin-top:70px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Jost, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.quantity {
+  display: flex;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height:70%
+}
+
+.quantity button {
+  background-color: #ffffff;
+  color: #060606;
+  border: none ;
+  cursor: pointer;
+  font-size: 20px;
+  width: 30px;
+  height: auto;
+  text-align: center;
+  transition: background-color 0.1s;
+}
+
+.quantity button:hover {
+  background-color: #3d4935;
+  color:white
+}
+
+.input-box {
+  width: 40px;
+  text-align: center;
+  border: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Hide the number input spin buttons */
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box[type="number"] {
+  -moz-appearance: textfield;
+}

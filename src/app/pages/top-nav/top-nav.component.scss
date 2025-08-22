@@ -13,7 +13,6 @@ $apple-green: #AAAC25ff;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: $dark-slate-gray;
   background-color: #ffffff;
@@ -25,16 +24,72 @@ body {
   padding: 0 20px;
 }
 
+.nav-menu {
+  display: flex;
+  align-items: start;
+  gap: 36px;
+ 
+  
+  .cta-button {
+    background-color: $avocado;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: darken($avocado, 10%);
+    }
+  }
+}
+
 // Navigation
-// .navbar_ {
-//   background-color: #ffffff;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   z-index: 1000;
-//   // display: flex;
-//   // justify-content: space-between;
-// }
+.navbar_ {
+  background-color: #ffffff38;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  .nav-link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    
+    &:hover {
+      @media (hover: hover) and (pointer: fine) {
+      color: $avocado;
+      font-weight: 900;
+      }
+    }
+  }
+
+}
+
+.navbar_::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* The color you are transitioning to */
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s ease;
+  z-index: -1; /* Puts the transition layer behind the text */
+
+  
+}
+
+.navbar_:hover::before {
+  transform: scaleY(1);
+}
+
 
 .nav-container {
   // max-width: 1200px;
@@ -63,37 +118,7 @@ body {
   }
 }
 
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  
-  .nav-link {
-    text-decoration: none;
-    color: $dark-slate-gray;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    
-    &:hover {
-      color: $avocado;
-    }
-  }
-  
-  .cta-button {
-    background-color: $avocado;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    
-    &:hover {
-      background-color: darken($avocado, 10%);
-    }
-  }
-}
+
 
 .nav-toggle {
   display: none;
@@ -412,52 +437,42 @@ body {
     flex-direction: column;
     background-color: white;
     width: 100%;
-    text-align: center;
+    text-align: left;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     padding: 20px 0;
+
+    opacity: 0;
+    transform: translateX(10%); /* Start 100% of its own height from the bottom */
+    transition: opacity 0.2s ease in out, transform 0.2s ease in out; /* Add a transition for both properties */
     
     &.active {
+      opacity:1;
       right: 0;
+      transform: translateX(0);
+
+    }
+
+    .nav-link{
+      text-decoration: none;
+    font-size: 1.8em;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    letter-spacing: .05em;
+    border-bottom: 1px solid #f0f0f0;
+    // border-top: 1px solid #f0f0f0;
+    width: 100%;
+    transition: all 0.3s ease;
+    padding-left: 5%;
+    }
+    .language {
+      display: none;
     }
   }
+  
   
   .nav-toggle {
     display: flex;
-  }
-  
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-    
-    .subtitle {
-      font-size: 1.2rem;
-    }
-  }
-  
-  .hero-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .product-bottle {
-    width: 250px;
-    height: 350px;
-  }
-  
-  .bottle-body {
-    width: 150px;
-    height: 250px;
   }
 }
 
@@ -485,3 +500,4 @@ body {
     height: 200px;
   }
 }
+.cart-count { position: absolute; top: -8px; right: -8px; background: $avocado; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }

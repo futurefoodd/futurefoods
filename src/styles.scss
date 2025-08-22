@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @import "@coreui/coreui/scss/coreui";
+@import "primeicons/primeicons.css";
 
 /* SCSS HEX */
 $battleship-gray: #999A94ff;
@@ -34,12 +35,3 @@ $gradient-radial: radial-gradient(#999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #A
 * { box-sizing: border-box; font-family:Jost, Roboto, sans-serif;}
 
 
-.navbar_ {
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    // display: flex;
-    // justify-content: space-between;
-  }

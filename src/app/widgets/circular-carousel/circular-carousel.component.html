@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card" style="margin-bottom: 30px;">
     <p-carousel [value]="products" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions" autoplayInterval="3000">
       <ng-template let-product #item>
           <div class="border border-surface-200 dark:border-surface-700 rounded m-2 p-4">
               <div class="mb-4">
-                  <div class="relative mx-auto">
-                      <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" [alt]="product.name" class="w-full rounded-border" />
+                  <div class="relative mx-auto" >
+                      <img [src]="product.image" [alt]="product.name" class="w-full object-cover rounded-border "  style="max-height: 290px; min-height:177px; object-fit: contain;"/>
                       <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" class="absolute dark:!bg-surface-900" [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
                   </div>
               </div>
@@ -14,6 +14,11 @@
                   <span>
                       <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
                       <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
+                      <!-- <button class="bg-sky-500/100 p-1 rounded-3 text-white">Add to Cart
+                        <span><svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 4.58011L3.88304 1.09945V1H15.2164L18 4.58011M1 4.58011V17.2099C1 18.2044 1.89474 19 2.88889 19H16.1111C17.1053 19 18 18.2044 18 17.2099V4.58011M1 4.58011H18M13.3275 8.16022C13.3275 10.1492 11.6374 11.7403 9.54971 11.7403C7.46199 11.7403 5.67251 10.1492 5.67251 8.16022" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg></span>
+                      </button> -->
                   </span>
               </div>
           </div>

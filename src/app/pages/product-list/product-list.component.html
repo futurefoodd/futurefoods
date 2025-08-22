@@ -20,8 +20,8 @@
 
       <div (click)="navigateProductDetail(product.id)" class="product-card" *ngFor="let product of products">
         <!-- <div class="w-full max-w-sm "> -->
-        <div class="image-holder h-100 mb-4">
-          <img class="rounded-t-lg" [src]="product.image_path_1" alt="product image" />
+        <div class="image-holder mb-4">
+          <img class="rounded-t-lg" [src]="product.image[0]" alt="product image" />
         </div>
         <div class="p-2">
           <div class="vendor-name">
@@ -30,7 +30,7 @@
           <div class="flex justify-between">
 
             <div class="produt-card-title">{{product.name}}</div>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center" style="align-self: flex-start;">
               <span class="text-3xl " style="color: rgb(79, 79, 79);">RM{{product.price}}</span>
               <!-- <button class="add-to-cart">Add to Cart</button> -->
             </div>
@@ -38,7 +38,7 @@
           <div class="flex items-center mt-2.5 mb-5">
             <div class="stars" [style.--rating]="product.product_rating"></div>
             <span
-              class="">({{product.product_rating}})</span>
+              class=>({{product.product_rating}})</span>
           </div>
         </div>
 
@@ -49,31 +49,3 @@
 
   </section>
 </main>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Fuel Up Nutrition</h3>
-        <p>Essential nutrients for growing minds and bodies.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a routerLink="/">Home</a>
-        <a routerLink="/products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p>Email: info&#64;fuelupnutrition.com</p>
-        <p>Phone: +60 3-1234-5678</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Fuel Up Nutrition. All rights reserved.</p>
-    </div>
-  </div>
-
-</footer>

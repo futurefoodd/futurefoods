@@ -1,32 +1,5 @@
-<!-- Navigation Bar -->
-<nav class="navbar_">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <div class="logo-icon" routerLink="/">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#5D792D"/>
-        </svg>
-        <span>Fuel Up Nutrition</span>
-      </div>
-    </div>
-    <div class="nav-menu" [class.active]="isMenuOpen">
-      <a routerLink="/products" class="nav-link">Products</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <a [routerLink]="'/cart'" class="cart-icon">
-        <img width="30" src="cart.png" alt="cart">
-        <span class="cart-count" *ngIf="items.length > 0">{{ items.length }}</span>
-      </a>
-    </div>
-    <div class="nav-toggle" (click)="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</nav>
 
-<main class="page">
+<!-- <main class="page"> -->
   <section class="container cart">
     <h2 class="section-title">Shopping Cart</h2>
     
@@ -87,31 +60,4 @@
       </div>
     </ng-template>
   </section>
-</main>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Fuel Up Nutrition</h3>
-        <p>Essential nutrients for growing minds and bodies.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a routerLink="/">Home</a>
-        <a routerLink="/products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p>Email: info&#64;fuelupnutrition.com</p>
-        <p>Phone: +60 3-1234-5678</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Fuel Up Nutrition. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+<!-- </main> -->

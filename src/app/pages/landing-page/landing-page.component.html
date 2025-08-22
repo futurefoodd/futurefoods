@@ -1,193 +1,237 @@
 <section id="home" class="product-section justify-center">
-  <!-- <div class="width-100 grow"> -->
-    <div class="slideshow-container">
-      <div class="slideshow-text flex flex-column">
-        <div class="font-semibold text-2xl mb-3">
-          <div class="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#28694B] to-[#FF5F2D] text-transparent bg-clip-text" style="max-width: 60%;">
-            VEGAN PRO-COLLAGEN with PALEO PREBIOTIC®
-            <h2 class="subtitle">Nature’s goodness in soft pastilles </h2>
-          </div>
-          <p class="hero-description" style="max-width:30%;">
-            Support your daily nutrition needs with our organic plant-based extracts 
-          </p>
-        </div>
-        <div class="flex">
-          <button type="button" class="buynow-button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Buy now- RM48.00 | 30 pastilles</button>
-          <button calss="uynow-button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Learn More</button>
-        </div>
-      </div>
-      <!-- Image display area -->
-       <!-- <a href="/about"> -->
+  <div class="slideshow-container">
+    <img [src]="currentImageUrl" alt="Slideshow image" class="slideshow-image">
+    <button class="prev-button z-10" (click)="prevSlide()">&#10094;</button>
+    <button class="next-button z-10" (click)="nextSlide()">&#10095;</button>
 
-         <img 
-           [src]="currentImageUrl" 
-           alt="Slideshow image" 
-           class="slideshow-image"
-         >
-       <!-- </a> -->
-      
-      <!-- Navigation buttons -->
-      <button class="prev-button" (click)="prevSlide()">&#10094;</button>
-      <button class="next-button" (click)="nextSlide()">&#10095;</button>
-
-      <!-- Dot navigation (optional) -->
-      <div class="dot-container">
-        <span 
-          *ngFor="let image of images; let i = index"
-          class="dot"
-          [class.active]="i === currentImageIndex"
-          (click)="goToSlide(i)">
-        </span>
-      </div>
+    <div class="dot-container">
+      <span *ngFor="let image of images; let i = index" class="dot" [class.active]="i === currentImageIndex"
+        (click)="goToSlide(i)">
+      </span>
     </div>
-
-    <!-- <div class="hero-content">
-      <h1 class="hero-title">
-        VEGAN PRO-COLLAGEN with PALEO PREBIOTIC®
-        <span class="subtitle">Nature’s goodness in soft pastilles </span>
-      </h1>
-      <p class="hero-description">
-        Support your daily nutrition needs with our organic plant-based extracts 
-      </p>
-
-      <div class="hero-buttons">
-        <button class="primary-button" [routerLink]="'/products'">Buy now- RM48.00 | 30 pastilles </button>
-        <button class="secondary-button">Learn More</button>
+    <div class="slideshow-text z-5 absolute ">
+      <!-- <div class="slide-header">Vegan Pro-Collaggen and</div> -->
+      <div class="slide-header">THE FUTURE OF HEALTH</div>
+      <!-- <div class="slide-header"></div> -->
+      <div class="slide-header-2">PALEO PREBIOTIC®</div>
+      <div class="sub-header">Nature's goodness in soft pastilles</div>
+      <p class="slider-paragraph">Support your daily nutrition needs with our organic plant-based extracts</p>
+      <button></button>
+      <button></button>
+      <div class="status">
       </div>
-    </div> -->
-    <!-- <div class=""> -->
-      <!-- <img src="soft_pastilles_bottle_2.png" alt="Classroom Wellbeing Supplement Bottle" class="product-image"> -->
-      <!-- <img src="image_1.png" class="product-image " style="object-fit: cover;"> --> 
 
-    <!-- </div> -->
-  <!-- </div> -->
+    </div>
+  </div>
+
 </section>
 
-<!-- <section class="product-section ">
-  <div class="container">
-    <img src="image_1.png" class="absolute w-50">
-  </div>
-</section> -->
-
-<div style="margin:5rem 7rem;">
-  <app-circular-carousel></app-circular-carousel>
-</div>
-
-<section class="py-12 my-12 overflow-hidden">
-  <div class="container mx-auto px-6">
-    <h2 class="text-2xl font-semibold text-center mb-12 text-[#28694B]">Trusted by Industry Leaders</h2>
-    <div class="logo-carousel">
-      <div class="logo-track">
-        <div *ngFor="let logo of duplicatedLogos" class="logo-slide">
-          <div class="logo-container">
-            <div class="logo-image">{{logo.text}}</div>
-          </div>
-        </div>
+<section id="benefits" class="benefits-section">
+  <div class="container" style="margin: 0 auto;">
+    <h2 class="section-title">Our Product Benefits</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-number">01</div>
+        <h3>Supports Gut Probiotics</h3>
+        <p>These soft pastilles feed your good bacteria in your stomach and gut to grow and stay strong. These good
+          bacteria help you better digest food and absorb essential nutrients, keep your immune system active, and even
+          improve your mood.</p>
       </div>
+      <div class="benefit-item">
+        <div class="benefit-number">02</div>
+        <h3>Strengthens Muscle & Joint</h3>
+        <p>These carefully formulated soft pastilles helps your body better absorb natural vitamin C, amino acids,
+          polypeptides and dietary calcium for muscle recovery and stronger bones. This supports joint and ligament
+          flexibility. These soft pastilles have also been studied to reduce joint inflammation thus helping with pain
+          management.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-number">03</div>
+        <h3>Higher Energy Creating Better Mood</h3>
+        <p>ALA Omega 3, MCT 8, MCT10 and B-Complex in these soft pastilles are absorbed quickly in the mouth giving you
+          more natural energy to do more. These soft pastilles also help you rebound after workouts and to recover from
+          brain fog and fatigue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about-section">
+  <div class="container mx-auto">
+    <div class="about-content">
+      <div class="about-text">
+        <div class="flex flex-column">
+
+          <div class="about-header-1">What is Paleo-Prebiotic?</div>
+          <!-- <div class="about-header-1">20% OFF</div> -->
+        </div>
+        <p>This blend is sourced from traditional soluble plant fibres and natural resistant starches from ancient tubers that nourish good gut bacteria to enhance nutrient absorption, timely bowel movements and gut health.</p>
+        <p>Real fruit extracts formulated into soft functional pastille, designed to progressively deliver your daily nutrition needs. Keep these great tasting functional pastilles under your tongue and experience quicker absorption of essential nutrients.  Each functional pastille has high-density dietary vitamin C (ascorbate) and polyphenols which naturally supports skin, muscles and joints.  ALA Omega 3 and MCTs replenish your energy needs. Complements Women’s Wellness.</p>
+
+          <div class="price flex">
+            <button class="bg-[#5D792Dff] p-3 text-white rounded-3">Learn More</button>
+
+          </div>
+      </div>
+      <div class="about-image">
+        <img src="info_poster.png" alt="Classroom Wellbeing Supplement Bottle" class="product-image">
+      </div>
+
+
     </div>
   </div>
 </section>
 
 <div id="mydiv" class="thin_border">
+</div>
 
+<section id="about" class="about-section">
+  <div class="container mx-auto">
+    <div class="buy-now-header-1">BUY 2 AND GET 10% OFF!</div>
+
+    <div class="about-content">
+      <div class="about-image">
+        <ng-container *ngIf="selectedProduct == 'productA'; else productBImage">
+          <img [src]="products.productA.image" alt="Classroom Wellbeing Supplement Bottle" class="product-image">
+        </ng-container>
+        <ng-template #productBImage><img [src]="products.productB.image" alt="Classroom Wellbeing Supplement Bottle" class="product-image">
+        </ng-template>
+      </div>
+      <div id="offer" class="about-text">
+        <div class="flex flex-column" >
+        </div>
+          <div class="flex flex-column ">
+              <div class="buy-now-title">Smooth Skin & Body Repair</div>
+            <div class="flex items-center" style="align-self: flex-start;">
+              <ng-container *ngIf="selectedProduct == 'productA'; else displayProductB">
+                <span class="text-3xl " style="color: rgb(255, 22, 22);">RM88.00</span>
+                <span class="text-2xl " style="color: rgb(0, 0, 0);" style="text-decoration: line-through;">RM97.80</span>
+              </ng-container>
+              <ng-template #displayProductB>
+                <span class="text-2xl " style="color: rgb(0, 0, 0);" >RM48.00</span>
+
+              </ng-template>
+            </div>
+            <div class="flex items-center mt-2.5 mb-5">
+              <div class="stars" [style.--rating]="5.0"></div>
+              <span class="">(5)</span>
+            </div>
+          </div>
+
+          <div class="price flex mb-3">
+            <label class="cursor-pointer" style="margin-right: 16px;">
+              <input 
+                type="radio" 
+                name="productA" 
+                value="productA" 
+                [(ngModel)]="selectedProduct" 
+                class="hidden"
+              >
+              <div 
+                [ngClass]="{
+                  'bg-gray-200 text-gray-800': selectedProduct === 'productA',
+                  'bg-white border border-gray-300 text-gray-600': selectedProduct !== 'productA'
+                }"
+                class="px-4 py-2 rounded-lg shadow-sm transition-colors duration-200"
+              >
+                x2 Value pack
+              </div>
+            </label>
+           
+            <label class="cursor-pointer">
+              <input 
+                type="radio" 
+                name="productB" 
+                value="productB" 
+                [(ngModel)]="selectedProduct" 
+                class="hidden"
+              >
+              <div 
+                [ngClass]="{
+                  'bg-gray-200 text-gray-800': selectedProduct === 'productB',
+                  'bg-white border border-gray-300 text-gray-600': selectedProduct !== 'productB'
+                }"
+                class="px-4 py-2 rounded-lg shadow-sm transition-colors duration-200"
+              >
+                Single pack
+              </div>
+            </label>
+          </div>
+          <div class="quantity" style="width: fit-content; max-height: 50px; margin: 20px 0;">
+            <button class="minus" aria-label="Decrease" [disabled]="quantity === 0"
+              (click)="quantity = quantity - 1">&minus;</button>
+            <input [(ngModel)]="quantity" type="number" class="input-box" min="0" max="200">
+            <button class="plus" aria-label="Increase" (click)="quantity = quantity + 1">&plus;</button>
+          </div>
+        <div class="flex flex-column" style="grid-column: 2;">
+          <button class="border-2 border-gray-700 p-3 " style="margin-bottom: 10px;">Add To Cart</button>
+          <button class="bg-[#5D792Dff] text-white p-3">Buy Now</button>
+        </div>
+          </div>
+
+
+    </div>
   </div>
+  
+</section>
+
+<div id="mydiv" class="thin_border">
+</div>
 
 <section class="comparison-section">
-  <div class="card comparison-container" >
+  
+  <h2 class="section-title">Our Transformation</h2>
+  <div class="container mx-auto">
+    <p>We believe every child deserves access to premium nutrition that supports their growth, learning, and overall
+      wellbeing. Our Classroom Wellbeing supplement is crafted with care using only the finest organic ingredients.
+    </p>
+  <button class="bg-[#5D792Dff] w-32 rounded-2 text-white px-8 py-3">Buy Now</button>
+  </div>
+
+  <div class="card comparison-container">
     <p-imagecompare class="shadow-lg rounded-2xl absolute">
-        <ng-template #left>
-            <img src="NOURRI_Customer_After.webp" />
-        </ng-template>
-        <ng-template #right>
-            <img src="NOURRI_Customer_Before.webp" />
-        </ng-template>
+      <ng-template #left>
+        <img src="NOURRI_Customer_After.webp" />
+      </ng-template>
+      <ng-template #right>
+        <img src="NOURRI_Customer_Before.webp" />
+      </ng-template>
     </p-imagecompare>
   </div>
 </section>
 
+<div id="mydiv" class="thin_border">
+</div>
 
-<!-- Benefits Section -->
-<section id="benefits" class="benefits-section">
-  <div class="container">
-    <h2 class="section-title">Key Benefits</h2>
-    <div class="benefits-grid">
-      <div class="benefit-item">
-        <div class="benefit-number">01</div>
-        <h3>Supports Gut Probiotics</h3>
-        <p>These soft pastilles feed your good bacteria in your stomach and gut to grow and stay strong. These good bacteria help you better digest food and absorb essential nutrients, keep your immune system active, and even improve your mood.</p>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-number">02</div>
-        <h3>Strengthens Muscle & Joint</h3>
-        <p>These carefully formulated soft pastilles helps your body better absorb natural vitamin C, amino acids, polypeptides and dietary calcium for muscle recovery and stronger bones. This supports joint and ligament flexibility.  These soft pastilles have also been studied to reduce joint inflammation thus helping with pain management.</p>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-number">03</div>
-        <h3>Higher Energy Creating Better Mood</h3>
-        <p>ALA Omega 3, MCT 8, MCT10 and B-Complex in these soft pastilles are absorbed quickly in the mouth giving you more natural energy to do more. These soft pastilles also help you rebound after workouts and to recover from brain fog and fatigue.</p>
-      </div>
-      <!-- <div class="benefit-item">
-        <div class="benefit-number">04</div>
-        <h3>Mental Focus</h3>
-        <p>Enhances classroom attention and cognitive performance.</p>
-      </div> -->
-    </div>
+<section class="news-letter">
+  <div class="flex gap-4 flex-column items-center">
+   <h1 class="section-title">Subscribe to our Newsletter!</h1>
+    <input style=" padding: 10px;" class="email-input px-10 py-3 placeholder-black text-black
+    rounded-xl border border-gray-500  transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-gray-700" type="text" placeholder="Ex. your-email@example.com">
+    <button style="width: 50%;" class="bg-[#5D792Dff] text-white rounded-3 p-2">Submit</button>
   </div>
 </section>
 
 
-<!-- About Section -->
-<section id="about" class="about-section">
-  <div class="container">
-    <div class="about-content">
-      <div class="about-image">
-        <!-- <div class="organic-badge">
-          <span>🌿</span>
-          <span>Organic Certified</span>
-        </div> -->
-        <img src="soft_pastilles_box_2.jpeg" alt="Classroom Wellbeing Supplement Bottle" class="product-image">
-      </div>
-      <div class="about-text">
-        <h2>About Fuel Up Nutrition</h2>
-        <p>We believe every child deserves access to premium nutrition that supports their growth, learning, and overall
-          wellbeing. Our Classroom Wellbeing supplement is crafted with care using only the finest organic ingredients.
-        </p>
-        <p>Made in Malaysia with love and commitment to quality, our products are designed to complement your child's
-          daily nutrition needs.</p>
-      </div>
-      
-    </div>
-  </div>
-</section>
+<!-- Testimony Section -->
 <section id="about" class="testimony-section">
-  <div class="container">
-    
-  </div>
-</section>
+  <h1 class="section-title text-white ">Our Testimonials</h1>
+    <div class="flex justify-around flex-wrap">
+@for (data of testimonyData; track $index) {
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Fuel Up Nutrition</h3>
-        <p>Essential nutrients for growing minds and bodies.</p>
+  <div  class="testimony-cards rounded-4">
+    <h1 class="tc-header">“{{data.testimony}}”</h1>
+    <div class="flex" style="padding:0 2em">
+      <div class="flex" style="margin-right:1em">
+        <img class="w-10 h-10 rounded-full" src=" https://picsum.photos/200/300" alt="Rounded avatar">
       </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#product">Product</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#about">About</a>
+      <div class="flex flex-column basis-2/3">
+        <div style="color: gray;">{{data.title}}</div>
+        <div>{{data.name}}</div>
       </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p>Email: info&#64;fuelupnutrition.com</p>
-        <p>Phone: +60 3-1234-5678</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Fuel Up Nutrition. All rights reserved.</p>
     </div>
   </div>
-</footer>
+}
+    </div>
+</section>

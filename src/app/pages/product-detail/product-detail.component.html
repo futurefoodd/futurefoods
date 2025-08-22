@@ -1,55 +1,32 @@
 <!-- product-details.component.html -->
-<div class="product-container">
-<div class="mx-auto">
-    <div class="mb-4 grid grid-cols-1" (click)="openModal($event)">
-      <img #image_1 [src]="product.imageUrls[0]" style="width:100%" >
+<!-- <div class="product-container">
+  <app-flickity-carousel></app-flickity-carousel>
+  <div class="product-details-content">
+    <h1 class="product-title">{{product.name}}</h1>
+    <p class="product-price">RM{{product.price}}</p>
+    <p class="product-description">
+      {{product.description_1}} </p>
+    <div class="quantity" style="width: fit-content; max-height: 50px;">
+      <button class="minus" aria-label="Decrease" [disabled]="quantity === 0"
+        (click)="quantity = quantity - 1">&minus;</button>
+      <input [(ngModel)]="quantity" type="number" class="input-box" min="0" max="200">
+      <button class="plus" aria-label="Increase" (click)="quantity = quantity + 1">&plus;</button>
     </div>
-  
-  <div class="grid grid-cols-3 gap-4 ">
-    <img #image_2 [src]="product.imageUrls[1]" style="width:100%" (click)="openModal($event)">
-    <img #image_3 [src]="product.imageUrls[2]" style="width:100%" (click)="openModal($event)">
-    <img #image_4 [src]="product.imageUrls[3]" style="width:100%" (click)="openModal($event)">
-  </div>   
+      <button class="border-2 border-gray-700 p-3 " style="margin-bottom: 10px;">Add To Cart</button>
+      <button class="bg-blue-700 text-white p-3">Buy Now</button>
+    <div class="additional-details">
+      <h3>Specifications</h3>
+      <ul>
+        <li>**Material:** 100% Organic Cotton</li>
+        <li>**Color:** Battleship Gray</li>
+        <li>**Size:** S, M, L, XL</li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<div #myModal class="modal" [style.display]="modalVisible ? 'block' : 'none'">
+  <span (click)="closeModal()" class="close">&times;</span>
+  <img #modalImage class="modal-content" id="img01">
+  <div #caption id="caption"></div>
 </div>
-
-
-  
-    <!-- Details Section -->
-    <div class="product-details-content">
-      <h1 class="product-title">{{product.name}}</h1>
-      <p class="product-price">RM{{product.price}}</p>
-      <p class="product-description">
-{{product.description_1}}      </p>
-  
-      <!-- Call to Action -->
-
-        
-      <div class="quantity" style="width: fit-content;">
-        <button class="minus" aria-label="Decrease">&minus;</button>
-        <input type="number" class="input-box" value="1" min="1" max="10">
-        <button class="plus" aria-label="Increase">&plus;</button>
-      </div>
-      <!-- <button class="bg-black text-white w-fit px-3 py-2 hover:text-black hover:pointer hover:bg-gray">Add to cart</button> -->
-      <button (click)="addToCart()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add to cart</button>
-
-
-  
-      <!-- Additional Details -->
-      <div class="additional-details">
-        <h3>Specifications</h3>
-        <ul>
-          <li>**Material:** 100% Organic Cotton</li>
-          <li>**Color:** Battleship Gray</li>
-          <li>**Size:** S, M, L, XL</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <div #myModal class="modal" [style.display]="modalVisible ? 'block' : 'none'">
-    <span (click)="closeModal()" class="close">&times;</span>
-    <img #modalImage class="modal-content" id="img01">
-    <div #caption id="caption"></div>
-  </div>
- 
-  

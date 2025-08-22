@@ -142,11 +142,13 @@ $apple-green: #AAAC25ff;
   padding: 24px 24px 0;
   
 }
+
 img {
   min-width: 240px;
   height: 100%;
   width: 100%;
   object-fit: cover;
+  max-height:370px
 }
 
 .card-body {
@@ -193,39 +195,7 @@ img {
   background-color: #f9f9f9;
   min-height:358px
 }
-// Footer (match landing)
-.footer {
-  background-color: $dark-slate-gray;
-  color: white;
-  padding: 60px 0 20px;
-}
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-section {
-  h3, h4 { margin-bottom: 20px; color: white; }
-  p { color: $silver; line-height: 1.6; margin-bottom: 10px; }
-  a {
-    color: $silver;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
-    &:hover { color: white; }
-  }
-}
-
-.footer-bottom {
-  border-top: 1px solid $battleship-gray;
-  padding-top: 20px;
-  text-align: center;
-  p { color: $silver; }
-}
 
 @media (max-width: 768px) {
   .nav-menu {

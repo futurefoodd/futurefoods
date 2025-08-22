@@ -28,9 +28,8 @@ export const cGetProduct = async (req: Request, res: Response, next: NextFunctio
     try {
       const id = req.params['id'] as UUID
      result =  await getProduct(id)
-    //  console.log(result)
+     console.log(result)
 
-    console.log('result:',result)
     
   if (result!){
     res.status(200).json({result:result,status:true} )

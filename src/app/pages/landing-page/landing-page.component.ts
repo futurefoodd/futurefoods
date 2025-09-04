@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 import {  AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
@@ -7,20 +7,26 @@ import { ImageCompareModule } from 'primeng/imagecompare';
 import { CircularCarouselComponent } from '../../widgets/circular-carousel/circular-carousel.component';
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
 import { FormsModule } from '@angular/forms';
+import { FaqComponent } from '../../widgets/faq/faq.component';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ RouterModule,  RouterLink, ImageCompareModule, FormsModule, CommonModule],
+  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent implements OnInit, OnDestroy {
   quantity=0;
   // slides: any[] = new Array(3).fill({ id: -1, src: '', title: '', subtitle: '' });
+  private autoSlideInterval: any;
+  private readonly slideInterval = 3000; // 5 seconds between slides
+  
   constructor(@Inject(PLATFORM_ID) private platformId: object){
-    this.interval  = isPlatformBrowser(this.platformId) ? 5000 : 0;
-   }
-  interval:any
+    // Only run auto-slide in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      this.startAutoSlide();
+    }
+  }
   // logos = [
   //   { text: 'Google', logo: 'assets/logos/google.png' },
   //   { text: 'Microsoft', logo: 'assets/logos/microsoft.svg' },
@@ -46,11 +52,12 @@ export class LandingPageComponent implements OnInit {
     }
   };
 
+
   public images: string[] = [
     'landing_image_1.svg',
-    'https://placehold.co/800x450/4ade80/FFFFFF/png?text=Slide+2',
-    'https://placehold.co/800x450/60a5fa/FFFFFF/png?text=Slide+3',
-    'https://placehold.co/800x450/c084fc/FFFFFF/png?text=Slide+4'
+    'landing_image_2.svg',
+    'landing_image_3.svg',
+    'landing_image_4.svg',
   ];
 
   public currentImageIndex = 0;
@@ -85,6 +92,11 @@ export class LandingPageComponent implements OnInit {
     this.updateImage();
   }
 
+  ngOnDestroy(): void {
+    // Clean up the interval when component is destroyed
+    this.stopAutoSlide();
+  }
+
   /**
    * Updates the displayed image based on the current index.
    */
@@ -99,6 +111,7 @@ export class LandingPageComponent implements OnInit {
   public nextSlide(): void {
     this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
     this.updateImage();
+    this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
 
   /**
@@ -108,6 +121,7 @@ export class LandingPageComponent implements OnInit {
   public prevSlide(): void {
     this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
     this.updateImage();
+    this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
 
   /**
@@ -117,6 +131,48 @@ export class LandingPageComponent implements OnInit {
   public goToSlide(index: number): void {
     this.currentImageIndex = index;
     this.updateImage();
+    this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
+
+  /**
+   * Starts the auto-slide functionality
+   */
+  private startAutoSlide(): void {
+    this.autoSlideInterval = setInterval(() => {
+      this.nextSlide();
+    }, this.slideInterval);
+  }
+
+  /**
+   * Stops the auto-slide functionality
+   */
+  private stopAutoSlide(): void {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+      this.autoSlideInterval = null;
+    }
+  }
+
+  /**
+   * Resets the auto-slide timer
+   */
+  private resetAutoSlide(): void {
+    this.stopAutoSlide();
+    this.startAutoSlide();
+  }
+
+  /**
+   * Pauses auto-slide when user hovers over the slideshow
+   */
+  // public onSlideshowHover(): void {
+  //   this.stopAutoSlide();
+  // }
+
+  // /**
+  //  * Resumes auto-slide when user stops hovering over the slideshow
+  //  */
+  // public onSlideshowLeave(): void {
+  //   this.startAutoSlide();
+  // }
 
 }

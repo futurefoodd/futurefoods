@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 })
 export class TopNavComponent {
   isMenuOpen = false;
+  isDieteticsDropdownOpen = false;
   items = [
     { id: 'classroom-wellbeing', name: 'Classroom Wellbeing', price: 49.9, quantity: 1, image: 'nvc_white_cap_no_background.png' },
     { id: 'immune-support', name: 'Immune Support', price: 39.9, quantity: 2, image: 'nvc-white-cap.png' }
@@ -22,6 +23,14 @@ export class TopNavComponent {
   toggleMenu() {
     console.log('here')
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  showDieteticsDropdown() {
+    this.isDieteticsDropdownOpen = true;
+  }
+
+  hideDieteticsDropdown() {
+    this.isDieteticsDropdownOpen = false;
   }
 
   @HostListener('document:click', ['$event'])

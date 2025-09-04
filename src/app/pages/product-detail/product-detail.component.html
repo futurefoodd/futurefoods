@@ -1,19 +1,51 @@
 <!-- product-details.component.html -->
-<!-- <div class="product-container">
-  <app-flickity-carousel></app-flickity-carousel>
+<div class="product-container">
+  @if (imageObject && imageObject.length > 0){
+    <app-flickity-carousel [item] ='imageObject'></app-flickity-carousel>
+  }
   <div class="product-details-content">
-    <h1 class="product-title">{{product.name}}</h1>
-    <p class="product-price">RM{{product.price}}</p>
+    <h1 class="product-title">{{product[0].name}}</h1>
+    <p class="product-price">RM{{product[0].price}}</p>
     <p class="product-description">
-      {{product.description_1}} </p>
-    <div class="quantity" style="width: fit-content; max-height: 50px;">
-      <button class="minus" aria-label="Decrease" [disabled]="quantity === 0"
-        (click)="quantity = quantity - 1">&minus;</button>
-      <input [(ngModel)]="quantity" type="number" class="input-box" min="0" max="200">
-      <button class="plus" aria-label="Increase" (click)="quantity = quantity + 1">&plus;</button>
-    </div>
-      <button class="border-2 border-gray-700 p-3 " style="margin-bottom: 10px;">Add To Cart</button>
-      <button class="bg-blue-700 text-white p-3">Buy Now</button>
+      {{product[0].description_1}} </p>
+    <form #productForm="ngForm" (ngSubmit)="addToCart(productForm)">
+      <div class="quantity" style="width: fit-content; max-height: 50px;">
+        <button type="button" class="minus" aria-label="Decrease" 
+          [disabled]="quantity === 0"
+          (click)="quantity = Math.max(0, quantity - 1)">&minus;</button>
+        <input [(ngModel)]="quantity" 
+               name="quantity"
+               type="number" 
+               class="input-box" 
+               min="0" 
+               max="200"
+               required
+               #quantityInput="ngModel">
+        <button type="button" class="plus" aria-label="Increase" 
+          (click)="quantity = Math.min(200, quantity + 1)">&plus;</button>
+      </div>
+      
+      <!-- <div class="error-message" *ngIf="quantityInput.invalid && quantityInput.touched">
+        <span *ngIf="quantityInput.errors?.['required']">Quantity is required</span>
+        <span *ngIf="quantityInput.errors?.['min']">Quantity must be at least 0</span>
+        <span *ngIf="quantityInput.errors?.['max']">Quantity cannot exceed 200</span>
+      </div> -->
+      
+      <div class="button-group">
+        <button type="submit" 
+                class="border-2 border-gray-700 p-3" 
+                style="margin-bottom: 10px;"
+                [disabled]="productForm.invalid || quantity === 0">
+          Add To Cart
+        </button>
+        <button type="button" 
+                class="bg-blue-700 text-white p-3"
+                (click)="buyNow()"
+                [disabled]="productForm.invalid || quantity === 0">
+          Buy Now
+        </button>
+      </div>
+    </form>
     <div class="additional-details">
       <h3>Specifications</h3>
       <ul>
@@ -23,7 +55,7 @@
       </ul>
     </div>
   </div>
-</div> -->
+</div>
 
 <div #myModal class="modal" [style.display]="modalVisible ? 'block' : 'none'">
   <span (click)="closeModal()" class="close">&times;</span>

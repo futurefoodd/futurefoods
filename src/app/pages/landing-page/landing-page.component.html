@@ -1,5 +1,5 @@
 <section id="home" class="product-section justify-center">
-  <div class="slideshow-container">
+  <div class="slideshow-container" >
     <img [src]="currentImageUrl" alt="Slideshow image" class="slideshow-image">
     <button class="prev-button z-10" (click)="prevSlide()">&#10094;</button>
     <button class="next-button z-10" (click)="nextSlide()">&#10095;</button>
@@ -9,19 +9,7 @@
         (click)="goToSlide(i)">
       </span>
     </div>
-    <div class="slideshow-text z-5 absolute ">
-      <!-- <div class="slide-header">Vegan Pro-Collaggen and</div> -->
-      <div class="slide-header">THE FUTURE OF HEALTH</div>
-      <!-- <div class="slide-header"></div> -->
-      <div class="slide-header-2">PALEO PREBIOTIC®</div>
-      <div class="sub-header">Nature's goodness in soft pastilles</div>
-      <p class="slider-paragraph">Support your daily nutrition needs with our organic plant-based extracts</p>
-      <button></button>
-      <button></button>
-      <div class="status">
-      </div>
-
-    </div>
+    <button class="slider-button rounded-3 py-2 px-4">Learn More</button>
   </div>
 
 </section>
@@ -33,24 +21,21 @@
       <div class="benefit-item">
         <div class="benefit-number">01</div>
         <h3>Supports Gut Probiotics</h3>
-        <p>These soft pastilles feed your good bacteria in your stomach and gut to grow and stay strong. These good
-          bacteria help you better digest food and absorb essential nutrients, keep your immune system active, and even
+        <p>These nutrient rich soft pastilles feed your gut probiotics to grow and stay strong. These good
+          microbe help you better digest food and absorb essential nutrients, keep your immune system active, and even
           improve your mood.</p>
       </div>
       <div class="benefit-item">
         <div class="benefit-number">02</div>
-        <h3>Strengthens Muscle & Joint</h3>
-        <p>These carefully formulated soft pastilles helps your body better absorb natural vitamin C, amino acids,
-          polypeptides and dietary calcium for muscle recovery and stronger bones. This supports joint and ligament
-          flexibility. These soft pastilles have also been studied to reduce joint inflammation thus helping with pain
-          management.</p>
+        <h3>Strengthens Muscle, Joints & Nails</h3>
+        <p>These clinically formulated soft pastilles helps your body better absorb natural vitamin C, amino acids,
+          polypeptides and dietary calcium for muscle recovery and stronger bones. These soft pastilles have also been studied to reduce joint inflammation.</p>
       </div>
       <div class="benefit-item">
         <div class="benefit-number">03</div>
         <h3>Higher Energy Creating Better Mood</h3>
-        <p>ALA Omega 3, MCT 8, MCT10 and B-Complex in these soft pastilles are absorbed quickly in the mouth giving you
-          more natural energy to do more. These soft pastilles also help you rebound after workouts and to recover from
-          brain fog and fatigue.</p>
+        <p>Organic ALA Omega 3, MCT8, MCT10 and B-Complex in these soft pastilles are absorbed quickly in the mouth giving you more natural energy to improve attention span. These soft pastilles also help you rebound after workouts, recover from
+          fatigue and reduce brain fog.</p>
       </div>
     </div>
   </div>
@@ -62,11 +47,15 @@
       <div class="about-text">
         <div class="flex flex-column">
 
-          <div class="about-header-1">What is Paleo-Prebiotic?</div>
-          <!-- <div class="about-header-1">20% OFF</div> -->
+          <div class="about-header-1">COMING SOON!</div>
         </div>
-        <p>This blend is sourced from traditional soluble plant fibres and natural resistant starches from ancient tubers that nourish good gut bacteria to enhance nutrient absorption, timely bowel movements and gut health.</p>
-        <p>Real fruit extracts formulated into soft functional pastille, designed to progressively deliver your daily nutrition needs. Keep these great tasting functional pastilles under your tongue and experience quicker absorption of essential nutrients.  Each functional pastille has high-density dietary vitamin C (ascorbate) and polyphenols which naturally supports skin, muscles and joints.  ALA Omega 3 and MCTs replenish your energy needs. Complements Women’s Wellness.</p>
+        <h3>What is Paleo-Prebiotic?</h3>
+        <br>
+        <p>A potent blend of traditional soluble plant fibers and resistant starches sourced from ancient tubers and herbs and fruits, that nourish gut probiotics to enhance nutrient absorption and reduce bloating for better bowel movements. Studies show that soluble dietary fibers, delays the absorption of glucose in Type II Diabetes.</p>
+
+        <h3>What you will be holding in your hands:</h3>
+        <br>
+        <p>A delicious soft functional pastille made with real fruit extracts, carefully formulated to progressively deliver your daily nutrition needs. Simply let it dissolve under your tongue for quicker absorption of essential nutrients.                                                                                                                      Each soft pastille is packed with high-density dietary Vitamin C (ascorbate), pro-collagen polypeptides, and polyphenols — working together to naturally support your skin, nails, muscles, and joints. ALA Omega-3 and MCTs further help to restore energy and vitality. Designed to complement Women’s Wellness, these great-tasting pastilles make everyday nourishment both effective and enjoyable.</p>
 
           <div class="price flex">
             <button class="bg-[#5D792Dff] p-3 text-white rounded-3">Learn More</button>
@@ -87,7 +76,7 @@
 
 <section id="about" class="about-section">
   <div class="container mx-auto">
-    <div class="buy-now-header-1">BUY 2 AND GET 10% OFF!</div>
+    <div class="buy-now-header-1">BUY 2 AND GET 12% OFF!</div>
 
     <div class="about-content">
       <div class="about-image">
@@ -101,56 +90,53 @@
         <div class="flex flex-column" >
         </div>
           <div class="flex flex-column ">
-              <div class="buy-now-title">Smooth Skin & Body Repair</div>
+            <div class="buy-now-title">Pro-Collaggen Soft Pastilles</div>
+            <p>Faster nutrient absorption, Promotes natural production of collagen & elastin, Nourishes gut microbiome, Reduces skin sensitivity, Better muscle & joint comfort, Soothes mouth sores and throat irritation</p>
             <div class="flex items-center" style="align-self: flex-start;">
               <ng-container *ngIf="selectedProduct == 'productA'; else displayProductB">
                 <span class="text-3xl " style="color: rgb(255, 22, 22);">RM88.00</span>
-                <span class="text-2xl " style="color: rgb(0, 0, 0);" style="text-decoration: line-through;">RM97.80</span>
+                <span class="text-2xl " style="color: rgb(0, 0, 0);" style="text-decoration: line-through;">RM99.80</span>
               </ng-container>
               <ng-template #displayProductB>
-                <span class="text-2xl " style="color: rgb(0, 0, 0);" >RM48.00</span>
+                <span class="text-2xl " style="color: rgb(0, 0, 0);" >RM49.90</span>
 
               </ng-template>
             </div>
             <div class="flex items-center mt-2.5 mb-5">
               <div class="stars" [style.--rating]="5.0"></div>
-              <span class="">(5)</span>
+              <span class="">(55)</span>
             </div>
           </div>
 
-          <div class="price flex mb-3">
-            <label class="cursor-pointer" style="margin-right: 16px;">
+          <div class="price flex mb-3" role="radiogroup" aria-label="Select product pack">
+            <label class="cursor-pointer" style="margin-right: 16px;" for="option-productA">
               <input 
+                id="option-productA"
                 type="radio" 
-                name="productA" 
-                value="productA" 
+                name="productOption" 
+                [value]="'productA'" 
                 [(ngModel)]="selectedProduct" 
                 class="hidden"
               >
               <div 
-                [ngClass]="{
-                  'bg-gray-200 text-gray-800': selectedProduct === 'productA',
-                  'bg-white border border-gray-300 text-gray-600': selectedProduct !== 'productA'
-                }"
+                [ngClass]="selectedProduct === 'productA' ? 'bg-gray-200 text-gray-800' : 'bg-white border border-gray-300 text-gray-600'"
                 class="px-4 py-2 rounded-lg shadow-sm transition-colors duration-200"
               >
                 x2 Value pack
               </div>
             </label>
            
-            <label class="cursor-pointer">
+            <label class="cursor-pointer" for="option-productB">
               <input 
+                id="option-productB"
                 type="radio" 
-                name="productB" 
-                value="productB" 
+                name="productOption" 
+                [value]="'productB'" 
                 [(ngModel)]="selectedProduct" 
                 class="hidden"
               >
               <div 
-                [ngClass]="{
-                  'bg-gray-200 text-gray-800': selectedProduct === 'productB',
-                  'bg-white border border-gray-300 text-gray-600': selectedProduct !== 'productB'
-                }"
+                [ngClass]="selectedProduct === 'productB' ? 'bg-gray-200 text-gray-800' : 'bg-white border border-gray-300 text-gray-600'"
                 class="px-4 py-2 rounded-lg shadow-sm transition-colors duration-200"
               >
                 Single pack
@@ -172,7 +158,6 @@
 
     </div>
   </div>
-  
 </section>
 
 <div id="mydiv" class="thin_border">
@@ -205,8 +190,11 @@
 
 <section class="news-letter">
   <div class="flex gap-4 flex-column items-center">
-   <h1 class="section-title">Subscribe to our Newsletter!</h1>
-    <input style=" padding: 10px;" class="email-input px-10 py-3 placeholder-black text-black
+   <h1 class="section-title">Request for a Consult</h1>
+    <input style=" padding: 10px;" class="email-input px-10 py-3 placeholder-gray-500 text-black
+    rounded-xl border border-gray-500  transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-gray-700" type="text" placeholder="Your Full name">
+    <input style=" padding: 10px;" class="email-input px-10 py-3 placeholder-gray-500 text-black
     rounded-xl border border-gray-500  transition-colors duration-200
     focus:outline-none focus:ring-2 focus:ring-gray-700" type="text" placeholder="Ex. your-email@example.com">
     <button style="width: 50%;" class="bg-[#5D792Dff] text-white rounded-3 p-2">Submit</button>
@@ -234,4 +222,11 @@
   </div>
 }
     </div>
+</section>
+
+<section style="padding: 100px 50px;">
+  <h1 class="section-title  ">FAQs</h1>
+
+  <app-faq></app-faq>
+
 </section>

@@ -5,14 +5,16 @@ import { isPlatformBrowser } from '@angular/common';
 import { RequestService } from '../../services/requestService.service';
 import {FormsModule} from '@angular/forms'
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
+import { productImage } from '../../core/model/product.model';
+import { CartService } from '../../services/cartService.service';
 
 
-type productImage = {
-  itemImageSrc: string | null,
-  thumbnailImageSrc: string | null,
-  alt:  string | null,
-  title:  string | null
-}
+// type productImage = {
+//   itemImageSrc: string | null,
+//   thumbnailImageSrc: string | null,
+//   alt:  string | null,
+//   title:  string | null
+// }
 
 @Component({
   selector: 'app-product-detail',
@@ -27,17 +29,19 @@ export class ProductDetailComponent implements OnInit {
   @ViewChild('modalImage') modalImage!: ElementRef<HTMLImageElement>;
   @ViewChild('caption') caption!: ElementRef<HTMLDivElement>;
   private platformId = inject(PLATFORM_ID);
-  product: any = undefined
-  quantity: number = 0
+  // product: any = undefined
+  product: any = { 0: { name: '', price: '', description_1: '', description_2: '' } };
+  // Form model for template-driven form
 
-  imageObject: Array<productImage> = [{
-    itemImageSrc: null,
-    thumbnailImageSrc: null,
-    alt: null,
-    title: null
-  }]
+    quantity:number = 1
+  // 
 
-  constructor(private activatedRoute: ActivatedRoute, private requestService:RequestService) {
+  // Make Math available in template
+  Math = Math;
+
+  imageObject: productImage[] = []
+
+  constructor(private activatedRoute: ActivatedRoute, private requestService:RequestService, private cartService:CartService) {
 
   }
 
@@ -54,10 +58,10 @@ export class ProductDetailComponent implements OnInit {
         }
         const product= await response.json()
         this.product = product.result
-        console.log(this.product)
+        // console.log(this.product[0])
         // const response = await this.requestService.requestHelper(`/products/getProduct/${productId}`, "GET")
        this.createImageObject()
-       console.log(this.imageObject)
+      //  console.log(this.imageObject)
       }else{
         this.product = undefined
       }
@@ -69,22 +73,20 @@ export class ProductDetailComponent implements OnInit {
   }
 
   createImageObject():void{
-    if (!this.product || !this.product[0] || !this.product[0].image) {
-      console.error('Product images not found.');
-      return;
-    }
-    
-    this.product[0].image.forEach((img:any, index: number) =>{
-        // console.log(img, index)
-        if(img.includes(`_${index+1}.`)){
-          this.imageObject[index].itemImageSrc=img
-        } 
-        
-        if(img.includes(`_${index+1}_s.`)){
-          this.imageObject[index].thumbnailImageSrc = img
-        }
-      })
-      
+ 
+    for (let i = 0; i < this.product[0].image.length; i += 2) {
+      const thumbnailImageSrc = this.product[0].image[i];
+      const itemImageSrc = this.product[0].image[i + 1];
+  
+      this.imageObject.push({
+          itemImageSrc: itemImageSrc,
+          thumbnailImageSrc: thumbnailImageSrc,
+          alt: null,
+          title: null
+      });
+
+  }
+  // console.log(this.imageObject)
   }
 
   openModal(event: MouseEvent) {
@@ -98,7 +100,15 @@ export class ProductDetailComponent implements OnInit {
     this.modalVisible = false
   }
 
-  addToCart() {
+  addToCart(form:any) {
+    const response = this.cartService.addToCart(this.product?.[0].id, this.quantity)
+    console.log(response)
+    console.log('Adding to cart:', this.quantity);
+    // Add your cart logic here
+  }
 
+  buyNow() {
+    console.log('Buying now:', this.quantity);
+    // Add your buy now logic here
   }
 }

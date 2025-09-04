@@ -1,0 +1,23 @@
+<div class="accordion">
+  @for (tab of tabs; track tab.value; let i = $index) {
+    <div class="accordion-item">
+      <button 
+        class="accordion-header" 
+        (click)="toggleAccordion(i)"
+        [attr.aria-expanded]="tab.isOpen"
+        [attr.aria-controls]="'accordion-content-' + i">
+        {{ tab.title }}
+        <span class="accordion-icon" [class.open]="tab.isOpen">+</span>
+      </button>
+      <div 
+        class="accordion-content" 
+        [class.open]="tab.isOpen"
+        [id]="'accordion-content-' + i"
+        [attr.aria-hidden]="!tab.isOpen">
+        <div class="accordion-body">
+          <p class="m-0">{{ tab.content }}</p>
+        </div>
+      </div>
+    </div>
+  }
+</div>

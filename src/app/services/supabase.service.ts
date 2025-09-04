@@ -1,31 +1,27 @@
-import { Injectable } from '@angular/core';
-import {  createClient,SupabaseClient } from '@supabase/supabase-js';
-import { environment } from '../../environments/environment.development';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SupabaseService {
-  private supabase: SupabaseClient;
+  public client: SupabaseClient;
 
-  constructor() {
-    this.supabase = createClient(environment.supabaseUrl, environment.SUPABASE_KEY);
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.client = createClient(environment.supabaseUrl, environment.SUPABASE_KEY, {
+        auth: {
+          autoRefreshToken: true,
+          persistSession: true,
+          detectSessionInUrl: true,
+        },
+      });
+    } else {
+      this.client = undefined as unknown as SupabaseClient;
+    }
   }
 
-  async getTodos() {
-    const { data, error } = await this.supabase
-      .from('todos')
-      .select('*');
-    if (error) throw error;
-    return data;
-  }
-
-  async addTodo(title: string) {
-    const { data, error } = await this.supabase
-      .from('todos')
-      .insert([{ title }]);
-    if (error) throw error;
-    return data;
-  }
 }

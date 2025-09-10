@@ -11,7 +11,7 @@
     COPY . .
     
     # Build Angular SSR app (production mode)
-    RUN npm run build:ssr --configuration production
+    RUN npm run build --configuration=production
     
     # --- Stage 2: Runtime ---
     FROM node:20-alpine

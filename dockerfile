@@ -1,24 +1,33 @@
-# Use official Node.js runtime (LTS recommended)
-FROM node:20-alpine
+# --- Stage 1: Builder ---
+    FROM node:20-alpine AS builder
 
-# Set working directory
-WORKDIR /usr/src/app
-
-# Copy package.json and lock first for caching
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install --omit=dev
-
-# Copy built Angular SSR app
-COPY dist ./dist
-
-# Expose the port Angular SSR will run on
-EXPOSE 4000
-
-# Set environment variables (override with docker run -e)
-ENV NODE_ENV=production
-ENV PORT=4000
-
-# Run Angular SSR server
-CMD ["node", "dist/nvc-web/server/server.mjs"]
+    WORKDIR /usr/src/app
+    
+    # Copy package.json and install all deps (including dev)
+    COPY package*.json ./
+    RUN npm install
+    
+    # Copy full project
+    COPY . .
+    
+    # Build Angular SSR app (production mode)
+    RUN npm run build:ssr --configuration production
+    
+    # --- Stage 2: Runtime ---
+    FROM node:20-alpine
+    
+    WORKDIR /usr/src/app
+    
+    # Copy only production deps
+    COPY package*.json ./
+    RUN npm install --omit=dev
+    
+    # Copy compiled dist from builder
+    COPY --from=builder /usr/src/app/dist ./dist
+    
+    EXPOSE 4000
+    ENV NODE_ENV=production
+    ENV PORT=4000
+    
+    CMD ["node", "dist/nvc-web/server/server.mjs"]
+    

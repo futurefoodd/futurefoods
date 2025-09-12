@@ -40,17 +40,17 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   // get duplicatedLogos() {
   //   return [...this.logos, ...this.logos, ...this.logos];
   // }
-  selectedProduct: string = 'productA';
-  products = {
-    productA: {
-      title: 'Product A',
-      image: '2_box_deal.png'
-    },
-    productB: {
-      title: 'Product B',
-      image: '1_box_deal.png'
-    }
-  };
+  // selectedProduct: string = 'productA';
+  // products = {
+  //   productA: {
+  //     title: 'Product A',
+  //     image: '2_box_deal.png'
+  //   },
+  //   productB: {
+  //     title: 'Product B',
+  //     image: '1_box_deal.png'
+  //   }
+  // };
 
 
   public images: string[] = [
@@ -67,22 +67,22 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     {
       id:1,
       title: 'Fitness Enthusiast',
-      name: 'Jane Doe',
-      testimony: 'I was skeptical at first, but this supplement has completely changed my daily routine. I used to feel sluggish by the afternoon, but now I have consistent energy all day!',
+      name: 'Carol Lee',
+      testimony: 'These nutrient rich soft pastilles helps your good bacteria in your gut to grow and stay strong. Your own probiotics help you better digest food and absorb important nutrients, can stop sugar cravings and even improve your mood.',
       image: 'https://via.placeholder.com/150/FF5733/FFFFFF?text=Jane',
     },
     {
       id:2,
-      title: 'Software Engineer',
-      name: 'David Chen',
-      testimony: 'This supplement not only helped me combat that lethargy, but I\'ve also seen a noticeable improvement in my skin\'s texture and radiance. It\'s a fantastic two-in-one benefit that I can\'t recommend enough.',
+      title: 'Deputy Director, MOE',
+      name: 'Kathijah Ibrahim',
+      testimony: 'These soft pastilles are well formulated to help your body better absorb natural vitamin C, amino acids, dietary calcium and magnesium for muscle recovery and stronger bones. I also have improved joint flexibility and have less pain',
       image: 'https://via.placeholder.com/150/33FF57/FFFFFF?text=David',
     },
     {
       id:3,
-      title: 'University Student',
-      name: 'Emily White',
-      testimony: 'Between classes and my part-time job, I was constantly exhausted. Since starting this supplement, I\'ve had so much more energy to get through my day. It\'s a great product that delivers on its promises.',
+      title: 'ActivBot Founder & Linguistic Tutor',
+      name: 'Grace Chow',
+      testimony: 'I feel the Omega 3, MCTs and B vitamins are easily and quickly absorbed in my mouth. I quickly get natural energy to rebound after workouts, recover from daily tiredness and also very much less brain fog.',
       image: 'https://via.placeholder.com/150/3357FF/FFFFFF?text=Emily',
     }
 ]

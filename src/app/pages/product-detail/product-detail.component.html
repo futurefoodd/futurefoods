@@ -39,22 +39,135 @@
           Add To Cart
         </button>
         <button type="button" 
-                class="bg-blue-700 text-white p-3"
+                class=" text-white p-3"
+                style="background-color:#5D792Dff"
                 (click)="buyNow()"
                 [disabled]="productForm.invalid || quantity === 0">
           Buy Now
         </button>
       </div>
     </form>
-    <div class="additional-details">
-      <h3>Specifications</h3>
-      <ul>
-        <li>**Material:** 100% Organic Cotton</li>
-        <li>**Color:** Battleship Gray</li>
-        <li>**Size:** S, M, L, XL</li>
-      </ul>
-    </div>
   </div>
+</div>
+
+<!-- Product Information Sections -->
+<div class="product-info-sections">
+  <!-- Specifications Section -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-content">
+        <div class="info-text">
+          <h2 class="section-title">Product Specifications</h2>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <strong>Weight:</strong> 30g per serving
+            </div>
+            <div class="spec-item">
+              <strong>Servings:</strong> 30 pastilles per bottle
+            </div>
+            <div class="spec-item">
+              <strong>Storage:</strong> Store in cool, dry place
+            </div>
+            <div class="spec-item">
+              <strong>Expiry:</strong> 24 months from manufacture
+            </div>
+            <div class="spec-item">
+              <strong>Certification:</strong> Halal, Organic Certified
+            </div>
+            <div class="spec-item">
+              <strong>Packaging:</strong> Glass bottle with child-proof cap
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ingredients Section -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-content reverse">
+        <div class="info-text">
+          <h2 class="section-title">Key Ingredients</h2>
+          <div class="ingredients-list">
+            <div class="ingredient-item">
+              <strong>Vitamin C (Ascorbate):</strong> 1000mg - Natural antioxidant for immune support
+            </div>
+            <div class="ingredient-item">
+              <strong>Pro-Collagen Peptides:</strong> 500mg - Supports skin elasticity and joint health
+            </div>
+            <div class="ingredient-item">
+              <strong>ALA Omega-3:</strong> 200mg - Plant-based omega-3 for heart and brain health
+            </div>
+            <div class="ingredient-item">
+              <strong>MCT Oil:</strong> 150mg - Medium-chain triglycerides for energy
+            </div>
+            <div class="ingredient-item">
+              <strong>Polyphenols:</strong> 50mg - Natural antioxidants from fruit extracts
+            </div>
+            <div class="ingredient-item">
+              <strong>B-Complex Vitamins:</strong> Complete B-vitamin complex for energy metabolism
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nutritional Information Section -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-content">
+        <div class="info-text">
+          <h2 class="section-title">Nutritional Information</h2>
+          <div class="nutrition-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nutrient</th>
+                  <th>Per Serving (30g)</th>
+                  <th>% Daily Value*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Calories</td>
+                  <td>120</td>
+                  <td>6%</td>
+                </tr>
+                <tr>
+                  <td>Protein</td>
+                  <td>8g</td>
+                  <td>16%</td>
+                </tr>
+                <tr>
+                  <td>Vitamin C</td>
+                  <td>1000mg</td>
+                  <td>1111%</td>
+                </tr>
+                <tr>
+                  <td>Omega-3 (ALA)</td>
+                  <td>200mg</td>
+                  <td>13%</td>
+                </tr>
+                <tr>
+                  <td>MCT Oil</td>
+                  <td>150mg</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Fiber</td>
+                  <td>5g</td>
+                  <td>18%</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="nutrition-note">*Percent Daily Values are based on a 2,000 calorie diet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <div #myModal class="modal" [style.display]="modalVisible ? 'block' : 'none'">

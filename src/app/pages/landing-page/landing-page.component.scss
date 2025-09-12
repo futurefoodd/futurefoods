@@ -36,6 +36,10 @@ body {
   @media(min-width:620px){
     height: 100vh;
   }
+  @media(max-width:768px){
+    height: 100%;
+    margin-top: 70px;
+  }
 }
 
 // Sections
@@ -169,6 +173,33 @@ body {
     // line-height: 32px;
     
   }
+}
+
+.limited-offer-container{
+  display:flex;
+  justify-content:start;
+}
+
+.limited-offer-badge{
+  display:inline-block;
+  padding: 6px 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff3b30, #ff9500);
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  box-shadow: 0 6px 18px rgba(255, 59, 48, 0.35);
+  position: relative;
+  animation: pulseGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.45) }
+  70% { box-shadow: 0 0 0 12px rgba(255, 59, 48, 0) }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0) }
 }
 
 .buy-now-title{
@@ -446,6 +477,22 @@ a {
   left:50px;
   font-weight: 500;
   border: 1px #1e4e1c solid;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+  &:hover {
+    background-color: #0a5247;
+    color: #f8f4ed;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(10, 82, 71, 0.3);
+    border-color: #0a5247;
+  }
+  
+  &:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(10, 82, 71, 0.2);
+  }
   font-size:25px
 }
 
@@ -547,12 +594,13 @@ a {
 
 .testimony-cards{
   height:280px;
-  // min-height:200px;
+  display: flex;
+  flex-direction: column;
   width:390px;
   background-color:#e3dfda;
   margin: 2em;
 .tc-header{
-  font-size: 1.4em;
+  font-size: 1.2em;
   padding:2rem;
   max-width:100%;
   max-height:80%;
@@ -625,3 +673,40 @@ a {
 .input-box[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* WhatsApp Buy Now Button */
+.buy-now-whatsapp {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+
+  &:hover {
+    background-color: #128C7E;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
+  }
+
+  span {
+    flex: 1;
+    text-align: left;
+  }
+
+  .whatsapp-icon {
+    color: white;
+    flex-shrink: 0;
+  }
+}
+

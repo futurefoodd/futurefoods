@@ -41,7 +41,7 @@
   </div>
 </section>
 
-<section id="about" class="about-section">
+<!-- <section id="about" class="about-section">
   <div class="container mx-auto">
     <div class="about-content">
       <div class="about-text">
@@ -69,38 +69,37 @@
 
     </div>
   </div>
-</section>
+</section> -->
 
 <div id="mydiv" class="thin_border">
 </div>
 
 <section id="about" class="about-section">
   <div class="container mx-auto">
-    <div class="buy-now-header-1">BUY 2 AND GET 12% OFF!</div>
+    <div class="limited-offer-container">
+      <span class="limited-offer-badge" aria-label="Limited time offer">Limited Time Offer</span>
+    </div>
+    <div class="buy-now-header-1">BUY NOW AND GET 15% OFF!</div>
 
     <div class="about-content">
       <div class="about-image">
-        <ng-container *ngIf="selectedProduct == 'productA'; else productBImage">
-          <img [src]="products.productA.image" alt="Classroom Wellbeing Supplement Bottle" class="product-image">
-        </ng-container>
-        <ng-template #productBImage><img [src]="products.productB.image" alt="Classroom Wellbeing Supplement Bottle" class="product-image">
-        </ng-template>
+          <img src="pro_collagen_front_and_side.png" alt="Pro-Collagen box" class="product-image">
       </div>
       <div id="offer" class="about-text">
         <div class="flex flex-column" >
         </div>
           <div class="flex flex-column ">
-            <div class="buy-now-title">Pro-Collaggen Soft Pastilles</div>
-            <p>Faster nutrient absorption, Promotes natural production of collagen & elastin, Nourishes gut microbiome, Reduces skin sensitivity, Better muscle & joint comfort, Soothes mouth sores and throat irritation</p>
+            <div class="buy-now-title">Pro-Collagen Soft Pastilles</div>
+            <p>Faster nutrient absorption, Promotes natural synthesis of collagen & elastin, Nourishes gut probiotics, Reduces skin sensitivity and strengthen nails, Better muscle & joint comfort, Soothes mouth sores & throat irritation.</p>
             <div class="flex items-center" style="align-self: flex-start;">
-              <ng-container *ngIf="selectedProduct == 'productA'; else displayProductB">
-                <span class="text-3xl " style="color: rgb(255, 22, 22);">RM88.00</span>
-                <span class="text-2xl " style="color: rgb(0, 0, 0);" style="text-decoration: line-through;">RM99.80</span>
-              </ng-container>
-              <ng-template #displayProductB>
+              <!-- <ng-container> -->
+                <span class="text-3xl " style="color: rgb(255, 22, 22);">RM49.90</span>
+                <span class="text-2xl " style="color: rgb(0, 0, 0);" style="text-decoration: line-through;">RM59.00</span>
+              <!-- </ng-container> -->
+              <!-- <ng-template #displayProductB>
                 <span class="text-2xl " style="color: rgb(0, 0, 0);" >RM49.90</span>
 
-              </ng-template>
+              </ng-template> -->
             </div>
             <div class="flex items-center mt-2.5 mb-5">
               <div class="stars" [style.--rating]="5.0"></div>
@@ -108,7 +107,7 @@
             </div>
           </div>
 
-          <div class="price flex mb-3" role="radiogroup" aria-label="Select product pack">
+          <!-- <div class="price flex mb-3" role="radiogroup" aria-label="Select product pack">
             <label class="cursor-pointer" style="margin-right: 16px;" for="option-productA">
               <input 
                 id="option-productA"
@@ -142,16 +141,23 @@
                 Single pack
               </div>
             </label>
-          </div>
-          <div class="quantity" style="width: fit-content; max-height: 50px; margin: 20px 0;">
+          </div> -->
+          <!-- <div class="quantity" style="width: fit-content; max-height: 50px; margin: 20px 0;">
             <button class="minus" aria-label="Decrease" [disabled]="quantity === 0"
               (click)="quantity = quantity - 1">&minus;</button>
             <input [(ngModel)]="quantity" type="number" class="input-box" min="0" max="200">
             <button class="plus" aria-label="Increase" (click)="quantity = quantity + 1">&plus;</button>
-          </div>
+          </div> -->
         <div class="flex flex-column" style="grid-column: 2;">
-          <button class="border-2 border-gray-700 p-3 " style="margin-bottom: 10px;">Add To Cart</button>
-          <button class="bg-[#5D792Dff] text-white p-3">Buy Now</button>
+          <!-- <button class="border-2 border-gray-700 p-3 " style="margin-bottom: 10px;">Add To Cart</button>
+          <button class="bg-[#5D792Dff] text-white p-3">Buy Now</button> -->
+          <button class="buy-now-whatsapp p-3" style="margin-bottom: 10px;">
+            <span>Buy Now</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="whatsapp-icon">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+          </button>
+          <button class="bg-white text-black border-2 hover:bg-[#5D792dff] p-3">Learn More</button>
         </div>
           </div>
 
@@ -188,7 +194,7 @@
 <div id="mydiv" class="thin_border">
 </div>
 
-<section class="news-letter">
+<!-- <section class="news-letter">
   <div class="flex gap-4 flex-column items-center">
    <h1 class="section-title">Request for a Consult</h1>
     <input style=" padding: 10px;" class="email-input px-10 py-3 placeholder-gray-500 text-black
@@ -199,7 +205,7 @@
     focus:outline-none focus:ring-2 focus:ring-gray-700" type="text" placeholder="Ex. your-email@example.com">
     <button style="width: 50%;" class="bg-[#5D792Dff] text-white rounded-3 p-2">Submit</button>
   </div>
-</section>
+</section> -->
 
 
 <!-- Testimony Section -->
@@ -214,7 +220,7 @@
       <div class="flex" style="margin-right:1em">
         <img class="w-10 h-10 rounded-full" src=" https://picsum.photos/200/300" alt="Rounded avatar">
       </div>
-      <div class="flex flex-column basis-2/3">
+      <div class="flex flex-column " style="flex-basis: fit-content;">
         <div style="color: gray;">{{data.title}}</div>
         <div>{{data.name}}</div>
       </div>

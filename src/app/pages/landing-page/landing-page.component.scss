@@ -267,16 +267,6 @@ p {
     justify-content: center;
     padding: 0 10%;
   }
-  
-  .product-bottle {
-    width: 250px;
-    height: 350px;
-  }
-  
-  .bottle-body {
-    width: 150px;
-    height: 250px;
-  }
 
  .comparison-section{
   padding:0 10%;
@@ -628,31 +618,31 @@ a {
   color: var(--star-fill); /* Set the color to the fill color */
 }
 
-.quantity {
-  display: flex;
-  border: 2px solid #000000;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height:70%
-}
+// .quantity {
+//   display: flex;
+//   border: 2px solid #000000;
+//   border-radius: 4px;
+//   overflow: hidden;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   height:70%
+// }
 
-.quantity button {
-  background-color: #ffffff;
-  color: #060606;
-  border: none ;
-  cursor: pointer;
-  font-size: 20px;
-  width: 30px;
-  height: auto;
-  text-align: center;
-  transition: background-color 0.1s;
-}
+// .quantity button {
+//   background-color: #ffffff;
+//   color: #060606;
+//   border: none ;
+//   cursor: pointer;
+//   font-size: 20px;
+//   width: 30px;
+//   height: auto;
+//   text-align: center;
+//   transition: background-color 0.1s;
+// }
 
-.quantity button:hover {
-  background-color: #3d4935;
-  color:white
-}
+// .quantity button:hover {
+//   background-color: #3d4935;
+//   color:white
+// }
 
 .input-box {
   width: 40px;

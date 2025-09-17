@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
         }
       } else {
         this.user = session.user;
-        console.log('Existing session found:', session.user);
+        console.log('Existing session found');
       }
     }
   }

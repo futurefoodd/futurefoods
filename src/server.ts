@@ -23,7 +23,11 @@ const angularApp = new AngularNodeAppEngine();
 
   app.use('/API', apiRoute);
 
-
+  // app.use(cors({
+  //   credentials: true, // Allows cookies to be included
+  //   origin:['http://futurefoods.com.my', 'http://www.futurefoods.com.my']
+  
+  // }));
 
 /**
  * Serve static files from /browser
@@ -63,3 +67,10 @@ if (isMainModule(import.meta.url)) {
  * The request handler used by the Angular CLI (dev-server and during build).
  */
 export const reqHandler = createNodeRequestHandler(app);
+function cors(arg0: {
+  credentials: boolean; // Allows cookies to be included
+  origin: string[];
+}): any {
+  throw new Error('Function not implemented.');
+}
+

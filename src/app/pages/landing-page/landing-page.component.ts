@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import {  AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ImageCompareModule } from 'primeng/imagecompare';
@@ -8,6 +8,9 @@ import { CircularCarouselComponent } from '../../widgets/circular-carousel/circu
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
 import { FormsModule } from '@angular/forms';
 import { FaqComponent } from '../../widgets/faq/faq.component';
+import { WhatsAppService } from '../../services/whatsapp.service';
+import { ScrollService } from '../../services/scroll.service';
+import { UUID } from 'crypto';
 
 @Component({
   selector: 'app-landing-page',
@@ -21,12 +24,36 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   private autoSlideInterval: any;
   private readonly slideInterval = 3000; // 5 seconds between slides
   
-  constructor(@Inject(PLATFORM_ID) private platformId: object){
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    private whatsappService: WhatsAppService,
+    private router: Router,
+    private scrollService: ScrollService
+  ){
     // Only run auto-slide in browser environment
     if (isPlatformBrowser(this.platformId)) {
       this.startAutoSlide();
     }
   }
+  async navigateProductDetail(id: UUID){
+    // console.log(this.route)
+        try{
+          await this.router.navigate(['product-detail', id]);
+          
+          // Scroll to top after navigation
+          if (isPlatformBrowser(this.platformId)) {
+            window.scrollTo(0, 0);
+          }
+    
+          // const response = await this.requestService.requestHelper(`/getProduct/${id}`, "GET")
+          // if(!response.ok){
+          //   throw new Error(`HTTP error! Status: ${response.status}`);
+          // }
+          // const data = await response.json();
+        }catch(err){
+          console.error('There was a problem navigating to product-detail/:id:', err);
+        }
+      }
   // logos = [
   //   { text: 'Google', logo: 'assets/logos/google.png' },
   //   { text: 'Microsoft', logo: 'assets/logos/microsoft.svg' },
@@ -174,5 +201,12 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   // public onSlideshowLeave(): void {
   //   this.startAutoSlide();
   // }
+
+  /**
+   * Opens WhatsApp for product inquiry
+   */
+  public openWhatsApp(): void {
+    this.whatsappService.openWhatsApp('landing');
+  }
 
 }

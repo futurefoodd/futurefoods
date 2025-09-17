@@ -9,7 +9,7 @@ export const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'products', component: ProductListComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  // { path: 'cart', component: CartComponent },
+  // { path: 'checkout', component: CheckoutComponent },
   { path: '**', redirectTo: '' }
 ];

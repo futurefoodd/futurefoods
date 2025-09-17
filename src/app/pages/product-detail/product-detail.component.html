@@ -4,12 +4,28 @@
     <app-flickity-carousel [item] ='imageObject'></app-flickity-carousel>
   }
   <div class="product-details-content">
+    <!-- Product Status Tags -->
+    <!-- To test different statuses, uncomment one of the demo lines in the TypeScript file -->
+    <div class="product-tags">
+      <span *ngIf="product[0].status === 'out-of-stock'" class="product-tag out-of-stock">Out of Stock</span>
+      <span *ngIf="product[0].status === 'sale'" class="product-tag sale">Sale</span>
+      <span *ngIf="product[0].status === 'coming-soon'" class="product-tag coming-soon">Coming Soon</span>
+    </div>
+    
     <h1 class="product-title">{{product[0].name}}</h1>
     <p class="product-price">RM{{product[0].price}}</p>
+    <!-- @if(product[0].desctiption_title_1){ -->
+    <h2>{{product[0].description_title_1}}</h2>
+    <!-- } -->
     <p class="product-description">
       {{product[0].description_1}} </p>
-    <form #productForm="ngForm" (ngSubmit)="addToCart(productForm)">
-      <div class="quantity" style="width: fit-content; max-height: 50px;">
+
+    <h2>{{product[0].description_title_2}}</h2>
+    <p class="product-description">
+      {{product[0].description_2}} </p>
+
+    <!-- <form #productForm="ngForm" (ngSubmit)="addToCart(productForm)"> -->
+      <!-- <div class="quantity" style="width: fit-content; max-height: 50px;">
         <button type="button" class="minus" aria-label="Decrease" 
           [disabled]="quantity === 0"
           (click)="quantity = Math.max(0, quantity - 1)">&minus;</button>
@@ -23,7 +39,7 @@
                #quantityInput="ngModel">
         <button type="button" class="plus" aria-label="Increase" 
           (click)="quantity = Math.min(200, quantity + 1)">&plus;</button>
-      </div>
+      </div> -->
       
       <!-- <div class="error-message" *ngIf="quantityInput.invalid && quantityInput.touched">
         <span *ngIf="quantityInput.errors?.['required']">Quantity is required</span>
@@ -32,6 +48,20 @@
       </div> -->
       
       <div class="button-group">
+        <button 
+          class="buy-now-whatsapp p-3" 
+          style="margin-bottom: 10px;" 
+          [class.disabled]="product[0].status === 'out-of-stock' || product[0].status === 'coming-soon'"
+          [disabled]="product[0].status === 'out-of-stock' || product[0].status === 'coming-soon'"
+          (click)="openWhatsApp()">
+          <span>{{ getButtonText() }}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="whatsapp-icon">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+          </svg>
+        </button>
+
+      </div>
+      <!-- <div class="button-group">
         <button type="submit" 
                 class="border-2 border-gray-700 p-3" 
                 style="margin-bottom: 10px;"
@@ -45,8 +75,8 @@
                 [disabled]="productForm.invalid || quantity === 0">
           Buy Now
         </button>
-      </div>
-    </form>
+      </div> -->
+    <!-- </form> -->
   </div>
 </div>
 
@@ -59,7 +89,12 @@
         <div class="info-text">
           <h2 class="section-title">Product Specifications</h2>
           <div class="specs-grid">
-            <div class="spec-item">
+            @for(item of createProductSpecification(this.product[0].product_specification); track $index){
+              <div class="spec-item">
+                <strong>{{item.key}}:</strong> {{item.value}}
+              </div>
+            }
+            <!-- <div class="spec-item">
               <strong>Weight:</strong> 30g per serving
             </div>
             <div class="spec-item">
@@ -76,7 +111,7 @@
             </div>
             <div class="spec-item">
               <strong>Packaging:</strong> Glass bottle with child-proof cap
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

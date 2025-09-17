@@ -158,7 +158,7 @@ $apple-green: #AAAC25ff;
 }
 
 @media (max-width: 768px) {
-  .info-content { grid-template-columns: 1fr; text-align: center; padding: 0 6%; }
+  .info-content { grid-template-columns: 1fr; text-align: center; }
 }
 
 // Product grid and card styles

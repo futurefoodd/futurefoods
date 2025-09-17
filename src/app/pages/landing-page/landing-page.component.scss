@@ -60,10 +60,7 @@ body {
 
 .comparison-container{
   width:60%; margin: 5% auto;
-  @media (max-width:430px){
-    width: 90%;
-    margin: 5% auto;
-  }
+ 
   @media (max-width:1024px){
     width: 80%;
     margin: 5% auto;
@@ -178,6 +175,9 @@ body {
 .limited-offer-container{
   display:flex;
   justify-content:start;
+  @media(max-width:768px){
+    padding: 0 10%;
+  }
 }
 
 .limited-offer-badge{
@@ -470,7 +470,21 @@ a {
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size:25px;
+  width: fit-content;
   
+  @media (max-width:768px){
+    bottom: 20px;
+    left: 30px;
+    font-size:18px;
+  }
+  @media (max-width:540px){
+      bottom: 10px;
+      left: 20px;
+     
+      font-size:11px;
+    // }
+  }
   &:hover {
     background-color: #0a5247;
     color: #f8f4ed;
@@ -483,7 +497,7 @@ a {
     transform: translateY(-1px) scale(1.02);
     box-shadow: 0 4px 12px rgba(10, 82, 71, 0.2);
   }
-  font-size:25px
+  
 }
 
 /* Styles for the buttons */

@@ -1,8 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UUID } from 'crypto';
 import { RequestService } from '../../services/requestService.service';
+import { ScrollService } from '../../services/scroll.service';
 
 type Product = {
   id: string;
@@ -22,7 +23,7 @@ type Product = {
 export class ProductListComponent implements OnInit {
   isMenuOpen = false;
   rating = 5;
-  apiURL = 'http://localhost:4200/api/products/getAllProducts'
+  apiURL = 'http://futurefoods.com.my:4200/api/products/getAllProducts'
 
   // environment: any
   products:any
@@ -31,7 +32,11 @@ export class ProductListComponent implements OnInit {
     this.getAllProducts()
   }
 
-  constructor(private requestService:RequestService, private router: Router
+  constructor(
+    private requestService:RequestService, 
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: object,
+    private scrollService: ScrollService
   ){
 
   }
@@ -40,6 +45,12 @@ export class ProductListComponent implements OnInit {
 // console.log(this.route)
     try{
       await this.router.navigate(['product-detail', id]);
+      
+      // Scroll to top after navigation with smooth behavior
+      // this.scrollService.scrollToTop();
+      if (isPlatformBrowser(this.platformId)) {
+        window.scrollTo(0, 0);
+      }
 
       // const response = await this.requestService.requestHelper(`/getProduct/${id}`, "GET")
       // if(!response.ok){

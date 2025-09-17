@@ -18,7 +18,12 @@ export const getAllProducts = async () => {
     .order('created_at', {ascending:false})
   
     if (error) {
-    throw new Error('Failed to fetch Products.', error);
+    throw new Error('Failed to fetch Products.');
+  }
+
+  // If no products, return empty array early
+  if (!products || products.length === 0) {
+    return [];
   }
 
   //get the main Image ONLY
@@ -52,21 +57,26 @@ export const getAllProducts = async () => {
   }
 };
 
-const getProductImages = async (bucketName:string, folderPath:string, mainImage:boolean = false) =>{
+const getProductImages = async (bucketName:string, folderPath:string | null | undefined, mainImage:boolean = false) =>{
   
   try {
+    // Guard against missing folderPath
+    if (!folderPath) {
+      console.warn('getProductImages called with empty folderPath');
+      return [];
+    }
     const { data, error } = await supabase.storage
       .from(bucketName)
       .list(folderPath); 
 
     if (error) {
       console.error('Error retrieving imageList:', error);
-      throw new Error('Error retrieving imageList:',error)
+      throw new Error('Error retrieving imageList: ' + (error?.message ?? 'unknown'))
     }
 
     if(!mainImage){
-
-      const plublicImageUrlArray = data.map(el=>{
+      
+      const plublicImageUrlArray = (data ?? []).map(el=>{
         const resObject = supabase
          .storage
          .from(bucketName).getPublicUrl(`${folderPath}/${el.name}`)
@@ -75,7 +85,8 @@ const getProductImages = async (bucketName:string, folderPath:string, mainImage:
       //  console.log('plublicImageUrlArray:', plublicImageUrlArray)
        return plublicImageUrlArray
     }
-    const mainImageName = folderPath.split('/')[1]
+    const pathSegments = folderPath.split('/').filter(Boolean)
+    const mainImageName = pathSegments[pathSegments.length - 1]
     // console.log('mainImageName',mainImageName)
     const response = supabase
       .storage
@@ -101,6 +112,9 @@ export const getProduct = async (productId:UUID) => {
   
     if (error) {
     throw new Error('Failed to fetch Products.');
+  }
+  if (!data || data.length === 0) {
+    return []
   }
   const image = await getProductImages('nvc',data[0].image_folder_path)
   data[0].image = image

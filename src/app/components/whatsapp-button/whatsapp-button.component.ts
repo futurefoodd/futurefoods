@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WhatsAppService } from '../../services/whatsapp.service';
 
 @Component({
   selector: 'app-whatsapp-button',
@@ -7,17 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './whatsapp-button.component.scss'
 })
 export class WhatsappButtonComponent {
-  
-  // WhatsApp number - replace with your actual WhatsApp business number
-  private whatsappNumber = '+601121092600'; // Replace with your WhatsApp number
-  private defaultMessage = 'Hello! I\'m interested in your products. Can you help me?';
+  constructor(private whatsappService: WhatsAppService) {}
 
   openWhatsApp(): void {
-    // Format the message for WhatsApp
-    const message = encodeURIComponent(this.defaultMessage);
-    const whatsappUrl = `https://wa.me/${this.whatsappNumber}?text=${message}`;
-    
-    // Open WhatsApp in a new tab
-    window.open(whatsappUrl, '_blank');
+    this.whatsappService.openGeneralInquiry();
   }
 }

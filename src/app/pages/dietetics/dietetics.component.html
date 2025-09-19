@@ -1,0 +1,164 @@
+<div class="nutrition-consult-form">
+    <h2>Nutrition Consultation Form</h2>
+  
+    <form [formGroup]="consultForm" (ngSubmit)="onSubmit()">
+      <!-- Basic Info -->
+      <div class="form-section">
+        <label>Name:</label>
+        <input type="text" formControlName="name" />
+  
+        <label>Age:</label>
+        <input type="number" formControlName="age" />
+  
+        <label>Sex:</label>
+        <div class="radio-group">
+          <label><input type="radio" value="Male" formControlName="sex" /> Male</label>
+          <label><input type="radio" value="Female" formControlName="sex" /> Female</label>
+          <label><input type="radio" value="Other" formControlName="sex" /> Other</label>
+        </div>
+      </div>
+  
+      <div class="form-section">
+        <label>Height (cm):</label>
+        <input type="number" formControlName="height" />
+  
+        <label>Weight (kg):</label>
+        <input type="number" formControlName="weight" />
+  
+        <label>Country:</label>
+        <input type="text" formControlName="country" />
+      </div>
+  
+      <!-- Lifestyle & Habits -->
+      <h3>Lifestyle & Habits</h3>
+  
+      <label>Daily Activity Level:</label>
+      <div class="radio-group">
+        <label><input type="radio" value="Sedentary" formControlName="activityLevel" /> Sedentary (&lt;2000 steps)</label>
+        <label><input type="radio" value="Moderate" formControlName="activityLevel" /> Moderate (5000 steps)</label>
+        <label><input type="radio" value="Active" formControlName="activityLevel" /> Active (10000 steps)</label>
+      </div>
+  
+      <label>Exercise Routine:</label>
+      <div class="checkbox-group">
+        <label *ngFor="let routine of exerciseOptions">
+          <input type="checkbox" [value]="routine" (change)="onCheckboxChange($event, 'exerciseRoutine')" />
+          {{ routine }}
+        </label>
+      </div>
+  
+      <label>Exercise Frequency:</label>
+      <div class="radio-group">
+        <label><input type="radio" value="Weekends" formControlName="exerciseFrequency" /> Weekends</label>
+        <label><input type="radio" value="3 times a week" formControlName="exerciseFrequency" /> 3 times a week</label>
+        <label><input type="radio" value="Daily" formControlName="exerciseFrequency" /> Daily</label>
+      </div>
+  
+      <label>Job Demands or Hazard:</label>
+      <div class="checkbox-group">
+        <label *ngFor="let job of jobOptions">
+          <input type="checkbox" [value]="job" (change)="onCheckboxChange($event, 'jobDemands')" />
+          {{ job }}
+        </label>
+      </div>
+  
+      <label>Typical Sleep Hours per Night:</label>
+      <div class="radio-group">
+        <label><input type="radio" value="4" formControlName="sleepHours" /> 4 hrs</label>
+        <label><input type="radio" value="6" formControlName="sleepHours" /> 6 hrs</label>
+        <label><input type="radio" value="8" formControlName="sleepHours" /> 8 hrs</label>
+      </div>
+  
+      <label>Smoking | Vaping Use:</label>
+      <div class="radio-group">
+        <label><input type="radio" value="Social" formControlName="smokingVaping" /> Social</label>
+        <label><input type="radio" value="Habitual" formControlName="smokingVaping" /> Habitual</label>
+      </div>
+  
+      <label>Beer | Wine | Liquor:</label>
+      <div class="radio-group">
+        <label><input type="radio" value="Social" formControlName="alcohol" /> Social</label>
+        <label><input type="radio" value="Habitual" formControlName="alcohol" /> Habitual</label>
+      </div>
+  
+      <label>Dietary Patterns:</label>
+      <div class="checkbox-group">
+        <label *ngFor="let pattern of dietPatterns">
+          <input type="checkbox" [value]="pattern" (change)="onCheckboxChange($event, 'dietaryPatterns')" />
+          {{ pattern }}
+        </label>
+      </div>
+  
+      <label>Usual Eating Style:</label>
+      <div class="checkbox-group">
+        <label *ngFor="let style of eatingStyles">
+          <input type="checkbox" [value]="style" (change)="onCheckboxChange($event, 'eatingStyle')" />
+          {{ style }}
+        </label>
+      </div>
+  
+      <label>Daily Water Intake:</label>
+      <div class="radio-group">
+        <label><input type="radio" value="2-3" formControlName="waterIntake" /> 2–3 glass</label>
+        <label><input type="radio" value="4-6" formControlName="waterIntake" /> 4–6 glass</label>
+        <label><input type="radio" value="8-10" formControlName="waterIntake" /> 8–10 glass</label>
+      </div>
+  
+      <label>Coffee / Tea / Sugary Drinks / Snacks:</label>
+      <div class="radio-group">
+        <label><input type="radio" value="When Stressed" formControlName="snackIntake" /> When Stressed</label>
+        <label><input type="radio" value="Often" formControlName="snackIntake" /> Often</label>
+        <label><input type="radio" value="Sometimes" formControlName="snackIntake" /> Sometimes</label>
+        <label><input type="radio" value="Rarely" formControlName="snackIntake" /> Rarely</label>
+      </div>
+  
+      <!-- Wellness Goals -->
+      <h3>Wellness Goals</h3>
+  
+      <label>Primary Goal:</label>
+      <div class="radio-group">
+        <label *ngFor="let goal of primaryGoals">
+          <input type="radio" [value]="goal" formControlName="primaryGoal" /> {{ goal }}
+        </label>
+      </div>
+  
+      <label>Secondary Goals:</label>
+      <div class="checkbox-group">
+        <label *ngFor="let goal of secondaryGoals">
+          <input type="checkbox" [value]="goal" (change)="onCheckboxChange($event, 'secondaryGoals')" />
+          {{ goal }}
+        </label>
+      </div>
+  
+      <label>Specific Concerns:</label>
+      <div class="checkbox-group">
+        <label *ngFor="let concern of concerns">
+          <input type="checkbox" [value]="concern" (change)="onCheckboxChange($event, 'specificConcerns')" />
+          {{ concern }}
+        </label>
+      </div>
+  
+      <!-- Additional Info -->
+      <h3>Additional Info</h3>
+  
+      <label>Supplements Currently Taken:</label>
+      <textarea formControlName="supplements"></textarea>
+  
+      <label>Family History of Health Issues:</label>
+      <div class="checkbox-group">
+        <label *ngFor="let issue of familyHistoryOptions">
+          <input type="checkbox" [value]="issue" (change)="onCheckboxChange($event, 'familyHistory')" />
+          {{ issue }}
+        </label>
+      </div>
+  
+      <label><input type="checkbox" formControlName="recentHospitalisation" /> Recent Hospitalisation</label>
+      <label><input type="checkbox" formControlName="yearlyScreening" /> Yearly Medical Screening</label>
+      <label><input type="checkbox" formControlName="foodAllergy" /> Any Food Allergy</label>
+      <label><input type="checkbox" formControlName="medication" /> Presently on Medication</label>
+      <label><input type="checkbox" formControlName="recentTravel" /> Recent Travel Abroad</label>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

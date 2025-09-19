@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UUID } from 'crypto';
 import { RequestService } from '../../services/requestService.service';
 import { ScrollService } from '../../services/scroll.service';
+import { environment } from '../../../environments/environment';
 
 type Product = {
   id: string;
@@ -23,7 +24,8 @@ type Product = {
 export class ProductListComponent implements OnInit {
   isMenuOpen = false;
   rating = 5;
-  apiURL = 'http://futurefoods.com.my:4200/api/products/getAllProducts'
+  baseUrl: string = environment.apiHost
+  apiURL = `${this.baseUrl}/products/getAllProducts`
 
   // environment: any
   products:any

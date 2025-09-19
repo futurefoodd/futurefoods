@@ -8,6 +8,7 @@ import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flick
 import { productImage } from '../../core/model/product.model';
 import { CartService } from '../../services/cartService.service';
 import { WhatsAppService } from '../../services/whatsapp.service';
+import { environment } from '../../../environments/environment';
 
 
 // type productImage = {
@@ -42,6 +43,8 @@ export class ProductDetailComponent implements OnInit {
 
   imageObject: productImage[] = []
 
+  baseUrl:string = environment.apiHost
+
   constructor(
     private activatedRoute: ActivatedRoute, 
     private requestService:RequestService, 
@@ -58,7 +61,7 @@ export class ProductDetailComponent implements OnInit {
         const productId = params.get('id')
         
        if(productId){ 
-        const response = await fetch(`http://localhost:4200/api/products/getProduct/${productId}`)
+        const response = await fetch(`${this.baseUrl}/products/getProduct/${productId}`)
         if(!response.ok){
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -92,20 +95,21 @@ export class ProductDetailComponent implements OnInit {
   }
 
   createProductSpecification (data:Array<string>){
-    console.log(this.product[0].product_specification)
     const result = [];
-  for (const item of data) {
-    const parts = item.split(': ');
-    if (parts.length === 2) {
-      const key = parts[0].trim();
-      const value = parts[1].trim();
-      result.push({
-        key,
-        value
-      });
+
+    if (data){
+      for (const item of data) {
+        const parts = item.split(': ');
+        if (parts.length === 2) {
+          const key = parts[0].trim();
+          const value = parts[1].trim();
+          result.push({
+            key,
+            value
+          });
+        }
+      }
     }
-  }
-  console.log(result)
   return result;
   }
 

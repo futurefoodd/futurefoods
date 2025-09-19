@@ -7,7 +7,8 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import {apiRoute} from './server/index'
+import {apiRoute} from './server/index';
+import cors from "cors";
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -15,6 +16,14 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+app.use(cors({
+  origin: [
+    "https://futurefoods.com.my",
+    "https://www.futurefoods.com.my"
+  ],
+  methods:["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 //  * Example Express Rest API endpoints can be defined here.
 //  * Uncomment and define endpoints as necessary.
@@ -23,11 +32,6 @@ const angularApp = new AngularNodeAppEngine();
 
   app.use('/API', apiRoute);
 
-  // app.use(cors({
-  //   credentials: true, // Allows cookies to be included
-  //   origin:['http://futurefoods.com.my', 'http://www.futurefoods.com.my']
-  
-  // }));
 
 /**
  * Serve static files from /browser
@@ -67,10 +71,10 @@ if (isMainModule(import.meta.url)) {
  * The request handler used by the Angular CLI (dev-server and during build).
  */
 export const reqHandler = createNodeRequestHandler(app);
-function cors(arg0: {
-  credentials: boolean; // Allows cookies to be included
-  origin: string[];
-}): any {
-  throw new Error('Function not implemented.');
-}
+// function cors(arg0: {
+//   credentials: boolean; // Allows cookies to be included
+//   origin: string[];
+// }): any {
+//   throw new Error('Function not implemented.');
+// }
 

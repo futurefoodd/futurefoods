@@ -118,7 +118,6 @@ export const getProduct = async (productId:UUID) => {
   }
   const image = await getProductImages('nvc',data[0].image_folder_path)
   data[0].image = image
-  console.log('data',data)
   return data
 }catch(err){
   console.log('Error getting Product in getProduct() in service ',err)

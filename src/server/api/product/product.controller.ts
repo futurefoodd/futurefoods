@@ -8,7 +8,6 @@ export const cGetAllProducts = async (req: Request, res: Response, next: NextFun
     try {
      result =  await getAllProducts()
 
-    // console.log('result:',result)
     
   if (result){
     res.status(200).json({result:result,status:true} )
@@ -28,7 +27,6 @@ export const cGetProduct = async (req: Request, res: Response, next: NextFunctio
     try {
       const id = req.params['id'] as UUID
      result =  await getProduct(id)
-     console.log(result)
 
     
   if (result!){

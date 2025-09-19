@@ -22,7 +22,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   quantity=0;
   // slides: any[] = new Array(3).fill({ id: -1, src: '', title: '', subtitle: '' });
   private autoSlideInterval: any;
-  private readonly slideInterval = 3000; // 5 seconds between slides
+  // private readonly slideInterval = 7000; // 5 seconds between slides
   
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
@@ -32,7 +32,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ){
     // Only run auto-slide in browser environment
     if (isPlatformBrowser(this.platformId)) {
-      this.startAutoSlide();
+      // this.startAutoSlide();
     }
   }
   async navigateProductDetail(id: UUID){
@@ -121,7 +121,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     // Clean up the interval when component is destroyed
-    this.stopAutoSlide();
+    // this.stopAutoSlide();
   }
 
   /**
@@ -138,7 +138,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public nextSlide(): void {
     this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
     this.updateImage();
-    this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
+    // this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
 
   /**
@@ -148,7 +148,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public prevSlide(): void {
     this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
     this.updateImage();
-    this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
+    // this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
 
   /**
@@ -158,35 +158,35 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public goToSlide(index: number): void {
     this.currentImageIndex = index;
     this.updateImage();
-    this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
+    // this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
 
   /**
    * Starts the auto-slide functionality
    */
-  private startAutoSlide(): void {
-    this.autoSlideInterval = setInterval(() => {
-      this.nextSlide();
-    }, this.slideInterval);
-  }
+  // private startAutoSlide(): void {
+  //   this.autoSlideInterval = setInterval(() => {
+  //     this.nextSlide();
+  //   }, this.slideInterval);
+  // }
 
   /**
    * Stops the auto-slide functionality
    */
-  private stopAutoSlide(): void {
-    if (this.autoSlideInterval) {
-      clearInterval(this.autoSlideInterval);
-      this.autoSlideInterval = null;
-    }
-  }
+  // private stopAutoSlide(): void {
+  //   if (this.autoSlideInterval) {
+  //     clearInterval(this.autoSlideInterval);
+  //     this.autoSlideInterval = null;
+  //   }
+  // }
 
   /**
    * Resets the auto-slide timer
    */
-  private resetAutoSlide(): void {
-    this.stopAutoSlide();
-    this.startAutoSlide();
-  }
+  // private resetAutoSlide(): void {
+  //   this.stopAutoSlide();
+  //   this.startAutoSlide();
+  // }
 
   /**
    * Pauses auto-slide when user hovers over the slideshow

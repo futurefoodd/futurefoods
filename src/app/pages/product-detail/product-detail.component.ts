@@ -45,6 +45,8 @@ export class ProductDetailComponent implements OnInit {
 
   baseUrl:string = environment.apiHost
 
+  productSpecification:any
+
   constructor(
     private activatedRoute: ActivatedRoute, 
     private requestService:RequestService, 
@@ -81,7 +83,7 @@ export class ProductDetailComponent implements OnInit {
         // console.log(this.product[0])
         // const response = await this.requestService.requestHelper(`/products/getProduct/${productId}`, "GET")
        this.createImageObject()
-      this.createProductSpecification(this.product[0].product_specification)
+      this.productSpecification =this.createKeyValue(this.product[0].product_specification)
       }else{
         this.product = undefined
       }
@@ -94,19 +96,27 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
-  createProductSpecification (data:Array<string>){
+  createKeyValue (data:Array<string>){
     const result = [];
 
     if (data){
       for (const item of data) {
-        const parts = item.split(': ');
-        if (parts.length === 2) {
+        if(item.includes(':')){
+          const parts = item.split(': ');
+          if (parts.length === 2) {
           const key = parts[0].trim();
           const value = parts[1].trim();
           result.push({
             key,
             value
           });
+          }
+        } else if(!item.includes(':')) {
+          result.push({
+            key:item,
+            value:''
+
+        });
         }
       }
     }

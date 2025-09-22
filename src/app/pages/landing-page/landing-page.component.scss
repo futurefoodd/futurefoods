@@ -31,15 +31,16 @@ body {
   align-items: center;
   position: relative;
   z-index: 2;
-  height: 550px;
+  height: fit-content;
+  margin-top: 70px;
 
-  @media(min-width:620px){
-    height: 100vh;
-  }
-  @media(max-width:768px){
-    height: 100%;
-    margin-top: 70px;
-  }
+  // @media(min-width:620px){
+  //   height: 100vh;
+  // }
+  // @media(max-width:768px){
+  //   height: 100%;
+  //   margin-top: 70px;
+  // }
 }
 
 // Sections
@@ -472,6 +473,7 @@ a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   font-size:25px;
   width: fit-content;
+  opacity: 0.3;
   
   @media (max-width:768px){
     bottom: 20px;
@@ -481,8 +483,13 @@ a {
   @media (max-width:540px){
       bottom: 10px;
       left: 20px;
-     
-      font-size:11px;
+      font-size:9px;
+    // }
+  }
+  @media (min-width:1500px){
+      bottom: 20px;
+      left: 50px;
+      font-size:44px;
     // }
   }
   &:hover {
@@ -491,6 +498,7 @@ a {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 20px rgba(10, 82, 71, 0.3);
     border-color: #0a5247;
+    opacity:1
   }
   
   &:active {
@@ -609,6 +617,10 @@ a {
   max-width:100%;
   max-height:80%;
   overflow: hidden;
+
+  @media(max-width:425px){
+    overflow: auto;
+  }
 }
 }
 .single-star {

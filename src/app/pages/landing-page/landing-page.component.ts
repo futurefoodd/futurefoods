@@ -81,10 +81,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
 
   public images: string[] = [
-    'landing_image_1.svg',
-    'landing_image_2.svg',
-    'landing_image_3.svg',
-    'landing_image_4.svg',
+    'landing_image_1.webp',
+    'landing_image_2.webp',
+    'landing_image_3.webp',
+    'landing_image_4.webp',
   ];
 
   public currentImageIndex = 0;

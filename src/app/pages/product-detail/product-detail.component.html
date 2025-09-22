@@ -89,7 +89,7 @@
         <div class="info-text">
           <h2 class="section-title">Product Specifications</h2>
           <div class="specs-grid">
-            @for(item of createProductSpecification(this.product[0].product_specification); track $index){
+            @for(item of productSpecification; track $index){
               <div class="spec-item">
                 <strong>{{item.key}}:</strong> {{item.value}}
               </div>

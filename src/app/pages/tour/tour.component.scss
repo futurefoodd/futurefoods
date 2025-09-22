@@ -1,0 +1,27 @@
+$dark-slate-gray: #364A42ff;
+
+
+.page { padding: 90px 0; }
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+.section-title {
+font-size: 60px;
+font-weight: 700;
+color: $dark-slate-gray;
+text-align: start;
+margin-bottom: 24px;
+}
+.info-image { display:flex; justify-content:center; align-items:center; height: 100%; }
+
+.info-text .info-title {
+    font-family: sans-serif, serif;
+    letter-spacing: 1px;
+    font-size: 50px;
+    font-weight: 500;
+    color: $dark-slate-gray;
+    margin-bottom: 20px;
+  }

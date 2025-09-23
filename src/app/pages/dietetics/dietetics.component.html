@@ -14,16 +14,15 @@
         <div class="radio-group">
           <label><input type="radio" value="Male" formControlName="sex" /> Male</label>
           <label><input type="radio" value="Female" formControlName="sex" /> Female</label>
-          <label><input type="radio" value="Other" formControlName="sex" /> Other</label>
         </div>
       </div>
   
       <div class="form-section">
         <label>Height (cm):</label>
-        <input type="number" formControlName="height" />
+        <input type="number" formControlName="height" min="0" />
   
         <label>Weight (kg):</label>
-        <input type="number" formControlName="weight" />
+        <input type="number" formControlName="weight" min="0" />
   
         <label>Country:</label>
         <input type="text" formControlName="country" />
@@ -52,6 +51,7 @@
         <label><input type="radio" value="Weekends" formControlName="exerciseFrequency" /> Weekends</label>
         <label><input type="radio" value="3 times a week" formControlName="exerciseFrequency" /> 3 times a week</label>
         <label><input type="radio" value="Daily" formControlName="exerciseFrequency" /> Daily</label>
+        <label><input type="radio" value="None" formControlName="exerciseFrequency" /> None</label>
       </div>
   
       <label>Job Demands or Hazard:</label>
@@ -73,14 +73,25 @@
       <div class="radio-group">
         <label><input type="radio" value="Social" formControlName="smokingVaping" /> Social</label>
         <label><input type="radio" value="Habitual" formControlName="smokingVaping" /> Habitual</label>
+        <label><input type="radio" value="None" formControlName="smokingVaping" /> None</label>
       </div>
   
-      <label>Beer | Wine | Liquor:</label>
-      <div class="radio-group">
-        <label><input type="radio" value="Social" formControlName="alcohol" /> Social</label>
-        <label><input type="radio" value="Habitual" formControlName="alcohol" /> Habitual</label>
-      </div>
-  
+      <label>Alcochol Consumption:</label>
+      <ng-container formGroupName="alcoholGroup">
+
+        <div class="checkbox-group" style="margin-bottom: 0px;">
+          <label *ngFor="let item of alcohol">
+            <input type="checkbox" [value]="item" (change)="onCheckboxChange($event, 'alcoholGroup.types')" />
+            {{ item }}
+          </label>
+        </div>
+        <div class="radio-group">
+          <label><input type="radio" value="Social" formControlName="consumption" /> Social</label>
+          <label><input type="radio" value="Habitual" formControlName="consumption" /> Habitual</label>
+          <label><input type="radio" value="None" formControlName="consumption" /> None</label>
+        </div>
+      </ng-container>
+
       <label>Dietary Patterns:</label>
       <div class="checkbox-group">
         <label *ngFor="let pattern of dietPatterns">
@@ -105,12 +116,20 @@
       </div>
   
       <label>Coffee / Tea / Sugary Drinks / Snacks:</label>
-      <div class="radio-group">
-        <label><input type="radio" value="When Stressed" formControlName="snackIntake" /> When Stressed</label>
-        <label><input type="radio" value="Often" formControlName="snackIntake" /> Often</label>
-        <label><input type="radio" value="Sometimes" formControlName="snackIntake" /> Sometimes</label>
-        <label><input type="radio" value="Rarely" formControlName="snackIntake" /> Rarely</label>
+    <ng-container formGroupName="snackGroup">
+      <div class="checkbox-group" style="margin-bottom: 0px;">
+        <label *ngFor="let snack of snacks">
+          <input type="checkbox" [value]="snack" (change)="onCheckboxChange($event, 'snackGroup.types')" />
+          {{ snack }}
+        </label>
       </div>
+      <div class="radio-group">
+        <label><input type="radio" value="When Stressed" formControlName="frequency" /> When Stressed</label>
+        <label><input type="radio" value="Often" formControlName="frequency" /> Often</label>
+        <label><input type="radio" value="Sometimes" formControlName="frequency" /> Sometimes</label>
+        <label><input type="radio" value="Rarely" formControlName="frequency" /> Rarely</label>
+      </div>
+    </ng-container>
   
       <!-- Wellness Goals -->
       <h3>Wellness Goals</h3>

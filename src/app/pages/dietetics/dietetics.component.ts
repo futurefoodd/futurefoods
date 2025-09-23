@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NutritionConsultService } from '../../services/consult.service';
 
 @Component({
   selector: 'app-dietetics',
@@ -12,8 +13,10 @@ export class DieteticsComponent {
   consultForm: FormGroup;
 
   // options
+  alcohol = ['Beer', 'Wine','Liquor']
+  snacks = ['Cofee', 'Tea','Suagry Drinks', 'Snacks']
   exerciseOptions = ['Brisk Walk', 'Yoga', 'Gym Workout', 'Swimming', 'Hiking'];
-  jobOptions = ['Night Shift', 'Cleaning Services', 'Construction', 'Engine Services'];
+  jobOptions = ['Night Shift', 'Cleaning Services', 'Frequent Deadlines', 'Engine Services/Construstion Works'];
   dietPatterns = [
     'One meal per day (OMAD)',
     'Weekly Intermittent Fasting',
@@ -26,35 +29,42 @@ export class DieteticsComponent {
   concerns = ['Bloating', 'Reflux', 'Constipation', 'Hormonal Issues', 'Knee & Back Ache', 'Stress & Cramps'];
   familyHistoryOptions = ['Diabetes', 'Hypertension', 'Heart Disease', 'IBS / IBD', 'Anaemia'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private consultFormService: NutritionConsultService) {
     this.consultForm = this.fb.group({
-      name: [''],
-      age: [''],
-      sex: [''],
-      height: [''],
-      weight: [''],
-      country: [''],
-      activityLevel: [''],
-      exerciseRoutine: [[]],
-      exerciseFrequency: [''],
-      jobDemands: [[]],
-      sleepHours: [''],
-      smokingVaping: [''],
-      alcohol: [''],
-      dietaryPatterns: [[]],
-      eatingStyle: [[]],
-      waterIntake: [''],
-      snackIntake: [''],
-      primaryGoal: [''],
-      secondaryGoals: [[]],
-      specificConcerns: [[]],
+      name: ['', Validators.required],
+      age: ['', Validators.required],
+      sex: ['', Validators.required],
+      height: ['', Validators.required],
+      weight: ['', Validators.required],
+      country: ['', Validators.required],
+      activityLevel: ['', Validators.required],
+      exerciseRoutine: [[], Validators.required],
+      exerciseFrequency: ['', Validators.required],
+      jobDemands: [[], Validators.required],
+      sleepHours: ['', Validators.required],
+      smokingVaping: ['', Validators.required],
+      alcoholGroup: this.fb.group({
+        types: [[], Validators.required],              // checkbox selections
+        consumption: ['', Validators.required],        // radio choice
+      }),
+      dietaryPatterns: [[], Validators.required],
+      eatingStyle: [[], Validators.required],
+      waterIntake: ['', Validators.required],
+      snackFrequency: ['', Validators.required],
+      snackGroup: this.fb.group({
+        types: [[], Validators.required],              // checkbox selections
+        frequency: ['', Validators.required],        // radio choice
+      }),
+      primaryGoal: ['', Validators.required],
+      secondaryGoals: [[], Validators.required],
+      specificConcerns: [[], Validators.required],
       supplements: [''],
-      familyHistory: [[]],
-      recentHospitalisation: [false],
-      yearlyScreening: [false],
-      foodAllergy: [false],
-      medication: [false],
-      recentTravel: [false]
+      familyHistory: [[], Validators.required],
+      recentHospitalisation: [false, Validators.required],
+      yearlyScreening: [false, Validators.required],
+      foodAllergy: [false, Validators.required],
+      medication: [false, Validators.required],
+      recentTravel: [false, Validators.required],
     });
   }
 
@@ -70,9 +80,16 @@ export class DieteticsComponent {
     this.consultForm.get(field)?.setValue(selected);
   }
 
-  onSubmit() {
-    console.log(this.consultForm.value);
-    alert('Form submitted! Check console for details.');
+  async onSubmit() {
+    if(this.consultForm.valid){
+      const submitConsultation = await this.consultFormService.submitConsultForm(this.consultForm.value)
+      console.log(submitConsultation)
+      console.log(this.consultForm.value);
+      alert('Form submitted!');
+    } else {
+      console.log(this.consultForm.value);
+      // alert('Please fill up the mandatory fields!')
+    }
   }
 
 }

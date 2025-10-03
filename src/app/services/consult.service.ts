@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 import { SupabaseService } from './supabase.service'
+import { UserService } from './userService.service'
 
 export interface NutritionConsultResponse {
   success: boolean
@@ -14,7 +15,7 @@ export interface NutritionConsultResponse {
 export class NutritionConsultService {
   private supabase: SupabaseClient
 
-  constructor(private supabaseService:SupabaseService) {
+  constructor(private supabaseService:SupabaseService, private userService:UserService) {
     this.supabase = supabaseService.client
   }
 
@@ -25,6 +26,21 @@ export class NutritionConsultService {
    */
   async submitConsultForm(values: any): Promise<NutritionConsultResponse> {
     try {
+    
+      const currentUser = await this.userService.getCurrentUser()
+      // console.log(currentUser.id)
+
+      
+      const { data: { user } } = await this.supabase.auth.getUser();
+      console.log('Current user:', user?.id);
+
+      const result= await this.supabase.rpc('get_uid');
+      console.log("Server auth.uid():", result.data);
+
+      
+
+      console.log('comparison', user?.id === result.data)
+
       const { data, error } = await this.supabase
         .from('nutrition_consultations')
         .insert([
@@ -33,6 +49,8 @@ export class NutritionConsultService {
             name: values.name,
             age: values.age,
             sex: values.sex,
+            contact: values.contact,
+            email: values.email,
             height_cm: values.height,
             weight_kg: values.weight,
             country: values.country,
@@ -72,19 +90,23 @@ export class NutritionConsultService {
             yearly_screening: !!values.yearlyScreening,
             food_allergy: !!values.foodAllergy,
             medication: !!values.medication,
-            recent_travel: !!values.recentTravel
+            recent_travel: !!values.recentTravel,
+
+            //user_id
+            user_id:currentUser.id
+
           }
         ])
         .select() // returns inserted row(s)
 
       if (error) {
-        console.error('❌ Supabase Insert Error:', error)
+        console.error('Consult service Insert Error:', error)
         return { success: false, error }
       }
 
       return { success: true, data }
     } catch (err: any) {
-      console.error('🔥 Unexpected Error:', err)
+      console.error('Consult service catch Error:', err)
       return { success: false, error: err }
     }
   }

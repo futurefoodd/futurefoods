@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class WhatsAppService {
   // WhatsApp number - replace with your actual WhatsApp business number
-  private readonly whatsappNumber = '+60102202574';
+  private readonly whatsappNumber = '+60126964997';
   
   // Default messages for different contexts
   private readonly defaultMessages = {

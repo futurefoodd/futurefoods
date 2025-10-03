@@ -35,3 +35,8 @@ $gradient-radial: radial-gradient(#999A94ff, #BCBAB2ff, #5D792Dff, #364A42ff, #A
 * { box-sizing: border-box; font-family:Jost, Roboto, sans-serif;}
 
 
+p, h1, h2, h3, .info-text, .buy-now-header-1, .buy-now-title {
+    user-select: none;   /* modern browsers */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none;     /* IE/Edge */
+}

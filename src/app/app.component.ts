@@ -23,6 +23,17 @@ export class AppComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
+  onCopy(event: ClipboardEvent) {
+    event.preventDefault();
+    alert("Copying is disabled!");
+  }
+  
+  onCut(event: ClipboardEvent) {
+    event.preventDefault();
+    alert("Cutting is disabled!");
+  }
+  
+
   async ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       const { data: { session } } = await this.supabaseService.client.auth.getSession();

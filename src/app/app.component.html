@@ -1,4 +1,7 @@
 <app-top-nav/>
-<router-outlet />
+<div (copy)="onCopy($event)" (cut)="onCut($event)">
+
+    <router-outlet />
+</div>
 <app-footer></app-footer>
 <app-whatsapp-button></app-whatsapp-button>

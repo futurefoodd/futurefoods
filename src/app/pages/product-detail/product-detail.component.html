@@ -14,15 +14,23 @@
     
     <h1 class="product-title">{{product[0].name}}</h1>
     <p class="product-price">RM{{product[0].price}}</p>
-    <!-- @if(product[0].desctiption_title_1){ -->
-    <h2>{{product[0].description_title_1}}</h2>
-    <!-- } -->
-    <p class="product-description">
-      {{product[0].description_1}} </p>
 
-    <h2>{{product[0].description_title_2}}</h2>
-    <p class="product-description">
-      {{product[0].description_2}} </p>
+
+    <div class="product-description-wrapper" [class.expanded]="expanded">
+      <h2>{{ product[0].description_title_1 }}</h2>
+      <p class="product-description">
+        {{ product[0].description_1 }}
+      </p>
+    
+      <h2>{{ product[0].description_title_2 }}</h2>
+      <p class="product-description">
+        {{ product[0].description_2 }}
+      </p>
+    </div>
+    
+    <button class="toggle-btn" (click)="toggle()">
+      {{ expanded ? 'Show less' : 'Read more' }}
+    </button>
 
     <!-- <form #productForm="ngForm" (ngSubmit)="addToCart(productForm)"> -->
       <!-- <div class="quantity" style="width: fit-content; max-height: 50px;">
@@ -119,35 +127,41 @@
   </section>
 
   <!-- Ingredients Section -->
-  <section class="info-section">
-    <div class="container">
-      <div class="info-content reverse">
-        <div class="info-text">
-          <h2 class="section-title">Key Ingredients</h2>
-          <div class="ingredients-list">
-            <div class="ingredient-item">
-              <strong>Vitamin C (Ascorbate):</strong> 1000mg - Natural antioxidant for immune support
-            </div>
-            <div class="ingredient-item">
-              <strong>Pro-Collagen Peptides:</strong> 500mg - Supports skin elasticity and joint health
-            </div>
-            <div class="ingredient-item">
-              <strong>ALA Omega-3:</strong> 200mg - Plant-based omega-3 for heart and brain health
-            </div>
-            <div class="ingredient-item">
-              <strong>MCT Oil:</strong> 150mg - Medium-chain triglycerides for energy
-            </div>
-            <div class="ingredient-item">
-              <strong>Polyphenols:</strong> 50mg - Natural antioxidants from fruit extracts
-            </div>
-            <div class="ingredient-item">
-              <strong>B-Complex Vitamins:</strong> Complete B-vitamin complex for energy metabolism
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+   @if(product[0].ingredients_1?.length > 0){
+
+     <section class="info-section">
+       <div class="container">
+         <div class="info-content reverse">
+           <div class="info-text">
+             <h2 class="section-title">Key Ingredients</h2>
+             <div class="ingredients-list">
+               <p>
+                 {{product[0].ingredients_1}}
+               </p>
+               <!-- <div class="ingredient-item">
+                 <strong>Vitamin C (Ascorbate):</strong> 1000mg - Natural antioxidant for immune support
+               </div>
+               <div class="ingredient-item">
+                 <strong>Pro-Collagen Peptides:</strong> 500mg - Supports skin elasticity and joint health
+               </div>
+               <div class="ingredient-item">
+                 <strong>ALA Omega-3:</strong> 200mg - Plant-based omega-3 for heart and brain health
+               </div>
+               <div class="ingredient-item">
+                 <strong>MCT Oil:</strong> 150mg - Medium-chain triglycerides for energy
+               </div>
+               <div class="ingredient-item">
+                 <strong>Polyphenols:</strong> 50mg - Natural antioxidants from fruit extracts
+               </div>
+               <div class="ingredient-item">
+                 <strong>B-Complex Vitamins:</strong> Complete B-vitamin complex for energy metabolism
+               </div> -->
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+   }
 
   <!-- Nutritional Information Section -->
   <section class="info-section">
@@ -155,7 +169,7 @@
       <div class="info-content">
         <div class="info-text">
           <h2 class="section-title">Nutritional Information</h2>
-          <div class="nutrition-table">
+          <!-- <div class="nutrition-table">
             <table>
               <thead>
                 <tr>
@@ -198,11 +212,15 @@
               </tbody>
             </table>
             <p class="nutrition-note">*Percent Daily Values are based on a 2,000 calorie diet.</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
-  </section>
+    <div class="flex justify-center">
+
+      <img [src]='nutrientsTableImage' style="max-width: 80%;">
+    </div>
+  </section> 
 </div>
 
 <div #myModal class="modal" [style.display]="modalVisible ? 'block' : 'none'">

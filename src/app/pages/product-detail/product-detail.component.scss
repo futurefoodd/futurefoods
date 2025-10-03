@@ -429,7 +429,6 @@ form {
   display: flex;
   gap: 40px;
   align-items: center;
-  min-height: 400px;
 }
 
 .info-content.reverse {
@@ -690,4 +689,53 @@ form {
   .nutrition-table td {
     padding: 0.75rem 0.5rem;
   }
+}
+
+.product-description-wrapper {
+  position: relative;
+  max-height: 120px;       /* collapsed height */
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.product-description-wrapper.expanded {
+  max-height: 1000px;      /* large enough to fit all text */
+}
+
+.product-description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #2e7d32;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+  margin-top: 6px;
+}
+
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.product-description-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;  /* fade height */
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.95));
+  pointer-events: none; /* allows clicking through */
+  transition: opacity 0.3s ease;
+}
+
+/* Hide gradient when expanded */
+.product-description-wrapper.expanded::after {
+  opacity: 0;
 }

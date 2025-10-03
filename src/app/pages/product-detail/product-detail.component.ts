@@ -9,6 +9,7 @@ import { productImage } from '../../core/model/product.model';
 import { CartService } from '../../services/cartService.service';
 import { WhatsAppService } from '../../services/whatsapp.service';
 import { environment } from '../../../environments/environment';
+import { ProductService } from '../../services/productService.service';
 
 
 // type productImage = {
@@ -34,11 +35,9 @@ export class ProductDetailComponent implements OnInit {
   // product: any = undefined
   product: any = { 0: { name: '', price: '', description_1: '', description_2: '', status: 'sale' } };
   // Form model for template-driven form
+  nutrients:any
+  quantity:number = 1
 
-    quantity:number = 1
-  // 
-
-  // Make Math available in template
   Math = Math;
 
   imageObject: productImage[] = []
@@ -47,11 +46,14 @@ export class ProductDetailComponent implements OnInit {
 
   productSpecification:any
 
+  nutrientsTableImage: any
+
   constructor(
     private activatedRoute: ActivatedRoute, 
     private requestService:RequestService, 
     private cartService:CartService,
-    private whatsappService: WhatsAppService
+    private whatsappService: WhatsAppService,
+    private productService: ProductService 
   ) {
 
   }
@@ -69,7 +71,8 @@ export class ProductDetailComponent implements OnInit {
         }
         const product= await response.json()
         this.product = product.result
-        
+        this.getNutrientTableData()
+        this.nutrientsTableImage = this.product[0].name + '.png'
         // Set default status if not provided
         if (this.product && this.product[0] && !this.product[0].status) {
           this.product[0].status = 'available';
@@ -96,6 +99,11 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
+  expanded = false;
+
+  toggle() {
+    this.expanded = !this.expanded;
+  }
   createKeyValue (data:Array<string>){
     const result = [];
 
@@ -138,6 +146,26 @@ export class ProductDetailComponent implements OnInit {
 
   }
   // console.log(this.imageObject)
+  }
+
+ 
+  async getNutrientTableData(){
+    try{
+    const response = await this.productService.getNutrientsData(this.product[0]?.id)
+
+    if (!response.success){
+      console.warn('Failed to load nutrients data:', response.result);
+      return;
+    }
+    this.nutrients = response.result;
+    console.log('Nutrients:', this.nutrients);
+    }catch(error){
+      console.error('Unexpected error in nutrientTable():', error);
+    }
+  }
+
+  async getNutrientTableHeader(){
+    
   }
 
   openModal(event: MouseEvent) {

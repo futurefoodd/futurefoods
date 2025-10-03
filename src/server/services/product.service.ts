@@ -111,7 +111,7 @@ export const getProduct = async (productId:UUID) => {
   
   
     if (error) {
-    throw new Error('Failed to fetch Products.');
+    throw new Error('Failed to fetch Products:', error);
   }
   if (!data || data.length === 0) {
     return []

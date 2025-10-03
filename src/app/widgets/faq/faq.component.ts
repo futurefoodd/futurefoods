@@ -70,7 +70,7 @@ export class FaqComponent {
     },
     {
       "title": "How should I store the product?",
-      "content": "Keep the box at or below 25°C, away from sunlight and moisture to maintain freshness.",
+      "content": "Keep the box at or below 28°C, away from sunlight and moisture to maintain freshness.",
       "value": "10",
       "isOpen": false
     },

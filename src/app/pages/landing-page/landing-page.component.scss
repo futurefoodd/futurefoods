@@ -32,7 +32,7 @@ body {
   position: relative;
   z-index: 2;
   height: fit-content;
-  margin-top: 70px;
+  margin-top: 40px;
 
   // @media(min-width:620px){
   //   height: 100vh;
@@ -64,7 +64,7 @@ body {
  
   @media (max-width:1024px){
     width: 80%;
-    margin: 5% auto;
+    margin: 15% auto;
   }
 }
 
@@ -293,9 +293,9 @@ p {
     font-size: 2rem;
   }
   
-  .section-title {
-    font-size: 2rem;
-  }
+  // .section-title {
+  //   font-size: 2rem;
+  // }
   
   .hero-buttons {
     flex-direction: column;

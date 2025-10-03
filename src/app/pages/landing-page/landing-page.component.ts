@@ -107,8 +107,8 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     },
     {
       id:3,
-      title: 'ActivBot Founder & Linguistic Tutor',
-      name: 'Grace Chow',
+      title: 'Founder of OPIKA ORGANIC',
+      name: 'Selina Gan',
       testimony: 'I feel the Omega 3, MCTs and B vitamins are easily and quickly absorbed in my mouth. I quickly get natural energy to rebound after workouts, recover from daily tiredness and also very much less brain fog.',
       image: 'https://via.placeholder.com/150/3357FF/FFFFFF?text=Emily',
     }

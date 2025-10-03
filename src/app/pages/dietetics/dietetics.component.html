@@ -1,16 +1,27 @@
+
 <div class="nutrition-consult-form">
-    <h2>Nutrition Consultation Form</h2>
+  <div class="info-image">
+    <img src="dietetics_logo.webp" >
+  
+  </div>
+    <h2>REQUEST FOR NUTRITION CONSULT</h2>
   
     <form [formGroup]="consultForm" (ngSubmit)="onSubmit()">
       <!-- Basic Info -->
       <div class="form-section">
-        <label>Name:</label>
+        <label>Name:<span style="color: red;">*</span></label>
         <input type="text" formControlName="name" />
   
-        <label>Age:</label>
-        <input type="number" formControlName="age" />
+        <label>Age:<span style="color: red;">*</span></label>
+        <input type="number" formControlName="age" min="0"/>
+
+        <label>Contact Number:<span style="color: red;">*</span></label>
+        <input type="text" formControlName="contact" />
+
+        <label>Email:<span style="color: red;">*</span></label>
+        <input type="text" formControlName="email" />
   
-        <label>Sex:</label>
+        <label>Sex:<span style="color: red;">*</span></label>
         <div class="radio-group">
           <label><input type="radio" value="Male" formControlName="sex" /> Male</label>
           <label><input type="radio" value="Female" formControlName="sex" /> Female</label>
@@ -18,27 +29,27 @@
       </div>
   
       <div class="form-section">
-        <label>Height (cm):</label>
+        <label>Height (cm):<span style="color: red;">*</span></label>
         <input type="number" formControlName="height" min="0" />
   
-        <label>Weight (kg):</label>
+        <label>Weight (kg):<span style="color: red;">*</span></label>
         <input type="number" formControlName="weight" min="0" />
   
-        <label>Country:</label>
+        <label>Country:<span style="color: red;">*</span></label>
         <input type="text" formControlName="country" />
       </div>
   
       <!-- Lifestyle & Habits -->
       <h3>Lifestyle & Habits</h3>
   
-      <label>Daily Activity Level:</label>
+      <label>Daily Activity Level:<span style="color: red;">*</span></label>
       <div class="radio-group">
         <label><input type="radio" value="Sedentary" formControlName="activityLevel" /> Sedentary (&lt;2000 steps)</label>
         <label><input type="radio" value="Moderate" formControlName="activityLevel" /> Moderate (5000 steps)</label>
         <label><input type="radio" value="Active" formControlName="activityLevel" /> Active (10000 steps)</label>
       </div>
   
-      <label>Exercise Routine:</label>
+      <label>Exercise Routine:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let routine of exerciseOptions">
           <input type="checkbox" [value]="routine" (change)="onCheckboxChange($event, 'exerciseRoutine')" />
@@ -46,7 +57,7 @@
         </label>
       </div>
   
-      <label>Exercise Frequency:</label>
+      <label>Exercise Frequency:<span style="color: red;">*</span></label>
       <div class="radio-group">
         <label><input type="radio" value="Weekends" formControlName="exerciseFrequency" /> Weekends</label>
         <label><input type="radio" value="3 times a week" formControlName="exerciseFrequency" /> 3 times a week</label>
@@ -54,7 +65,7 @@
         <label><input type="radio" value="None" formControlName="exerciseFrequency" /> None</label>
       </div>
   
-      <label>Job Demands or Hazard:</label>
+      <label>Job Demands or Hazard:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let job of jobOptions">
           <input type="checkbox" [value]="job" (change)="onCheckboxChange($event, 'jobDemands')" />
@@ -62,23 +73,22 @@
         </label>
       </div>
   
-      <label>Typical Sleep Hours per Night:</label>
+      <label>Typical Sleep Hours per Night:<span style="color: red;">*</span></label>
       <div class="radio-group">
         <label><input type="radio" value="4" formControlName="sleepHours" /> 4 hrs</label>
         <label><input type="radio" value="6" formControlName="sleepHours" /> 6 hrs</label>
         <label><input type="radio" value="8" formControlName="sleepHours" /> 8 hrs</label>
       </div>
   
-      <label>Smoking | Vaping Use:</label>
+      <label>Smoking | Vaping Use:<span style="color: red;">*</span></label>
       <div class="radio-group">
         <label><input type="radio" value="Social" formControlName="smokingVaping" /> Social</label>
         <label><input type="radio" value="Habitual" formControlName="smokingVaping" /> Habitual</label>
         <label><input type="radio" value="None" formControlName="smokingVaping" /> None</label>
       </div>
   
-      <label>Alcochol Consumption:</label>
+      <label>Alcochol Consumption:<span style="color: red;">*</span></label>
       <ng-container formGroupName="alcoholGroup">
-
         <div class="checkbox-group" style="margin-bottom: 0px;">
           <label *ngFor="let item of alcohol">
             <input type="checkbox" [value]="item" (change)="onCheckboxChange($event, 'alcoholGroup.types')" />
@@ -92,7 +102,7 @@
         </div>
       </ng-container>
 
-      <label>Dietary Patterns:</label>
+      <label>Dietary Patterns:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let pattern of dietPatterns">
           <input type="checkbox" [value]="pattern" (change)="onCheckboxChange($event, 'dietaryPatterns')" />
@@ -100,7 +110,7 @@
         </label>
       </div>
   
-      <label>Usual Eating Style:</label>
+      <label>Usual Eating Style:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let style of eatingStyles">
           <input type="checkbox" [value]="style" (change)="onCheckboxChange($event, 'eatingStyle')" />
@@ -108,14 +118,14 @@
         </label>
       </div>
   
-      <label>Daily Water Intake:</label>
+      <label>Daily Water Intake:<span style="color: red;">*</span></label>
       <div class="radio-group">
         <label><input type="radio" value="2-3" formControlName="waterIntake" /> 2–3 glass</label>
         <label><input type="radio" value="4-6" formControlName="waterIntake" /> 4–6 glass</label>
         <label><input type="radio" value="8-10" formControlName="waterIntake" /> 8–10 glass</label>
       </div>
   
-      <label>Coffee / Tea / Sugary Drinks / Snacks:</label>
+      <label>Coffee / Tea / Sugary Drinks / Snacks:<span style="color: red;">*</span></label>
     <ng-container formGroupName="snackGroup">
       <div class="checkbox-group" style="margin-bottom: 0px;">
         <label *ngFor="let snack of snacks">
@@ -134,14 +144,14 @@
       <!-- Wellness Goals -->
       <h3>Wellness Goals</h3>
   
-      <label>Primary Goal:</label>
+      <label>Primary Goal:<span style="color: red;">*</span></label>
       <div class="radio-group">
         <label *ngFor="let goal of primaryGoals">
           <input type="radio" [value]="goal" formControlName="primaryGoal" /> {{ goal }}
         </label>
       </div>
   
-      <label>Secondary Goals:</label>
+      <label>Secondary Goals:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let goal of secondaryGoals">
           <input type="checkbox" [value]="goal" (change)="onCheckboxChange($event, 'secondaryGoals')" />
@@ -149,7 +159,7 @@
         </label>
       </div>
   
-      <label>Specific Concerns:</label>
+      <label>Specific Concerns:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let concern of concerns">
           <input type="checkbox" [value]="concern" (change)="onCheckboxChange($event, 'specificConcerns')" />
@@ -176,6 +186,13 @@
       <label><input type="checkbox" formControlName="foodAllergy" /> Any Food Allergy</label>
       <label><input type="checkbox" formControlName="medication" /> Presently on Medication</label>
       <label><input type="checkbox" formControlName="recentTravel" /> Recent Travel Abroad</label>
+
+      <p class="privacy-note">
+  By clicking <strong>Submit</strong>, you acknowledge that you have read and agree to our
+  <!-- <a href="/data-privacy" target="_blank">Data Privacy</a> and  -->
+  <a href="/privacy-policy" target="_blank">Privacy Policy</a> and that your personal data will be processed in accordance with the 
+  <strong>Personal Data Protection Act 2010 (PDPA)</strong>.
+</p>
   
       <button type="submit">Submit</button>
     </form>

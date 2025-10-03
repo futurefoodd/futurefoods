@@ -1,6 +1,6 @@
 .nutrition-consult-form {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 100px auto ;
     padding: 2rem;
     background: #fff;
     border-radius: 12px;
@@ -68,4 +68,20 @@
       }
     }
   }
+  .info-image { display:flex; justify-content:start; align-items:center; height: 100%; width: 60%;}
+
+  .privacy-note {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 10px 0;
+    text-align: center;
+  }
   
+  .privacy-note a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .privacy-note a:hover {
+    text-decoration: underline;
+  }

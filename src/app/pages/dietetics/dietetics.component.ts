@@ -13,19 +13,19 @@ export class DieteticsComponent {
   consultForm: FormGroup;
 
   // options
-  alcohol = ['Beer', 'Wine','Liquor']
-  snacks = ['Cofee', 'Tea','Suagry Drinks', 'Snacks']
-  exerciseOptions = ['Brisk Walk', 'Yoga', 'Gym Workout', 'Swimming', 'Hiking'];
-  jobOptions = ['Night Shift', 'Cleaning Services', 'Frequent Deadlines', 'Engine Services/Construstion Works'];
+  alcohol = ['Beer', 'Wine','Liquor', 'None']
+  snacks = ['Cofee', 'Tea','Sugary Drinks', 'Snacks']
+  exerciseOptions = ['Brisk Walk', 'Yoga', 'Gym Workout', 'Swimming', 'Hiking', 'None'];
+  jobOptions = ['Night Shift', 'Cleaning Services', 'Frequent Deadlines', 'Engine Services/Construstion Works', 'N/A'];
   dietPatterns = [
-    'One meal per day (OMAD)',
+    'One Meal Per Day (OMAD)',
     'Weekly Intermittent Fasting',
-    'Meals after 8pm',
-    'Meals with bigger portion of carbs'
+    'Meals After 8pm',
+    'Meals With Bigger Portion Of Carbs'
   ];
   eatingStyles = ['Vegetarian', 'Vegan', 'Omnivore', 'Keto', 'Fast Food'];
-  primaryGoals = ['Weight loss', 'Gut health & Regular Bowel Movement', 'Energy boost'];
-  secondaryGoals = ['Muscle gain', 'Joint Comfort', 'Skin health', 'Women’s wellness'];
+  primaryGoals = ['Weight Loss', 'Gut Health & Regular Bowel Movement', 'Energy Boost'];
+  secondaryGoals = ['Muscle Gain', 'Joint Comfort', 'Skin Health', 'Women’s Wellness & Beauty'];
   concerns = ['Bloating', 'Reflux', 'Constipation', 'Hormonal Issues', 'Knee & Back Ache', 'Stress & Cramps'];
   familyHistoryOptions = ['Diabetes', 'Hypertension', 'Heart Disease', 'IBS / IBD', 'Anaemia'];
 
@@ -33,6 +33,8 @@ export class DieteticsComponent {
     this.consultForm = this.fb.group({
       name: ['', Validators.required],
       age: ['', Validators.required],
+      contact: ['', Validators.required],
+      email: ['', Validators.required],
       sex: ['', Validators.required],
       height: ['', Validators.required],
       weight: ['', Validators.required],
@@ -50,7 +52,7 @@ export class DieteticsComponent {
       dietaryPatterns: [[], Validators.required],
       eatingStyle: [[], Validators.required],
       waterIntake: ['', Validators.required],
-      snackFrequency: ['', Validators.required],
+      // snackFrequency: ['', Validators.required],
       snackGroup: this.fb.group({
         types: [[], Validators.required],              // checkbox selections
         frequency: ['', Validators.required],        // radio choice
@@ -59,12 +61,12 @@ export class DieteticsComponent {
       secondaryGoals: [[], Validators.required],
       specificConcerns: [[], Validators.required],
       supplements: [''],
-      familyHistory: [[], Validators.required],
-      recentHospitalisation: [false, Validators.required],
-      yearlyScreening: [false, Validators.required],
-      foodAllergy: [false, Validators.required],
-      medication: [false, Validators.required],
-      recentTravel: [false, Validators.required],
+      familyHistory: [[]],
+      recentHospitalisation: [false],
+      yearlyScreening: [false],
+      foodAllergy: [false],
+      medication: [false],
+      recentTravel: [false],
     });
   }
 
@@ -81,14 +83,21 @@ export class DieteticsComponent {
   }
 
   async onSubmit() {
+    console.log(this.consultForm.valid)
     if(this.consultForm.valid){
-      const submitConsultation = await this.consultFormService.submitConsultForm(this.consultForm.value)
-      console.log(submitConsultation)
       console.log(this.consultForm.value);
-      alert('Form submitted!');
+      const result = await this.consultFormService.submitConsultForm(this.consultForm.value)
+      console.log(result)
+      if(result.success){
+        alert('Form submitted!');
+        this.consultForm.reset()
+      }else {
+        alert('Form submission failed!')
+        console.log(result.error)
+      }
     } else {
       console.log(this.consultForm.value);
-      // alert('Please fill up the mandatory fields!')
+      alert('Please fill up the mandatory fields!')
     }
   }
 

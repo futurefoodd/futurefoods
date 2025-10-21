@@ -1,0 +1,295 @@
+{
+    "Button":{
+          "buyNow": "立即购买",
+          "learnMore": "了解更多"
+        },
+    
+        "Top-nav":{
+          "home":"主页",
+          "products":"产品",
+          "R&D":"研发",
+          "dietetics":"营养学",
+          "dieteticsMenu":{
+            "nutritionFacts":"营养成分与用量",
+            "dualTherapy":"双重疗法与营养素协同作用",
+            "gutBrain":"肠-脑轴与益生菌",
+            "bioTherapeutics":"神经发散性疾病中的生物疗法",
+            "ketosis":"营养生酮状态",
+            "consult":"营养咨询请求"
+          },
+          "upskill":"提升技能",
+          "tour":"参观"
+        },
+    
+        "Landing": {
+          "functionalClaims":"功能声称",
+          "main_title_1": "植物基",
+          "main_title_2": "功能性",
+          "main_title_3": "未来就绪营养",
+          "supportsGutProbiotics": {
+            "title": "支持肠道益生菌",
+            "description": "这些软糖为您的肠道益生菌提供“食物”，使其生长并保持强壮。这些有益微生物帮助您更好地消化食物和吸收必需营养素，保持您的免疫系统活跃，甚至改善您的情绪。"
+          },
+          "strengthensMuscleJointsNails": {
+            "title": "强健肌肉、关节与指甲",
+            "description": "这些经过临床配方的软糖能帮助您的身体更好地吸收维生素 C、氨基酸、多肽和天然膳食钙，以促进肌肉恢复和骨骼强健。这些软糖也经过研究可减少炎症，从而支持关节和韧带的柔韧性。"
+          },
+          "higherEnergyCreatingBetterMood": {
+            "title": "更高能量，创造更好心情",
+            "description": "这些软糖中的有机 ALA Omega 3、MCT 8、MCT10 和 B 族复合物可在口中迅速吸收，为您提供更多天然能量以从疲劳中恢复、增强专注力并减少脑雾。这些软糖含有具有天然抗炎功效的多酚，帮助您的身体在日常步行或锻炼后恢复。"
+          },
+          "Limitedtime":{
+            "limitedTimeOffer": "限时优惠！",
+            "title": "Pro-Collagen Soft Pastilles",
+            "description":"更快的营养吸收，实现天然胶原蛋白和弹性蛋白合成，滋养肠道益生菌，减少皮肤敏感性并强健指甲，改善肌肉和关节舒适度，缓解口腔溃疡和喉咙刺激。"
+          },
+          "Comparison":{
+            "title": "这些软糖为您做些什么：",
+            "description": "温和的植物基缓解，旨在从内到外支持您的皮肤自然愈合。不含合成化学品，只有营养丰富的护理，帮助您的皮肤焕发光彩，让您感到自信。"
+          },
+          "Testimony":{
+            "title": "我们的见证",
+            "testimony_1":{
+              "name":"Carol Lee",
+              "title":"健身爱好者",
+              "description": "这些营养丰富的软糖帮助您肠道中的益生菌生长并保持强壮。您自身的益生菌有助于您更好地消化食物和吸收必需营养素，可以阻止对糖的渴望，甚至改善您的情绪。"
+            },
+            "testimony_2":{
+              "name":"Kathijah Ibrahim",
+              "title":"KPM 副局长",
+              "description": "这些软糖配方精良，有助于您的身体更好地吸收天然维生素 C、氨基酸、膳食钙和镁，以实现更强壮的肌肉和骨骼恢复。我的关节柔韧性也有所提高，疼痛感减少了。"
+            },
+            "testimony_3":{
+              "name":"Selina Gan",
+              "title":"OPIKA ORGANIC 创始人",
+              "description": "我感觉 Omega 3、MCTs 和 B 族维生素很容易且迅速地在我的口中被吸收。我迅速获得了天然能量以在锻炼后恢复，从日常疲劳中恢复，并且脑雾也大大减少了。"
+          }
+        },
+          "FAQ": {
+              "title" : "常见问题",
+              "question_1":{
+                "question": "我们的产品是清真的吗？",
+                "answer": "是的，每种成分都有自己的清真认证，并且生产过程也有 OEM 清真认证。"
+              },
+              "question_2":{
+                "question": "软糖中的 Pro-Collagen 是什么？",
+                "answer": "一种美味的果味植物基软糖，由支持胶原蛋白合成的有机植物营养素和清真明胶混合制成。软糖是植物基抗氧化剂抗坏血酸盐（维生素 C）和抗炎化合物的来源，有助于您的身体和精神保持活跃。"
+              },
+              "question_3":{
+                "question": "这些软糖如何帮助我的敏感/衰老皮肤？",
+                "answer": "这些营养丰富的软糖含有天然氨基酸、糖蛋白、多酚和抗坏血酸盐（膳食维生素 C），以减少皮肤敏感性、强健关节和指甲，并支持肌肉恢复。这些软糖促进天然胶原蛋白和弹性蛋白的产生，帮助您的皮肤感觉更紧致，散发出更健康的光泽。"
+              },
+              "question_4":{
+                "question": "什么是 Paleo-Prebiotics®？",
+                "answer": "它是一种独特的、可溶性植物纤维和古老抗性淀粉的混合物，为您的肠道益生菌提供“食物”，改善消化、营养吸收并促进规律排便。"
+              },
+              "question_5":{
+                "question": "为什么要加入 MCT？",
+                "answer": "MCT C8 和 C10（源自初榨椰子油）与 ALA=Omega 3 结合是快速补充身体和大脑能量的脂质，让您保持活跃和清醒。"
+              },
+              "question_6":{
+                "question": "我应该如何服用这些软糖？",
+                "answer": "每天两次或三次将一片软糖放在舌下以实现更快吸收，或遵医嘱、顾问、药剂师或营养师的建议服用。"
+              },
+              "question_7":{
+                "question": "这些软糖适合日常食用吗？",
+                "answer": "是的！它们不含任何人造色素、甜味剂、防腐剂或隐藏添加剂。这些软糖使用来自砂拉越 Apong 糖的低 GI Nipa Fructan。"
+              },
+              "question_8":{
+                "question": "这些软糖的味道如何？",
+                "answer": "它们具有来自有机成分（如洛神花、车前草、醋栗和番荔枝）的天然果味，使其美味可口，适合儿童、活跃成人和老年人食用。"
+              },
+              "question_9":{
+                "question": "这些软糖能帮助缓解衰老不适并满足日常需求吗？",
+                "answer": "是的！天然维生素 C、氨基酸、糖蛋白、多酚和 ALA-Omega 3 的独特混合物协同作用（营养素协同作用），以支持肌肉恢复、强健皮肤和指甲，并增强关节舒适度和柔韧性；帮助您感觉精力充沛，为日常活动做好准备。"
+              },
+              "question_10":{
+                "question": "这些软糖适合女性保健吗？",
+                "answer": "是的！这些软糖专为支持女性保健而设计；有助于提高能量和情绪、增强皮肤水润度、促进荷尔蒙平衡，并培养整体活力，让美丽的您焕发生机。"
+              },
+              "question_11":{
+                "question": "我应该如何储存产品？",
+                "answer": "将盒子存放在 28°C 或以下，避光避湿以保持新鲜度。"
+              },
+              "question_12":{
+                "question": "这些软糖在哪里制造？",
+                "answer": "它们由 Utara Dietetics & Plant-Based Research 与经过 HACCP 和清真认证的 OEM 制造商合作，在马来西亚专业配制和生产。"
+              },
+              "question_13":{
+                "question": "这些软糖有五星级产品评价吗？",
+                "answer": "是的！独立的客户评价和患者对医生的反馈一致地将我们的软糖评为五星，反映了在口味、功效、整体健康支持和性价比等方面的高度满意。"
+              }
+    
+            }
+        },
+        
+        "Footer": {
+          "feedYourBody":"为您的身体提供应有的滋养",
+          "quickLinks":"快速链接",
+          "quickLinksMenu":{
+            "home":"主页",
+            "products":"产品",
+            "r&d":"研发",
+            "tour": "参观",
+            "dietetics":"营养学"
+          },
+          "clickForForm":"点击此处获取表格！",
+          "allRightsReserved":"2025 Future Foods. 版权所有。"
+        },
+    
+        "ProductList": {
+          "ourProducts":"我们的产品",
+          "familyWellness": {
+            "title": "Family Wellness",
+            "description": "您家庭健康的日常营养，旨在支持您挚爱家人日常需求和活跃生活方式的植物基益处。这种独特的配方不仅仅是日常维生素；它是您家庭健康的“营养协同作用”。富含天然超级抗氧化剂，有助于减少食物过敏和污染造成的损害。这些 Vegan Soft Pastilles 从内部滋养，以促进更健康的肠道益生菌。我们的医疗级配方使您的身体能够快速利用多酚、氨基酸、短链酸、MCT 和 Paleo-Prebiotics 等关键营养素，从而获得更快的效果。此外，Family Wellness 是计量剂量的，因此为您的身体健康提供全面的支持。感受不同；妈妈、爸爸每天 2 到 3 粒软糖，祖父母每天 2 粒软糖，青少年和孙辈每天 1 粒软糖，享受每日的益处。这些软糖支持家庭日常的繁重需求，它们还能提升能量水平和平衡情绪。家庭健康医生 Ravi Akambaram 博士说：“有了 Family Wellness，您就是为您所爱的人投资于安全的营养综合方法。”"
+          },
+          "veganSoftPastilles":{
+            "title":"Vegan Soft Pastilles, Glass Bottle with 60 pcs",
+            "description":"产品科学声称高密度果胶基植物营养素，可提供更快的吸收和能量补充，并带来您可以真实感受到的效果。通过美味且易溶于口的 Vegan Soft Pastilles 发现营养素协同作用。每粒美味的软糖还旨在增强您皮肤的自然光泽，保持指甲健康，并支持更好的肌肉和关节舒适度，让您轻松自信地活动。临床研究员 Dato Dr Nor Shahida 说：“这是远离动物基胶原蛋白，可靠地选择，以实现您的日常健康之旅。”",
+            "vegan":"纯素",
+            "functional":"功能性",
+            "futureReadyNutrition": "未来就绪营养"
+          },
+          "nvc3":{
+            "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen)",
+            "description": "通过 NVC3 Vegan Pro-Collagen 探索植物基营养的新时代。这种突破性配方超越了普通的补充剂，具有高密度成分混合物，旨在支持您身体的天然活力。我们独特的 Paleo-Prebiotics、Nata De Coco 和 Pro-Collagen Polypeptides 注入物从内到外发挥作用，促进均衡和有活力的您。每份都富含维生素 C、B12、槲皮素和锌等关键营养素，帮助您茁壮成长。NVC3 的独特之处在于它通过生物共振水输送，这个过程最大限度地提高了每种有益化合物的吸收，确保您从每一口中获得最大益处。体验清爽的口感并感受不同，将这种日常仪式纳入您的健康习惯中，同时知道您正在选择一款有效且符合道德采购的马来西亚制造产品。"
+          },
+          "21Days":{
+            "title":"21‑Days Vegan Keto Meal",
+            "description": "从临床营养的角度来看，21‑Days Vegan Keto Meal 每份 30 克以上含有 5 克可溶性纤维、3 克抗性淀粉、8 克蛋白质和 3 克 MCT 以及 1.1 克 ALA Omega 3，它还富含史前益生元、植物基氨基酸、糖蛋白、维生素化合物、MCT、植物甾醇、多酚、辅因子和辅酶。",
+            "description2":"“Keshu 博士分享说，这种植物基和营养丰富的代餐是一种安全且支持恢复的选择，特别是对于患有代谢紊乱的人。”"
+          },
+          "ancestralKeto":{
+            "title":"Ancestral Keto Diet Guide",
+            "description": "与“完全基于动物和乳制品的生酮饮食”不同，Ancestral Keto Diet Guide 是营养丰富的全食物——古老的谷物，通过有机实践种植，为我们的身体提供均衡的饮食和必需营养素，以调节我们的消化功能，阻止体重增加并治愈组织损伤以保持活力。医生还推荐这种植物基和营养密集的代餐作为从慢性感染和术后恢复的个体的安全选择。",
+            "description2":"“……参考 2016 年康奈尔大学的 Allele Vegan 研究，古老的谷物是我们的祖先为保持强壮而食用的，”来自北方营养学与植物基研究诊所的临床研究营养师 Keshu 博士说。"
+          }
+    
+        },
+    
+        "ProductDetail": {
+          "veganSoftPastilles": {
+            "title": "素食软糖",
+            "description": "Functional Foods 配方工厂 | FSSC ISO22000"
+          }
+        },
+        "Tour":{
+            "header":"参观",
+            "subHeader": "功能性食品配方工厂 | FSSC ISO22000"
+        },
+        "Dietetics": {
+            
+                "title": "营养咨询请求",
+                "sections": {
+                  "lifestyleHabits": "生活方式与习惯",
+                  "wellnessGoals": "健康目标",
+                  "additionalInfo": "附加信息"
+                },
+                "form": {
+                  "name": "姓名",
+                  "age": "年龄",
+                  "contact": "联系电话",
+                  "email": "电子邮箱",
+                  "sex": "性别",
+                  "male": "男",
+                  "female": "女",
+                  "height": "身高 (cm)",
+                  "weight": "体重 (kg)",
+                  "country": "国家",
+                  "dailyActivityLevel": "日常活动水平",
+                  "exerciseRoutine": "运动项目",
+                  "exerciseFrequency": "运动频率",
+                  "jobDemands": "工作要求或风险",
+                  "sleepHours": "每晚典型睡眠时长",
+                  "smokingVaping": "吸烟 | 电子烟使用",
+                  "alcoholConsumption": "酒精饮用情况",
+                  "dietaryPatterns": "饮食模式",
+                  "eatingStyle": "通常的饮食方式",
+                  "waterIntake": "每日饮水量",
+                  "snacks": "咖啡/茶/含糖饮料/零食",
+                  "primaryGoal": "主要目标",
+                  "secondaryGoals": "次要目标",
+                  "specificConcerns": "具体健康问题",
+                  "supplements": "目前服用的补充剂",
+                  "familyHistory": "家族健康问题史",
+                  "recentHospitalisation": "近期住院情况",
+                  "yearlyScreening": "年度体检情况",
+                  "foodAllergy": "食物过敏情况",
+                  "medication": "目前服药情况",
+                  "recentTravel": "近期海外旅行",
+                  "submit": "提交"
+                },
+                "options": {
+                  "sedentary": "久坐 (<2000 步)",
+                  "moderate": "适度 (5000 步)",
+                  "active": "活跃 (10000 步)",
+                  "weekends": "周末",
+                  "threeTimesWeek": "每周 3 次",
+                  "daily": "每天",
+                  "none": "无",
+                  "social": "社交性",
+                  "habitual": "习惯性",
+                  "fourHours": "4 小时",
+                  "sixHours": "6 小时",
+                  "eightHours": "8 小时",
+                  "twoThreeGlasses": "2-3 杯",
+                  "fourSixGlasses": "4-6 杯",
+                  "eightTenGlasses": "8-10 杯",
+                  "whenStressed": "压力大时",
+                  "often": "经常",
+                  "sometimes": "有时",
+                  "rarely": "很少",
+                  "beer": "啤酒",
+                  "wine": "葡萄酒",
+                  "liquor": "烈酒",
+                  "coffee": "咖啡",
+                  "tea": "茶",
+                  "sugaryDrinks": "含糖饮料",
+                  "snacks": "零食",
+                  "briskWalk": "快走",
+                  "yoga": "瑜伽",
+                  "gymWorkout": "健身房锻炼",
+                  "swimming": "游泳",
+                  "hiking": "徒步",
+                  "nightShift": "夜班",
+                  "cleaningServices": "清洁服务",
+                  "frequentDeadlines": "频繁的截止日期",
+                  "engineServices": "机械维修/建筑工程",
+                  "na": "不适用",
+                  "omad": "每日一餐 (OMAD)",
+                  "weeklyFasting": "每周间歇性禁食",
+                  "mealsAfter8pm": "晚上 8 点后进食",
+                  "biggerCarbs": "碳水化合物占比较大的餐食",
+                  "vegetarian": "素食者",
+                  "vegan": "纯素食者",
+                  "omnivore": "杂食者",
+                  "keto": "生酮饮食",
+                  "fastFood": "快餐",
+                  "weightLoss": "减重",
+                  "gutHealth": "肠道健康与规律排便",
+                  "energyBoost": "提升能量",
+                  "muscleGain": "增肌",
+                  "jointComfort": "关节舒适度",
+                  "skinHealth": "皮肤健康",
+                  "womensWellness": "女性健康与美丽",
+                  "bloating": "腹胀",
+                  "reflux": "反流",
+                  "constipation": "便秘",
+                  "hormonalIssues": "荷尔蒙问题",
+                  "kneeBackAche": "膝盖和背部疼痛",
+                  "stressCramps": "压力和痉挛",
+                  "diabetes": "糖尿病",
+                  "hypertension": "高血压",
+                  "heartDisease": "心脏病",
+                  "ibsIbd": "IBS / IBD",
+                  "anaemia": "贫血"
+                },
+                "privacyNote": {
+                  "text": "点击“提交”即表示您已阅读并同意我们的",
+                  "privacyPolicy": "隐私政策",
+                  "and": "以及您的个人数据将根据",
+                  "pdpa": "2010 年个人数据保护法 (PDPA)"
+                }
+              
+        }
+      }

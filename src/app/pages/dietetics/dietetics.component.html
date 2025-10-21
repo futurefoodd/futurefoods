@@ -4,197 +4,197 @@
     <img src="dietetics_logo.webp" >
   
   </div>
-    <h2>REQUEST FOR NUTRITION CONSULT</h2>
+    <h2>{{'Dietetics.title' | translate}}</h2>
   
     <form [formGroup]="consultForm" (ngSubmit)="onSubmit()">
       <!-- Basic Info -->
       <div class="form-section">
-        <label>Name:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.name' | translate}}:<span style="color: red;">*</span></label>
         <input type="text" formControlName="name" />
   
-        <label>Age:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.age' | translate}}:<span style="color: red;">*</span></label>
         <input type="number" formControlName="age" min="0"/>
 
-        <label>Contact Number:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.contact' | translate}}:<span style="color: red;">*</span></label>
         <input type="text" formControlName="contact" />
 
-        <label>Email:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.email' | translate}}:<span style="color: red;">*</span></label>
         <input type="text" formControlName="email" />
   
-        <label>Sex:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.sex' | translate}}:<span style="color: red;">*</span></label>
         <div class="radio-group">
-          <label><input type="radio" value="Male" formControlName="sex" /> Male</label>
-          <label><input type="radio" value="Female" formControlName="sex" /> Female</label>
+          <label><input type="radio" value="Male" formControlName="sex" /> {{'Dietetics.form.male' | translate}}</label>
+          <label><input type="radio" value="Female" formControlName="sex" /> {{'Dietetics.form.female' | translate}}</label>
         </div>
       </div>
   
       <div class="form-section">
-        <label>Height (cm):<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.height' | translate}}:<span style="color: red;">*</span></label>
         <input type="number" formControlName="height" min="0" />
   
-        <label>Weight (kg):<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.weight' | translate}}:<span style="color: red;">*</span></label>
         <input type="number" formControlName="weight" min="0" />
   
-        <label>Country:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.country' | translate}}:<span style="color: red;">*</span></label>
         <input type="text" formControlName="country" />
       </div>
   
       <!-- Lifestyle & Habits -->
-      <h3>Lifestyle & Habits</h3>
+      <h3>{{'Dietetics.sections.lifestyleHabits' | translate}}</h3>
   
-      <label>Daily Activity Level:<span style="color: red;">*</span></label>
+      <label>{{'Dietetics.form.dailyActivityLevel' | translate}}:<span style="color: red;">*</span></label>
       <div class="radio-group">
-        <label><input type="radio" value="Sedentary" formControlName="activityLevel" /> Sedentary (&lt;2000 steps)</label>
-        <label><input type="radio" value="Moderate" formControlName="activityLevel" /> Moderate (5000 steps)</label>
-        <label><input type="radio" value="Active" formControlName="activityLevel" /> Active (10000 steps)</label>
+        <label><input type="radio" value="Sedentary" formControlName="activityLevel" /> {{'Dietetics.options.sedentary' | translate}}</label>
+        <label><input type="radio" value="Moderate" formControlName="activityLevel" /> {{'Dietetics.options.moderate' | translate}}</label>
+        <label><input type="radio" value="Active" formControlName="activityLevel" /> {{'Dietetics.options.active' | translate}}</label>
       </div>
   
-      <label>Exercise Routine:<span style="color: red;">*</span></label>
+      <label>{{'Dietetics.form.exerciseRoutine' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let routine of exerciseOptions">
           <input type="checkbox" [value]="routine" (change)="onCheckboxChange($event, 'exerciseRoutine')" />
-          {{ routine }}
+          {{ routine | translate }}
         </label>
       </div>
   
-      <label>Exercise Frequency:<span style="color: red;">*</span></label>
+      <label>{{'Dietetics.form.exerciseFrequency' | translate}}:<span style="color: red;">*</span></label>
       <div class="radio-group">
-        <label><input type="radio" value="Weekends" formControlName="exerciseFrequency" /> Weekends</label>
-        <label><input type="radio" value="3 times a week" formControlName="exerciseFrequency" /> 3 times a week</label>
-        <label><input type="radio" value="Daily" formControlName="exerciseFrequency" /> Daily</label>
-        <label><input type="radio" value="None" formControlName="exerciseFrequency" /> None</label>
+        <label><input type="radio" value="Weekends" formControlName="exerciseFrequency" /> {{'Dietetics.options.weekends' | translate}}</label>
+        <label><input type="radio" value="3 times a week" formControlName="exerciseFrequency" /> {{'Dietetics.options.threeTimesWeek' | translate}}</label>
+        <label><input type="radio" value="Daily" formControlName="exerciseFrequency" /> {{'Dietetics.options.daily' | translate}}</label>
+        <label><input type="radio" value="None" formControlName="exerciseFrequency" /> {{'Dietetics.options.none' | translate}}</label>
       </div>
   
-      <label>Job Demands or Hazard:<span style="color: red;">*</span></label>
+      <label>{{'Dietetics.form.jobDemands' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let job of jobOptions">
           <input type="checkbox" [value]="job" (change)="onCheckboxChange($event, 'jobDemands')" />
-          {{ job }}
+          {{ job | translate }}
         </label>
       </div>
-  
-      <label>Typical Sleep Hours per Night:<span style="color: red;">*</span></label>
+
+      <label>{{'Dietetics.form.sleepHours' | translate}}:<span style="color: red;">*</span></label>
       <div class="radio-group">
-        <label><input type="radio" value="4" formControlName="sleepHours" /> 4 hrs</label>
-        <label><input type="radio" value="6" formControlName="sleepHours" /> 6 hrs</label>
-        <label><input type="radio" value="8" formControlName="sleepHours" /> 8 hrs</label>
+        <label><input type="radio" value="4" formControlName="sleepHours" /> {{'Dietetics.options.fourHours' | translate}}</label>
+        <label><input type="radio" value="6" formControlName="sleepHours" /> {{'Dietetics.options.sixHours' | translate}}</label>
+        <label><input type="radio" value="8" formControlName="sleepHours" /> {{'Dietetics.options.eightHours' | translate}}</label>
+      </div>
+
+      <label>{{'Dietetics.form.smokingVaping' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label><input type="radio" value="Social" formControlName="smokingVaping" /> {{'Dietetics.options.social' | translate}}</label>
+        <label><input type="radio" value="Habitual" formControlName="smokingVaping" /> {{'Dietetics.options.habitual' | translate}}</label>
+        <label><input type="radio" value="None" formControlName="smokingVaping" /> {{'Dietetics.options.none' | translate}}</label>
       </div>
   
-      <label>Smoking | Vaping Use:<span style="color: red;">*</span></label>
-      <div class="radio-group">
-        <label><input type="radio" value="Social" formControlName="smokingVaping" /> Social</label>
-        <label><input type="radio" value="Habitual" formControlName="smokingVaping" /> Habitual</label>
-        <label><input type="radio" value="None" formControlName="smokingVaping" /> None</label>
-      </div>
-  
-      <label>Alcochol Consumption:<span style="color: red;">*</span></label>
+      <label>{{'Dietetics.form.alcoholConsumption' | translate}}:<span style="color: red;">*</span></label>
       <ng-container formGroupName="alcoholGroup">
         <div class="checkbox-group" style="margin-bottom: 0px;">
           <label *ngFor="let item of alcohol">
             <input type="checkbox" [value]="item" (change)="onCheckboxChange($event, 'alcoholGroup.types')" />
-            {{ item }}
+            {{ item | translate }}
           </label>
         </div>
         <div class="radio-group">
-          <label><input type="radio" value="Social" formControlName="consumption" /> Social</label>
-          <label><input type="radio" value="Habitual" formControlName="consumption" /> Habitual</label>
-          <label><input type="radio" value="None" formControlName="consumption" /> None</label>
+          <label><input type="radio" value="Social" formControlName="consumption" /> {{'Dietetics.options.social' | translate}}</label>
+          <label><input type="radio" value="Habitual" formControlName="consumption" /> {{'Dietetics.options.habitual' | translate}}</label>
+          <label><input type="radio" value="None" formControlName="consumption" /> {{'Dietetics.options.none' | translate}}</label>
         </div>
       </ng-container>
 
-      <label>Dietary Patterns:<span style="color: red;">*</span></label>
+      <label>{{'Dietetics.form.dietaryPatterns' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let pattern of dietPatterns">
           <input type="checkbox" [value]="pattern" (change)="onCheckboxChange($event, 'dietaryPatterns')" />
-          {{ pattern }}
+          {{ pattern | translate }}
         </label>
       </div>
-  
-      <label>Usual Eating Style:<span style="color: red;">*</span></label>
+
+      <label>{{'Dietetics.form.eatingStyle' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let style of eatingStyles">
           <input type="checkbox" [value]="style" (change)="onCheckboxChange($event, 'eatingStyle')" />
-          {{ style }}
+          {{ style | translate }}
         </label>
       </div>
-  
-      <label>Daily Water Intake:<span style="color: red;">*</span></label>
+
+      <label>{{'Dietetics.form.waterIntake' | translate}}:<span style="color: red;">*</span></label>
       <div class="radio-group">
-        <label><input type="radio" value="2-3" formControlName="waterIntake" /> 2–3 glass</label>
-        <label><input type="radio" value="4-6" formControlName="waterIntake" /> 4–6 glass</label>
-        <label><input type="radio" value="8-10" formControlName="waterIntake" /> 8–10 glass</label>
+        <label><input type="radio" value="2-3" formControlName="waterIntake" /> {{'Dietetics.options.twoThreeGlasses' | translate}}</label>
+        <label><input type="radio" value="4-6" formControlName="waterIntake" /> {{'Dietetics.options.fourSixGlasses' | translate}}</label>
+        <label><input type="radio" value="8-10" formControlName="waterIntake" /> {{'Dietetics.options.eightTenGlasses' | translate}}</label>
       </div>
   
-      <label>Coffee / Tea / Sugary Drinks / Snacks:<span style="color: red;">*</span></label>
+      <label>{{'Dietetics.form.snacks' | translate}}:<span style="color: red;">*</span></label>
     <ng-container formGroupName="snackGroup">
       <div class="checkbox-group" style="margin-bottom: 0px;">
         <label *ngFor="let snack of snacks">
           <input type="checkbox" [value]="snack" (change)="onCheckboxChange($event, 'snackGroup.types')" />
-          {{ snack }}
+          {{ snack | translate }}
         </label>
       </div>
       <div class="radio-group">
-        <label><input type="radio" value="When Stressed" formControlName="frequency" /> When Stressed</label>
-        <label><input type="radio" value="Often" formControlName="frequency" /> Often</label>
-        <label><input type="radio" value="Sometimes" formControlName="frequency" /> Sometimes</label>
-        <label><input type="radio" value="Rarely" formControlName="frequency" /> Rarely</label>
+        <label><input type="radio" value="When Stressed" formControlName="frequency" /> {{'Dietetics.options.whenStressed' | translate}}</label>
+        <label><input type="radio" value="Often" formControlName="frequency" /> {{'Dietetics.options.often' | translate}}</label>
+        <label><input type="radio" value="Sometimes" formControlName="frequency" /> {{'Dietetics.options.sometimes' | translate}}</label>
+        <label><input type="radio" value="Rarely" formControlName="frequency" /> {{'Dietetics.options.rarely' | translate}}</label>
       </div>
     </ng-container>
   
       <!-- Wellness Goals -->
-      <h3>Wellness Goals</h3>
-  
-      <label>Primary Goal:<span style="color: red;">*</span></label>
+      <h3>{{'Dietetics.sections.wellnessGoals' | translate}}</h3>
+
+      <label>{{'Dietetics.form.primaryGoal' | translate}}:<span style="color: red;">*</span></label>
       <div class="radio-group">
         <label *ngFor="let goal of primaryGoals">
-          <input type="radio" [value]="goal" formControlName="primaryGoal" /> {{ goal }}
+          <input type="radio" [value]="goal" formControlName="primaryGoal" /> {{ goal | translate }}
         </label>
       </div>
-  
-      <label>Secondary Goals:<span style="color: red;">*</span></label>
+
+      <label>{{'Dietetics.form.secondaryGoals' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let goal of secondaryGoals">
           <input type="checkbox" [value]="goal" (change)="onCheckboxChange($event, 'secondaryGoals')" />
-          {{ goal }}
+          {{ goal | translate }}
         </label>
       </div>
-  
-      <label>Specific Concerns:<span style="color: red;">*</span></label>
+
+      <label>{{'Dietetics.form.specificConcerns' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let concern of concerns">
           <input type="checkbox" [value]="concern" (change)="onCheckboxChange($event, 'specificConcerns')" />
-          {{ concern }}
+          {{ concern | translate }}
         </label>
       </div>
   
       <!-- Additional Info -->
-      <h3>Additional Info</h3>
-  
-      <label>Supplements Currently Taken:</label>
+      <h3>{{'Dietetics.sections.additionalInfo' | translate}}</h3>
+
+      <label>{{'Dietetics.form.supplements' | translate}}:</label>
       <textarea formControlName="supplements"></textarea>
-  
-      <label>Family History of Health Issues:</label>
+
+      <label>{{'Dietetics.form.familyHistory' | translate}}:</label>
       <div class="checkbox-group">
         <label *ngFor="let issue of familyHistoryOptions">
           <input type="checkbox" [value]="issue" (change)="onCheckboxChange($event, 'familyHistory')" />
-          {{ issue }}
+          {{ issue | translate }}
         </label>
       </div>
-  
-      <label><input type="checkbox" formControlName="recentHospitalisation" /> Recent Hospitalisation</label>
-      <label><input type="checkbox" formControlName="yearlyScreening" /> Yearly Medical Screening</label>
-      <label><input type="checkbox" formControlName="foodAllergy" /> Any Food Allergy</label>
-      <label><input type="checkbox" formControlName="medication" /> Presently on Medication</label>
-      <label><input type="checkbox" formControlName="recentTravel" /> Recent Travel Abroad</label>
+
+      <label><input type="checkbox" formControlName="recentHospitalisation" /> {{'Dietetics.form.recentHospitalisation' | translate}}</label>
+      <label><input type="checkbox" formControlName="yearlyScreening" /> {{'Dietetics.form.yearlyScreening' | translate}}</label>
+      <label><input type="checkbox" formControlName="foodAllergy" /> {{'Dietetics.form.foodAllergy' | translate}}</label>
+      <label><input type="checkbox" formControlName="medication" /> {{'Dietetics.form.medication' | translate}}</label>
+      <label><input type="checkbox" formControlName="recentTravel" /> {{'Dietetics.form.recentTravel' | translate}}</label>
 
       <p class="privacy-note">
-  By clicking <strong>Submit</strong>, you acknowledge that you have read and agree to our
-  <!-- <a href="/data-privacy" target="_blank">Data Privacy</a> and  -->
-  <a href="/privacy-policy" target="_blank">Privacy Policy</a> and that your personal data will be processed in accordance with the 
-  <strong>Personal Data Protection Act 2010 (PDPA)</strong>.
+  {{ 'Dietetics.privacyNote.text' | translate }}
+  <!-- <a href="/data-privacy" target="_blank">{{ 'Dietetics.privacyNote.dataPrivacy' | translate }}</a> and  -->
+  <a href="/privacy-policy" target="_blank">{{ 'Dietetics.privacyNote.privacyPolicy' | translate }}</a> {{ 'Dietetics.privacyNote.and' | translate }}
+  <strong>{{ 'Dietetics.privacyNote.pdpa' | translate }}</strong>.
 </p>
-  
-      <button type="submit">Submit</button>
+
+      <button type="submit">{{ 'Dietetics.form.submit' | translate }}</button>
     </form>
   </div>
   

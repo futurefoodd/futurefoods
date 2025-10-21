@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NutritionConsultService } from '../../services/consult.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dietetics',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './dietetics.component.html',
   styleUrl: './dietetics.component.scss'
 })
@@ -13,21 +14,21 @@ export class DieteticsComponent {
   consultForm: FormGroup;
 
   // options
-  alcohol = ['Beer', 'Wine','Liquor', 'None']
-  snacks = ['Cofee', 'Tea','Sugary Drinks', 'Snacks']
-  exerciseOptions = ['Brisk Walk', 'Yoga', 'Gym Workout', 'Swimming', 'Hiking', 'None'];
-  jobOptions = ['Night Shift', 'Cleaning Services', 'Frequent Deadlines', 'Engine Services/Construstion Works', 'N/A'];
+  alcohol = ['Dietetics.options.beer', 'Dietetics.options.wine','Dietetics.options.liquor', 'Dietetics.options.none']
+  snacks = ['Dietetics.options.coffee', 'Dietetics.options.tea','Dietetics.options.sugaryDrinks', 'Dietetics.options.snacks']
+  exerciseOptions = ['Dietetics.options.briskWalk', 'Dietetics.options.yoga', 'Dietetics.options.gymWorkout', 'Dietetics.options.swimming', 'Dietetics.options.hiking', 'Dietetics.options.none'];
+  jobOptions = ['Dietetics.options.nightShift', 'Dietetics.options.cleaningServices', 'Dietetics.options.frequentDeadlines', 'Dietetics.options.engineServices', 'Dietetics.options.na'];
   dietPatterns = [
-    'One Meal Per Day (OMAD)',
-    'Weekly Intermittent Fasting',
-    'Meals After 8pm',
-    'Meals With Bigger Portion Of Carbs'
+    'Dietetics.options.omad',
+    'Dietetics.options.weeklyFasting',
+    'Dietetics.options.mealsAfter8pm',
+    'Dietetics.options.biggerCarbs'
   ];
-  eatingStyles = ['Vegetarian', 'Vegan', 'Omnivore', 'Keto', 'Fast Food'];
-  primaryGoals = ['Weight Loss', 'Gut Health & Regular Bowel Movement', 'Energy Boost'];
-  secondaryGoals = ['Muscle Gain', 'Joint Comfort', 'Skin Health', 'Women’s Wellness & Beauty'];
-  concerns = ['Bloating', 'Reflux', 'Constipation', 'Hormonal Issues', 'Knee & Back Ache', 'Stress & Cramps'];
-  familyHistoryOptions = ['Diabetes', 'Hypertension', 'Heart Disease', 'IBS / IBD', 'Anaemia'];
+  eatingStyles = ['Dietetics.options.vegetarian', 'Dietetics.options.vegan', 'Dietetics.options.omnivore', 'Dietetics.options.keto', 'Dietetics.options.fastFood'];
+  primaryGoals = ['Dietetics.options.weightLoss', 'Dietetics.options.gutHealth', 'Dietetics.options.energyBoost'];
+  secondaryGoals = ['Dietetics.options.muscleGain', 'Dietetics.options.jointComfort', 'Dietetics.options.skinHealth', 'Dietetics.options.womensWellness'];
+  concerns = ['Dietetics.options.bloating', 'Dietetics.options.reflux', 'Dietetics.options.constipation', 'Dietetics.options.hormonalIssues', 'Dietetics.options.kneeBackAche', 'Dietetics.options.stressCramps'];
+  familyHistoryOptions = ['Dietetics.options.diabetes', 'Dietetics.options.hypertension', 'Dietetics.options.heartDisease', 'Dietetics.options.ibsIbd', 'Dietetics.options.anaemia'];
 
   constructor(private fb: FormBuilder, private consultFormService: NutritionConsultService) {
     this.consultForm = this.fb.group({

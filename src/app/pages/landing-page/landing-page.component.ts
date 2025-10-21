@@ -11,10 +11,11 @@ import { FaqComponent } from '../../widgets/faq/faq.component';
 import { WhatsAppService } from '../../services/whatsapp.service';
 import { ScrollService } from '../../services/scroll.service';
 import { UUID } from 'crypto';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent],
+  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent, TranslatePipe],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
@@ -28,13 +29,26 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: object,
     private whatsappService: WhatsAppService,
     private router: Router,
-    private scrollService: ScrollService
+    private scrollService: ScrollService,
+    private translate: TranslateService
   ){
     // Only run auto-slide in browser environment
     if (isPlatformBrowser(this.platformId)) {
       // this.startAutoSlide();
     }
+    // this.getTranslatedTestimonies()
   }
+  // translatedTitle = ''
+  // loadTranslation() {
+  //   // Option 1: synchronous (returns instantly if already loaded)
+  //   // this.translatedTitle = this.translate.instant('demo.title');
+
+  //   // Option 2: async (useful if you switch languages dynamically)
+  //   // this.translate.get('Demo.title').subscribe((res: string) => {
+  //   //   this.translatedTitle = res;
+  //   // });
+  // }
+
   async navigateProductDetail(id: UUID){
     // console.log(this.route)
         try{
@@ -93,26 +107,34 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public testimonyData = [
     {
       id:1,
-      title: 'Fitness Enthusiast',
-      name: 'Carol Lee',
-      testimony: 'These nutrient rich soft pastilles helps your good bacteria in your gut to grow and stay strong. Your own probiotics help you better digest food and absorb important nutrients, can stop sugar cravings and even improve your mood.',
+      title: 'Landing.Testimony.testimony_1.title',
+      name: 'Landing.Testimony.testimony_1.name',
+      testimony: 'Landing.Testimony.testimony_1.description',
       image: 'https://via.placeholder.com/150/FF5733/FFFFFF?text=Jane',
     },
     {
       id:2,
-      title: 'Deputy Director, MOE',
-      name: 'Kathijah Ibrahim',
-      testimony: 'These soft pastilles are well formulated to help your body better absorb natural vitamin C, amino acids, dietary calcium and magnesium for muscle recovery and stronger bones. I also have improved joint flexibility and have less pain',
+      title: 'Landing.Testimony.testimony_2.title',
+      name: 'Landing.Testimony.testimony_2.name',
+      testimony: 'Landing.Testimony.testimony_2.description',
       image: 'https://via.placeholder.com/150/33FF57/FFFFFF?text=David',
     },
     {
       id:3,
-      title: 'Founder of OPIKA ORGANIC',
-      name: 'Selina Gan',
-      testimony: 'I feel the Omega 3, MCTs and B vitamins are easily and quickly absorbed in my mouth. I quickly get natural energy to rebound after workouts, recover from daily tiredness and also very much less brain fog.',
+      title: 'Landing.Testimony.testimony_3.title',
+      name: 'Landing.Testimony.testimony_3.name',
+      testimony: 'Landing.Testimony.testimony_2.description',
       image: 'https://via.placeholder.com/150/3357FF/FFFFFF?text=Emily',
     }
 ]
+
+// getTranslatedTestimonies() {
+//   return this.testimonyData.map(testimony => ({
+//     ...testimony,
+//     title: this.translate.instant(testimony.title),
+//     testimony: this.translate.instant(testimony.testimony)
+//   }));
+// }
 
   ngOnInit(): void {
     // Set the initial image when the component loads.

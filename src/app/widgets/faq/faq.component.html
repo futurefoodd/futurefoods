@@ -6,7 +6,7 @@
         (click)="toggleAccordion(i)"
         [attr.aria-expanded]="tab.isOpen"
         [attr.aria-controls]="'accordion-content-' + i">
-        {{ tab.title }}
+        {{ tab.title | translate }}
         <span class="accordion-icon" [class.open]="tab.isOpen">+</span>
       </button>
       <div 
@@ -15,7 +15,7 @@
         [id]="'accordion-content-' + i"
         [attr.aria-hidden]="!tab.isOpen">
         <div class="accordion-body">
-          <p class="m-0">{{ tab.content }}</p>
+          <p class="m-0">{{ tab.content | translate }}</p>
         </div>
       </div>
     </div>

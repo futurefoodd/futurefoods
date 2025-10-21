@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { inject } from '@angular/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-top-nav',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslatePipe],
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.scss'
 })
@@ -17,6 +20,12 @@ export class TopNavComponent {
   ];
   // @Input() isMenuOpen2: boolean = false;
   @Output() closeMenu = new EventEmitter<void>();
+
+  private translate = inject(TranslateService);
+
+  useLanguage(language: string): void {
+      this.translate.use(language);
+  }
 
   constructor(private elementRef: ElementRef) {}
   

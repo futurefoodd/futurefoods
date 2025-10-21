@@ -1,0 +1,293 @@
+{
+  "Button":{
+        "buyNow": "Beli Sekarang",
+        "learnMore": "Ketahui Lanjut"
+      },
+  
+      "Top-nav":{
+        "home":"Laman Utama",
+        "products":"Produk",
+        "R&D":"Penyelidikan & Pembangunan",
+        "dietetics":"Dietetik",
+        "dieteticsMenu":{
+          "nutritionFacts":"Fakta Pemakanan dan Dos",
+          "dualTherapy":"Terapi Dwi & Sinergi Nutrien",
+          "gutBrain":"Paksi Usus-Otak & Probiotik",
+          "bioTherapeutics":"Bio-Terapeutik dalam Neurodivergens",
+          "ketosis":"Ketosis Nutrisi",
+          "consult":"Permintaan untuk Konsultasi Pemakanan"
+        },
+        "upskill":"Tingkat Kemahiran",
+        "tour":"Jelajah"
+      },
+  
+      "Landing": {
+        "functionalClaims":"Tuntutan Fungsian",
+        "main_title_1": "Berasaskan Tumbuhan",
+        "main_title_2": "Fungsian",
+        "main_title_3": "Nutrisi Sedia Masa Depan",
+        "supportsGutProbiotics": {
+          "title": "Menyokong Probiotik Usus",
+          "description": "Pastil lembut ini memberi 'makanan' kepada probiotik usus anda untuk berkembang dan kekal kuat. Mikrob baik ini membantu anda mencerna makanan dan menyerap nutrien penting dengan lebih baik, memastikan sistem imun anda aktif, dan malah meningkatkan mood anda."
+        },
+        "strengthensMuscleJointsNails": {
+          "title": "Menguatkan Otot, Sendi & Kuku",
+          "description": "Pastil lembut yang diformulasikan secara klinikal ini membantu badan anda menyerap vitamin C, asid amino, polipeptida, dan kalsium diet semula jadi dengan lebih baik untuk pemulihan otot dan tulang yang lebih kuat. Pastil lembut ini juga telah dikaji untuk mengurangkan keradangan, sekaligus menyokong fleksibiliti sendi dan ligamen."
+        },
+        "higherEnergyCreatingBetterMood": {
+          "title": "Tenaga Lebih Tinggi Mencipta Mood Lebih Baik",
+          "description": "ALA Omega 3 Organik, MCT 8, MCT10 dan B-Kompleks dalam pastil lembut ini diserap dengan cepat di dalam mulut, memberikan anda lebih banyak tenaga semula jadi untuk pulih daripada keletihan, meningkatkan tumpuan dan mengurangkan kabus otak (brain fog). Pastil lembut ini mengandungi polifenol dengan manfaat anti-radang semula jadi, membantu badan anda pulih selepas berjalan atau bersenam setiap hari."
+        },
+        "Limitedtime":{
+          "limitedTimeOffer": "Tawaran Masa Terhad!",
+          "title": "Pro-Collagen Soft Pastilles",
+          "description":"Penyerapan nutrien yang lebih pantas, Membolehkan sintesis kolagen & elastin semula jadi, Menyuburkan probiotik usus, Mengurangkan sensitiviti kulit dan Menguatkan kuku, Keselesaan otot & sendi yang lebih baik, Melegakan luka mulut & kerengsaan tekak."
+        },
+        "Comparison":{
+          "title": "Apa yang dilakukan oleh pastil lembut ini untuk anda:",
+          "description": "Kelegahan yang lembut, berasaskan tumbuhan, dan direka untuk menyokong penyembuhan semula jadi kulit anda dari dalam. Tiada bahan kimia sintetik, hanya penjagaan kaya nutrien yang membantu kulit anda berseri membuatkan anda berasa yakin."
+        },
+        "Testimony":{
+          "title": "Testimoni Kami",
+          "testimony_1":{
+            "name":"Carol Lee",
+            "title":"Peminat Kecergasan",
+            "description": "Pastil lembut kaya nutrien ini membantu bakteria baik dalam usus anda untuk tumbuh dan kekal kuat. Probiotik anda sendiri membantu anda mencerna makanan dan menyerap nutrien penting dengan lebih baik, boleh menghentikan keinginan gula dan malah meningkatkan mood anda."
+          },
+          "testimony_2":{
+            "name":"Kathijah Ibrahim",
+            "title":"Timbalan Pengarah, KPM",
+            "description": "Pastil lembut ini diformulasikan dengan baik untuk membantu badan anda menyerap vitamin C semula jadi, asid amino, kalsium diet dan magnesium dengan lebih baik untuk pemulihan otot dan tulang yang lebih kuat. Saya juga telah meningkatkan fleksibiliti sendi dan kurang rasa sakit."
+          },
+          "testimony_3":{
+            "name":"Selina Gan",
+            "title":"Pengasas OPIKA ORGANIC",
+            "description": "Saya rasa Omega 3, MCTs dan vitamin B diserap dengan mudah dan cepat di dalam mulut saya. Saya cepat mendapat tenaga semula jadi untuk pulih selepas bersenam, pulih daripada keletihan harian dan juga kabus otak yang sangat kurang."
+        }
+      },
+        "FAQ": {
+            "title" : "Soalan Lazim",
+            "question_1":{
+              "question": "Adakah produk kami Halal?",
+              "answer": "Ya, setiap ramuan mempunyai sijil Halal tersendiri dan pensijilan Halal OEM untuk proses pengeluaran."
+            },
+            "question_2":{
+              "question": "Apakah Pro-Kolagen dalam pastil lembut?",
+              "answer": "Pastil lembut berasaskan buah yang lazat yang dibuat dengan adunan organik nutrien tumbuhan dan gelatin halal yang menyokong sintesis kolagen. Pastil lembut adalah sumber antioksidan Askorbat (Vitamin C) berasaskan tumbuhan dan sebatian anti-radang untuk membantu badan dan minda anda kekal aktif."
+            },
+            "question_3":{
+              "question": "Bagaimanakah pastil lembut ini membantu kulit sensitif / penuaan saya?",
+              "answer": "Pastil lembut kaya nutrien ini mengandungi asid amino semula jadi, glikoprotein, polifenol, dan askorbat (vitamin C diet) untuk mengurangkan sensitiviti kulit, menguatkan sendi dan kuku, dan menyokong pemulihan otot. Pastil lembut ini menggalakkan pengeluaran kolagen dan elastin semula jadi, membantu kulit anda berasa lebih pejal dengan cahaya yang lebih sihat."
+            },
+            "question_4":{
+              "question": "Apakah Paleo-Prebiotics®?",
+              "answer": "Ia adalah adunan unik gentian tumbuhan larut dan kanji resistan kuno yang memberi 'makanan' kepada bakteria baik usus anda, meningkatkan pencernaan, penyerapan nutrien, dan melancarkan pergerakan usus."
+            },
+            "question_5":{
+              "question": "Mengapakah MCT dimasukkan?",
+              "answer": "MCT C8 & C10 (daripada minyak kelapa dara) digabungkan dengan ALA=Omega 3 adalah lipid tenaga yang cepat mengisi semula tenaga badan dan otak anda, membuatkan anda aktif dan segar."
+            },
+            "question_6":{
+              "question": "Bagaimanakah saya patut mengambil pastil lembut ini?",
+              "answer": "Letakkan satu pastil lembut dua atau tiga kali sehari di bawah lidah anda untuk penyerapan yang lebih cepat, atau seperti yang dinasihatkan oleh doktor, kaunselor, ahli farmasi, atau pakar pemakanan anda."
+            },
+            "question_7":{
+              "question": "Adakah pastil lembut ini selamat untuk kegunaan harian?",
+              "answer": "Ya! Ia dibuat tanpa sebarang pewarna tiruan, pemanis, pengawet, atau bahan tambahan tersembunyi. Pastil lembut ini menggunakan Fruktan Nipa GI Rendah daripada Gula Apong Sarawak."
+            },
+            "question_8":{
+              "question": "Apakah rasa pastil lembut ini?",
+              "answer": "Ia mempunyai rasa buah semula jadi daripada bahan organik seperti roselle, plantain, gooseberry, dan soursop, menjadikannya enak diambil oleh kanak-kanak, dewasa aktif, dan warga emas."
+            },
+            "question_9":{
+              "question": "Bolehkah pastil lembut ini membantu dengan ketidakselesaan penuaan dan memenuhi tuntutan harian?",
+              "answer": "Ya! Adunan unik Vitamin C semula jadi, asid amino, glikoprotein, polifenol, dan ALA-Omega 3 berfungsi bersama (sinergi nutrien) untuk menyokong pemulihan otot, menguatkan kulit dan kuku, serta meningkatkan keselesaan dan fleksibiliti sendi; membantu anda berasa cergas dan bersedia untuk aktiviti harian."
+            },
+            "question_10":{
+              "question": "Adakah pastil lembut ini sesuai untuk kesejahteraan wanita?",
+              "answer": "Ya! Pastil lembut ini direka khas untuk menyokong kesejahteraan wanita; membantu meningkatkan tenaga dan mood, meningkatkan penghidratan kulit, menggalakkan keseimbangan hormon, dan memupuk daya hidup keseluruhan untuk anda yang cantik."
+            },
+            "question_11":{
+              "question": "Bagaimanakah saya patut menyimpan produk?",
+              "answer": "Simpan kotak pada atau di bawah 28°C, jauh dari cahaya matahari dan kelembapan untuk mengekalkan kesegaran."
+            },
+            "question_12":{
+              "question": "Di manakah pastil lembut ini dibuat?",
+              "answer": "Ia diformulasikan secara profesional dan dihasilkan di Malaysia oleh Utara Dietetics & Plant-Based Research dengan kerjasama pengeluar OEM yang disahkan HACCP dan Halal."
+            },
+            "question_13":{
+              "question": "Adakah pastil lembut ini mempunyai penarafan produk lima bintang?",
+              "answer": "Ya! Ulasan pelanggan bebas dan maklum balas pesakit kepada doktor secara konsisten menilai pastil lembut kami pada lima bintang, mencerminkan kepuasan tinggi dalam bidang seperti rasa, keberkesanan, sokongan kesejahteraan keseluruhan, dan nilai untuk wang."
+            }
+  
+          }
+      },
+      
+      "Footer": {
+        "feedYourBody":"Berikan badan anda makanan yang sepatutnya",
+        "quickLinks":"Pautan Pantas",
+        "quickLinksMenu":{
+          "home":"Laman Utama",
+          "products":"Produk",
+          "r&d":"P&P",
+          "tour": "Jelajah",
+          "dietetics":"Dietetik"
+        },
+        "clickForForm":"Klik di sini untuk borang!",
+        "allRightsReserved":"2025 Future Foods. Semua hak terpelihara."
+      },
+  
+      "ProductList": {
+        "ourProducts":"Produk Kami",
+        "familyWellness": {
+          "title": "Family Wellness",
+          "description": "Nutrisi Harian untuk Kesejahteraan Keluarga anda, kebaikan berasaskan tumbuhan yang direka untuk menyokong tuntutan harian dan gaya hidup aktif keluarga tersayang anda. Formula unik ini lebih daripada sekadar vitamin harian; ia adalah 'sinergi nutrien' untuk kesejahteraan keluarga anda. Kaya dengan antioksidan super semula jadi, ia membantu mengurangkan kerosakan yang disebabkan oleh alahan makanan dan pencemaran. Pastil Lembut Vegan ini menyuburkan dari dalam untuk probiotik usus yang lebih sihat. Formulasi gred perubatan kami membolehkan badan anda menggunakan nutrien utama seperti polifenol, asid amino, dan asid rantai pendek, MCT, dan Paleo-Prebiotics dengan cepat untuk hasil yang lebih pantas. Selain itu, Kesejahteraan Keluarga diukur dosnya, dengan itu menawarkan sokongan komprehensif untuk kesihatan fizikal anda. Rasai perbezaannya; 2 hingga 3 pastil lembut kebaikan setiap hari untuk Ibu, Ayah dan 2 pastil lembut untuk datuk dan nenek dan satu sehari untuk remaja dan cucu. Pastil lembut ini menyokong rutin harian keluarga yang menuntut, ia juga meningkatkan tahap tenaga dan mengimbangi mood. 'dengan Kesejahteraan Keluarga, anda melabur dalam pendekatan holistik terhadap nutrisi selamat untuk orang yang anda sayangi', Dr Ravi Akambaram, Pengamal Kesihatan Keluarga."
+        },
+        "veganSoftPastilles":{
+          "title":"Vegan Soft Pastilles, Glass Bottle with 60 pcs",
+          "description":"Sains Produk yang mendakwa nutrien tumbuhan berasaskan pektin berkepadatan tinggi, yang memberikan penyerapan dan pengisian semula tenaga yang lebih cepat dan untuk hasil yang benar-benar boleh anda rasai. Temui Sinergi Nutrien dengan Pastil Lembut Vegan yang lazat dan mudah cair di dalam mulut anda. Setiap pastil lembut yang lazat juga direka untuk meningkatkan cahaya semula jadi kulit anda, menjaga kuku anda sihat, dan menyokong keselesaan otot dan sendi yang lebih baik, supaya anda boleh bergerak dengan mudah dan yakin. 'pilihan yang boleh dipercayai jauh daripada kolagen berasaskan haiwan untuk perjalanan kesejahteraan harian anda', Dato Dr Nor Shahida, Penyelidik Klinikal.",
+          "vegan":"Vegan",
+          "functional":"Fungsian",
+          "futureReadyNutrition": "Nutrisi Sedia Masa Depan"
+        },
+        "nvc3":{
+          "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen)",
+          "description": "Temui era baharu pemakanan berasaskan tumbuhan dengan NVC3 Vegan Pro-Kolagen. Formula terobosan ini melangkaui suplemen biasa, menampilkan adunan berkepadatan tinggi bahan-bahan yang direka untuk menyokong daya hidup semula jadi badan anda. Infusi unik Paleo-Prebiotics, Nata De Coco dan Polipeptida Pro-Kolagen kami berfungsi dari dalam ke luar, menggalakkan anda yang seimbang dan berdaya tahan. Setiap hidangan diperkaya dengan nutrien utama seperti Vitamin C, B12, Quercetin, dan Zink untuk membantu anda berkembang maju. Apa yang membezakan NVC3 ialah penghantarannya dalam Air Bio-Resonance, satu proses yang memaksimumkan penyerapan setiap sebatian bermanfaat, memastikan anda mendapat manfaat maksimum daripada setiap tegukan. Alami rasa yang menyegarkan dan rasai perbezaannya sambil anda menggabungkan ritual harian ini ke dalam rutin kesejahteraan anda, sambil mengetahui bahawa anda memilih produk yang berkesan dan bersumberkan etika, yang dibanggakan buatan Malaysia."
+        },
+        "21Days":{
+          "title":"21‑Days Vegan Keto Meal",
+          "description": "Dari perspektif nutrisi klinikal, Makanan Keto Vegan 21 Hari mempunyai 5 gram gentian larut, 3 gram kanji resistan, 8 gram protein dan 3 gram MCT dan 1.1g ALA Omega 3 setiap hidangan 30+ gram, ia juga padat dengan paleo prebiotik, asid amino berasaskan tumbuhan, glikoprotein, sebatian vitamin, MCT, fitosterol, polifenol, kofaktor dan koenzim.",
+          "description2":"“Dr. Keshu berkongsi bahawa penggantian makanan berasaskan tumbuhan dan kaya nutrien ini adalah pilihan yang selamat dan menyokong untuk pemulihan, terutamanya bagi mereka yang hidup dengan gangguan metabolik.”"
+        },
+        "ancestralKeto":{
+          "title":"Ancestral Keto Diet Guide",
+          "description": "Jauh dari ‘diet keto berasaskan haiwan dan tenusu sepenuhnya’, Diet Keto Nenek Moyang adalah makanan keseluruhan kaya nutrien—biji-bijian kuno, yang ditanam melalui amalan organik, menyediakan badan kita dengan diet seimbang dan nutrien penting untuk mengawal fungsi pencernaan kita, menghentikan kenaikan berat badan dan menyembuhkan kerosakan tisu untuk kekal berdaya tahan. Doktor juga mengesyorkan penggantian makanan berasaskan tumbuhan dan padat nutrien ini sebagai pilihan selamat untuk individu yang pulih daripada jangkitan kronik dan selepas pembedahan.",
+          "description2":"‘’…merujuk kepada penyelidikan Allele Vegan di Cornell pada 2016, Biji-bijian Kuno adalah apa yang dimakan oleh nenek moyang kita untuk kekal teguh,” kata Dr Keshu, Pakar Pemakanan Penyelidikan Klinikal dengan Klinik Dietetik Utara & Penyelidikan Berasaskan Tumbuhan."
+        }
+  
+      },
+  
+      "ProductDetail": {
+        "veganSoftPastilles": {
+          "title": "Pastil Lembut Vegan",
+          "description": "Pastil Lembut Vegan, Botol Kaca dengan 60 biji"
+        }
+      },
+      "Tour":{
+      "header":"Jelajah",
+      "subHeader": "Loji Formulasi Makanan Fungsian | FSSC ISO22000"
+    },
+      "Dietetics": {
+        "title": "PERMOHONAN KONSULTASI NUTRISI",
+        "sections": {
+          "lifestyleHabits": "Gaya Hidup & Tabiat",
+          "wellnessGoals": "Matlamat Kesejahteraan",
+          "additionalInfo": "Maklumat Tambahan"
+        },
+        "form": {
+          "name": "Nama",
+          "age": "Umur",
+          "contact": "Nombor Telefon",
+          "email": "Emel",
+          "sex": "Jantina",
+          "male": "Lelaki",
+          "female": "Perempuan",
+          "height": "Tinggi (cm)",
+          "weight": "Berat (kg)",
+          "country": "Negara",
+          "dailyActivityLevel": "Tahap Aktiviti Harian",
+          "exerciseRoutine": "Rutin Senaman",
+          "exerciseFrequency": "Kekerapan Senaman",
+          "jobDemands": "Tuntutan atau Bahaya Kerja",
+          "sleepHours": "Jam Tidur Biasa Semalam",
+          "smokingVaping": "Merokok | Vaping",
+          "alcoholConsumption": "Pengambilan Alkohol",
+          "dietaryPatterns": "Corak Pemakanan",
+          "eatingStyle": "Gaya Makan Biasa",
+          "waterIntake": "Pengambilan Air Harian",
+          "snacks": "Kopi / Teh / Minuman Manis / Snek",
+          "primaryGoal": "Matlamat Utama",
+          "secondaryGoals": "Matlamat Sekunder",
+          "specificConcerns": "Kebimbangan Khusus",
+          "supplements": "Suplemen yang Diambil Masa Kini",
+          "familyHistory": "Sejarah Kesihatan Keluarga",
+          "recentHospitalisation": "Kemasukan Hospital Terkini",
+          "yearlyScreening": "Saringan Perubatan Tahunan",
+          "foodAllergy": "Alahan Makanan",
+          "medication": "Sedang Mengambil Ubat",
+          "recentTravel": "Perjalanan Luar Negara Terkini",
+          "submit": "Hantar"
+        },
+        "options": {
+          "sedentary": "Tidak Aktif (<2000 langkah)",
+          "moderate": "Sederhana (5000 langkah)",
+          "active": "Aktif (10000 langkah)",
+          "weekends": "Hujung Minggu",
+          "threeTimesWeek": "3 kali seminggu",
+          "daily": "Harian",
+          "none": "Tiada",
+          "social": "Sosial",
+          "habitual": "Tabiat",
+          "fourHours": "4 jam",
+          "sixHours": "6 jam",
+          "eightHours": "8 jam",
+          "twoThreeGlasses": "2–3 gelas",
+          "fourSixGlasses": "4–6 gelas",
+          "eightTenGlasses": "8–10 gelas",
+          "whenStressed": "Bila Stres",
+          "often": "Kerap",
+          "sometimes": "Kadang-kadang",
+          "rarely": "Jarang",
+          "beer": "Bir",
+          "wine": "Wain",
+          "liquor": "Minuman Keras",
+          "coffee": "Kopi",
+          "tea": "Teh",
+          "sugaryDrinks": "Minuman Manis",
+          "snacks": "Snek",
+          "briskWalk": "Jalan Cepat",
+          "yoga": "Yoga",
+          "gymWorkout": "Senaman Gim",
+          "swimming": "Berenang",
+          "hiking": "Mendaki",
+          "nightShift": "Giliran Malam",
+          "cleaningServices": "Perkhidmatan Pembersihan",
+          "frequentDeadlines": "Tarikh Akhir Kerap",
+          "engineServices": "Perkhidmatan Enjin/Pembinaan",
+          "na": "Tidak Berkaitan",
+          "omad": "Satu Makan Sehari (OMAD)",
+          "weeklyFasting": "Puasa Berselang Mingguan",
+          "mealsAfter8pm": "Makan Selepas 8 Malam",
+          "biggerCarbs": "Makan Dengan Bahagian Karbohidrat Lebih Besar",
+          "vegetarian": "Vegetarian",
+          "vegan": "Vegan",
+          "omnivore": "Omnivor",
+          "keto": "Keto",
+          "fastFood": "Makanan Segera",
+          "weightLoss": "Penurunan Berat Badan",
+          "gutHealth": "Kesihatan Usus & Pergerakan Usus Biasa",
+          "energyBoost": "Peningkatan Tenaga",
+          "muscleGain": "Peningkatan Otot",
+          "jointComfort": "Keselesaan Sendi",
+          "skinHealth": "Kesihatan Kulit",
+          "womensWellness": "Kesejahteraan Wanita & Kecantikan",
+          "bloating": "Kembung",
+          "reflux": "Refluks",
+          "constipation": "Sembelit",
+          "hormonalIssues": "Masalah Hormon",
+          "kneeBackAche": "Sakit Lutut & Belakang",
+          "stressCramps": "Stres & Kekejangan",
+          "diabetes": "Diabetes",
+          "hypertension": "Hipertensi",
+          "heartDisease": "Penyakit Jantung",
+          "ibsIbd": "IBS / IBD",
+          "anaemia": "Anemia"
+        },
+        "privacyNote": {
+          "text": "Dengan mengklik Hantar, anda mengakui bahawa anda telah membaca dan bersetuju dengan",
+          "privacyPolicy": "Dasar Privasi",
+          "and": "dan data peribadi anda akan diproses mengikut",
+          "pdpa": "Akta Perlindungan Data Peribadi 2010 (PDPA)"
+        }
+      }
+    }

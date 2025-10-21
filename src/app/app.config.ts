@@ -1,7 +1,7 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection, provideAppInitializer, inject} from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {provideTranslateService, provideTranslateLoader} from "@ngx-translate/core";
+import {TranslateService, provideTranslateService, provideTranslateLoader} from "@ngx-translate/core";
 import {provideTranslateHttpLoader} from "@ngx-translate/http-loader";
 import {provideHttpClient} from "@angular/common/http";
 
@@ -17,13 +17,17 @@ export const appConfig: ApplicationConfig = {
     }
 }),
 provideHttpClient(),
-    provideTranslateService({
-      loader: provideTranslateHttpLoader({
-        prefix: '/assets/i18n/',
-        suffix: '.json'
-      }),
-      fallbackLang: 'en',
-      lang: 'en'
-    })
+provideTranslateService({
+  loader: provideTranslateHttpLoader({
+    prefix: '/i18n/',
+    suffix: '.json'
+  }),
+  fallbackLang: 'en',
+  lang: 'en'
+}),
+provideAppInitializer(() => {
+  const  translate = inject(TranslateService);
+  translate.use(translate.getBrowserLang() || "en");
+})
   ]
 };

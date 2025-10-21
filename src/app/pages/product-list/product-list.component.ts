@@ -5,6 +5,8 @@ import { UUID } from 'crypto';
 import { RequestService } from '../../services/requestService.service';
 import { ScrollService } from '../../services/scroll.service';
 import { environment } from '../../../environments/environment';
+import { TranslatePipe } from '@ngx-translate/core';
+
 
 type Product = {
   id: string;
@@ -17,7 +19,7 @@ type Product = {
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslatePipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })

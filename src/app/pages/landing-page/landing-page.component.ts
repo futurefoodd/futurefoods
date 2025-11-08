@@ -20,10 +20,6 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
-  quantity=0;
-  // slides: any[] = new Array(3).fill({ id: -1, src: '', title: '', subtitle: '' });
-  private autoSlideInterval: any;
-  // private readonly slideInterval = 7000; // 5 seconds between slides
   
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
@@ -32,22 +28,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     private scrollService: ScrollService,
     private translate: TranslateService
   ){
-    // Only run auto-slide in browser environment
-    if (isPlatformBrowser(this.platformId)) {
-      // this.startAutoSlide();
-    }
-    // this.getTranslatedTestimonies()
   }
-  // translatedTitle = ''
-  // loadTranslation() {
-  //   // Option 1: synchronous (returns instantly if already loaded)
-  //   // this.translatedTitle = this.translate.instant('demo.title');
-
-  //   // Option 2: async (useful if you switch languages dynamically)
-  //   // this.translate.get('Demo.title').subscribe((res: string) => {
-  //   //   this.translatedTitle = res;
-  //   // });
-  // }
 
   async navigateProductDetail(id: UUID){
     // console.log(this.route)
@@ -68,30 +49,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
           console.error('There was a problem navigating to product-detail/:id:', err);
         }
       }
-  // logos = [
-  //   { text: 'Google', logo: 'assets/logos/google.png' },
-  //   { text: 'Microsoft', logo: 'assets/logos/microsoft.svg' },
-  //   { text: 'Amazon', logo: 'assets/logos/amazon.svg' },
-  //   { text: 'Apple', logo: 'assets/logos/apple.svg' },
-  //   { text: 'Meta', logo: 'assets/logos/meta.svg' },
-  //   { text: 'Netflix', logo: 'assets/logos/netflix.svg' }
-  // ];
-
-  // For the infinite carousel effect
-  // get duplicatedLogos() {
-  //   return [...this.logos, ...this.logos, ...this.logos];
-  // }
-  // selectedProduct: string = 'productA';
-  // products = {
-  //   productA: {
-  //     title: 'Product A',
-  //     image: '2_box_deal.png'
-  //   },
-  //   productB: {
-  //     title: 'Product B',
-  //     image: '1_box_deal.png'
-  //   }
-  // };
 
 
   public images: string[] = [
@@ -128,22 +85,12 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     }
 ]
 
-// getTranslatedTestimonies() {
-//   return this.testimonyData.map(testimony => ({
-//     ...testimony,
-//     title: this.translate.instant(testimony.title),
-//     testimony: this.translate.instant(testimony.testimony)
-//   }));
-// }
-
   ngOnInit(): void {
     // Set the initial image when the component loads.
     this.updateImage();
   }
 
   ngOnDestroy(): void {
-    // Clean up the interval when component is destroyed
-    // this.stopAutoSlide();
   }
 
   /**
@@ -160,7 +107,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public nextSlide(): void {
     this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
     this.updateImage();
-    // this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
 
   /**
@@ -170,7 +116,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public prevSlide(): void {
     this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
     this.updateImage();
-    // this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
 
   /**
@@ -180,55 +125,29 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public goToSlide(index: number): void {
     this.currentImageIndex = index;
     this.updateImage();
-    // this.resetAutoSlide(); // Reset auto-slide timer when manually navigating
   }
-
-  /**
-   * Starts the auto-slide functionality
-   */
-  // private startAutoSlide(): void {
-  //   this.autoSlideInterval = setInterval(() => {
-  //     this.nextSlide();
-  //   }, this.slideInterval);
-  // }
-
-  /**
-   * Stops the auto-slide functionality
-   */
-  // private stopAutoSlide(): void {
-  //   if (this.autoSlideInterval) {
-  //     clearInterval(this.autoSlideInterval);
-  //     this.autoSlideInterval = null;
-  //   }
-  // }
-
-  /**
-   * Resets the auto-slide timer
-   */
-  // private resetAutoSlide(): void {
-  //   this.stopAutoSlide();
-  //   this.startAutoSlide();
-  // }
-
-  /**
-   * Pauses auto-slide when user hovers over the slideshow
-   */
-  // public onSlideshowHover(): void {
-  //   this.stopAutoSlide();
-  // }
-
-  // /**
-  //  * Resumes auto-slide when user stops hovering over the slideshow
-  //  */
-  // public onSlideshowLeave(): void {
-  //   this.startAutoSlide();
-  // }
 
   /**
    * Opens WhatsApp for product inquiry
    */
   public openWhatsApp(): void {
     this.whatsappService.openWhatsApp('landing');
+  }
+
+  /**
+   * Opens WhatsApp for single product purchase
+   */
+  public openWhatsAppSingleProduct(): void {
+    const message = 'Hello! I\'m interested in purchasing 1 Pro-Collagen Soft Pastilles box (RM150.00). Can you help me complete my order?';
+    this.whatsappService.openWhatsApp('landing', message);
+  }
+
+  /**
+   * Opens WhatsApp for two products purchase (best value)
+   */
+  public openWhatsAppTwoProducts(): void {
+    const message = 'Hello! I\'m interested in purchasing 2 Pro-Collagen Soft Pastilles boxes (RM240.00 - Best Value Offer). Can you help me complete my order?';
+    this.whatsappService.openWhatsApp('landing', message);
   }
 
 }

@@ -2,14 +2,11 @@ import { Component, OnInit, model, ViewChild, ElementRef, PLATFORM_ID, inject } 
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
-import { RequestService } from '../../services/requestService.service';
 import {FormsModule} from '@angular/forms'
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
 import { productImage } from '../../core/model/product.model';
-import { CartService } from '../../services/cartService.service';
 import { WhatsAppService } from '../../services/whatsapp.service';
 import { environment } from '../../../environments/environment';
-import { ProductService } from '../../services/productService.service';
 
 
 // type productImage = {
@@ -32,14 +29,7 @@ export class ProductDetailComponent implements OnInit {
   @ViewChild('modalImage') modalImage!: ElementRef<HTMLImageElement>;
   @ViewChild('caption') caption!: ElementRef<HTMLDivElement>;
   private platformId = inject(PLATFORM_ID);
-  // product: any = undefined
   product: any = { 0: { name: '', price: '', description_1: '', description_2: '', status: 'sale' } };
-  // Form model for template-driven form
-  nutrients:any
-  quantity:number = 1
-
-  Math = Math;
-
   imageObject: productImage[] = []
 
   baseUrl:string = environment.apiHost
@@ -50,10 +40,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute, 
-    private requestService:RequestService, 
-    private cartService:CartService,
-    private whatsappService: WhatsAppService,
-    private productService: ProductService 
+    private whatsappService: WhatsAppService
   ) {
 
   }
@@ -71,20 +58,13 @@ export class ProductDetailComponent implements OnInit {
         }
         const product= await response.json()
         this.product = product.result
-        this.getNutrientTableData()
+
         this.nutrientsTableImage = this.product[0].name + '.png'
-        // Set default status if not provided
+
         if (this.product && this.product[0] && !this.product[0].status) {
           this.product[0].status = 'available';
         }
         
-        // Demo: Uncomment one of these lines to test different statuses
-        // this.product[0].status = 'out-of-stock';
-        // this.product[0].status = 'sale';
-        // this.product[0].status = 'coming-soon';
-        
-        // console.log(this.product[0])
-        // const response = await this.requestService.requestHelper(`/products/getProduct/${productId}`, "GET")
        this.createImageObject()
       this.productSpecification =this.createKeyValue(this.product[0].product_specification)
       }else{
@@ -132,7 +112,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   createImageObject():void{
- 
     for (let i = 0; i < this.product[0].image.length; i += 2) {
       const thumbnailImageSrc = this.product[0].image[i];
       const itemImageSrc = this.product[0].image[i + 1];
@@ -143,52 +122,11 @@ export class ProductDetailComponent implements OnInit {
           alt: null,
           title: null
       });
-
-  }
-  // console.log(this.imageObject)
-  }
-
- 
-  async getNutrientTableData(){
-    try{
-    const response = await this.productService.getNutrientsData(this.product[0]?.id)
-
-    if (!response.success){
-      console.warn('Failed to load nutrients data:', response.result);
-      return;
     }
-    this.nutrients = response.result;
-    console.log('Nutrients:', this.nutrients);
-    }catch(error){
-      console.error('Unexpected error in nutrientTable():', error);
-    }
-  }
-
-  async getNutrientTableHeader(){
-    
-  }
-
-  openModal(event: MouseEvent) {
-    const target = event.target as HTMLImageElement;
-    this.modalImage.nativeElement.src = target.src;
-    this.caption.nativeElement.textContent = target.alt;
-    this.modalVisible = true;
   }
 
   closeModal() {
     this.modalVisible = false
-  }
-
-  addToCart(form:any) {
-    const response = this.cartService.addToCart(this.product?.[0].id, this.quantity)
-    console.log(response)
-    console.log('Adding to cart:', this.quantity);
-    // Add your cart logic here
-  }
-
-  buyNow() {
-    console.log('Buying now:', this.quantity);
-    // Add your buy now logic here
   }
 
   /**
@@ -197,11 +135,135 @@ export class ProductDetailComponent implements OnInit {
   openWhatsApp(): void {
     if (this.product && this.product[0]) {
       const productName = this.product[0].name;
-      const productPrice = this.product[0].price ? `RM${this.product[0].price}` : undefined;
+      const productPrice = this.getFormattedPrice();
       this.whatsappService.openProductInquiry(productName, productPrice);
     } else {
       this.whatsappService.openWhatsApp('product');
     }
+  }
+
+  /**
+   * Opens WhatsApp for single product purchase (special offer)
+   */
+  openWhatsAppSingleProduct(): void {
+    if (this.product && this.product[0]) {
+      const productName = this.product[0].name;
+      const price = this.getSingleProductTotal();
+      const message = `Hello! I'm interested in purchasing 1 ${productName} box (${price}). Can you help me complete my order?`;
+      this.whatsappService.openWhatsApp('product', message);
+    } else {
+      this.whatsappService.openWhatsApp('product');
+    }
+  }
+
+  /**
+   * Opens WhatsApp for two products purchase (best value offer)
+   */
+  openWhatsAppTwoProducts(): void {
+    if (this.product && this.product[0]) {
+      const productName = this.product[0].name;
+      const total = this.getTwoProductTotal();
+      const message = `Hello! I'm interested in purchasing 2 ${productName} boxes (${total} - Best Value Offer). Can you help me complete my order?`;
+      this.whatsappService.openWhatsApp('product', message);
+    } else {
+      this.whatsappService.openWhatsApp('product');
+    }
+  }
+
+
+  hasPromo(){
+   return this.product && this.product[0] && this.product[0].promo_price ? true : false;
+  }
+
+  /**
+   * Formats a price number to always show 2 decimal places with RM prefix
+   * @param price - The price value (number or string)
+   * @returns Formatted price string (e.g., "RM120.00", "RM15.50")
+   */
+  formatPrice(price: number | string | undefined | null): string {
+    if (price === undefined || price === null || price === '') {
+      return 'RM0.00';
+    }
+    const numPrice = typeof price === 'string' ? parseFloat(price.trim()) : price;
+    if (isNaN(numPrice) || numPrice < 0) {
+      return 'RM0.00';
+    }
+    return `RM${numPrice.toFixed(2)}`;
+  }
+
+  /**
+   * Gets the formatted single product price per unit
+   */
+  getSingleProductPrice(): string {
+    if (!this.product || !this.product[0]) {
+      return 'RM0.00';
+    }
+    return this.formatPrice(this.product[0].price);
+  }
+
+  /**
+   * Gets the formatted total for single product purchase
+   */
+  getSingleProductTotal(): string {
+    if (!this.product || !this.product[0]) {
+      return 'RM0.00';
+    }
+    return this.formatPrice(this.product[0].price);
+  }
+
+  /**
+   * Gets the formatted promo price per unit for two products
+   */
+  getTwoProductPricePerUnit(): string {
+    if (!this.product || !this.product[0] || !this.product[0].promo_price) {
+      return 'RM0.00';
+    }
+    return this.formatPrice(this.product[0].promo_price);
+  }
+
+  /**
+   * Gets the formatted total for two products (promo price * 2)
+   */
+  getTwoProductTotal(): string {
+    if (!this.product || !this.product[0] || !this.product[0].promo_price) {
+      return 'RM0.00';
+    }
+    const total = this.product[0].promo_price * 2;
+    return this.formatPrice(total);
+  }
+
+  /**
+   * Gets the formatted original total for two products (regular price * 2)
+   */
+  getTwoProductOriginalTotal(): string {
+    if (!this.product || !this.product[0]) {
+      return 'RM0.00';
+    }
+    const total = this.product[0].price * 2;
+    return this.formatPrice(total);
+  }
+
+  /**
+   * Gets the formatted savings amount (original total - promo total)
+   */
+  getSavingsAmount(): string {
+    if (!this.product || !this.product[0] || !this.product[0].promo_price) {
+      return 'RM0.00';
+    }
+    const originalTotal = this.product[0].price * 2;
+    const promoTotal = this.product[0].promo_price * 2;
+    const savings = originalTotal - promoTotal;
+    return this.formatPrice(savings);
+  }
+
+  /**
+   * Gets the formatted regular price for non-promo products
+   */
+  getFormattedPrice(): string {
+    if (!this.product || !this.product[0]) {
+      return 'RM0.00';
+    }
+    return this.formatPrice(this.product[0].price);
   }
 
   /**

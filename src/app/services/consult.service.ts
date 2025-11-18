@@ -73,10 +73,26 @@ export class NutritionConsultService {
             snack_types: values.snackGroup?.types ?? [],
             snack_frequency: values.snackGroup?.frequency ?? null,
 
+            // Food Choices
+            breakfast_food_choices: values.breakfastFoodChoices,
+            lunch_food_choices: values.lunchFoodChoices,
+            dinner_supper_time: values.dinnerSupperTime,
+            dinner_food_choices: values.dinnerFoodChoices,
+            water_beverages_per_day: values.waterBeveragesPerDay,
+            cooking_oils: values.cookingOils,
+            milk_non_dairy_consumption: values.milkNonDairyConsumption,
+            hours_after_breakfast_hungry: values.hoursAfterBreakfastHungry,
+
             // Wellness Goals
             primary_goal: values.primaryGoal,
             secondary_goals: values.secondaryGoals ?? [],
             specific_concerns: values.specificConcerns ?? [],
+            
+            // Health & Symptoms
+            low_energy_tired: values.lowEnergyTired,
+            constipation_loose_motion: values.constipationLooseMotion,
+            pain_discomfort_parts: values.painDiscomfortParts ?? [],
+            symptoms_frequency: values.symptomsFrequency ?? [],
 
             // Additional Info
             supplements: values.supplements,
@@ -88,6 +104,11 @@ export class NutritionConsultService {
             food_allergy: !!values.foodAllergy,
             medication: !!values.medication,
             recent_travel: !!values.recentTravel,
+
+            // Medical Tests & History
+            basic_urine_observation: values.basicUrineObservation || null,
+            full_blood_urine_test_date: values.fullBloodUrineTestDate,
+            date_of_hospitalisation: values.dateOfHospitalisation,
 
             //user_id
             user_id:currentUser.id

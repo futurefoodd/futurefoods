@@ -60,7 +60,7 @@
       <label>{{'Dietetics.form.exerciseRoutine' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let routine of exerciseOptions">
-          <input type="checkbox" [value]="routine" (change)="onCheckboxChange($event, 'exerciseRoutine')" />
+          <input type="checkbox" [value]="routine" [checked]="isCheckboxSelected('exerciseRoutine', routine)" (change)="onCheckboxChange($event, 'exerciseRoutine')" />
           {{ routine | translate }}
         </label>
       </div>
@@ -76,7 +76,7 @@
       <label>{{'Dietetics.form.jobDemands' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let job of jobOptions">
-          <input type="checkbox" [value]="job" (change)="onCheckboxChange($event, 'jobDemands')" />
+          <input type="checkbox" [value]="job" [checked]="isCheckboxSelected('jobDemands', job)" (change)="onCheckboxChange($event, 'jobDemands')" />
           {{ job | translate }}
         </label>
       </div>
@@ -99,7 +99,7 @@
       <ng-container formGroupName="alcoholGroup">
         <div class="checkbox-group" style="margin-bottom: 0px;">
           <label *ngFor="let item of alcohol">
-            <input type="checkbox" [value]="item" (change)="onCheckboxChange($event, 'alcoholGroup.types')" />
+            <input type="checkbox" [value]="item" [checked]="isCheckboxSelected('alcoholGroup.types', item)" (change)="onCheckboxChange($event, 'alcoholGroup.types')" />
             {{ item | translate }}
           </label>
         </div>
@@ -113,7 +113,7 @@
       <label>{{'Dietetics.form.dietaryPatterns' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let pattern of dietPatterns">
-          <input type="checkbox" [value]="pattern" (change)="onCheckboxChange($event, 'dietaryPatterns')" />
+          <input type="checkbox" [value]="pattern" [checked]="isCheckboxSelected('dietaryPatterns', pattern)" (change)="onCheckboxChange($event, 'dietaryPatterns')" />
           {{ pattern | translate }}
         </label>
       </div>
@@ -121,7 +121,7 @@
       <label>{{'Dietetics.form.eatingStyle' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let style of eatingStyles">
-          <input type="checkbox" [value]="style" (change)="onCheckboxChange($event, 'eatingStyle')" />
+          <input type="checkbox" [value]="style" [checked]="isCheckboxSelected('eatingStyle', style)" (change)="onCheckboxChange($event, 'eatingStyle')" />
           {{ style | translate }}
         </label>
       </div>
@@ -137,7 +137,7 @@
     <ng-container formGroupName="snackGroup">
       <div class="checkbox-group" style="margin-bottom: 0px;">
         <label *ngFor="let snack of snacks">
-          <input type="checkbox" [value]="snack" (change)="onCheckboxChange($event, 'snackGroup.types')" />
+          <input type="checkbox" [value]="snack" [checked]="isCheckboxSelected('snackGroup.types', snack)" (change)="onCheckboxChange($event, 'snackGroup.types')" />
           {{ snack | translate }}
         </label>
       </div>
@@ -148,6 +148,73 @@
         <label><input type="radio" value="Rarely" formControlName="frequency" /> {{'Dietetics.options.rarely' | translate}}</label>
       </div>
     </ng-container>
+
+      <!-- Food Choices Section -->
+      <h3>{{'Dietetics.sections.foodChoices' | translate}}</h3>
+
+      <label>{{'Dietetics.form.breakfastFoodChoices' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let choice of breakfastFoodChoices">
+          <input type="radio" [value]="choice" formControlName="breakfastFoodChoices" />
+          {{ choice | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.lunchFoodChoices' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let choice of lunchFoodChoices">
+          <input type="radio" [value]="choice" formControlName="lunchFoodChoices" />
+          {{ choice | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.dinnerSupperTime' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of dinnerSupperTimeOptions">
+          <input type="radio" [value]="option" formControlName="dinnerSupperTime" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.dinnerFoodChoices' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let choice of dinnerFoodChoices">
+          <input type="radio" [value]="choice" formControlName="dinnerFoodChoices" />
+          {{ choice | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.waterBeveragesPerDay' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of waterBeveragesPerDayOptions">
+          <input type="radio" [value]="option" formControlName="waterBeveragesPerDay" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.cookingOils' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of cookingOilsOptions">
+          <input type="radio" [value]="option" formControlName="cookingOils" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.milkNonDairyConsumption' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of milkNonDairyOptions">
+          <input type="radio" [value]="option" formControlName="milkNonDairyConsumption" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.hoursAfterBreakfastHungry' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of hoursAfterBreakfastHungryOptions">
+          <input type="radio" [value]="option" formControlName="hoursAfterBreakfastHungry" />
+          {{ option | translate }}
+        </label>
+      </div>
   
       <!-- Wellness Goals -->
       <h3>{{'Dietetics.sections.wellnessGoals' | translate}}</h3>
@@ -162,7 +229,7 @@
       <label>{{'Dietetics.form.secondaryGoals' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let goal of secondaryGoals">
-          <input type="checkbox" [value]="goal" (change)="onCheckboxChange($event, 'secondaryGoals')" />
+          <input type="checkbox" [value]="goal" [checked]="isCheckboxSelected('secondaryGoals', goal)" (change)="onCheckboxChange($event, 'secondaryGoals')" />
           {{ goal | translate }}
         </label>
       </div>
@@ -170,8 +237,40 @@
       <label>{{'Dietetics.form.specificConcerns' | translate}}:<span style="color: red;">*</span></label>
       <div class="checkbox-group">
         <label *ngFor="let concern of concerns">
-          <input type="checkbox" [value]="concern" (change)="onCheckboxChange($event, 'specificConcerns')" />
+          <input type="checkbox" [value]="concern" [checked]="isCheckboxSelected('specificConcerns', concern)" (change)="onCheckboxChange($event, 'specificConcerns')" />
           {{ concern | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.lowEnergyTired' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of lowEnergyTiredOptions">
+          <input type="radio" [value]="option" formControlName="lowEnergyTired" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.constipationLooseMotion' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of constipationLooseMotionOptions">
+          <input type="radio" [value]="option" formControlName="constipationLooseMotion" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.painDiscomfortParts' | translate}}:<span style="color: red;">*</span></label>
+      <div class="checkbox-group">
+        <label *ngFor="let part of painDiscomfortPartsOptions">
+          <input type="checkbox" [value]="part" (change)="onCheckboxChange($event, 'painDiscomfortParts')" />
+          {{ part | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.symptomsFrequency' | translate}}:<span style="color: red;">*</span></label>
+      <div class="checkbox-group">
+        <label *ngFor="let symptom of symptomsFrequencyOptions">
+          <input type="checkbox" [value]="symptom" (change)="onCheckboxChange($event, 'symptomsFrequency')" />
+          {{ symptom | translate }}
         </label>
       </div>
   
@@ -194,6 +293,30 @@
       <label><input type="checkbox" formControlName="foodAllergy" /> {{'Dietetics.form.foodAllergy' | translate}}</label>
       <label><input type="checkbox" formControlName="medication" /> {{'Dietetics.form.medication' | translate}}</label>
       <label><input type="checkbox" formControlName="recentTravel" /> {{'Dietetics.form.recentTravel' | translate}}</label>
+
+      <label>{{'Dietetics.form.basicUrineObservation' | translate}}:</label>
+      <div class="radio-group">
+        <label *ngFor="let option of basicUrineObservationOptions">
+          <input type="radio" [value]="option" formControlName="basicUrineObservation" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.fullBloodUrineTestDate' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of fullBloodUrineTestDateOptions">
+          <input type="radio" [value]="option" formControlName="fullBloodUrineTestDate" />
+          {{ option | translate }}
+        </label>
+      </div>
+
+      <label>{{'Dietetics.form.dateOfHospitalisation' | translate}}:<span style="color: red;">*</span></label>
+      <div class="radio-group">
+        <label *ngFor="let option of dateOfHospitalisationOptions">
+          <input type="radio" [value]="option" formControlName="dateOfHospitalisation" />
+          {{ option | translate }}
+        </label>
+      </div>
 
       <p class="privacy-note">
   {{ 'Dietetics.privacyNote.text' | translate }}

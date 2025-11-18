@@ -20,12 +20,35 @@
         "upskill":"Tingkat Kemahiran",
         "tour":"Jelajah"
       },
+
+      "Upskill": {
+        "eyebrow": "Dipercayai oleh Pengamal Perubatan Fungsian dan Kaunselor Kesihatan",
+        "title": "Tingkatkan kemahiran pasukan anda dengan sains nutrisi berasaskan tumbuhan",
+        "subtitle": "Forum untuk profesional penjagaan kesihatan, penjaga, pakar diet, pakar nutrisi sukan, dan peminat kesihatan/kesejahteraan.",
+        "videoSection": {
+          "heading": "Kebersihan Mulut",
+          "description": "Dapatkan kisah ringkas bagaimana Future Foods menyokong klinik, sekolah, dan program kesihatan komuniti dengan nutrisi fungsional berasaskan tumbuhan dan disokong bukti.",
+          "videoTitle": "Tingkatkan Kemahiran dengan Future Foods"
+        },
+        "highlights": {
+          "heading": "Apa yang anda akan pelajari"
+        },
+        "expertise": {
+          "title": "Wawasan formulasi klinikal",
+          "description": "Fahami sumber bahan, pengesahan klinikal, dan sinergi nutrien yang menggerakkan pastil lembut vegan kami."
+        },
+        "results": {
+          "title": "Hasil pesakit & pelajar",
+          "description": "Lihat bagaimana rakan kongsi kami menggunakan program ini untuk meningkatkan perhatian, peraturan mood, dan daya tahan metabolik."
+        },
+        "partnership": {
+          "title": "Buku panduan pelaksanaan",
+          "description": "Akses kit permulaan, dek pendidikan, dan langkah-langkah pengenalan untuk mengaktifkan kurikulum dalam masa kurang dari 30 minit."
+        }
+      },
   
       "Landing": {
         "functionalClaims":"Tuntutan Fungsian",
-        "main_title_1": "Berasaskan Tumbuhan",
-        "main_title_2": "Fungsian",
-        "main_title_3": "Nutrisi Sedia Masa Depan",
         "supportsGutProbiotics": {
           "title": "Menyokong Probiotik Usus",
           "description": "Pastil lembut ini memberi 'makanan' kepada probiotik usus anda untuk berkembang dan kekal kuat. Mikrob baik ini membantu anda mencerna makanan dan menyerap nutrien penting dengan lebih baik, memastikan sistem imun anda aktif, dan malah meningkatkan mood anda."
@@ -124,7 +147,7 @@
       },
       
       "Footer": {
-        "feedYourBody":"Berikan badan anda makanan yang sepatutnya",
+        "feedYourBody":"'Nutrisi Atas Permintaan' (atau 'Nutrisi Ikut Keperluan') Beri tenaga kepada gaya hidup aktif anda dengan makanan bioaktif yang direka untuk keperluan fungsian dan usus yang sihat.",
         "quickLinks":"Pautan Pantas",
         "quickLinksMenu":{
           "home":"Laman Utama",
@@ -151,7 +174,7 @@
           "futureReadyNutrition": "Nutrisi Sedia Masa Depan"
         },
         "nvc3":{
-          "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen)",
+          "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen Drink)",
           "description": "Temui era baharu pemakanan berasaskan tumbuhan dengan NVC3 Vegan Pro-Kolagen. Formula terobosan ini melangkaui suplemen biasa, menampilkan adunan berkepadatan tinggi bahan-bahan yang direka untuk menyokong daya hidup semula jadi badan anda. Infusi unik Paleo-Prebiotics, Nata De Coco dan Polipeptida Pro-Kolagen kami berfungsi dari dalam ke luar, menggalakkan anda yang seimbang dan berdaya tahan. Setiap hidangan diperkaya dengan nutrien utama seperti Vitamin C, B12, Quercetin, dan Zink untuk membantu anda berkembang maju. Apa yang membezakan NVC3 ialah penghantarannya dalam Air Bio-Resonance, satu proses yang memaksimumkan penyerapan setiap sebatian bermanfaat, memastikan anda mendapat manfaat maksimum daripada setiap tegukan. Alami rasa yang menyegarkan dan rasai perbezaannya sambil anda menggabungkan ritual harian ini ke dalam rutin kesejahteraan anda, sambil mengetahui bahawa anda memilih produk yang berkesan dan bersumberkan etika, yang dibanggakan buatan Malaysia."
         },
         "21Days":{
@@ -281,7 +304,9 @@
           "hypertension": "Hipertensi",
           "heartDisease": "Penyakit Jantung",
           "ibsIbd": "IBS / IBD",
-          "anaemia": "Anemia"
+          "anaemia": "Anemia",
+          "agent": "Agen",
+          "doctor": "Doktor"
         },
         "privacyNote": {
           "text": "Dengan mengklik Hantar, anda mengakui bahawa anda telah membaca dan bersetuju dengan",

@@ -22,11 +22,34 @@
       "tour":"Tour"
     },
 
+    "Upskill": {
+      "eyebrow": "Trusted by Functional Medicine Practitioners and Health Counsellors",
+      "title": "Upskill your team with plant-based nutrition science",
+      "subtitle": "A forum for healthcare professionals, caregivers, dieticians, sports nutritionist and wellness enthusiast.",
+      "videoSection": {
+        "heading": "Oral Hygiene",
+        "description": "Get the distilled story of how Future Foods supports clinics, schools, and community health programmes with plant-based, evidence-backed functional nutrition.",
+        "videoTitle": "Upskill with Future Foods"
+      },
+      "highlights": {
+        "heading": "What you will learn"
+      },
+      "expertise": {
+        "title": "Clinical formulation insights",
+        "description": "Understand the ingredient sourcing, clinical validation, and nutrient synergy that power our vegan soft pastilles."
+      },
+      "results": {
+        "title": "Patient & learner outcomes",
+        "description": "See how our partners deploy the programme to improve attention, mood regulation, and metabolic resilience."
+      },
+      "partnership": {
+        "title": "Implementation playbooks",
+        "description": "Access starter kits, education decks, and onboarding steps to activate the curriculum in under 30 minutes."
+      }
+    },
+
     "Landing": {
       "functionalClaims":"Functional Claims",
-      "main_title_1": "Plant-Based",
-      "main_title_2": "Functional",
-      "main_title_3": "Future-Ready Nutrition",
       "supportsGutProbiotics": {
         "title": "Supports Gut Probiotics",
         "description": "These soft pastilles feed your gut probiotics to grow and stay strong. These good microbes help you better digest food and absorb essential nutrients, keep your immune system active, and even improve your mood."
@@ -124,7 +147,7 @@
     },
     
     "Footer": {
-      "feedYourBody":"Feed your body the food you deserves.",
+      "feedYourBody":"'Nutrition on Demand' Fuel your active lifestyle with bioactive foods designed for functional needs and a healthy gut.",
       "quickLinks":"Quick Links",
       "quickLinksMenu":{
         "home":"Home",
@@ -151,7 +174,7 @@
         "futureReadyNutrition": "Future-Ready Nutrition"
       },
       "nvc3":{
-        "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen)",
+        "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen Drink)",
         "description": "Discover a new era of plant-based nourishment with NVC3 Vegan Pro-Collagen. This groundbreaking formula goes beyond ordinary supplements, featuring a high-density blend of ingredients designed to support your body's natural vitality. Our unique infusion of Paleo-Prebiotics, Nata De Coco and Pro-Collagen Polypeptides work from the inside out, promoting a balanced and resilient you. Each serving is enriched with key nutrients like Vitamin C, B12, Quercetin, and Zinc to help you thrive. What sets NVC3 apart is its delivery in Bio-Resonance Water, a process that maximizes the absorption of every beneficial compound, ensuring you get the most out of each sip. Experience the refreshing taste and feel the difference as you incorporate this daily ritual into your wellness routine, all while knowing you're choosing a product that is both effective and ethically sourced, proudly made in Malaysia."
       },
       "21Days":{
@@ -197,6 +220,7 @@
         "height": "Height (cm)",
         "weight": "Weight (kg)",
         "country": "Country",
+        "referredBy": "Referred By",
         "dailyActivityLevel": "Daily Activity Level",
         "exerciseRoutine": "Exercise Routine",
         "exerciseFrequency": "Exercise Frequency",
@@ -283,7 +307,9 @@
         "hypertension": "Hypertension",
         "heartDisease": "Heart Disease",
         "ibsIbd": "IBS / IBD",
-        "anaemia": "Anaemia"
+        "anaemia": "Anaemia",
+        "agent": "Agent",
+        "doctor": "Doctor"
       },
       "privacyNote": {
         "text": "By clicking Submit, you acknowledge that you have read and agree to our",

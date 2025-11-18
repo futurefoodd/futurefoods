@@ -1,0 +1,152 @@
+:host {
+  display: block;
+}
+
+.video-player {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.video-player__wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: radial-gradient(circle at top, rgba(93, 121, 45, 0.35), rgba(10, 82, 71, 0.8));
+  border-radius: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 32px 50px rgba(10, 82, 71, 0.25);
+  }
+}
+
+.video-player__wrapper--playing {
+  background: #000;
+}
+
+.video-player__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.video-player__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(23, 43, 66, 0.7), rgba(14, 91, 55, 0.75));
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(61, 255, 164, 0.75);
+    outline-offset: 4px;
+  }
+
+  &:disabled {
+    cursor: wait;
+  }
+}
+
+.video-player__overlay--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-player__play-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(96px, 12vw, 140px);
+  height: clamp(96px, 12vw, 140px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffcb47, #ff5f2d);
+  box-shadow: 0 18px 32px rgba(255, 95, 45, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  svg {
+    width: 58%;
+    height: 58%;
+    fill: #ffffff;
+
+    circle {
+      fill: none;
+    }
+  }
+
+  polygon {
+    transform: translateX(6%);
+  }
+
+  &:hover {
+    transform: scale(1.06);
+    box-shadow: 0 24px 40px rgba(255, 95, 45, 0.45);
+  }
+}
+
+.video-player__overlay--loading {
+  pointer-events: none;
+  cursor: wait;
+}
+
+.video-player__spinner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #ff5f2d;
+  animation: spin 1s linear infinite;
+}
+
+.video-player__error {
+  margin-top: 12px;
+  color: #ff5f2d;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.video-player__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-player__play-button {
+    width: clamp(72px, 22vw, 110px);
+    height: clamp(72px, 22vw, 110px);
+  }
+
+  .video-player__spinner {
+    width: 52px;
+    height: 52px;
+  }
+}
+

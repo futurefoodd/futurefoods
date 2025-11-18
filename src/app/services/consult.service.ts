@@ -28,18 +28,14 @@ export class NutritionConsultService {
     try {
     
       const currentUser = await this.userService.getCurrentUser()
-      // console.log(currentUser.id)
 
       
       const { data: { user } } = await this.supabase.auth.getUser();
-      console.log('Current user:', user?.id);
 
       const result= await this.supabase.rpc('get_uid');
-      console.log("Server auth.uid():", result.data);
 
       
 
-      console.log('comparison', user?.id === result.data)
 
       const { data, error } = await this.supabase
         .from('nutrition_consultations')
@@ -54,6 +50,7 @@ export class NutritionConsultService {
             height_cm: values.height,
             weight_kg: values.weight,
             country: values.country,
+            referred_by: values.referredBy,
 
             // Lifestyle & Habits
             activity_level: values.activityLevel,

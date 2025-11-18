@@ -20,12 +20,36 @@
           "upskill":"提升技能",
           "tour":"参观"
         },
+
+        
+        "Upskill": {
+          "eyebrow": "受到功能医学医师和健康顾问的信赖",
+          "title": "通过植物性营养科学提升您的团队技能",
+          "subtitle": "一个面向医疗保健专业人员、护理人员、营养师、运动营养师和健康爱好者的论坛",
+          "videoSection": {
+           "heading": "口腔卫生",
+            "description": "了解Future Foods如何通过基于植物、有证据支持的功能性营养，为诊所、学校和社区健康项目提供支持的精髓故事。",
+            "videoTitle": "通过Future Foods提升技能"
+          },
+          "highlights": {
+            "heading": "您将学到什么"
+          },
+          "expertise": {
+            "title": "临床配方洞察",
+            "description": "了解我们素食软糖的成分来源、临床验证和营养协同作用。"
+          },
+          "results": {
+            "title": "患者与学习者成果",
+            "description": "了解我们的合作伙伴如何部署该计划以改善注意力、情绪调节和代谢弹性。"
+          },
+          "partnership": {
+            "title": "实施操作手册",
+            "description": "获取入门工具包、教育演示文稿和入职步骤，可在30分钟内启动课程。"
+          }
+        },
     
         "Landing": {
           "functionalClaims":"功能声称",
-          "main_title_1": "植物基",
-          "main_title_2": "功能性",
-          "main_title_3": "未来就绪营养",
           "supportsGutProbiotics": {
             "title": "支持肠道益生菌",
             "description": "这些软糖为您的肠道益生菌提供“食物”，使其生长并保持强壮。这些有益微生物帮助您更好地消化食物和吸收必需营养素，保持您的免疫系统活跃，甚至改善您的情绪。"
@@ -124,7 +148,7 @@
         },
         
         "Footer": {
-          "feedYourBody":"为您的身体提供应有的滋养",
+          "feedYourBody":"“即时营养” 以专为功能性需求和健康肠道设计的生物活性食物，为您的积极生活方式加油",
           "quickLinks":"快速链接",
           "quickLinksMenu":{
             "home":"主页",
@@ -151,7 +175,7 @@
             "futureReadyNutrition": "未来就绪营养"
           },
           "nvc3":{
-            "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen)",
+            "title":"NVC3 Paleo-Prebiotics (Sakura Pro-Collagen Drink)",
             "description": "通过 NVC3 Vegan Pro-Collagen 探索植物基营养的新时代。这种突破性配方超越了普通的补充剂，具有高密度成分混合物，旨在支持您身体的天然活力。我们独特的 Paleo-Prebiotics、Nata De Coco 和 Pro-Collagen Polypeptides 注入物从内到外发挥作用，促进均衡和有活力的您。每份都富含维生素 C、B12、槲皮素和锌等关键营养素，帮助您茁壮成长。NVC3 的独特之处在于它通过生物共振水输送，这个过程最大限度地提高了每种有益化合物的吸收，确保您从每一口中获得最大益处。体验清爽的口感并感受不同，将这种日常仪式纳入您的健康习惯中，同时知道您正在选择一款有效且符合道德采购的马来西亚制造产品。"
           },
           "21Days":{
@@ -282,7 +306,9 @@
                   "hypertension": "高血压",
                   "heartDisease": "心脏病",
                   "ibsIbd": "IBS / IBD",
-                  "anaemia": "贫血"
+                  "anaemia": "贫血",
+                  "agent": "代理人",
+                  "doctor": "医生"
                 },
                 "privacyNote": {
                   "text": "点击“提交”即表示您已阅读并同意我们的",

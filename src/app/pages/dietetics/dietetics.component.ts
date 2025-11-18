@@ -18,6 +18,10 @@ export class DieteticsComponent {
   snacks = ['Dietetics.options.coffee', 'Dietetics.options.tea','Dietetics.options.sugaryDrinks', 'Dietetics.options.snacks']
   exerciseOptions = ['Dietetics.options.briskWalk', 'Dietetics.options.yoga', 'Dietetics.options.gymWorkout', 'Dietetics.options.swimming', 'Dietetics.options.hiking', 'Dietetics.options.none'];
   jobOptions = ['Dietetics.options.nightShift', 'Dietetics.options.cleaningServices', 'Dietetics.options.frequentDeadlines', 'Dietetics.options.engineServices', 'Dietetics.options.na'];
+  referredByOptions = [
+    'Dietetics.options.agent',
+    'Dietetics.options.doctor'
+  ];
   dietPatterns = [
     'Dietetics.options.omad',
     'Dietetics.options.weeklyFasting',
@@ -40,6 +44,7 @@ export class DieteticsComponent {
       height: ['', Validators.required],
       weight: ['', Validators.required],
       country: ['', Validators.required],
+      referredBy:['', Validators.required],
       activityLevel: ['', Validators.required],
       exerciseRoutine: [[], Validators.required],
       exerciseFrequency: ['', Validators.required],
@@ -84,11 +89,8 @@ export class DieteticsComponent {
   }
 
   async onSubmit() {
-    console.log(this.consultForm.valid)
     if(this.consultForm.valid){
-      console.log(this.consultForm.value);
       const result = await this.consultFormService.submitConsultForm(this.consultForm.value)
-      console.log(result)
       if(result.success){
         alert('Form submitted!');
         this.consultForm.reset()

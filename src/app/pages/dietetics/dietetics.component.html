@@ -37,6 +37,14 @@
   
         <label>{{'Dietetics.form.country' | translate}}:<span style="color: red;">*</span></label>
         <input type="text" formControlName="country" />
+
+        <label>{{'Dietetics.form.referredBy' | translate}}:<span style="color: red;">*</span></label>
+        <div class="radio-group">
+          <label *ngFor="let option of referredByOptions">
+            <input type="radio" [value]="option" formControlName="referredBy" />
+            {{ option | translate }}
+          </label>
+        </div>
       </div>
   
       <!-- Lifestyle & Habits -->

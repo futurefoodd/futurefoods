@@ -1,0 +1,55 @@
+<div class="video-player" [attr.aria-label]="description">
+  <div class="video-player__wrapper" [class.video-player__wrapper--playing]="isPlaying">
+    <video
+      #videoEl
+      class="video-player__video"
+      loading="lazy"
+      [attr.poster]="poster || null"
+      [attr.preload]="preload"
+      [attr.title]="title"
+      [muted]="muted"
+      [loop]="loop"
+      [playsInline]="playsInline"
+      [controls]="isPlaying && showControls"
+      (play)="handleVideoPlay()"
+      (pause)="handleVideoPause()"
+      (ended)="handleVideoEnded()"
+      (error)="handleVideoError()"
+    >
+      <ng-container *ngIf="shouldRenderSources">
+        <source *ngFor="let source of sources" [src]="source.src" [type]="source.type || 'video/mp4'" />
+      </ng-container>
+      Your browser does not support the video tag.
+    </video>
+
+    <button
+      type="button"
+      class="video-player__overlay"
+      [class.video-player__overlay--hidden]="isPlaying"
+      [class.video-player__overlay--loading]="isLoading"
+      (click)="handlePlayRequest()"
+      [attr.aria-pressed]="isPlaying"
+      [disabled]="isLoading"
+    >
+      <span class="video-player__sr-only">
+        {{ isPlaying ? 'Pause video' : 'Play video' }}
+      </span>
+      <ng-container *ngIf="!isLoading">
+        <span class="video-player__play-button" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false">
+            <circle cx="32" cy="32" r="31" />
+            <polygon points="26,20 48,32 26,44" />
+          </svg>
+        </span>
+      </ng-container>
+      <ng-container *ngIf="isLoading">
+        <span class="video-player__spinner" aria-hidden="true"></span>
+      </ng-container>
+    </button>
+  </div>
+
+  <p class="video-player__error" *ngIf="playbackError">
+    {{ playbackError }}
+  </p>
+</div>
+

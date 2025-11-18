@@ -77,9 +77,12 @@
         </div>
       </div>
     } @else {
-      <p class="product-price">{{getFormattedPrice()}}</p>
+      <p class="product-price">{{getFormattedPrice()}}<span>@if(unitQuantity){
+        /{{unitQuantity}}
+      }
+       {{unitName}}</span> </p>
     }
-
+    <span></span>
     <div class="product-description-wrapper" [class.expanded]="expanded">
       <h2>{{ product[0].description_title_1 }}</h2>
       <p class="product-description">

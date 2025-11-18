@@ -1,0 +1,47 @@
+<section class="upskill-hero">
+  <div class="upskill-container">
+    <div class="upskill-hero__content">
+      <span class="upskill-eyebrow">{{ 'Upskill.eyebrow' | translate }}</span>
+      <h1 class="upskill-title">
+        {{ 'Upskill.title' | translate }}
+      </h1>
+      <p class="upskill-subtitle">
+        {{ 'Upskill.subtitle' | translate }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="upskill-video">
+  <div class="upskill-container">
+    <div class="upskill-video__header">
+      <h2>{{ 'Upskill.videoSection.heading' | translate }}</h2>
+      <!-- <p>{{ 'Upskill.videoSection.description' | translate }}</p> -->
+    </div>
+
+    <app-video-player
+      class="upskill-video__player"
+      [title]="'Upskill.videoSection.videoTitle' | translate"
+      [poster]="videoPoster"
+      [sources]="videoSources"
+      preload="none"
+      [muted]="false"
+      [loop]="false"
+      [showControls]="true"
+    ></app-video-player>
+
+  </div>
+</section>
+
+<!-- <section class="upskill-highlights">
+  <div class="upskill-container">
+    <h2>{{ 'Upskill.highlights.heading' | translate }}</h2>
+    <div class="upskill-highlights__grid">
+      <article class="upskill-highlights__item" *ngFor="let highlight of highlights">
+        <h3>{{ highlight.title | translate }}</h3>
+        <p>{{ highlight.description | translate }}</p>
+      </article>
+    </div>
+  </div>
+</section> -->
+

@@ -37,6 +37,10 @@ export class ProductDetailComponent implements OnInit {
   productSpecification:any
 
   nutrientsTableImage: any
+  expanded = false;
+
+  unitName:string= "box"
+  unitQuantity:string = ''
 
   constructor(
     private activatedRoute: ActivatedRoute, 
@@ -67,6 +71,7 @@ export class ProductDetailComponent implements OnInit {
         
        this.createImageObject()
       this.productSpecification =this.createKeyValue(this.product[0].product_specification)
+      this.setUnitQuantity = '12'
       }else{
         this.product = undefined
       }
@@ -79,7 +84,15 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
-  expanded = false;
+
+  set setUnitQuantity(quantity: string){
+    if(this.product[0]?.name =="Sakura Pro Collagen Drink") {
+      this.unitName='Bottles'
+      this.unitQuantity= quantity
+    }
+  }
+
+
 
   toggle() {
     this.expanded = !this.expanded;

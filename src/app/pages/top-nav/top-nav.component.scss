@@ -605,7 +605,13 @@ body {
 }
 
 // Responsive adjustments for dietetics dropdown
+@media (min-width: 769px) {
+  .language-mobile {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
+  
   .dietetics-dropdown {
     position: static;
   }

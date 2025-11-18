@@ -59,7 +59,7 @@
             </a>
           </div>
         </div>
-        <a routerLink="/" class="nav-link">{{'Top-nav.upskill' | translate}}</a>
+        <a routerLink="/upskill" class="nav-link">{{'Top-nav.upskill' | translate}}</a>
         <a routerLink="/tour" class="nav-link">{{'Top-nav.tour' | translate}}</a>
         <div class="flex language">
 
@@ -75,6 +75,14 @@
           </svg>
           <span class="cart-count" *ngIf="items.length > 0">{{ items.length }}</span>
         </a> -->
+      </div>
+      <div class="flex language-mobile">
+
+        <a (click)="useLanguage('en')" class="nav-link cursor-pointer">EN</a>
+        |
+        <a (click)="useLanguage('bm')" class="nav-link cursor-pointer">BM</a>
+        |
+        <a (click)="useLanguage('ch')" class="nav-link cursor-pointer">CN</a>
       </div>
 
       <div class="nav-toggle" (click)="toggleMenu()">

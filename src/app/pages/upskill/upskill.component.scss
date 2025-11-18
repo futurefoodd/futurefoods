@@ -1,0 +1,131 @@
+.upskill-container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.upskill-hero {
+  padding: clamp(96px, 18vw, 140px) 0 clamp(64px, 12vw, 120px);
+  background: linear-gradient(135deg, rgba(93, 121, 45, 0.12), rgba(10, 82, 71, 0.25));
+  color: #0a5247;
+
+  .upskill-title {
+    font-size: clamp(2.75rem, 6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #0a5247;
+  }
+
+  .upskill-subtitle {
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
+    max-width: 540px;
+    color: rgba(10, 82, 71, 0.75);
+  }
+}
+
+.upskill-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 95, 45, 0.12);
+  color: #ff5f2d;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.upskill-video {
+  padding: clamp(56px, 12vw, 96px) 0;
+  background: #fbf5ed;
+
+  .upskill-video__header {
+    text-align: center;
+    margin-bottom: clamp(32px, 6vw, 48px);
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      color: #0a5247;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: rgba(10, 82, 71, 0.75);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+  }
+
+  .upskill-video__player {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .upskill-video__caption {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: rgba(54, 74, 66, 0.8);
+    font-size: 0.95rem;
+  }
+}
+
+.upskill-highlights {
+  padding: clamp(64px, 14vw, 120px) 0 clamp(72px, 16vw, 140px);
+  background: linear-gradient(180deg, rgba(10, 82, 71, 0.08), transparent);
+
+  h2 {
+    text-align: center;
+    font-size: clamp(2.1rem, 5vw, 2.9rem);
+    color: #0a5247;
+    margin-bottom: clamp(32px, 6vw, 48px);
+  }
+
+  .upskill-highlights__grid {
+    display: grid;
+    gap: clamp(20px, 4vw, 32px);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .upskill-highlights__item {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: clamp(24px, 5vw, 32px);
+    box-shadow: 0 20px 35px rgba(10, 82, 71, 0.08);
+    border: 1px solid rgba(93, 121, 45, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: #0a5247;
+    }
+
+    p {
+      color: rgba(54, 74, 66, 0.75);
+      line-height: 1.6;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 45px rgba(10, 82, 71, 0.15);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .upskill-hero {
+    text-align: center;
+
+    .upskill-subtitle {
+      margin: 0 auto;
+    }
+  }
+
+  .upskill-video__caption {
+    padding: 0 1rem;
+  }
+}
+

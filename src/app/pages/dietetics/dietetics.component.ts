@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NutritionConsultService } from '../../services/consult.service';
+import { DetailedConsultService } from '../../services/detailed-consult.service';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
@@ -12,6 +13,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class DieteticsComponent {
   consultForm: FormGroup;
+  detailedForm: FormGroup;
+  activeTab: 'basic' | 'detailed' = 'basic';
 
   // options
   alcohol = ['Dietetics.options.beer', 'Dietetics.options.wine','Dietetics.options.liquor', 'Dietetics.options.none']
@@ -33,104 +36,109 @@ export class DieteticsComponent {
   secondaryGoals = ['Dietetics.options.muscleGain', 'Dietetics.options.jointComfort', 'Dietetics.options.skinHealth', 'Dietetics.options.womensWellness'];
   concerns = ['Dietetics.options.bloating', 'Dietetics.options.reflux', 'Dietetics.options.constipation', 'Dietetics.options.hormonalIssues', 'Dietetics.options.kneeBackAche', 'Dietetics.options.stressCramps'];
   familyHistoryOptions = ['Dietetics.options.diabetes', 'Dietetics.options.hypertension', 'Dietetics.options.heartDisease', 'Dietetics.options.ibsIbd', 'Dietetics.options.anaemia'];
-  
-  // New question options
-  breakfastFoodChoices = [
-    'Dietetics.options.breakfastToastButter',
-    'Dietetics.options.breakfastHamBaconEggs',
-    'Dietetics.options.breakfastPancakesHashBrowns',
-    'Dietetics.options.breakfastProteinShakesOats',
-    'Dietetics.options.breakfastFreshFruits',
-    'Dietetics.options.breakfastBlackCoffeeMilo',
-    'Dietetics.options.breakfastNoodlesNasiLemak'
+
+  // Detailed form options
+  breakfastOptions = [
+    'Dietetics.detailedForm.options.breakfastToast',
+    'Dietetics.detailedForm.options.breakfastHam',
+    'Dietetics.detailedForm.options.breakfastPancakes',
+    'Dietetics.detailedForm.options.breakfastProtein',
+    'Dietetics.detailedForm.options.breakfastFruits',
+    'Dietetics.detailedForm.options.breakfastCoffee',
+    'Dietetics.detailedForm.options.breakfastNoodles'
   ];
-  lunchFoodChoices = [
-    'Dietetics.options.lunchCarbsMeat',
-    'Dietetics.options.lunchTubersVegetables',
-    'Dietetics.options.lunchNasiKandarNoodles',
-    'Dietetics.options.lunchProteinShakesOats',
-    'Dietetics.options.lunchSoupsCongee'
+  lunchOptions = [
+    'Dietetics.detailedForm.options.lunchCarbs',
+    'Dietetics.detailedForm.options.lunchTubers',
+    'Dietetics.detailedForm.options.lunchNasiKandar',
+    'Dietetics.detailedForm.options.lunchProtein',
+    'Dietetics.detailedForm.options.lunchSoups'
   ];
-  dinnerSupperTimeOptions = [
-    'Dietetics.options.dinnerBefore6pmSupper10pm',
-    'Dietetics.options.dinnerBefore8pmNoSupper',
-    'Dietetics.options.dinnerAfter8pm',
-    'Dietetics.options.skipDinner'
+  dinnerTimeOptions = [
+    'Dietetics.detailedForm.options.dinnerTimeEarly',
+    'Dietetics.detailedForm.options.dinnerTimeBefore8',
+    'Dietetics.detailedForm.options.dinnerTimeAfter8',
+    'Dietetics.detailedForm.options.dinnerTimeSkip'
   ];
-  dinnerFoodChoices = [
-    'Dietetics.options.dinnerCarbsMeatNoodles',
-    'Dietetics.options.dinnerVegeMushroomsSoups',
-    'Dietetics.options.dinnerSoupsSeafood',
-    'Dietetics.options.dinnerBreadBiscuitsSandwiches',
-    'Dietetics.options.dinnerProteinShakesOatsMilk',
-    'Dietetics.options.dinnerMixSaladsFreshFruit'
+  dinnerOptions = [
+    'Dietetics.detailedForm.options.dinnerCarbs',
+    'Dietetics.detailedForm.options.dinnerVege',
+    'Dietetics.detailedForm.options.dinnerSeafood',
+    'Dietetics.detailedForm.options.dinnerBread',
+    'Dietetics.detailedForm.options.dinnerProtein',
+    'Dietetics.detailedForm.options.dinnerSalads'
   ];
-  waterBeveragesPerDayOptions = [
-    'Dietetics.options.waterMoreThan5Cups',
-    'Dietetics.options.waterMoreThan3CupsBeverages',
-    'Dietetics.options.waterMoreThan3CupsAlkaline'
+  waterBeveragesOptions = [
+    'Dietetics.detailedForm.options.waterMore5',
+    'Dietetics.detailedForm.options.waterBeverages3',
+    'Dietetics.detailedForm.options.waterAlkaline'
   ];
-  lowEnergyTiredOptions = [
-    'Dietetics.options.lowEnergyMorning',
-    'Dietetics.options.lowEnergyAfter5pm',
-    'Dietetics.options.lowEnergySleepyAfterNoon',
-    'Dietetics.options.lowEnergyUnableToSleep'
+  lowEnergyOptions = [
+    'Dietetics.detailedForm.options.energyMorning',
+    'Dietetics.detailedForm.options.energyAfter5',
+    'Dietetics.detailedForm.options.energySleepy',
+    'Dietetics.detailedForm.options.energySleep'
   ];
-  constipationLooseMotionOptions = [
-    'Dietetics.options.constipationDaily',
-    'Dietetics.options.constipationThriceWeekly',
-    'Dietetics.options.constipationSuddenSpells'
+  constipationOptions = [
+    'Dietetics.detailedForm.options.constipationDaily',
+    'Dietetics.detailedForm.options.constipationThrice',
+    'Dietetics.detailedForm.options.constipationSudden'
   ];
-  cookingOilsOptions = [
-    'Dietetics.options.cookingOilsCoconutSesame',
-    'Dietetics.options.cookingOilsCanolaSunflower'
+  cookingOilOptions = [
+    'Dietetics.detailedForm.options.oilCoconut',
+    'Dietetics.detailedForm.options.oilCanola'
   ];
-  milkNonDairyOptions = [
-    'Dietetics.options.milkInCoffeeTea',
-    'Dietetics.options.nonDairyCreamer',
-    'Dietetics.options.threeInOneBeverage',
-    'Dietetics.options.glassWarmMilk'
+  milkConsumptionOptions = [
+    'Dietetics.detailedForm.options.milkCoffee',
+    'Dietetics.detailedForm.options.milkCreamer',
+    'Dietetics.detailedForm.options.milk3in1',
+    'Dietetics.detailedForm.options.milkBed'
   ];
-  hoursAfterBreakfastHungryOptions = [
-    'Dietetics.options.hungryLessThan4Hours',
-    'Dietetics.options.hungryBetween7And8Hours',
-    'Dietetics.options.hungryCoffeeBreak10am'
+  hungerAfterBreakfastOptions = [
+    'Dietetics.detailedForm.options.hungerLess4',
+    'Dietetics.detailedForm.options.hunger7to8',
+    'Dietetics.detailedForm.options.hungerCoffee'
   ];
-  painDiscomfortPartsOptions = [
-    'Dietetics.options.painJoints',
-    'Dietetics.options.painNeckShoulder',
-    'Dietetics.options.painLowerLimbs',
-    'Dietetics.options.painBackGroin',
-    'Dietetics.options.painRibCage'
+  painDiscomfortOptions = [
+    'Dietetics.detailedForm.options.painJoints',
+    'Dietetics.detailedForm.options.painNeck',
+    'Dietetics.detailedForm.options.painLimbs',
+    'Dietetics.detailedForm.options.painBack',
+    'Dietetics.detailedForm.options.painRib'
   ];
-  symptomsFrequencyOptions = [
-    'Dietetics.options.symptomPainBelly',
-    'Dietetics.options.symptomMotionAfterEating',
-    'Dietetics.options.symptomConstipation',
-    'Dietetics.options.symptomHeartburnReflux',
-    'Dietetics.options.symptomNauseaVomiting',
-    'Dietetics.options.symptomDifficultToSwallow',
-    'Dietetics.options.symptomHungerPangsThirsty',
-    'Dietetics.options.symptomBadBreathBodyOdour'
+  symptomsOptions = [
+    'Dietetics.detailedForm.options.symptomBelly',
+    'Dietetics.detailedForm.options.symptomMotion',
+    'Dietetics.detailedForm.options.symptomConstipation',
+    'Dietetics.detailedForm.options.symptomHeartburn',
+    'Dietetics.detailedForm.options.symptomNausea',
+    'Dietetics.detailedForm.options.symptomSwallow',
+    'Dietetics.detailedForm.options.symptomHunger',
+    'Dietetics.detailedForm.options.symptomBreath'
   ];
-  basicUrineObservationOptions = [
-    'Dietetics.options.urineYellowDarkYellow',
-    'Dietetics.options.urineFoamySweetSmell',
-    'Dietetics.options.urineFoulSmell',
-    'Dietetics.options.urineRegularClear'
+  urineObservationOptions = [
+    'Dietetics.detailedForm.options.urineYellow',
+    'Dietetics.detailedForm.options.urineFoamy',
+    'Dietetics.detailedForm.options.urineSweet',
+    'Dietetics.detailedForm.options.urineFoul'
   ];
-  fullBloodUrineTestDateOptions = [
-    'Dietetics.options.testRecently',
-    'Dietetics.options.test6MonthsAgo',
-    'Dietetics.options.testMoreThan1Year'
+  bloodUrineTestOptions = [
+    'Dietetics.detailedForm.options.testRecently',
+    'Dietetics.detailedForm.options.test6Months',
+    'Dietetics.detailedForm.options.test1Year'
   ];
-  dateOfHospitalisationOptions = [
-    'Dietetics.options.hospitalisationRecently',
-    'Dietetics.options.hospitalisation6MonthsAgo',
-    'Dietetics.options.hospitalisationMoreThan1Year'
+  hospitalisationDateOptions = [
+    'Dietetics.detailedForm.options.hospitalRecently',
+    'Dietetics.detailedForm.options.hospital6Months',
+    'Dietetics.detailedForm.options.hospital1Year',
+    'Dietetics.detailedForm.options.hospitalRegular'
   ];
 
-  constructor(private fb: FormBuilder, private consultFormService: NutritionConsultService) {
+  constructor(
+    private fb: FormBuilder, 
+    private consultFormService: NutritionConsultService,
+    private detailedConsultService: DetailedConsultService
+  ) {
     this.consultForm = this.fb.group({
       name: ['', Validators.required],
       age: ['', Validators.required],
@@ -169,22 +177,26 @@ export class DieteticsComponent {
       foodAllergy: [false],
       medication: [false],
       recentTravel: [false],
-      // New form fields
-      breakfastFoodChoices: ['', Validators.required],
-      lunchFoodChoices: ['', Validators.required],
-      dinnerSupperTime: ['', Validators.required],
-      dinnerFoodChoices: ['', Validators.required],
-      waterBeveragesPerDay: ['', Validators.required],
-      lowEnergyTired: ['', Validators.required],
-      constipationLooseMotion: ['', Validators.required],
-      cookingOils: ['', Validators.required],
-      milkNonDairyConsumption: ['', Validators.required],
-      hoursAfterBreakfastHungry: ['', Validators.required],
-      painDiscomfortParts: [[], Validators.required],
-      symptomsFrequency: [[], Validators.required],
-      basicUrineObservation: [''],
-      fullBloodUrineTestDate: ['', Validators.required],
-      dateOfHospitalisation: ['', Validators.required],
+    });
+
+    // Detailed form
+    this.detailedForm = this.fb.group({
+      breakfastChoice: [''],
+      lunchChoice: [''],
+      dinnerTime: [''],
+      dinnerChoice: [''],
+      waterBeverages: [''],
+      lowEnergy: [''],
+      constipation: [''],
+      cookingOil: [''],
+      milkConsumption: [''],
+      hungerAfterBreakfast: [''],
+      painDiscomfort: [''],
+      symptoms: [''],
+      urineObservation: [''],
+      bloodUrineTest: [''],
+      hospitalisationDate: [''],
+      urineFrequency: ['']
     });
   }
 
@@ -200,21 +212,52 @@ export class DieteticsComponent {
     this.consultForm.get(field)?.setValue(selected);
   }
 
-  // check if a checkbox value is selected
-  isCheckboxSelected(field: string, value: string): boolean {
-    const selected = this.consultForm.get(field)?.value || [];
-    return selected.includes(value);
+  setActiveTab(tab: 'basic' | 'detailed') {
+    this.activeTab = tab;
+  }
+
+  async onSubmitDetailedForm() {
+    if(this.detailedForm.value && Object.values(this.detailedForm.value).some(val => val !== '' && val !== null)) {
+      const detailedResult = await this.detailedConsultService.submitDetailedForm(this.detailedForm.value)
+      
+      if(detailedResult.success){
+        alert('Detailed form submitted successfully!');
+        this.detailedForm.reset()
+      } else {
+        alert('Detailed form submission failed!')
+        console.log('Detailed form error:', detailedResult.error)
+      }
+    } else {
+      alert('Please fill out at least one field in the detailed form!')
+    }
   }
 
   async onSubmit() {
     if(this.consultForm.valid){
-      const result = await this.consultFormService.submitConsultForm(this.consultForm.value)
-      if(result.success){
-        alert('Form submitted!');
-        this.consultForm.reset()
-      }else {
+      // Submit basic form
+      const basicResult = await this.consultFormService.submitConsultForm(this.consultForm.value)
+      
+      if(basicResult.success){
+        // Submit detailed form if it has any data
+        if(this.detailedForm.value && Object.values(this.detailedForm.value).some(val => val !== '' && val !== null)) {
+          const detailedResult = await this.detailedConsultService.submitDetailedForm(this.detailedForm.value)
+          
+          if(detailedResult.success){
+            alert('Both forms submitted successfully!');
+            this.consultForm.reset()
+            this.detailedForm.reset()
+          } else {
+            alert('Basic form submitted, but detailed form submission failed!')
+            console.log('Detailed form error:', detailedResult.error)
+            this.consultForm.reset()
+          }
+        } else {
+          alert('Basic form submitted successfully!');
+          this.consultForm.reset()
+        }
+      } else {
         alert('Form submission failed!')
-        console.log(result.error)
+        console.log('Basic form error:', basicResult.error)
       }
     } else {
       console.log(this.consultForm.value);

@@ -7,7 +7,7 @@
       "Top-nav":{
         "home":"Laman Utama",
         "products":"Produk",
-        "R&D":"Penyelidikan & Pembangunan",
+        "doctorsForum":"Forum Doktor",
         "dietetics":"Dietetik",
         "dieteticsMenu":{
           "nutritionFacts":"Fakta Pemakanan dan Dos",
@@ -152,7 +152,7 @@
         "quickLinksMenu":{
           "home":"Laman Utama",
           "products":"Produk",
-          "r&d":"P&P",
+          "r&d":"Forum Doktor",
           "tour": "Jelajah",
           "dietetics":"Dietetik"
         },
@@ -184,8 +184,8 @@
         },
         "ancestralKeto":{
           "title":"Ancestral Keto Diet Guide",
-          "description": "Jauh dari ‘diet keto berasaskan haiwan dan tenusu sepenuhnya’, Diet Keto Nenek Moyang adalah makanan keseluruhan kaya nutrien—biji-bijian kuno, yang ditanam melalui amalan organik, menyediakan badan kita dengan diet seimbang dan nutrien penting untuk mengawal fungsi pencernaan kita, menghentikan kenaikan berat badan dan menyembuhkan kerosakan tisu untuk kekal berdaya tahan. Doktor juga mengesyorkan penggantian makanan berasaskan tumbuhan dan padat nutrien ini sebagai pilihan selamat untuk individu yang pulih daripada jangkitan kronik dan selepas pembedahan.",
-          "description2":"‘’…merujuk kepada penyelidikan Allele Vegan di Cornell pada 2016, Biji-bijian Kuno adalah apa yang dimakan oleh nenek moyang kita untuk kekal teguh,” kata Dr Keshu, Pakar Pemakanan Penyelidikan Klinikal dengan Klinik Dietetik Utara & Penyelidikan Berasaskan Tumbuhan."
+          "description": "Diet Keto Nenek Moyang adalah makanan keseluruhan padat nutrien—biji-bijian kuno, yang ditanam melalui amalan organik, menyediakan badan kita dengan diet seimbang dan nutrien penting untuk mengawal fungsi pencernaan kita, menghentikan kenaikan berat badan dan menyembuhkan kerosakan tisu untuk kekal berdaya tahan. Doktor juga mengesyorkan penggantian makanan berasaskan tumbuhan dan padat nutrien ini sebagai pilihan selamat untuk individu yang pulih daripada jangkitan kronik dan selepas pembedahan.",
+          "description2":"''…merujuk kepada penyelidikan Vegan Allele di Cornell pada 2016, Biji-bijian Kuno adalah apa yang dimakan oleh nenek moyang kita untuk kekal teguh,\" kata Dr Keshu, Pakar Pemakanan Penyelidikan Klinikal dengan Klinik Dietetik Utara & Penyelidikan Berasaskan Tumbuhan."
         }
   
       },
@@ -394,6 +394,46 @@
           "privacyPolicy": "Dasar Privasi",
           "and": "dan data peribadi anda akan diproses mengikut",
           "pdpa": "Akta Perlindungan Data Peribadi 2010 (PDPA)"
+        }
+      },
+      "GutBrainAxis": {
+        "mainTitle": "CERAMAH KOMUNITI untuk IBU BAPA KANAK-KANAK dengan ASD dan ADHD",
+        "articleTitle": "Paksi Usus-Otak",
+        "events": {
+          "event1": "27 Okt 2024",
+          "event1Location": "Utara Dietetics, Southern Park",
+          "event2": "16 Nov 2024",
+          "event2Location": "STEM 4 ALL, USJ",
+          "event3": "21 Dis 2024",
+          "event3Location": "PKD, Bukit Mertajam",
+          "event4": "19 Jan 2025",
+          "event4Location": "KBS, Sarawak",
+          "event5": "23 Mac 2025",
+          "event5Location": "Mt. Kiara Club",
+          "event6": "25 Mei 2025",
+          "event6Location": "Bertam Golf Course"
+        },
+        "article": {
+          "heading": "Pastil Lembut Padat Nutrien Meningkatkan Fungsi Paksi Usus-Otak (GBA)*",
+          "metaAnalysis": "> Meta Analisis 19 tapak",
+          "paragraph1": "Usus dan otak berkomunikasi secara dua hala melalui GBA melalui laluan neural, endokrin, dan imun. Pilihan diet adalah faktor utama dalam memodulasi komunikasi ini.",
+          "paragraph2": "Pastil lembut padat nutrien yang mengandungi ramuan bermanfaat seperti kanji resistan (prebiotik paleo), omega-3 dan MCT, polifenol (antioksidan), pro-kolagen, askorbat, kompleks vitamin, dan mineral boleh memberi kesan positif kepada GBA dengan mempengaruhi pengeluaran neurotransmitter, dengan itu mendorong rasa kesejahteraan.",
+          "paragraph3": "Apabila diformulasikan dengan ramuan organik semata-mata, pastil lembut boleh menawarkan cara yang selamat, mudah dan berkesan untuk menyokong fungsi GBA.",
+          "resistantStarchTitle": "Kanji Resistif (Prebiotik)",
+          "resistantStarchContent": "Memberi makanan kepada bakteria usus yang bermanfaat (mikrob komensal). Probiotik ini menapai serat ini menjadi metabolit yang bermanfaat, terutamanya asid lemak rantai pendek (SCFA), yang meningkatkan fungsi halangan usus, mengurangkan keradangan sistemik dan neuro.",
+          "omega3Title": "Omega-3 dan MCT",
+          "omega3Content": "Adalah penting untuk perkembangan otak dan pembelajaran. Ia meningkatkan kolesterol baik dan badan keton yang dikaitkan dengan peraturan mood yang lebih baik dan risiko kemurungan yang lebih rendah.",
+          "polyphenolsTitle": "Polifenol dan Fitosterol",
+          "polyphenolsContent": "Telah dikaji untuk mengurangkan radikal bebas, mengawal LDL dan lemak trans dan meningkatkan tindak balas keradangan.",
+          "vitaminsTitle": "Vitamin dan Mikronutrien",
+          "vitaminsContent": "Askorbat, vitamin B, folat, zink, dan magnesium terlibat sebagai koenzim dan kofaktor dalam laluan metabolik yang mempengaruhi perkembangan dan fungsi sistem saraf dan neuro hormon.",
+          "probioticsTitle": "Probiotik Budaya Hidup (gred perubatan)",
+          "probioticsContent": "Apabila dipasangkan dengan pastil lembut kaya nutrien, seperti yang dilaporkan dalam beberapa kajian sinergi probiotik–nutrisi, probiotik gred perubatan ini menyokong fokus yang lebih jelas, mood yang lebih tenang, dan pencernaan yang lebih sihat. Penyelidikan pada kanak-kanak menunjukkan faedah dalam menguatkan imuniti semula jadi dan meringankan ketidakselesaan seperti selesema bermusim atau berkaitan alahan.",
+          "mechanismTitle": "Mekanisme Tindakan",
+          "mechanismContent": "Komponen pastil lembut padat nutrien boleh bertindak sebagai sistem penghantaran untuk \"psikobiotik\" (faktor diet yang mempengaruhi mikrobiota dengan kesan positif pada kesihatan mental), menyokong paksi usus-otak, keberkesanan ubat dan kesejahteraan keseluruhan.",
+          "sharingBy": "Perkongsian oleh",
+          "organization": "Utara Dietetics & Penyelidikan Berasaskan Tumbuhan",
+          "contactEmail": "consult@futurefoods.com.my"
         }
       }
     }

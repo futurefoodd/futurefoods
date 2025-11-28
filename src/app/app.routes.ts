@@ -8,6 +8,7 @@ import { DieteticsComponent } from './pages/dietetics/dietetics.component';
 import { TourComponent } from './pages/tour/tour.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { UpskillComponent } from './pages/upskill/upskill.component';
+import { GutBrainAxisComponent } from './pages/gut-brain-axis/gut-brain-axis.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'tour', component: TourComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'upskill', component: UpskillComponent },
+  { path: 'gut-brain-axis', component: GutBrainAxisComponent },
   // { path: 'cart', component: CartComponent },
   // { path: 'checkout', component: CheckoutComponent },
   { path: '**', redirectTo: '' }

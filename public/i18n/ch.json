@@ -7,7 +7,7 @@
         "Top-nav":{
           "home":"主页",
           "products":"产品",
-          "R&D":"研发",
+          "doctorsForum":"医生论坛",
           "dietetics":"营养学",
           "dieteticsMenu":{
             "nutritionFacts":"营养成分与用量",
@@ -153,7 +153,7 @@
           "quickLinksMenu":{
             "home":"主页",
             "products":"产品",
-            "r&d":"研发",
+            "r&d":"医生论坛",
             "tour": "参观",
             "dietetics":"营养学"
           },
@@ -185,8 +185,8 @@
           },
           "ancestralKeto":{
             "title":"Ancestral Keto Diet Guide",
-            "description": "与“完全基于动物和乳制品的生酮饮食”不同，Ancestral Keto Diet Guide 是营养丰富的全食物——古老的谷物，通过有机实践种植，为我们的身体提供均衡的饮食和必需营养素，以调节我们的消化功能，阻止体重增加并治愈组织损伤以保持活力。医生还推荐这种植物基和营养密集的代餐作为从慢性感染和术后恢复的个体的安全选择。",
-            "description2":"“……参考 2016 年康奈尔大学的 Allele Vegan 研究，古老的谷物是我们的祖先为保持强壮而食用的，”来自北方营养学与植物基研究诊所的临床研究营养师 Keshu 博士说。"
+            "description": "Ancestral Keto Diet 是营养密集的全食物——古老谷物，通过有机实践种植，为我们的身体提供均衡的饮食和必需营养素，以调节我们的消化功能，阻止体重增加并治愈组织损伤以保持活力。医生还推荐这种植物基和营养密集的代餐作为从慢性感染和术后恢复的个体的安全选择。",
+            "description2":"''……参考 2016 年康奈尔大学的 Vegan Allele 研究，古老谷物是我们的祖先为保持强壮而食用的，\"来自北方营养学与植物基研究诊所的临床研究营养师 Keshu 博士说。"
           }
     
         },
@@ -392,11 +392,50 @@
                   "hospitalisationMoreThan1Year": ">1年前"
                 },
                 "privacyNote": {
-                  "text": "点击“提交”即表示您已阅读并同意我们的",
+                  "text": "点击\"提交\"即表示您已阅读并同意我们的",
                   "privacyPolicy": "隐私政策",
                   "and": "以及您的个人数据将根据",
                   "pdpa": "2010 年个人数据保护法 (PDPA)"
                 }
-              
-        }
+              },
+      "GutBrainAxis": {
+        "mainTitle": "面向 ASD 和 ADHD 儿童家长的社区外展讲座",
+        "articleTitle": "肠-脑轴",
+        "events": {
+          "event1": "2024年10月27日",
+                  "event1Location": "Utara Dietetics, Southern Park",
+                  "event2": "2024年11月16日",
+                  "event2Location": "STEM 4 ALL, USJ",
+                  "event3": "2024年12月21日",
+                  "event3Location": "PKD, Bukit Mertajam",
+                  "event4": "2025年1月19日",
+                  "event4Location": "KBS, Sarawak",
+                  "event5": "2025年3月23日",
+                  "event5Location": "Mt. Kiara Club",
+                  "event6": "2025年5月25日",
+                  "event6Location": "Bertam Golf Course"
+                },
+                "article": {
+                  "heading": "营养密集软糖增加肠脑轴 (GBA) 功能性*",
+                  "metaAnalysis": "> 19个站点的荟萃分析",
+                  "paragraph1": "肠道和大脑通过神经、内分泌和免疫途径通过 GBA 进行双向沟通。饮食选择是调节这种沟通的主要因素。",
+                  "paragraph2": "含有有益成分的营养密集软糖，如抗性淀粉（古生元）、omega-3 和 MCT、多酚（抗氧化剂）、前胶原、抗坏血酸盐、维生素复合物和矿物质，可以通过影响神经递质产生对 GBA 产生积极影响，从而促进幸福感。",
+                  "paragraph3": "当使用纯有机成分配制时，软糖可以提供安全、方便和有效的方式来支持 GBA 功能。",
+                  "resistantStarchTitle": "抗性淀粉（益生元）",
+                  "resistantStarchContent": "喂养有益的肠道细菌（共生微生物）。这些益生菌将这种纤维发酵成有益的代谢物，特别是短链脂肪酸 (SCFA)，可改善肠道屏障功能，减少全身和神经炎症。",
+                  "omega3Title": "Omega-3 和 MCT",
+                  "omega3Content": "对大脑发育和学习至关重要。它们增加好胆固醇和酮体，这与更好的情绪调节和更低的抑郁风险有关。",
+                  "polyphenolsTitle": "多酚和植物甾醇",
+                  "polyphenolsContent": "已被研究可减少自由基，调节 LDL 和反式脂肪，并改善炎症反应。",
+                  "vitaminsTitle": "维生素和微量营养素",
+                  "vitaminsContent": "抗坏血酸盐、B 族维生素、叶酸、锌和镁作为辅酶和辅因子参与影响神经系统和神经激素发育和功能的代谢途径。",
+                  "probioticsTitle": "生命培养益生菌（医疗级）",
+                  "probioticsContent": "当与营养丰富的软糖配对时，正如几项益生菌-营养协同作用研究报告的那样，这些医疗级益生菌支持更清晰的注意力、更平静的情绪和更健康的消化。儿童研究表明，在加强自然免疫力和缓解季节性流感样或过敏相关不适方面有好处。",
+                  "mechanismTitle": "作用机制",
+                  "mechanismContent": "营养密集软糖的成分可以作为\"精神益生菌\"（影响微生物群并对心理健康产生积极影响的饮食因素）的递送系统，支持肠-脑轴、药物疗效和整体健康。",
+                  "sharingBy": "分享者",
+                  "organization": "Utara Dietetics & Plant-Based Research",
+                  "contactEmail": "consult@futurefoods.com.my"
+                }
+              }
       }

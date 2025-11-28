@@ -8,7 +8,7 @@
     "Top-nav":{
       "home":"Home",
       "products":"Products",
-      "R&D":"R&D",
+      "doctorsForum":"Doctor's Forum",
       "dietetics":"Dietetics",
       "dieteticsMenu":{
         "nutritionFacts":"Nutrition Facts and Dosage",
@@ -152,7 +152,7 @@
       "quickLinksMenu":{
         "home":"Home",
         "products":"Products",
-        "r&d":"R&D",
+        "r&d":"Doctor's Forum",
         "tour": "Tour",
         "dietetics":"Dietetics"
       },
@@ -184,7 +184,7 @@
       },
       "ancestralKeto":{
         "title":"Ancestral Keto Diet Guide",
-        "description": "Way from ‘strictly animal and dairy based keto diets’ Ancestral Keto Diet is a nutrient dense whole food-ancient grains, cultivated via organic practices, providing our bodies with a balanced diet and essential nutrients to regulate our digestive function, stop weight gain and heal tissue damage to stay resilient.Doctors also recommends this plant-based, nutrient-dense meal replacement as safe choice for individuals recovering chronic infection and post-surgery.",
+        "description": "Ancestral Keto Diet is a nutrient dense whole food-ancient grains, cultivated via organic practices, providing our bodies with a balanced diet and essential nutrients to regulate our digestive function, stop weight gain and heal tissue damage to stay resilient.Doctors also recommends this plant-based, nutrient-dense meal replacement as safe choice for individuals recovering chronic infection and post-surgery.",
         "description2":"‘’…referring to the Vegan Allele research in Cornell in 2016, Ancient Grains is what our ancestors ate to stay robust,” says Dr Keshu, Clinical Research Nutritionist with Utara Dietetics Clinic & Plant-Based Research."
       }
 
@@ -396,6 +396,46 @@
         "privacyPolicy": "Privacy Policy",
         "and": "and that your personal data will be processed in accordance with the",
         "pdpa": "Personal Data Protection Act 2010 (PDPA)"
+      }
+    },
+    "GutBrainAxis": {
+      "mainTitle": "COMMUNITY OUTREACH TALK for PARENTS of CHILDREN with ASD and ADHD",
+      "articleTitle": "Gut-Brain Axis",
+      "events": {
+        "event1": "Oct 27th, 2024",
+        "event1Location": "Utara Dietetics, Southern Park",
+        "event2": "Nov 16th, 2024",
+        "event2Location": "STEM 4 ALL, USJ",
+        "event3": "Dec 21st, 2024",
+        "event3Location": "PKD, Bukit Mertajam",
+        "event4": "Jan 19th, 2025",
+        "event4Location": "KBS, Sarawak",
+        "event5": "Mar 23rd, 2025",
+        "event5Location": "Mt. Kiara Club",
+        "event6": "May 25th, 2025",
+        "event6Location": "Bertam Golf Course"
+      },
+      "article": {
+        "heading": "Nutrient Dense Soft Pastilles increase Gut Brain Axis (GBA) Functionality*",
+        "metaAnalysis": "> Meta Analysis of 19 sites",
+        "paragraph1": "The gut and brain communicate bidirectionally through the GBA via neural, endocrine, and immune pathways. Dietary choices are a major factor in modulating this communication.",
+        "paragraph2": "Nutrient-dense soft pastilles containing beneficial ingredients such as resistant starch (paleo prebiotics), omega-3 and MCTs, polyphenols (antioxidants), pro-collagen, ascorbate, vitamin complex, and minerals can positively impact the GBA by influencing neurotransmitter production, thus prompting a sense of wellbeing.",
+        "paragraph3": "When formulated with purely organic ingredients, soft pastilles can offer a safe, convenient and effective way to support GBA functionality.",
+        "resistantStarchTitle": "Resistant Starch (Prebiotics)",
+        "resistantStarchContent": "Feeds beneficial gut bacteria (commensal microbes). These probiotics ferment this fiber into beneficial metabolites, notably short-chain fatty acids (SCFAs), which improves intestinal barrier function, reduce systemic and neuro inflammation.",
+        "omega3Title": "Omega-3 and MCTs",
+        "omega3Content": "Are crucial for brain development and learning. They increase good cholesterol and ketone bodies which is linked to better mood regulation and a lower risk of depression.",
+        "polyphenolsTitle": "Polyphenols and Phytosterols",
+        "polyphenolsContent": "Have been studied to reduce free radicals, regulate LDL and trans-fats and improve inflammatory responses.",
+        "vitaminsTitle": "Vitamins and Micronutrients",
+        "vitaminsContent": "Ascorbate, B vitamins, folate, zinc, and magnesium are involved as coenzymes and cofactors in the metabolic pathways that affect the development and functioning of the nervous system and neuro hormones.",
+        "probioticsTitle": "Life Culture Probiotics (med-grade)",
+        "probioticsContent": "When paired with nutrient-rich soft pastilles, as reported in several probiotic–nutrition synergy studies, these med-grade probiotics supports clearer focus, calmer mood, and healthier digestion. Research in children shows benefits in strengthening natural immunity and easing seasonal flu-like or allergy-related discomfort.",
+        "mechanismTitle": "Mechanism of Action",
+        "mechanismContent": "The components of nutrient-dense soft pastille can act as a delivery system for \"psychobiotics\" (dietary factors that influence the microbiota with positive effects on mental health), supporting the gut-brain axis, medication efficacy and overall well-being.",
+        "sharingBy": "Sharing by",
+        "organization": "Utara Dietetics & Plant-Based Research",
+        "contactEmail": "consult@futurefoods.com.my"
       }
     }
   }

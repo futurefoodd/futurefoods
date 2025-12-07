@@ -221,6 +221,7 @@
         "weight": "Weight (kg)",
         "country": "Country",
         "referredBy": "Referred By",
+        "socialMediaId": "Social Media ID",
         "dailyActivityLevel": "Daily Activity Level",
         "exerciseRoutine": "Exercise Routine",
         "exerciseFrequency": "Exercise Frequency",
@@ -322,8 +323,21 @@
       "detailedForm": {
         "title": "Metabolic Health Survey",
         "tabs": {
-          "basic": "Basic Information",
-          "detailed": "Detailed Assessment"
+          "basic": "Nutrition Consult",
+          "detailed": "Metabolic Health Survey",
+          "sample": "Request for Sample"
+        },
+        "basicInformation": "Basic Information",
+        "syncBasicInfo": "Sync basic information across all tabs",
+        "sampleRequest": {
+          "title": "Request for Sample",
+          "description": "Fill out the form below to request a sample of our products.",
+          "name": "Name",
+          "email": "Email",
+          "contact": "Contact Number",
+          "address": "Address",
+          "message": "Message",
+          "submit": "Submit Request"
         },
         "questions": {
           "breakfastChoice": "Which of the following food choices is mostly for Breakfast:",
@@ -417,6 +431,11 @@
     "GutBrainAxis": {
       "mainTitle": "COMMUNITY OUTREACH TALK for PARENTS of CHILDREN with ASD and ADHD",
       "articleTitle": "Gut-Brain Axis",
+      "tabs": {
+        "talk": "Gut-Brain Axis Talk",
+        "science": "Gut Brain Axis Science"
+      },
+      "comingSoon": "Coming Soon",
       "events": {
         "event1": "Oct 27th, 2024",
         "event1Location": "Utara Dietetics, Southern Park",
@@ -429,30 +448,142 @@
         "event5": "Mar 23rd, 2025",
         "event5Location": "Mt. Kiara Club",
         "event6": "May 25th, 2025",
-        "event6Location": "Bertam Golf Course"
+        "event6Location": "Bertam Golf Course",
+        "event7": "July 27th, 2025",
+        "event7Location": "Perda Food Tech Park"
       },
       "article": {
-        "heading": "Nutrient Dense Soft Pastilles increase Gut Brain Axis (GBA) Functionality*",
-        "metaAnalysis": "> Meta Analysis of 19 sites",
-        "paragraph1": "The gut and brain communicate bidirectionally through the GBA via neural, endocrine, and immune pathways. Dietary choices are a major factor in modulating this communication.",
-        "paragraph2": "Nutrient-dense soft pastilles containing beneficial ingredients such as resistant starch (paleo prebiotics), omega-3 and MCTs, polyphenols (antioxidants), pro-collagen, ascorbate, vitamin complex, and minerals can positively impact the GBA by influencing neurotransmitter production, thus prompting a sense of wellbeing.",
-        "paragraph3": "When formulated with purely organic ingredients, soft pastilles can offer a safe, convenient and effective way to support GBA functionality.",
+        "heading": "Nutrient Dense Soft Pastilles increase Gut Brain Axis (GBA) Functionality",
+        "metaAnalysis": "> Synopsis (based on product trials since 2023 and literature review of 19 reference sites)",
+        "paragraph1": "The gut and the brain communicate bidirectionally through the Gut–Brain Axis (GBA), which operates through interconnected neural, endocrine, immune, and microbiome pathways. Emerging evidence shows that dietary choices, spring water and exposure to Schumann resonance (grounding) can influence these pathways and modulate gut–brain communication. Lifestyle activities align with stress-reduction and nervous-system calming mechanisms indirectly support GBA regulation.",
+        "paragraph2": "NVC Soft Pastilles, SKU VII",
+        "paragraph3": "Functional food and progressive clinical nutrition made save, simple and effective.",
+        "paragraph4": "The certified organic ingredients are Halal Gelatine (source chicken, sheep, fish, bovine), Annona, Plantain, Gum Arabica, Roselle, Beetroot, Amla, Virgin Coconut Oil, Nipah Nectar, Panela (raw cane sugar)",
+        "paragraph5": "Nutrient-dense soft pastilles containing resistant starch (paleo prebiotics), phytosterols, omega-3 and MCTs, polyphenols (antioxidants), pro-collagen complex (amino acids, polypeptides, glycoproteins and ascorbate) together with essential vitamins and minerals, support the GBA interventions.",
+        "paragraph6": "When formulated with certified organic bioactive ingredients, soft pastilles may provide a safe, convenient, and well-tolerated modality for supporting GBA functionality. By delivering phytonutrients, bioactive compounds and medical grade probiotics we influence microbial diversity, short-chain fatty acid synthesis, enhance mitochondrial activity, regulate inflammatory signalling and neurotransmitter biosynthesis.",
+        "paragraph7": "Soft Pastilles are formulated for maximum quick absorption via the buccal sublingual pathway thus giving early results.",
+        "productTitle": "Product Information",
+        "productDescription": "Soft pastille formulations can help stabilize neurocognitive and autonomic responses. Improved GBA responses can enhance emotional resilience, cognitive processing and stress tolerance, thereby increasing patient receptiveness and engagement in mental-health counselling and related psychotherapeutic interventions.",
+        "productIngredients": "",
         "resistantStarchTitle": "Resistant Starch (Prebiotics)",
-        "resistantStarchContent": "Feeds beneficial gut bacteria (commensal microbes). These probiotics ferment this fiber into beneficial metabolites, notably short-chain fatty acids (SCFAs), which improves intestinal barrier function, reduce systemic and neuro inflammation.",
+        "resistantStarchContent": "feeds beneficial gut bacteria (commensal microbes). These probiotics ferment this fiber into beneficial metabolites, notably short-chain fatty acids (SCFAs), which improves intestinal barrier function, reduce systemic and neuro inflammation.",
         "omega3Title": "Omega-3 and MCTs",
-        "omega3Content": "Are crucial for brain development and learning. They increase good cholesterol and ketone bodies which is linked to better mood regulation and a lower risk of depression.",
-        "polyphenolsTitle": "Polyphenols and Phytosterols",
-        "polyphenolsContent": "Have been studied to reduce free radicals, regulate LDL and trans-fats and improve inflammatory responses.",
+        "omega3Content": "play essential roles in cellular energy metabolism, neurodevelopment and cognitive processing. These healthy lipids support the synthesis of neuronal membranes, enhance mitochondrial efficiency and facilitate the production of ketone bodies associated with improved mood regulation and a reduced risk of depressive symptoms.",
+        "omega3Content2": "These lipids been studied for their capacity to modulate cholesterol profile by increasing HDL cholesterol, balancing the Omega 3:6 ratio and dietary trans-fat burden.",
         "vitaminsTitle": "Vitamins and Micronutrients",
-        "vitaminsContent": "Ascorbate, B vitamins, folate, zinc, and magnesium are involved as coenzymes and cofactors in the metabolic pathways that affect the development and functioning of the nervous system and neuro hormones.",
+        "vitaminsContent": "Ascorbate, B vitamins, folate, zinc, and magnesium are involved as coenzymes and cofactors in the metabolic pathways that affect the development and functioning of the nervous system and neuro hormones",
         "probioticsTitle": "Life Culture Probiotics (med-grade)",
         "probioticsContent": "When paired with nutrient-rich soft pastilles, as reported in several probiotic–nutrition synergy studies, these med-grade probiotics supports clearer focus, calmer mood, and healthier digestion. Research in children shows benefits in strengthening natural immunity and easing seasonal flu-like or allergy-related discomfort.",
+        "dosageTitle": "Dosage",
+        "dosageChildren": "In regular children the entry dosage is 1 soft pastille per day.",
+        "dosageAdhd": "In children with ADHD entry dosage would be 1 soft pastille per day.",
+        "dosageOlderAdults": "In regular older adults the dosage would be 2 soft pastilles per day and early benefits can be seen after 1st week",
+        "dosageRecovering": "In recovering older adults and elderly the dosage would be 3 soft pastilles per day and benefits can be felt after 2 weeks",
+        "oralHygieneTitle": "Oral Hygiene and Early Dental Care",
+        "oralHygieneContent": "\"Buccal/sublingual nutrient-dense pastilles direct delivery beneficial probiotics, natural anti-inflammatory compounds, prebiotic substrates, phytonutrients (cofactors/vitamins/coenzyme) into the biofilm environment where they can compete with pathogens, produce antimicrobial metabolites, modulate local immunity, and change local pH. This may help modulate the oral microbiome and mucosal health.",
+        "oralHygieneContent2": "Evidence from clinical trials of lozenges with probiotics and bioactive ingredients shows improvements in some markers of oral dysbiosis and gum inflammation. Results are promising but heterogeneous. Systemic nutritional effects depend on absorption and is dose dependent.",
+        "oralHygieneContent3": "These interventions should be considered adjunctive and not replacements for professional dental care.\"",
         "mechanismTitle": "Mechanism of Action",
-        "mechanismContent": "The components of nutrient-dense soft pastille can act as a delivery system for \"psychobiotics\" (dietary factors that influence the microbiota with positive effects on mental health), supporting the gut-brain axis, medication efficacy and overall well-being.",
-        "sharingBy": "Sharing by",
-        "organization": "Utara Dietetics & Plant-Based Research",
-        "contactEmail": "consult@futurefoods.com.my"
+        "mechanismContent": "NVC nutrient-dense soft pastille may function as a cofactor and coenzyme delivery system, that support microcapillary functionality, cellular metabolism, anti-inflammatory activity and microbiome stability. The formulation can act in line with \"psychobiotic\" principles thus contributing in some parts to improved physiological balance, better stress modulation and complementary support to well-being. While not a replacement for medical therapy, functional soft pastilles facilitate 'nutrient synergy' that enhance the body's response to prescription medication and promote treatment efficacy in the elderly.",
+        "researchTitle": "Research & Development (under funding campaign phase)",
+        "researchContent": "Certified organic cultivation of selected non-GMO plant species has been shown to yield higher concentrations of key bioactive compounds, including Acetogenins and Thymoquinone, presently under investigation for their potent anti-inflammatory, immunomodulatory, and cytoprotective properties. Our cultivation and processing activities at the Agri Research Institute operate under a strict Farm to Pharmacy framework, ensuring traceability, phytochemical integrity and therapeutic consistency across all research batches and clinical-grade formulations."
+      },
+      "science": {
+        "intro": "Gut-Brain Axis [GBA] refers to the bidirectional neural signalling pathway between the brain, nerves, stomach, colon, hormones, immune system and gut microbes. This 'second brain' is generally referred to as source of emotional intelligence, supporting social norms, learning focus, restful sleep and wellbeing.",
+        "functionality": "This functionality is influenced by prebiotics, probiotics, oral hygiene, human intestinal microbes, nutrient synergy and metabolic chemistry. These complex microbes ~ molecules ~ mitochondria co-dependency provide the important teamwork necessary for appetite regulation, nutrition absorption, bowel movement, hormone production, neurological functions, stress coping and immune response.",
+        "studies": "Numerous studies show that emotional wellbeing, mood modulation, movement coordination, learning development and social skills are inherited, initiated and regulated by our friendly commensal gut bacteria acquired during birth and adolescence.",
+        "researchTitle": "Clinical Research",
+        "researchContent": "Clinical researchers Dr Nobuyuki Sudo and Dr Yoichi Chida of Psychosomatic Medicine at Kyushu University contributed to the discovery of the gut-brain axis through a 2004 study.",
+        "nagoyaStudy": "Scientist at the Nagoya University Graduate School of Medicine in Japan conducted a meta-analysis of stool samples collected from patients in Japan, Taiwan, China, Germany, and the U.S. that suffer from varied neurological conditions. The research team sequenced all the genetic material in the stool samples, examining both the genetic and microbial makeup of the stool. This 2024 research exploring the relationship between the gut and the brain showed evidence that the happy colony of microbes, influences cognitive development and emotional wellbeing.",
+        "dysbiosisTitle": "Gut Dysbiosis",
+        "dysbiosisContent": "Gut Dysbiosis disrupts this happiness and causes heighten inflammation, which is linked to neurodegenerative conditions and indigestion, food intolerance, bloating, malabsorption, constipation and IBS.",
+        "quote": "\"Emerging research continues to show that dietary patterns, digestive efficacy, nutrient assimilation and neurochemical balance are interconnected. Gut-Brain Axis significantly influences metabolic regulation, cognitive development, stress coping and emotional stability,\"",
+        "quoteAuthor": "said Dr. Keshu A.",
+        "treatmentTitle": "Treatment Protocols",
+        "treatmentContent": "Practical treatment protocols to restore Gut-Brain Axis functionality must be a slow-steady–safe approach. Safe therapies include gelatine or pectin base infused with phytonutrient, paleo prebiotics meals, vegan ketogenic diets, psychobiotics or life-culture med-grade probiotics and anti-inflammatory polyphenols.",
+        "specialNeedsTitle": "Special Needs Education & Clinical Validation",
+        "specialNeedsContent": "Special Needs Educators or ASD Therapists or Paediatricians in teaching hospitals are well-placed to validate the efficacy of long-term treatment plans for children with ADHD and students with learning difficulties by conducting structured before-and-after evaluations of attentiveness, engagement, receptiveness scores and academic progress.",
+        "contactTitle": "Neurodivergent Education & Development Practitioner",
+        "contactOrg": "ASD Counsellor\nUtara Dietetics & Plant-Based Research",
+        "contactEmail": "consult@futurefoods.com.my",
+        "communityTitle": "Community Outreach & Parental Support",
+        "communitySubtitle": "Nutritional Care and Learning Development in Neurodivergent Children",
+        "communityContent1": "Children with ASD and ADHD commonly struggle with more than attention, learning and social skills; many neurodivergent children experience sensitive digestion, limited food preference, food intolerance, excessive sugar cravings, restless sleep and challenges in managing emotions.",
+        "communityContent2": "Today, medical researchers understand far more clearly that the gut and brain are deeply connected through food chemistry, nutrient synergy, neural pathways, immune messengers, hormones and the activity of gut microbes.",
+        "communityContent3": "This relationship called the Gut–Brain Axis plays an important role in behaviour, mood, and how neurodivergent children think, feel, and learn.",
+        "communityContent4": "This community outreach talk introduces parents to practical, science-informed strategies that support their child's wellbeing through gentle improvements in gut health. The session explains, in simple language, how gut bacteria influence mood, focus, stress response, and sleep quality; why digestive problems are common in neurodivergent children; and how diet, daily routines, and lifestyle habits can positively affect behaviour and attention.",
+        "communityContent5": "Parents will learn safe and achievable interventions such as using gut-friendly foods, prebiotics and probiotics, reducing common dietary triggers, improving sleep hygiene, encouraging movement, and creating a calmer sensory environment. The talk emphasises that gut-brain support is not a cure, but a complementary approach that can enhance therapy outcomes and improve daily functioning. By the end of the session, parents will gain actionable steps they can start at home, renewed confidence in supporting their child's development, and a realistic understanding of how nurturing gut health can contribute to better behaviour, emotional balance, and overall quality of life for children with ASD and ADHD.",
+        "footerTitle": "Clinical Research Nutritionist",
+        "footerOrg": "Utara Dietetics & Plant-Based Research",
+        "footerEmail": "consult@futurefoods.com.my"
+      },
+      "FAQ": {
+        "question_1": {
+          "question": "Q.1 How soon can I have safe weight loss (burn body fat)?",
+          "answer": "Keto Grains Breakfast is our ancestral diet. Speak with your Doctor and include this nutritious plant-based Gluten free meal into your low carb diet plan. After 2 weeks, you can expect 5kg weight loss and after 30 days 11kg weight loss."
+        },
+        "question_2": {
+          "question": "Q.2 How does Keto Grains Breakfast help lower blood sugar? | How does Vegan Keto Meal reduce insulin resistance?",
+          "answer": "Keto Grains Breakfast and Vegan Keto Meal have 12 gram Soluble Fibre and 3 grams Resistant Starch Type 2 per serving. Keto Grains Breakfast and Vegan Keto Meal have a Glyceamic Index of 37 - 42. Both type of dietary fibre slows down glucose absorption and increase metabolism."
+        },
+        "question_3": {
+          "question": "Q.3 Who needs to take Keto Grains Breakfast / Vegan Keto Meal?",
+          "answer": "Individuals with sudden weight gain, constipation, pre-diabetic, poor diabetes control, fatty liver, high blood pressure, unable to loose belly fat, frequent low energy and infertility issues"
+        },
+        "question_4": {
+          "question": "Q.4 How much Keto Grains Breakfast / Vegan Keto Meal to take per day?",
+          "answer": "Clinic Advice;\n\nBelow 80kg take 3 tbsp. per serving alternate days. (30g)\n\nAbove 81kg take 4 tbsp. daily."
+        },
+        "question_5": {
+          "question": "Q.5 How long should I take Keto Grains Breakfast / Vegan Keto Meal?",
+          "answer": "Each treatment course and eating plan is designed for 21 days. For best results repeat for 3 cycles"
+        },
+        "question_6": {
+          "question": "Q.6 What health outcomes or results can I expect?",
+          "answer": "Depending on the individual's body composition, taste tolerance level and illness you may expect regular bowel movements, better blood sugar control, less hunger, lower cholesterol levels, higher energy levels and improved muscle strength."
+        },
+        "question_7": {
+          "question": "Q.7 What type of toppings can I add to enjoy the taste I like?",
+          "answer": "Choice of Toppings;\n\n50ml unsweetened Almond or Walnut Milk\n\n2 tbsp. rinsed Nata de Coco or Grass Jelly\n\n3 Madinah Dates or 1 tbsp. Pumpkin Seeds\n\n1 green Apple or green Pear or Guava or Dragon Fruit"
+        },
+        "question_8": {
+          "question": "Q.8 Can I expect to gain lean muscle mass with only plant-based protein?",
+          "answer": "Our clinic has recorded 3% increase in lean muscle mass upon completing the 90 days therapeutic eating plan.\n\nIndividuals completing > 5000 steps per day or gym workouts 3 times per week can expect 5% increase in lean muscle mass"
+        },
+        "question_9": {
+          "question": "Q.9 Is Keto Grains Breakfast / Vegan Keto Meal affordable?",
+          "answer": "Cost per healthy breakfast serving is RM9.27. When compared to regular low nutrition Chinese hawker food, fast food or western breakfast or mamak meals this plant-based meals are safer and affordable."
+        },
+        "question_10": {
+          "question": "Q.10 Is it similar to popular Meal Replacements and Protein Shakes?",
+          "answer": "Ancient Keto Grains are nutritionally superior and safer but cost 30% less than meal replacements sold by MLM or protein shakes retailed in organic or wellness stores."
+        },
+        "question_11": {
+          "question": "Q.11 Is it similar to Multi Grains in Organic Stores?",
+          "answer": "Ancient Keto Grains is a Gluten-Lectin-Soy and Nut free ready to eat formulation.\n\nMultigrain mix are often not Gluten or Soy or Nut Free and have Maltodextrin and artificial sweeteners."
+        },
+        "question_12": {
+          "question": "Q.12 How does Keto Grains Breakfast / Vegan Keto Meal induce Nutritional Ketosis?",
+          "answer": "Nutritional Ketosis is true ketosis, Keto Grains is a nutrient dense thermogenic food; this meal requires more metabolic energy to digest than calories obtained (account deficit in energy exchange) prompting the body into lipolysis (fat burning)"
+        },
+        "question_13": {
+          "question": "Q.13 Why is Keto Grains Breakfast / Vegan Keto Meal a Keto Diet?",
+          "answer": "This organic paleo meal has less than 5g available carbohydrate per serving. It's a thermogenic meal thus you will experience increase in basal metabolic rate, gradual body fat loss of 30 - 50 grams per day after day 5, higher energy levels especially towards the evening and better mental clarity due to increased ketone bodies in your blood stream."
+        },
+        "question_14": {
+          "question": "Q.14 Why is Keto Grains rated as 'first real meal of the day' by Primary Care Physicians and many General Practice Clinics?",
+          "answer": "You obtain daily value of dietary soluble fibre, ALA Omega 3, trace minerals, adequate plant proteins and polyphenols and phytosterols."
+        },
+        "question_15": {
+          "question": "Q.15 When was the medical research into Plant-Based Meal's efficacy completed?",
+          "answer": "In 2015 product trials were conducted by 3 physicians on 18 patients with promising results. In 2017 the improved Keto Grains formulation was clinically test with the participation of 133 patient over 18 months.\n\nTrial results showed Keto Grains Vegan Meal has a Glycaemic Index of 37 - 42, and is therapeutic for patients with food intolerance (allergy), constipation, diabetes, fatty liver, muscle atrophy/cramps and low energy (fibromyalgia)\n\nNarrative by\n\nDr Keshu A\n\nClinical Research Nutritionist\n\nMedical Counsellor\n\nUtara Dietetics Clinic"
+        }
       }
+    },
+    "DoctorsForum": {
+      "heading": "Doctor's Forum",
+      "paragraph": "Welcome to the Doctor's Forum. This is a dedicated space for healthcare professionals to access resources, research, and information related to our products and services.",
+      "pdfNotSupported": "Your browser does not support PDFs. Please",
+      "downloadPdf": "download the PDF"
     }
   }
-  

@@ -194,8 +194,7 @@
         "veganSoftPastilles": {
           "title": "Pastil Lembut Vegan",
           "description": "Pastil Lembut Vegan, Botol Kaca dengan 60 biji"
-        }
-      },
+        },
       "Tour":{
       "header":"Jelajah",
       "subHeader": "Loji Formulasi Makanan Fungsian | FSSC ISO22000"
@@ -219,6 +218,7 @@
           "weight": "Berat (kg)",
           "country": "Negara",
           "referredBy": "Dirujuk Oleh",
+          "socialMediaId": "ID Media Sosial",
           "dailyActivityLevel": "Tahap Aktiviti Harian",
           "exerciseRoutine": "Rutin Senaman",
           "exerciseFrequency": "Kekerapan Senaman",
@@ -320,8 +320,21 @@
         "detailedForm": {
           "title": "Tinjauan Kesihatan Metabolik",
           "tabs": {
-            "basic": "Maklumat Asas",
-            "detailed": "Penilaian Terperinci"
+            "basic": "Konsultasi Pemakanan",
+            "detailed": "Tinjauan Kesihatan Metabolik",
+            "sample": "Permintaan Sampel"
+          },
+          "basicInformation": "Maklumat Asas",
+          "syncBasicInfo": "Segerakkan maklumat asas merentas semua tab",
+          "sampleRequest": {
+            "title": "Permintaan Sampel",
+            "description": "Isi borang di bawah untuk meminta sampel produk kami.",
+            "name": "Nama",
+            "email": "Emel",
+            "contact": "Nombor Telefon",
+            "address": "Alamat",
+            "message": "Mesej",
+            "submit": "Hantar Permintaan"
           },
           "questions": {
             "breakfastChoice": "Antara pilihan makanan berikut, yang manakah paling banyak untuk Sarapan:",
@@ -415,6 +428,11 @@
       "GutBrainAxis": {
         "mainTitle": "CERAMAH KOMUNITI untuk IBU BAPA KANAK-KANAK dengan ASD dan ADHD",
         "articleTitle": "Paksi Usus-Otak",
+        "tabs": {
+          "talk": "Ceramah Paksi Usus-Otak",
+          "science": "Sains Paksi Usus-Otak"
+        },
+        "comingSoon": "Akan Datang",
         "events": {
           "event1": "27 Okt 2024",
           "event1Location": "Utara Dietetics, Southern Park",
@@ -427,29 +445,148 @@
           "event5": "23 Mac 2025",
           "event5Location": "Mt. Kiara Club",
           "event6": "25 Mei 2025",
-          "event6Location": "Bertam Golf Course"
+          "event6Location": "Bertam Golf Course",
+          "event7": "27 Julai 2025",
+          "event7Location": "Perda Food Tech Park"
         },
         "article": {
           "heading": "Pastil Lembut Padat Nutrien Meningkatkan Fungsi Paksi Usus-Otak (GBA)*",
           "metaAnalysis": "> Meta Analisis 19 tapak",
-          "paragraph1": "Usus dan otak berkomunikasi secara dua hala melalui GBA melalui laluan neural, endokrin, dan imun. Pilihan diet adalah faktor utama dalam memodulasi komunikasi ini.",
-          "paragraph2": "Pastil lembut padat nutrien yang mengandungi ramuan bermanfaat seperti kanji resistan (prebiotik paleo), omega-3 dan MCT, polifenol (antioksidan), pro-kolagen, askorbat, kompleks vitamin, dan mineral boleh memberi kesan positif kepada GBA dengan mempengaruhi pengeluaran neurotransmitter, dengan itu mendorong rasa kesejahteraan.",
-          "paragraph3": "Apabila diformulasikan dengan ramuan organik semata-mata, pastil lembut boleh menawarkan cara yang selamat, mudah dan berkesan untuk menyokong fungsi GBA.",
+          "paragraph1": "Usus dan otak berkomunikasi secara dua hala melalui Paksi Usus-Otak (GBA), yang beroperasi melalui laluan neural, endokrin, imun, dan mikrobiom yang saling berkaitan. Bukti yang muncul menunjukkan bahawa pilihan diet, air mata air dan pendedahan kepada resonans Schumann (grounding) boleh mempengaruhi laluan ini dan memodulasi komunikasi usus-otak. Aktiviti gaya hidup selaras dengan mekanisme pengurangan tekanan dan penenang sistem saraf secara tidak langsung menyokong peraturan GBA.",
+          "paragraph2": "NVC Soft Pastilles, SKU VII",
+          "paragraph3": "Makanan fungsional dan nutrisi klinikal progresif dibuat selamat, mudah dan berkesan.",
+          "paragraph4": "Ramuan organik yang disahkan adalah Gelatin Halal (sumber ayam, kambing, ikan, lembu), Annona, Plantain, Gum Arabica, Roselle, Beetroot, Amla, Minyak Kelapa Dara, Nektar Nipah, Panela (gula tebu mentah)",
+          "paragraph5": "Pastil lembut padat nutrien yang mengandungi kanji resistan (prebiotik paleo), fitosterol, omega-3 dan MCT, polifenol (antioksidan), kompleks pro-kolagen (asid amino, polipeptida, glikoprotein dan askorbat) bersama dengan vitamin dan mineral penting, menyokong intervensi GBA.",
+          "paragraph6": "Apabila diformulasikan dengan ramuan bioaktif organik yang disahkan, pastil lembut boleh menyediakan modaliti yang selamat, mudah dan boleh diterima dengan baik untuk menyokong fungsi GBA. Dengan menyampaikan fitonutrien, sebatian bioaktif dan probiotik gred perubatan, kami mempengaruhi kepelbagaian mikrob, sintesis asid lemak rantai pendek, meningkatkan aktiviti mitokondria, mengawal isyarat keradangan dan biosintesis neurotransmitter.",
+          "paragraph7": "Pastil Lembut diformulasikan untuk penyerapan cepat maksimum melalui laluan bukal sublingual dengan itu memberikan hasil awal.",
+          "productTitle": "Maklumat Produk",
+          "productDescription": "Formulasi pastil lembut boleh membantu menstabilkan respons neurokognitif dan autonomi. Respons GBA yang diperbaiki boleh meningkatkan daya tahan emosi, pemprosesan kognitif dan toleransi tekanan, dengan itu meningkatkan penerimaan dan penglibatan pesakit dalam kaunseling kesihatan mental dan intervensi psikoterapi yang berkaitan.",
+          "productIngredients": "",
           "resistantStarchTitle": "Kanji Resistif (Prebiotik)",
           "resistantStarchContent": "Memberi makanan kepada bakteria usus yang bermanfaat (mikrob komensal). Probiotik ini menapai serat ini menjadi metabolit yang bermanfaat, terutamanya asid lemak rantai pendek (SCFA), yang meningkatkan fungsi halangan usus, mengurangkan keradangan sistemik dan neuro.",
           "omega3Title": "Omega-3 dan MCT",
-          "omega3Content": "Adalah penting untuk perkembangan otak dan pembelajaran. Ia meningkatkan kolesterol baik dan badan keton yang dikaitkan dengan peraturan mood yang lebih baik dan risiko kemurungan yang lebih rendah.",
+          "omega3Content": "memainkan peranan penting dalam metabolisme tenaga selular, neurodevelopment dan pemprosesan kognitif. Lipid sihat ini menyokong sintesis membran neuron, meningkatkan kecekapan mitokondria dan memudahkan pengeluaran badan keton yang dikaitkan dengan peraturan mood yang lebih baik dan risiko gejala kemurungan yang lebih rendah.",
+          "omega3Content2": "Lipid ini telah dikaji untuk keupayaan mereka untuk memodulasi profil kolesterol dengan meningkatkan kolesterol HDL, mengimbangi nisbah Omega 3:6 dan beban lemak trans diet.",
           "polyphenolsTitle": "Polifenol dan Fitosterol",
           "polyphenolsContent": "Telah dikaji untuk mengurangkan radikal bebas, mengawal LDL dan lemak trans dan meningkatkan tindak balas keradangan.",
           "vitaminsTitle": "Vitamin dan Mikronutrien",
           "vitaminsContent": "Askorbat, vitamin B, folat, zink, dan magnesium terlibat sebagai koenzim dan kofaktor dalam laluan metabolik yang mempengaruhi perkembangan dan fungsi sistem saraf dan neuro hormon.",
           "probioticsTitle": "Probiotik Budaya Hidup (gred perubatan)",
           "probioticsContent": "Apabila dipasangkan dengan pastil lembut kaya nutrien, seperti yang dilaporkan dalam beberapa kajian sinergi probiotik–nutrisi, probiotik gred perubatan ini menyokong fokus yang lebih jelas, mood yang lebih tenang, dan pencernaan yang lebih sihat. Penyelidikan pada kanak-kanak menunjukkan faedah dalam menguatkan imuniti semula jadi dan meringankan ketidakselesaan seperti selesema bermusim atau berkaitan alahan.",
+          "dosageTitle": "Dos",
+          "dosageChildren": "Pada kanak-kanak biasa, dos permulaan adalah 1 pastil lembut sehari.",
+          "dosageAdhd": "Pada kanak-kanak dengan ADHD, dos permulaan adalah 1 pastil lembut sehari.",
+          "dosageOlderAdults": "Pada warga emas biasa, dos adalah 2 pastil lembut sehari dan faedah awal boleh dilihat selepas minggu pertama",
+          "dosageRecovering": "Pada warga emas yang pulih dan warga tua, dos adalah 3 pastil lembut sehari dan faedah boleh dirasai selepas 2 minggu",
+          "oralHygieneTitle": "Kebersihan Mulut dan Penjagaan Gigi Awal",
+          "oralHygieneContent": "\"Pastil padat nutrien bukal/sublingual menyampaikan probiotik bermanfaat, sebatian anti-radang semula jadi, substrat prebiotik, fitonutrien (kofaktor/vitamin/koenzim) terus ke persekitaran biofilm di mana mereka boleh bersaing dengan patogen, menghasilkan metabolit antimikrob, memodulasi imuniti tempatan, dan mengubah pH tempatan. Ini boleh membantu memodulasi mikrobiom mulut dan kesihatan mukosa.",
+          "oralHygieneContent2": "Bukti daripada ujian klinikal lozenges dengan probiotik dan ramuan bioaktif menunjukkan peningkatan dalam beberapa penanda disbiosis mulut dan keradangan gusi. Hasilnya menjanjikan tetapi heterogen. Kesan nutrisi sistemik bergantung pada penyerapan dan bergantung pada dos.",
+          "oralHygieneContent3": "Intervensi ini harus dianggap sebagai tambahan dan bukan pengganti untuk penjagaan pergigian profesional.\"",
           "mechanismTitle": "Mekanisme Tindakan",
-          "mechanismContent": "Komponen pastil lembut padat nutrien boleh bertindak sebagai sistem penghantaran untuk \"psikobiotik\" (faktor diet yang mempengaruhi mikrobiota dengan kesan positif pada kesihatan mental), menyokong paksi usus-otak, keberkesanan ubat dan kesejahteraan keseluruhan.",
+          "mechanismContent": "Pastil lembut padat nutrien NVC boleh berfungsi sebagai sistem penghantaran kofaktor dan koenzim, yang menyokong fungsi mikrokapilari, metabolisme selular, aktiviti anti-radang dan kestabilan mikrobiom. Formulasi boleh bertindak selaras dengan prinsip \"psikobiotik\" dengan itu menyumbang dalam beberapa bahagian kepada keseimbangan fisiologi yang diperbaiki, modulasi tekanan yang lebih baik dan sokongan pelengkap kepada kesejahteraan. Walaupun bukan pengganti terapi perubatan, pastil lembut fungsional memudahkan 'sinergi nutrien' yang meningkatkan respons badan terhadap ubat preskripsi dan menggalakkan keberkesanan rawatan pada warga emas.",
+          "researchTitle": "Penyelidikan & Pembangunan (dalam fasa kempen pembiayaan)",
+          "researchContent": "Penanaman organik yang disahkan bagi spesies tumbuhan bukan GMO terpilih telah terbukti menghasilkan kepekatan yang lebih tinggi bagi sebatian bioaktif utama, termasuk Acetogenins dan Thymoquinone, yang kini sedang disiasat untuk sifat anti-radang, imunomodulatori, dan sitoprotektif mereka yang berpotensi. Aktiviti penanaman dan pemprosesan kami di Institut Penyelidikan Agri beroperasi di bawah rangka kerja Farm to Pharmacy yang ketat, memastikan kebolehkesanan, integriti fitokimia dan konsistensi terapeutik merentas semua kumpulan penyelidikan dan formulasi gred klinikal.",
           "sharingBy": "Perkongsian oleh",
           "organization": "Utara Dietetics & Penyelidikan Berasaskan Tumbuhan",
           "contactEmail": "consult@futurefoods.com.my"
+        },
+        "science": {
+          "intro": "Paksi Usus-Otak [GBA] merujuk kepada laluan isyarat neural dua hala antara otak, saraf, perut, kolon, hormon, sistem imun dan mikrob usus. 'Otak kedua' ini secara amnya dirujuk sebagai sumber kecerdasan emosi, menyokong norma sosial, fokus pembelajaran, tidur yang nyenyak dan kesejahteraan.",
+          "functionality": "Fungsi ini dipengaruhi oleh prebiotik, probiotik, kebersihan mulut, mikrob usus manusia, sinergi nutrien dan kimia metabolik. Kebergantungan bersama mikrob ~ molekul ~ mitokondria yang kompleks ini menyediakan kerjasama penting yang diperlukan untuk peraturan selera makan, penyerapan nutrien, pergerakan usus, pengeluaran hormon, fungsi neurologi, mengatasi tekanan dan tindak balas imun.",
+          "studies": "Banyak kajian menunjukkan bahawa kesejahteraan emosi, modulasi mood, koordinasi pergerakan, perkembangan pembelajaran dan kemahiran sosial diwarisi, dimulakan dan dikawal oleh bakteria usus komensal mesra yang diperoleh semasa kelahiran dan remaja.",
+          "researchTitle": "Penyelidikan Klinikal",
+          "researchContent": "Penyelidik klinikal Dr Nobuyuki Sudo dan Dr Yoichi Chida dari Perubatan Psikosomatik di Universiti Kyushu menyumbang kepada penemuan paksi usus-otak melalui kajian 2004.",
+          "nagoyaStudy": "Saintis di Sekolah Siswazah Perubatan Universiti Nagoya di Jepun menjalankan meta-analisis sampel najis yang dikumpulkan daripada pesakit di Jepun, Taiwan, China, Jerman, dan A.S. yang menderita pelbagai keadaan neurologi. Pasukan penyelidikan mengurutkan semua bahan genetik dalam sampel najis, memeriksa kedua-dua susunan genetik dan mikrob najis. Penyelidikan 2024 ini yang meneroka hubungan antara usus dan otak menunjukkan bukti bahawa koloni mikrob yang gembira, mempengaruhi perkembangan kognitif dan kesejahteraan emosi.",
+          "dysbiosisTitle": "Disbiosis Usus",
+          "dysbiosisContent": "Disbiosis Usus mengganggu kebahagiaan ini dan menyebabkan keradangan yang meningkat, yang dikaitkan dengan keadaan neurodegeneratif dan gangguan pencernaan, intoleransi makanan, kembung, malabsorpsi, sembelit dan IBS.",
+          "quote": "\"Penyelidikan yang muncul terus menunjukkan bahawa corak diet, keberkesanan pencernaan, asimilasi nutrien dan keseimbangan neurokimia saling berkaitan. Paksi Usus-Otak mempengaruhi peraturan metabolik, perkembangan kognitif, mengatasi tekanan dan kestabilan emosi dengan ketara,\"",
+          "quoteAuthor": "kata Dr. Keshu A.",
+          "treatmentTitle": "Protokol Rawatan",
+          "treatmentContent": "Protokol rawatan praktikal untuk memulihkan fungsi Paksi Usus-Otak mestilah pendekatan perlahan-teguh-selamat. Terapi selamat termasuk asas gelatine atau pektin yang disuntik dengan fitonutrien, makanan prebiotik paleo, diet ketogenik vegan, psikobiotik atau probiotik gred perubatan budaya hidup dan polifenol anti-radang.",
+          "specialNeedsTitle": "Pendidikan Keperluan Khas & Pengesahan Klinikal",
+          "specialNeedsContent": "Pendidik Keperluan Khas atau Ahli Terapi ASD atau Pakar Pediatrik di hospital pengajaran berada dalam kedudukan yang baik untuk mengesahkan keberkesanan pelan rawatan jangka panjang untuk kanak-kanak dengan ADHD dan pelajar dengan kesukaran pembelajaran dengan menjalankan penilaian sebelum dan selepas yang berstruktur bagi skor perhatian, penglibatan, penerimaan dan kemajuan akademik.",
+          "contactTitle": "Pengamal Pendidikan & Pembangunan Neurodivergen",
+          "contactOrg": "Kaunselor ASD\nUtara Dietetics & Penyelidikan Berasaskan Tumbuhan",
+          "contactEmail": "consult@futurefoods.com.my",
+          "communityTitle": "Outreach Komuniti & Sokongan Ibu Bapa",
+          "communitySubtitle": "Penjagaan Nutrisi dan Pembangunan Pembelajaran dalam Kanak-kanak Neurodivergen",
+          "communityContent1": "Kanak-kanak dengan ASD dan ADHD biasanya bergelut dengan lebih daripada perhatian, pembelajaran dan kemahiran sosial; ramai kanak-kanak neurodivergen mengalami pencernaan sensitif, pilihan makanan terhad, intoleransi makanan, keinginan gula yang berlebihan, tidur yang gelisah dan cabaran dalam menguruskan emosi.",
+          "communityContent2": "Hari ini, penyelidik perubatan memahami dengan lebih jelas bahawa usus dan otak saling berkait rapat melalui kimia makanan, sinergi nutrien, laluan neural, utusan imun, hormon dan aktiviti mikrob usus.",
+          "communityContent3": "Hubungan ini yang dipanggil Paksi Usus-Otak memainkan peranan penting dalam tingkah laku, mood, dan bagaimana kanak-kanak neurodivergen berfikir, merasa, dan belajar.",
+          "communityContent4": "Ceramah outreach komuniti ini memperkenalkan ibu bapa kepada strategi praktikal, berasaskan sains yang menyokong kesejahteraan anak mereka melalui peningkatan lembut dalam kesihatan usus. Sesi ini menerangkan, dalam bahasa mudah, bagaimana bakteria usus mempengaruhi mood, fokus, tindak balas tekanan, dan kualiti tidur; mengapa masalah pencernaan adalah biasa pada kanak-kanak neurodivergen; dan bagaimana diet, rutin harian, dan tabiat gaya hidup boleh memberi kesan positif kepada tingkah laku dan perhatian.",
+          "communityContent5": "Ibu bapa akan belajar intervensi selamat dan boleh dicapai seperti menggunakan makanan mesra usus, prebiotik dan probiotik, mengurangkan pencetus diet biasa, meningkatkan kebersihan tidur, menggalakkan pergerakan, dan mewujudkan persekitaran deria yang lebih tenang. Ceramah menekankan bahawa sokongan usus-otak bukanlah penawar, tetapi pendekatan pelengkap yang boleh meningkatkan hasil terapi dan meningkatkan fungsi harian. Pada akhir sesi, ibu bapa akan mendapat langkah-langkah yang boleh dilaksanakan yang boleh mereka mulakan di rumah, keyakinan baru dalam menyokong perkembangan anak mereka, dan pemahaman yang realistik tentang bagaimana memupuk kesihatan usus boleh menyumbang kepada tingkah laku yang lebih baik, keseimbangan emosi, dan kualiti hidup keseluruhan untuk kanak-kanak dengan ASD dan ADHD.",
+          "footerTitle": "Ahli Pemakanan Penyelidikan Klinikal",
+          "footerOrg": "Utara Dietetics & Penyelidikan Berasaskan Tumbuhan",
+          "footerEmail": "consult@futurefoods.com.my"
+        },
+        "FAQ": {
+          "question_1": {
+            "question": "Q.1 Berapa cepat saya boleh mengalami penurunan berat badan yang selamat (membakar lemak badan)?",
+            "answer": "Keto Grains Breakfast adalah diet nenek moyang kami. Bercakap dengan Doktor anda dan sertakan makanan bebas Gluten berasaskan tumbuhan yang berkhasiat ini ke dalam pelan diet rendah karbohidrat anda. Selepas 2 minggu, anda boleh menjangkakan penurunan berat badan 5kg dan selepas 30 hari penurunan berat badan 11kg."
+          },
+          "question_2": {
+            "question": "Q.2 Bagaimanakah Keto Grains Breakfast membantu menurunkan gula dalam darah? | Bagaimanakah Vegan Keto Meal mengurangkan rintangan insulin?",
+            "answer": "Keto Grains Breakfast dan Vegan Keto Meal mempunyai 12 gram Serat Larut dan 3 gram Kanji Rintang Jenis 2 setiap hidangan. Keto Grains Breakfast dan Vegan Keto Meal mempunyai Indeks Glisemik 37 - 42. Kedua-dua jenis serat makanan melambatkan penyerapan glukosa dan meningkatkan metabolisme."
+          },
+          "question_3": {
+            "question": "Q.3 Siapa yang perlu mengambil Keto Grains Breakfast / Vegan Keto Meal?",
+            "answer": "Individu dengan kenaikan berat badan secara tiba-tiba, sembelit, pra-diabetes, kawalan diabetes yang lemah, hati berlemak, tekanan darah tinggi, tidak dapat menurunkan lemak perut, tenaga rendah yang kerap dan masalah ketidaksuburan"
+          },
+          "question_4": {
+            "question": "Q.4 Berapa banyak Keto Grains Breakfast / Vegan Keto Meal untuk diambil setiap hari?",
+            "answer": "Nasihat Klinik;\n\nDi bawah 80kg ambil 3 sudu besar. setiap hidangan pada hari selang. (30g)\n\nDi atas 81kg ambil 4 sudu besar. setiap hari."
+          },
+          "question_5": {
+            "question": "Q.5 Berapa lama saya perlu mengambil Keto Grains Breakfast / Vegan Keto Meal?",
+            "answer": "Setiap kursus rawatan dan pelan makan direka untuk 21 hari. Untuk hasil terbaik ulangi selama 3 kitaran"
+          },
+          "question_6": {
+            "question": "Q.6 Apakah hasil atau keputusan kesihatan yang boleh saya jangkakan?",
+            "answer": "Bergantung pada komposisi badan individu, tahap toleransi rasa dan penyakit anda mungkin menjangkakan pergerakan usus yang teratur, kawalan gula dalam darah yang lebih baik, kurang lapar, tahap kolesterol yang lebih rendah, tahap tenaga yang lebih tinggi dan kekuatan otot yang bertambah baik."
+          },
+          "question_7": {
+            "question": "Q.7 Apakah jenis topping yang boleh saya tambah untuk menikmati rasa yang saya suka?",
+            "answer": "Pilihan Topping;\n\n50ml susu Badam atau Walnut tanpa gula\n\n2 sudu besar. Nata de Coco atau Jeli Rumput yang dibilas\n\n3 Kurma Madinah atau 1 sudu besar. Biji Labu\n\n1 Epal hijau atau Pir hijau atau Jambu atau Buah Naga"
+          },
+          "question_8": {
+            "question": "Q.8 Bolehkah saya menjangkakan untuk mendapat jisim otot tanpa lemak dengan hanya protein berasaskan tumbuhan?",
+            "answer": "Klinik kami telah mencatatkan peningkatan 3% dalam jisim otot tanpa lemak selepas menyelesaikan pelan makan terapeutik 90 hari.\n\nIndividu yang menyelesaikan > 5000 langkah sehari atau senaman gim 3 kali seminggu boleh menjangkakan peningkatan 5% dalam jisim otot tanpa lemak"
+          },
+          "question_9": {
+            "question": "Q.9 Adakah Keto Grains Breakfast / Vegan Keto Meal mampu milik?",
+            "answer": "Kos setiap hidangan sarapan sihat ialah RM9.27. Apabila dibandingkan dengan makanan penjaja Cina rendah nutrisi biasa, makanan segera atau sarapan barat atau makanan mamak, makanan berasaskan tumbuhan ini lebih selamat dan mampu milik."
+          },
+          "question_10": {
+            "question": "Q.10 Adakah ia serupa dengan Pengganti Makanan dan Protein Shake yang popular?",
+            "answer": "Ancient Keto Grains adalah lebih unggul dari segi nutrisi dan lebih selamat tetapi kos 30% lebih rendah daripada pengganti makanan yang dijual oleh MLM atau protein shake yang dijual di kedai organik atau kesihatan."
+          },
+          "question_11": {
+            "question": "Q.11 Adakah ia serupa dengan Multi Grains di Kedai Organik?",
+            "answer": "Ancient Keto Grains adalah formulasi siap makan bebas Gluten-Lektin-Soya dan Kacang.\n\nCampuran Multigrain selalunya tidak bebas Gluten atau Soya atau Kacang dan mempunyai Maltodekstrin dan pemanis tiruan."
+          },
+          "question_12": {
+            "question": "Q.12 Bagaimanakah Keto Grains Breakfast / Vegan Keto Meal mendorong Ketosis Nutrisi?",
+            "answer": "Ketosis Nutrisi adalah ketosis sebenar, Keto Grains adalah makanan termogenik padat nutrien; makanan ini memerlukan lebih banyak tenaga metabolik untuk dicerna daripada kalori yang diperoleh (defisit akaun dalam pertukaran tenaga) mendorong badan ke dalam lipolisis (pembakaran lemak)"
+          },
+          "question_13": {
+            "question": "Q.13 Mengapakah Keto Grains Breakfast / Vegan Keto Meal adalah Diet Keto?",
+            "answer": "Makanan paleo organik ini mempunyai kurang daripada 5g karbohidrat tersedia setiap hidangan. Ia adalah makanan termogenik oleh itu anda akan mengalami peningkatan dalam kadar metabolik basal, penurunan lemak badan secara beransur-ansur 30 - 50 gram sehari selepas hari ke-5, tahap tenaga yang lebih tinggi terutamanya menjelang petang dan kejelasan mental yang lebih baik disebabkan peningkatan badan keton dalam aliran darah anda."
+          },
+          "question_14": {
+            "question": "Q.14 Mengapakah Keto Grains dinilai sebagai 'makanan sebenar pertama hari' oleh Doktor Penjagaan Primer dan banyak Klinik Amalan Umum?",
+            "answer": "Anda memperoleh nilai harian serat makanan larut, ALA Omega 3, mineral surih, protein tumbuhan yang mencukupi dan polifenol dan fitosterol."
+          },
+          "question_15": {
+            "question": "Q.15 Bilakah penyelidikan perubatan mengenai keberkesanan Makanan Berasaskan Tumbuhan selesai?",
+            "answer": "Pada 2015 ujian produk dijalankan oleh 3 doktor ke atas 18 pesakit dengan hasil yang menjanjikan. Pada 2017 formulasi Keto Grains yang dipertingkatkan diuji secara klinikal dengan penyertaan 133 pesakit selama 18 bulan.\n\nKeputusan ujian menunjukkan Keto Grains Vegan Meal mempunyai Indeks Glisemik 37 - 42, dan adalah terapeutik untuk pesakit dengan intoleransi makanan (alahan), sembelit, diabetes, hati berlemak, atrofi/kekejangan otot dan tenaga rendah (fibromyalgia)\n\nNaratif oleh\n\nDr Keshu A\n\nAhli Pemakanan Penyelidikan Klinikal\n\nKaunselor Perubatan\n\nKlinik Utara Dietetics"
+          }
         }
       }
+    },
+    "DoctorsForum": {
+      "heading": "Forum Doktor",
+      "paragraph": "Selamat datang ke Forum Doktor. Ini adalah ruang khusus untuk profesional penjagaan kesihatan untuk mengakses sumber, penyelidikan, dan maklumat berkaitan produk dan perkhidmatan kami.",
+      "pdfNotSupported": "Pelayar anda tidak menyokong PDF. Sila",
+      "downloadPdf": "muat turun PDF"
     }
+  }

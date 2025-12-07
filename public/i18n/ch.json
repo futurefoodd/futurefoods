@@ -191,12 +191,6 @@
     
         },
     
-        "ProductDetail": {
-          "veganSoftPastilles": {
-            "title": "素食软糖",
-            "description": "Functional Foods 配方工厂 | FSSC ISO22000"
-          }
-        },
         "Tour":{
             "header":"参观",
             "subHeader": "功能性食品配方工厂 | FSSC ISO22000"
@@ -220,6 +214,8 @@
                   "height": "身高 (cm)",
                   "weight": "体重 (kg)",
                   "country": "国家",
+                  "referredBy": "推荐人",
+                  "socialMediaId": "社交媒体ID",
                   "dailyActivityLevel": "日常活动水平",
                   "exerciseRoutine": "运动项目",
                   "exerciseFrequency": "运动频率",
@@ -321,8 +317,21 @@
                 "detailedForm": {
                   "title": "代谢健康调查",
                   "tabs": {
-                    "basic": "基本信息",
-                    "detailed": "详细评估"
+                    "basic": "营养咨询",
+                    "detailed": "代谢健康调查",
+                    "sample": "申请样品"
+                  },
+                  "basicInformation": "基本信息",
+                  "syncBasicInfo": "在所有标签页之间同步基本信息",
+                  "sampleRequest": {
+                    "title": "申请样品",
+                    "description": "请填写下面的表格以申请我们的产品样品。",
+                    "name": "姓名",
+                    "email": "电子邮箱",
+                    "contact": "联系电话",
+                    "address": "地址",
+                    "message": "留言",
+                    "submit": "提交申请"
                   },
                   "questions": {
                     "breakfastChoice": "以下食物选择中，早餐主要是：",
@@ -416,6 +425,11 @@
       "GutBrainAxis": {
         "mainTitle": "面向 ASD 和 ADHD 儿童家长的社区外展讲座",
         "articleTitle": "肠-脑轴",
+        "tabs": {
+          "talk": "肠-脑轴讲座",
+          "science": "肠-脑轴科学"
+        },
+        "comingSoon": "即将推出",
         "events": {
           "event1": "2024年10月27日",
                   "event1Location": "Utara Dietetics, Southern Park",
@@ -428,7 +442,9 @@
                   "event5": "2025年3月23日",
                   "event5Location": "Mt. Kiara Club",
                   "event6": "2025年5月25日",
-                  "event6Location": "Bertam Golf Course"
+                  "event6Location": "Bertam Golf Course",
+                  "event7": "2025年7月27日",
+                  "event7Location": "Perda Food Tech Park"
                 },
                 "article": {
                   "heading": "营养密集软糖增加肠脑轴 (GBA) 功能性*",
@@ -451,6 +467,110 @@
                   "sharingBy": "分享者",
                   "organization": "Utara Dietetics & Plant-Based Research",
                   "contactEmail": "consult@futurefoods.com.my"
+                },
+                "science": {
+                  "intro": "肠-脑轴 [GBA] 是指大脑、神经、胃、结肠、激素、免疫系统和肠道微生物之间的双向神经信号通路。这个'第二大脑'通常被称为情绪智力的来源，支持社会规范、学习专注、安稳睡眠和幸福感。",
+                  "functionality": "这种功能受到益生元、益生菌、口腔卫生、人类肠道微生物、营养协同作用和代谢化学的影响。这些复杂的微生物 ~ 分子 ~ 线粒体相互依赖提供了食欲调节、营养吸收、肠道运动、激素产生、神经功能、压力应对和免疫反应所需的重要团队合作。",
+                  "studies": "大量研究表明，情绪健康、情绪调节、运动协调、学习发展和社会技能是由我们在出生和青春期获得的友好共生肠道细菌继承、启动和调节的。",
+                  "researchTitle": "临床研究",
+                  "researchContent": "九州大学心身医学的临床研究人员 Nobuyuki Sudo 博士和 Yoichi Chida 博士通过 2004 年的一项研究为肠-脑轴的发现做出了贡献。",
+                  "nagoyaStudy": "日本名古屋大学医学研究科的科学家对从日本、台湾、中国、德国和美国的患有各种神经系统疾病的患者收集的粪便样本进行了荟萃分析。研究团队对粪便样本中的所有遗传物质进行了测序，检查了粪便的遗传和微生物组成。这项 2024 年探索肠道与大脑之间关系的研究表明，快乐的微生物群落影响认知发展和情绪健康。",
+                  "dysbiosisTitle": "肠道菌群失调",
+                  "dysbiosisContent": "肠道菌群失调破坏了这种快乐并导致炎症加剧，这与神经退行性疾病以及消化不良、食物不耐受、腹胀、吸收不良、便秘和肠易激综合征有关。",
+                  "quote": "\"新兴研究继续表明，饮食模式、消化效率、营养吸收和神经化学平衡是相互关联的。肠-脑轴显著影响代谢调节、认知发展、压力应对和情绪稳定性，\"",
+                  "quoteAuthor": "Keshu A. 博士说。",
+                  "treatmentTitle": "治疗方案",
+                  "treatmentContent": "恢复肠-脑轴功能的实用治疗方案必须采用缓慢-稳定-安全的方法。安全疗法包括注入植物营养素的明胶或果胶基质、古生元益生元膳食、纯素生酮饮食、精神益生菌或生命培养医疗级益生菌以及抗炎多酚。",
+                  "specialNeedsTitle": "特殊需求教育与临床验证",
+                  "specialNeedsContent": "特殊需求教育工作者或 ASD 治疗师或教学医院的儿科医生非常适合通过进行结构化的前后评估来验证针对 ADHD 儿童和学习困难学生的长期治疗计划的有效性，评估注意力、参与度、接受度分数和学业进步。",
+                  "contactTitle": "神经多样性教育与发展从业者",
+                  "contactOrg": "ASD 咨询师\nUtara Dietetics & Plant-Based Research",
+                  "contactEmail": "consult@futurefoods.com.my",
+                  "communityTitle": "社区外展与家长支持",
+                  "communitySubtitle": "神经多样性儿童的营养护理与学习发展",
+                  "communityContent1": "患有 ASD 和 ADHD 的儿童通常不仅在注意力、学习和社交技能方面遇到困难；许多神经多样性儿童还经历敏感消化、食物偏好有限、食物不耐受、过度糖分渴望、不安睡眠和管理情绪的挑战。",
+                  "communityContent2": "今天，医学研究人员更清楚地了解，肠道和大脑通过食物化学、营养协同作用、神经通路、免疫信使、激素和肠道微生物的活动而深度连接。",
+                  "communityContent3": "这种称为肠-脑轴的关系在行为、情绪以及神经多样性儿童如何思考、感受和学习方面发挥着重要作用。",
+                  "communityContent4": "这次社区外展讲座向家长介绍实用的、基于科学的策略，通过温和改善肠道健康来支持孩子的健康。会议用简单的语言解释了肠道细菌如何影响情绪、专注力、压力反应和睡眠质量；为什么消化问题在神经多样性儿童中很常见；以及饮食、日常习惯和生活方式如何积极影响行为和注意力。",
+                  "communityContent5": "家长将学习安全且可实现的干预措施，例如使用肠道友好食物、益生元和益生菌、减少常见饮食触发因素、改善睡眠卫生、鼓励运动以及创造更平静的感觉环境。讲座强调，肠-脑支持不是治愈方法，而是一种补充方法，可以增强治疗效果并改善日常功能。在会议结束时，家长将获得可以在家中开始的可操作步骤，重新获得支持孩子发展的信心，以及对培养肠道健康如何有助于改善行为、情绪平衡和 ASD 和 ADHD 儿童整体生活质量的现实理解。",
+                  "footerTitle": "临床研究营养师",
+                  "footerOrg": "Utara Dietetics & Plant-Based Research",
+                  "footerEmail": "consult@futurefoods.com.my"
+                },
+                "FAQ": {
+          "question_1": {
+                    "question": "Q.1 我多久可以安全减重（燃烧体脂）？",
+                    "answer": "Keto Grains Breakfast 是我们的祖先饮食。与您的医生交谈，并将这种营养丰富的无麸质植物性膳食纳入您的低碳水化合物饮食计划。2周后，您可以预期减重5公斤，30天后减重11公斤。"
+                  },
+                  "question_2": {
+                    "question": "Q.2 Keto Grains Breakfast 如何帮助降低血糖？| 纯素生酮餐如何减少胰岛素抵抗？",
+                    "answer": "Keto Grains Breakfast 和纯素生酮餐每份含有12克可溶性纤维和3克抗性淀粉类型2。Keto Grains Breakfast 和纯素生酮餐的血糖指数为37-42。两种膳食纤维都会减慢葡萄糖吸收并增加新陈代谢。"
+                  },
+                  "question_3": {
+                    "question": "Q.3 谁需要服用 Keto Grains Breakfast / 纯素生酮餐？",
+                    "answer": "突然体重增加、便秘、糖尿病前期、糖尿病控制不佳、脂肪肝、高血压、无法减掉腹部脂肪、经常低能量和不育问题的个人"
+                  },
+                  "question_4": {
+                    "question": "Q.4 每天应该服用多少 Keto Grains Breakfast / 纯素生酮餐？",
+                    "answer": "临床建议；\n\n80公斤以下，每份3汤匙，隔天服用。(30g)\n\n81公斤以上，每天4汤匙。"
+                  },
+                  "question_5": {
+                    "question": "Q.5 我应该服用 Keto Grains Breakfast / 纯素生酮餐多长时间？",
+                    "answer": "每个治疗疗程和饮食计划设计为21天。为获得最佳效果，重复3个周期"
+                  },
+                  "question_6": {
+                    "question": "Q.6 我可以期待什么健康结果或效果？",
+                    "answer": "根据个人的身体成分、味觉耐受水平和疾病，您可能会期待规律的排便、更好的血糖控制、减少饥饿感、降低胆固醇水平、更高的能量水平和改善的肌肉力量。"
+                  },
+                  "question_7": {
+                    "question": "Q.7 我可以添加什么类型的配料来享受我喜欢的味道？",
+                    "answer": "配料选择；\n\n50ml 无糖杏仁或核桃奶\n\n2汤匙冲洗过的椰果或仙草\n\n3个麦地那枣或1汤匙南瓜籽\n\n1个青苹果或青梨或番石榴或火龙果"
+                  },
+                  "question_8": {
+                    "question": "Q.8 仅使用植物性蛋白质，我可以期待增加瘦肌肉质量吗？",
+                    "answer": "我们的诊所记录到，完成90天治疗性饮食计划后，瘦肌肉质量增加了3%。\n\n每天完成>5000步或每周3次健身房锻炼的个人可以期待瘦肌肉质量增加5%"
+                  },
+                  "question_9": {
+                    "question": "Q.9 Keto Grains Breakfast / 纯素生酮餐是否负担得起？",
+                    "answer": "每份健康早餐的成本为RM9.27。与常规低营养的中式小贩食品、快餐或西式早餐或mamak餐相比，这种植物性膳食更安全且负担得起。"
+                  },
+                  "question_10": {
+                    "question": "Q.10 它是否类似于流行的代餐和蛋白质奶昔？",
+                    "answer": "Ancient Keto Grains 在营养上更优越且更安全，但成本比MLM销售的代餐或有机或健康商店零售的蛋白质奶昔低30%。"
+                  },
+                  "question_11": {
+                    "question": "Q.11 它是否类似于有机商店的多谷物？",
+                    "answer": "Ancient Keto Grains 是一种无麸质-凝集素-大豆和坚果的即食配方。\n\n多谷物混合物通常不含麸质或大豆或坚果，并含有麦芽糊精和人造甜味剂。"
+                  },
+                  "question_12": {
+                    "question": "Q.12 Keto Grains Breakfast / 纯素生酮餐如何诱导营养性酮症？",
+                    "answer": "营养性酮症是真正的酮症，Keto Grains 是一种营养密集的生热食物；这顿饭需要比获得的卡路里更多的代谢能量来消化（能量交换中的账户赤字），促使身体进入脂肪分解（脂肪燃烧）"
+                  },
+                  "question_13": {
+                    "question": "Q.13 为什么 Keto Grains Breakfast / 纯素生酮餐是生酮饮食？",
+                    "answer": "这种有机古生代膳食每份含有少于5克可用碳水化合物。它是一种生热膳食，因此您将经历基础代谢率的增加，第5天后每天逐渐减少30-50克体脂，更高的能量水平，特别是在傍晚，以及由于血液中酮体增加而改善的精神清晰度。"
+                  },
+                  "question_14": {
+                    "question": "Q.14 为什么 Keto Grains 被初级保健医生和许多全科诊所评为'一天的第一顿真正的饭'？",
+                    "answer": "您获得每日价值的膳食可溶性纤维、ALA Omega 3、微量矿物质、充足的植物蛋白质以及多酚和植物甾醇。"
+                  },
+                  "question_15": {
+                    "question": "Q.15 植物性膳食功效的医学研究何时完成？",
+                    "answer": "2015年，3名医生对18名患者进行了产品试验，结果令人鼓舞。2017年，改进的Keto Grains配方进行了临床试验，有133名患者参与，历时18个月。\n\n试验结果显示，Keto Grains纯素餐的血糖指数为37-42，对食物不耐受（过敏）、便秘、糖尿病、脂肪肝、肌肉萎缩/痉挛和低能量（纤维肌痛）患者具有治疗作用\n\n叙述者\n\nKeshu A 博士\n\n临床研究营养师\n\n医疗顾问\n\nUtara Dietetics 诊所"
+                  }
                 }
-              }
+              },
+            
+      "ProductDetail": {
+        "veganSoftPastilles": {
+          "title": "素食软糖",
+          "description": "Functional Foods 配方工厂 | FSSC ISO22000"
+        }
+      },
+      "DoctorsForum": {
+        "heading": "医生论坛",
+        "paragraph": "欢迎来到医生论坛。这是医疗保健专业人员访问与我们产品和服务相关的资源、研究和信息的专用空间。",
+        "pdfNotSupported": "您的浏览器不支持PDF。请",
+        "downloadPdf": "下载PDF"
       }
+    }

@@ -14,7 +14,9 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class DieteticsComponent {
   consultForm: FormGroup;
   detailedForm: FormGroup;
-  activeTab: 'basic' | 'detailed' = 'basic';
+  sampleRequestForm: FormGroup;
+  activeTab: 'basic' | 'detailed' | 'sample' = 'basic';
+  syncBasicInfo: boolean = false;
 
   // options
   alcohol = ['Dietetics.options.beer', 'Dietetics.options.wine','Dietetics.options.liquor', 'Dietetics.options.none']
@@ -149,6 +151,7 @@ export class DieteticsComponent {
       weight: ['', Validators.required],
       country: ['', Validators.required],
       referredBy:['', Validators.required],
+      socialMediaId: [''],
       activityLevel: ['', Validators.required],
       exerciseRoutine: [[], Validators.required],
       exerciseFrequency: ['', Validators.required],
@@ -181,6 +184,18 @@ export class DieteticsComponent {
 
     // Detailed form
     this.detailedForm = this.fb.group({
+      // Basic info fields
+      name: ['', Validators.required],
+      age: ['', Validators.required],
+      contact: ['', Validators.required],
+      email: ['', Validators.required],
+      sex: ['', Validators.required],
+      height: ['', Validators.required],
+      weight: ['', Validators.required],
+      country: ['', Validators.required],
+      referredBy: ['', Validators.required],
+      socialMediaId: [''],
+      // Detailed form specific fields
       breakfastChoice: [''],
       lunchChoice: [''],
       dinnerTime: [''],
@@ -198,6 +213,27 @@ export class DieteticsComponent {
       hospitalisationDate: [''],
       urineFrequency: ['']
     });
+
+    // Sample request form
+    this.sampleRequestForm = this.fb.group({
+      // Basic info fields
+      name: ['', Validators.required],
+      age: ['', Validators.required],
+      contact: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      sex: ['', Validators.required],
+      height: ['', Validators.required],
+      weight: ['', Validators.required],
+      country: ['', Validators.required],
+      referredBy: ['', Validators.required],
+      socialMediaId: [''],
+      // Sample request specific fields
+      address: [''],
+      message: ['']
+    });
+
+    // Set up value change listeners for syncing
+    this.setupBasicInfoSync();
   }
 
   // handle checkbox changes
@@ -212,7 +248,7 @@ export class DieteticsComponent {
     this.consultForm.get(field)?.setValue(selected);
   }
 
-  setActiveTab(tab: 'basic' | 'detailed') {
+  setActiveTab(tab: 'basic' | 'detailed' | 'sample') {
     this.activeTab = tab;
   }
 
@@ -229,6 +265,77 @@ export class DieteticsComponent {
       }
     } else {
       alert('Please fill out at least one field in the detailed form!')
+    }
+  }
+
+  async onSubmitSampleRequest() {
+    if(this.sampleRequestForm.valid){
+      // TODO: Implement sample request submission service
+      alert('Sample request submitted successfully!');
+      this.sampleRequestForm.reset()
+    } else {
+      alert('Please fill up the mandatory fields!')
+    }
+  }
+
+  setupBasicInfoSync() {
+    const basicInfoFields = ['name', 'age', 'contact', 'email', 'sex', 'height', 'weight', 'country', 'referredBy', 'socialMediaId'];
+    
+    // Listen to changes in each form and sync if checkbox is checked
+    basicInfoFields.forEach(field => {
+      this.consultForm.get(field)?.valueChanges.subscribe(value => {
+        if (this.syncBasicInfo) {
+          this.detailedForm.patchValue({ [field]: value }, { emitEvent: false });
+          this.sampleRequestForm.patchValue({ [field]: value }, { emitEvent: false });
+        }
+      });
+
+      this.detailedForm.get(field)?.valueChanges.subscribe(value => {
+        if (this.syncBasicInfo) {
+          this.consultForm.patchValue({ [field]: value }, { emitEvent: false });
+          this.sampleRequestForm.patchValue({ [field]: value }, { emitEvent: false });
+        }
+      });
+
+      this.sampleRequestForm.get(field)?.valueChanges.subscribe(value => {
+        if (this.syncBasicInfo) {
+          this.consultForm.patchValue({ [field]: value }, { emitEvent: false });
+          this.detailedForm.patchValue({ [field]: value }, { emitEvent: false });
+        }
+      });
+    });
+  }
+
+  onSyncBasicInfoChange(checked: boolean) {
+    this.syncBasicInfo = checked;
+    if (checked) {
+      // Sync from active tab to all other tabs
+      const basicInfoFields = ['name', 'age', 'contact', 'email', 'sex', 'height', 'weight', 'country', 'referredBy', 'socialMediaId'];
+      let sourceForm: FormGroup;
+      
+      if (this.activeTab === 'basic') {
+        sourceForm = this.consultForm;
+      } else if (this.activeTab === 'detailed') {
+        sourceForm = this.detailedForm;
+      } else {
+        sourceForm = this.sampleRequestForm;
+      }
+
+      const values: any = {};
+      basicInfoFields.forEach(field => {
+        values[field] = sourceForm.get(field)?.value;
+      });
+
+      // Apply to all forms
+      if (this.activeTab !== 'basic') {
+        this.consultForm.patchValue(values, { emitEvent: false });
+      }
+      if (this.activeTab !== 'detailed') {
+        this.detailedForm.patchValue(values, { emitEvent: false });
+      }
+      if (this.activeTab !== 'sample') {
+        this.sampleRequestForm.patchValue(values, { emitEvent: false });
+      }
     }
   }
 

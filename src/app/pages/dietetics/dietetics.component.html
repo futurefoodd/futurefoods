@@ -14,15 +14,30 @@
         {{ 'Dietetics.detailedForm.tabs.basic' | translate }}
       </button>
       <button type="button" 
+            [class.active]="activeTab === 'sample'" 
+            (click)="setActiveTab('sample')">
+        {{ 'Dietetics.detailedForm.tabs.sample' | translate }}
+      </button>
+      <button type="button" 
               [class.active]="activeTab === 'detailed'" 
               (click)="setActiveTab('detailed')">
         {{ 'Dietetics.detailedForm.tabs.detailed' | translate }}
       </button>
+     
+    </div>
+
+    <!-- Sync Basic Info Checkbox -->
+    <div class="sync-checkbox-section">
+      <label>
+        <input type="checkbox" [checked]="syncBasicInfo" (change)="onSyncBasicInfoChange($any($event.target).checked)" />
+        {{ 'Dietetics.detailedForm.syncBasicInfo' | translate }}
+      </label>
     </div>
 
     <!-- Basic Form Tab -->
     <form [formGroup]="consultForm" (ngSubmit)="onSubmit()" *ngIf="activeTab === 'basic'">
       <!-- Basic Info -->
+      <h3>{{ 'Dietetics.detailedForm.basicInformation' | translate }}</h3>
       <div class="form-section">
         <label>{{'Dietetics.form.name' | translate}}:<span style="color: red;">*</span></label>
         <input type="text" formControlName="name" />
@@ -60,6 +75,9 @@
             {{ option | translate }}
           </label>
         </div>
+
+        <label>{{'Dietetics.form.socialMediaId' | translate}}:</label>
+        <input type="text" formControlName="socialMediaId"/>
       </div>
   
       <!-- Lifestyle & Habits -->
@@ -226,6 +244,50 @@
 
     <!-- Detailed Form Tab -->
     <form [formGroup]="detailedForm" *ngIf="activeTab === 'detailed'">
+      <!-- Basic Info -->
+      <h3>{{ 'Dietetics.detailedForm.basicInformation' | translate }}</h3>
+      <div class="form-section">
+        <label>{{'Dietetics.form.name' | translate}}:<span style="color: red;">*</span></label>
+        <input type="text" formControlName="name" />
+  
+        <label>{{'Dietetics.form.age' | translate}}:<span style="color: red;">*</span></label>
+        <input type="number" formControlName="age" min="0"/>
+
+        <label>{{'Dietetics.form.contact' | translate}}:<span style="color: red;">*</span></label>
+        <input type="text" formControlName="contact" />
+
+        <label>{{'Dietetics.form.email' | translate}}:<span style="color: red;">*</span></label>
+        <input type="text" formControlName="email" />
+  
+        <label>{{'Dietetics.form.sex' | translate}}:<span style="color: red;">*</span></label>
+        <div class="radio-group">
+          <label><input type="radio" value="Male" formControlName="sex" /> {{'Dietetics.form.male' | translate}}</label>
+          <label><input type="radio" value="Female" formControlName="sex" /> {{'Dietetics.form.female' | translate}}</label>
+        </div>
+      </div>
+  
+      <div class="form-section">
+        <label>{{'Dietetics.form.height' | translate}}:<span style="color: red;">*</span></label>
+        <input type="number" formControlName="height" min="0" />
+  
+        <label>{{'Dietetics.form.weight' | translate}}:<span style="color: red;">*</span></label>
+        <input type="number" formControlName="weight" min="0" />
+  
+        <label>{{'Dietetics.form.country' | translate}}:<span style="color: red;">*</span></label>
+        <input type="text" formControlName="country" />
+
+        <label>{{'Dietetics.form.referredBy' | translate}}:<span style="color: red;">*</span></label>
+        <div class="radio-group">
+          <label *ngFor="let option of referredByOptions">
+            <input type="radio" [value]="option" formControlName="referredBy" />
+            {{ option | translate }}
+          </label>
+        </div>
+
+        <label>{{'Dietetics.form.socialMediaId' | translate}}:</label>
+        <input type="text" formControlName="socialMediaId" />
+      </div>
+
       <h3>{{ 'Dietetics.detailedForm.title' | translate }}</h3>
 
       <label>{{ 'Dietetics.detailedForm.questions.breakfastChoice' | translate }}<span style="color: red;">*</span></label>
@@ -368,5 +430,71 @@
       
       <button type="button" (click)="onSubmitDetailedForm()">{{ 'Dietetics.form.submit' | translate }}</button>
     </form>
+
+    <!-- Request for Sample Tab -->
+    <div *ngIf="activeTab === 'sample'" class="sample-request-section">
+      <form [formGroup]="sampleRequestForm" (ngSubmit)="onSubmitSampleRequest()" *ngIf="sampleRequestForm">
+        <!-- Basic Info -->
+        <h3>{{ 'Dietetics.detailedForm.basicInformation' | translate }}</h3>
+        <div class="form-section">
+          <label>{{'Dietetics.form.name' | translate}}:<span style="color: red;">*</span></label>
+          <input type="text" formControlName="name" />
+  
+          <label>{{'Dietetics.form.age' | translate}}:<span style="color: red;">*</span></label>
+          <input type="number" formControlName="age" min="0"/>
+
+          <label>{{'Dietetics.form.contact' | translate}}:<span style="color: red;">*</span></label>
+          <input type="text" formControlName="contact" />
+
+          <label>{{'Dietetics.form.email' | translate}}:<span style="color: red;">*</span></label>
+          <input type="text" formControlName="email" />
+  
+          <label>{{'Dietetics.form.sex' | translate}}:<span style="color: red;">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" value="Male" formControlName="sex" /> {{'Dietetics.form.male' | translate}}</label>
+            <label><input type="radio" value="Female" formControlName="sex" /> {{'Dietetics.form.female' | translate}}</label>
+          </div>
+        </div>
+  
+        <div class="form-section">
+          <label>{{'Dietetics.form.height' | translate}}:<span style="color: red;">*</span></label>
+          <input type="number" formControlName="height" min="0" />
+  
+          <label>{{'Dietetics.form.weight' | translate}}:<span style="color: red;">*</span></label>
+          <input type="number" formControlName="weight" min="0" />
+  
+          <label>{{'Dietetics.form.country' | translate}}:<span style="color: red;">*</span></label>
+          <input type="text" formControlName="country" />
+
+          <label>{{'Dietetics.form.referredBy' | translate}}:<span style="color: red;">*</span></label>
+          <div class="radio-group">
+            <label *ngFor="let option of referredByOptions">
+              <input type="radio" [value]="option" formControlName="referredBy" />
+              {{ option | translate }}
+            </label>
+          </div>
+
+          <label>{{'Dietetics.form.socialMediaId' | translate}}:</label>
+          <input type="text" formControlName="socialMediaId" />
+        </div>
+
+        <!-- Sample Request Specific Fields -->
+        <div class="form-section">
+          <label>{{ 'Dietetics.detailedForm.sampleRequest.address' | translate }}:</label>
+          <textarea formControlName="address" rows="3"></textarea>
+          
+          <label>{{ 'Dietetics.detailedForm.sampleRequest.message' | translate }}:</label>
+          <textarea formControlName="message" rows="4"></textarea>
+        </div>
+        
+        <p class="privacy-note">
+          {{ 'Dietetics.privacyNote.text' | translate }}
+          <a href="/privacy-policy" target="_blank">{{ 'Dietetics.privacyNote.privacyPolicy' | translate }}</a> {{ 'Dietetics.privacyNote.and' | translate }}
+          <strong>{{ 'Dietetics.privacyNote.pdpa' | translate }}</strong>.
+        </p>
+        
+        <button type="submit">{{ 'Dietetics.detailedForm.sampleRequest.submit' | translate }}</button>
+      </form>
+    </div>
   </div>
   

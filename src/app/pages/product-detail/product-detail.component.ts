@@ -3,10 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms'
+import { TranslatePipe } from '@ngx-translate/core';
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
 import { productImage } from '../../core/model/product.model';
 import { WhatsAppService } from '../../services/whatsapp.service';
 import { environment } from '../../../environments/environment';
+import { VideoPlayerComponent, VideoSource } from '../../components/video-player/video-player.component';
 
 
 // type productImage = {
@@ -18,7 +20,7 @@ import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, FormsModule, FlickityCarouselComponent],
+  imports: [CommonModule, FormsModule, TranslatePipe, FlickityCarouselComponent, VideoPlayerComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
   providers: []
@@ -42,12 +44,26 @@ export class ProductDetailComponent implements OnInit {
   unitName:string= "box"
   unitQuantity:string = ''
 
+  videoPoster = '';
+  videoSources: VideoSource[] = [];
+
   constructor(
     private activatedRoute: ActivatedRoute, 
     private whatsappService: WhatsAppService
   ) {
 
   }
+
+  // readonly videoSources: VideoSource[] = [
+  //   {
+  //     src: 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public/videos/ancestral_video.mp4',
+  //     type: 'video/mp4',
+  //   },
+  //   {
+  //     src: 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/videos/upskill-story-1080p.webm',
+  //     type: 'video/webm',
+  //   },
+  // ];
 
   async ngOnInit(): Promise<void> {
     if (isPlatformBrowser(this.platformId)) {
@@ -72,6 +88,14 @@ export class ProductDetailComponent implements OnInit {
        this.createImageObject()
       this.productSpecification =this.createKeyValue(this.product[0].product_specification)
       this.setUnitQuantity = '12'
+      
+      // Initialize video sources if available in product data
+      if (this.product && this.product[0] && this.product[0].video_url) {
+        this.initializeVideoSources(this.product[0].video_url);
+      }
+      if (this.product && this.product[0] && this.product[0].video_url) {
+        this.videoPoster = this.constructImageUrl(this.product[0].video_url);
+      }
       }else{
         this.product = undefined
       }
@@ -297,5 +321,176 @@ export class ProductDetailComponent implements OnInit {
       default:
         return 'Buy Now';
     }
+  }
+
+  /**
+   * Initializes video sources from product video data
+   * Supports both full URLs and relative paths (which will be converted to full Supabase URLs)
+   */
+  private initializeVideoSources(videoData: any): void {
+    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc';
+    
+    const constructVideoUrl = (pathOrUrl: string): string => {
+      // If it's already a full URL, return as is
+      if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
+        return pathOrUrl;
+      }
+      // Otherwise, construct the full Supabase URL
+      // Remove leading slash if present
+      const cleanPath = pathOrUrl.startsWith('/') ? pathOrUrl.slice(1) : pathOrUrl;
+      return `${supabaseBaseUrl}/${cleanPath}`;
+    };
+
+    const getVideoType = (url: string): string => {
+      if (url.endsWith('.webm')) return 'video/webm';
+      if (url.endsWith('.mp4')) return 'video/mp4';
+      if (url.endsWith('.ogg')) return 'video/ogg';
+      return 'video/mp4'; // default
+    };
+
+    if (Array.isArray(videoData)) {
+      this.videoSources = videoData.map((video: any) => {
+        const src = typeof video === 'string' ? video : video.src;
+        const fullUrl = constructVideoUrl(src);
+        return {
+          src: fullUrl,
+          type: typeof video === 'string' ? getVideoType(fullUrl) : (video.type || getVideoType(fullUrl)),
+        };
+      });
+    } else if (typeof videoData === 'string') {
+      const fullUrl = constructVideoUrl(videoData);
+      this.videoSources = [{
+        src: fullUrl,
+        type: getVideoType(fullUrl),
+      }];
+    }
+  }
+
+  /**
+   * Constructs full URL for images/posters from path or returns full URL as-is
+   */
+  private constructImageUrl(pathOrUrl: string): string {
+    // If it's already a full URL, return as is
+    if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
+      return pathOrUrl;
+    }
+    // Otherwise, construct the full Supabase URL
+    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc';
+    const cleanPath = pathOrUrl.startsWith('/') ? pathOrUrl.slice(1) : pathOrUrl;
+    return `${supabaseBaseUrl}/${cleanPath}`;
+  }
+
+  /**
+   * Checks if video sources are available
+   */
+  hasVideo(): boolean {
+    return this.videoSources && this.videoSources.length > 0;
+  }
+
+  /**
+   * Checks if the current product is Ancestral Keto Diet Guide
+   */
+  isAncestralKetoProduct(): boolean {
+    return this.product && this.product[0] && this.product[0].name === 'Ancestral Keto Diet Guide';
+  }
+
+  /**
+   * FAQ data for Ancestral Keto Diet Guide
+   */
+  ancestralKetoFaq = [
+    {
+      "title": "ProductDetail.FAQ.question_1.question",
+      "content": "ProductDetail.FAQ.question_1.answer",
+      "value": "0",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_2.question",
+      "content": "ProductDetail.FAQ.question_2.answer",
+      "value": "1",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_3.question",
+      "content": "ProductDetail.FAQ.question_3.answer",
+      "value": "2",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_4.question",
+      "content": "ProductDetail.FAQ.question_4.answer",
+      "value": "3",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_5.question",
+      "content": "ProductDetail.FAQ.question_5.answer",
+      "value": "4",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_6.question",
+      "content": "ProductDetail.FAQ.question_6.answer",
+      "value": "5",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_7.question",
+      "content": "ProductDetail.FAQ.question_7.answer",
+      "value": "6",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_8.question",
+      "content": "ProductDetail.FAQ.question_8.answer",
+      "value": "7",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_9.question",
+      "content": "ProductDetail.FAQ.question_9.answer",
+      "value": "8",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_10.question",
+      "content": "ProductDetail.FAQ.question_10.answer",
+      "value": "9",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_11.question",
+      "content": "ProductDetail.FAQ.question_11.answer",
+      "value": "10",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_12.question",
+      "content": "ProductDetail.FAQ.question_12.answer",
+      "value": "11",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_13.question",
+      "content": "ProductDetail.FAQ.question_13.answer",
+      "value": "12",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_14.question",
+      "content": "ProductDetail.FAQ.question_14.answer",
+      "value": "13",
+      "isOpen": false
+    },
+    {
+      "title": "ProductDetail.FAQ.question_15.question",
+      "content": "ProductDetail.FAQ.question_15.answer",
+      "value": "14",
+      "isOpen": false
+    }
+  ];
+
+  toggleFaqAccordion(index: number): void {
+    this.ancestralKetoFaq[index].isOpen = !this.ancestralKetoFaq[index].isOpen;
   }
 }

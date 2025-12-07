@@ -12,7 +12,7 @@
       <div class="nav-menu" [class.active]="isMenuOpen" (closeMenu)="isMenuOpen = false" (click)="isMenuOpen = false">
         <a routerLink="/" class="nav-link">{{'Top-nav.home' | translate}}</a>
         <a routerLink="/products" class="nav-link">{{'Top-nav.products' | translate}}</a>
-        <a routerLink="/" class="nav-link">{{'Top-nav.doctorsForum' | translate}}</a>
+        <a routerLink="/doctors-forum" class="nav-link">{{'Top-nav.doctorsForum' | translate}}</a>
         <div class="dietetics-dropdown" (mouseenter)="showDieteticsDropdown()" (mouseleave)="hideDieteticsDropdown()">
           <a class="nav-link cursor-pointer dietetics-trigger">
             {{'Top-nav.dietetics' | translate}} <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none">

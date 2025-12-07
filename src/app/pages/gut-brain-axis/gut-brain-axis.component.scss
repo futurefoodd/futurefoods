@@ -7,9 +7,121 @@ $dark-slate-gray: #364A42ff;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.tabs-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.tabs-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
+  flex-shrink: 0;
+
+  button {
+    background: white;
+    color: #6b7280;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f9fafb;
+      border-color: $dark-slate-gray;
+      color: $dark-slate-gray;
+    }
+
+    &.active {
+      background: $dark-slate-gray;
+      color: white;
+      border-color: $dark-slate-gray;
+      font-weight: 600;
+    }
+  }
+}
+
+.tabs-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tab-panel {
+  width: 100%;
+}
+
+.dysbiosis-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #fff5f5;
+  border-radius: 8px;
+  border-left: 4px solid #dc2626;
+}
+
+.quote-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 4px solid $dark-slate-gray;
+  font-style: italic;
+}
+
+.quote-text {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.quote-author {
+  font-size: 16px;
+  color: $dark-slate-gray;
+  font-weight: 600;
+  text-align: right;
+  font-style: normal;
+}
+
+.treatment-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #f0f9ff;
+  border-radius: 8px;
+  border-left: 4px solid #0284c7;
+}
+
+.special-needs-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #fef3c7;
+  border-radius: 8px;
+  border-left: 4px solid #d97706;
+}
+
+.contact-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.community-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #f0f7f4;
+  border-radius: 8px;
+  border-left: 4px solid $dark-slate-gray;
 }
 
 .main-title {
@@ -128,12 +240,44 @@ $dark-slate-gray: #364A42ff;
   }
 }
 
+.product-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid $dark-slate-gray;
+}
+
+.dosage-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #fff9e6;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+.oral-hygiene-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #f0f7f4;
+  border-radius: 8px;
+  border-left: 4px solid $dark-slate-gray;
+}
+
 .mechanism-section {
   margin: 40px 0;
   padding: 30px;
   background: #f0f7f4;
   border-radius: 8px;
   border-left: 4px solid $dark-slate-gray;
+}
+
+.research-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: #e8f4f8;
+  border-radius: 8px;
+  border-left: 4px solid #4a90a4;
 }
 
 .section-title {
@@ -184,6 +328,22 @@ $dark-slate-gray: #364A42ff;
     letter-spacing: 0.3px;
   }
 
+  .tabs-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tabs-sidebar {
+    flex-direction: row;
+    min-width: 100%;
+    overflow-x: auto;
+
+    button {
+      white-space: nowrap;
+      min-width: fit-content;
+    }
+  }
+
   .article-title {
     font-size: 28px;
   }
@@ -203,6 +363,14 @@ $dark-slate-gray: #364A42ff;
     .separator {
       display: none;
     }
+  }
+
+  .coming-soon-content {
+    padding: 40px 20px;
+  }
+
+  .coming-soon-message {
+    font-size: 20px;
   }
 }
 

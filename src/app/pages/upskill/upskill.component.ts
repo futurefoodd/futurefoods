@@ -12,7 +12,6 @@ import { VideoPlayerComponent, VideoSource } from '../../components/video-player
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpskillComponent {
-  readonly videoPoster = 'upskill_video_poster.webp';
 
   readonly videoSources: VideoSource[] = [
     {

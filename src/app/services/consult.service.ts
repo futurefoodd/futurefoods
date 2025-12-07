@@ -16,6 +16,12 @@ export interface DetailedConsultResponse {
   error?: any
 }
 
+export interface UnifiedConsultResponse {
+  success: boolean
+  data?: any
+  error?: any
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -152,6 +158,134 @@ export class NutritionConsultService {
       return { success: true, data }
     } catch (err: any) {
       console.error('Consult service catch Error:', err)
+      return { success: false, error: err }
+    }
+  }
+
+  /**
+   * Submit unified nutrition consultation with data from all 3 tabs
+   * @param basicFormValues Basic form values (from consultForm)
+   * @param detailedFormValues Detailed form values (from detailedForm) - optional
+   * @param sampleRequestFormValues Sample request form values (from sampleRequestForm) - optional
+   * @returns UnifiedConsultResponse
+   */
+  async submitUnifiedConsultation(
+    basicFormValues: any,
+    detailedFormValues?: any,
+    sampleRequestFormValues?: any
+  ): Promise<UnifiedConsultResponse> {
+    try {
+      const currentUser = await this.userService.getCurrentUser()
+
+      // Combine all form values, prioritizing basic form values for shared fields
+      const payload: any = {
+        // ============================================
+        // BASIC INFORMATION (Shared across all tabs)
+        // ============================================
+        name: basicFormValues.name || detailedFormValues?.name || sampleRequestFormValues?.name,
+        age: basicFormValues.age || detailedFormValues?.age || sampleRequestFormValues?.age,
+        contact: basicFormValues.contact || detailedFormValues?.contact || sampleRequestFormValues?.contact,
+        email: basicFormValues.email || detailedFormValues?.email || sampleRequestFormValues?.email,
+        sex: basicFormValues.sex || detailedFormValues?.sex || sampleRequestFormValues?.sex,
+        height_cm: basicFormValues.height || detailedFormValues?.height || sampleRequestFormValues?.height,
+        weight_kg: basicFormValues.weight || detailedFormValues?.weight || sampleRequestFormValues?.weight,
+        country: basicFormValues.country || detailedFormValues?.country || sampleRequestFormValues?.country,
+        referred_by: this.translateValue(
+          basicFormValues.referredBy || detailedFormValues?.referredBy || sampleRequestFormValues?.referredBy
+        ),
+        social_media_id: basicFormValues.socialMediaId || detailedFormValues?.socialMediaId || sampleRequestFormValues?.socialMediaId || null,
+
+        // ============================================
+        // BASIC FORM TAB SPECIFIC FIELDS (Nullable)
+        // ============================================
+        // Lifestyle & Habits
+        activity_level: basicFormValues.activityLevel || null,
+        exercise_routine: this.translateArray(basicFormValues.exerciseRoutine),
+        exercise_frequency: basicFormValues.exerciseFrequency || null,
+        job_demands: this.translateArray(basicFormValues.jobDemands),
+        sleep_hours: basicFormValues.sleepHours || null,
+        smoking_vaping: basicFormValues.smokingVaping || null,
+
+        // Alcohol Consumption
+        alcohol_types: this.translateArray(basicFormValues.alcoholGroup?.types),
+        alcohol_consumption: basicFormValues.alcoholGroup?.consumption || null,
+
+        // Diet & Eating
+        dietary_patterns: this.translateArray(basicFormValues.dietaryPatterns),
+        eating_style: this.translateArray(basicFormValues.eatingStyle),
+        water_intake: basicFormValues.waterIntake || null,
+
+        // Snacks
+        snack_types: this.translateArray(basicFormValues.snackGroup?.types),
+        snack_frequency: basicFormValues.snackGroup?.frequency || null,
+
+        // Wellness Goals
+        primary_goal: this.translateValue(basicFormValues.primaryGoal),
+        secondary_goals: this.translateArray(basicFormValues.secondaryGoals),
+        specific_concerns: this.translateArray(basicFormValues.specificConcerns),
+
+        // Additional Info
+        supplements: basicFormValues.supplements || null,
+        family_history: this.translateArray(basicFormValues.familyHistory),
+
+        // Health flags
+        recent_hospitalisation: !!basicFormValues.recentHospitalisation,
+        yearly_screening: !!basicFormValues.yearlyScreening,
+        food_allergy: !!basicFormValues.foodAllergy,
+        medication: !!basicFormValues.medication,
+        recent_travel: !!basicFormValues.recentTravel,
+
+        // ============================================
+        // DETAILED FORM TAB SPECIFIC FIELDS (Nullable)
+        // Metabolic Health Survey
+        // ============================================
+        // Meal Choices
+        breakfast_choice: detailedFormValues ? this.translateValue(detailedFormValues.breakfastChoice) : null,
+        lunch_choice: detailedFormValues ? this.translateValue(detailedFormValues.lunchChoice) : null,
+        dinner_time: detailedFormValues ? this.translateValue(detailedFormValues.dinnerTime) : null,
+        dinner_choice: detailedFormValues ? this.translateValue(detailedFormValues.dinnerChoice) : null,
+
+        // Consumption Patterns
+        water_beverages: detailedFormValues ? this.translateValue(detailedFormValues.waterBeverages) : null,
+        milk_consumption: detailedFormValues ? this.translateValue(detailedFormValues.milkConsumption) : null,
+        cooking_oil: detailedFormValues ? this.translateValue(detailedFormValues.cookingOil) : null,
+
+        // Health Symptoms
+        low_energy: detailedFormValues ? this.translateValue(detailedFormValues.lowEnergy) : null,
+        constipation: detailedFormValues ? this.translateValue(detailedFormValues.constipation) : null,
+        hunger_after_breakfast: detailedFormValues ? this.translateValue(detailedFormValues.hungerAfterBreakfast) : null,
+        pain_discomfort: detailedFormValues ? this.translateValue(detailedFormValues.painDiscomfort) : null,
+        symptoms: detailedFormValues ? this.translateValue(detailedFormValues.symptoms) : null,
+
+        // Medical Information
+        urine_observation: detailedFormValues ? this.translateValue(detailedFormValues.urineObservation) : null,
+        urine_frequency: detailedFormValues ? this.translateValue(detailedFormValues.urineFrequency) : null,
+        blood_urine_test: detailedFormValues ? this.translateValue(detailedFormValues.bloodUrineTest) : null,
+        hospitalisation_date: detailedFormValues ? this.translateValue(detailedFormValues.hospitalisationDate) : null,
+
+        // ============================================
+        // SAMPLE REQUEST TAB SPECIFIC FIELDS (Nullable)
+        // ============================================
+        address: sampleRequestFormValues?.address || null,
+        message: sampleRequestFormValues?.message || null,
+
+        // User ID
+        user_id: currentUser.id
+      }
+
+      const { data, error } = await this.supabase
+        .from('unified_nutrition_consultations')
+        .insert([payload])
+        .select() // returns inserted row(s)
+
+      if (error) {
+        console.error('Unified Consult service Insert Error:', error)
+        return { success: false, error }
+      }
+
+      return { success: true, data }
+    } catch (err: any) {
+      console.error('Unified Consult service catch Error:', err)
       return { success: false, error: err }
     }
   }

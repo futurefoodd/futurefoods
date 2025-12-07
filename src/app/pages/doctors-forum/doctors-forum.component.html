@@ -1,0 +1,27 @@
+<main class="doctors-forum-page">
+  <div class="container">
+    <h1 class="page-heading">{{ 'DoctorsForum.heading' | translate }}</h1>
+    
+    <div class="content-section">
+      <p class="intro-paragraph">
+        {{ 'DoctorsForum.paragraph' | translate }}
+      </p>
+      
+      <div class="pdf-container">
+        <iframe 
+          [src]="pdfUrl" 
+          class="pdf-viewer"
+          type="application/pdf"
+          title="Doctors Forum Document">
+          <p>
+            {{ 'DoctorsForum.pdfNotSupported' | translate }}
+            <a [href]="pdfUrl" target="_blank" rel="noopener noreferrer">
+              {{ 'DoctorsForum.downloadPdf' | translate }}
+            </a>
+          </p>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</main>
+

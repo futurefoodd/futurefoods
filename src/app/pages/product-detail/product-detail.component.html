@@ -156,6 +156,28 @@
   </div>
 </div>
 
+<!-- Product Video Section -->
+@if (hasVideo()) {
+  <section class="product-video">
+    <div class="product-video-container">
+      <div class="product-video__header">
+        <h2>Product Video</h2>
+      </div>
+
+      <app-video-player
+        class="product-video__player"
+        [title]="product[0].name + ' - Product Video'"
+        [poster]="videoPoster"
+        [sources]="videoSources"
+        preload="none"
+        [muted]="false"
+        [loop]="false"
+        [showControls]="true"
+      ></app-video-player>
+    </div>
+  </section>
+}
+
 <!-- Product Information Sections -->
 <div class="product-info-sections">
   <!-- Specifications Section -->
@@ -289,6 +311,38 @@
     </div>
   </section> 
 </div>
+
+<!-- FAQ Section for Ancestral Keto Diet Guide -->
+@if (isAncestralKetoProduct()) {
+  <section class="product-faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="accordion">
+        @for (faq of ancestralKetoFaq; track faq.value; let i = $index) {
+          <div class="accordion-item">
+            <button 
+              class="accordion-header" 
+              (click)="toggleFaqAccordion(i)"
+              [attr.aria-expanded]="faq.isOpen"
+              [attr.aria-controls]="'accordion-content-' + i">
+              {{ faq.title | translate }}
+              <span class="accordion-icon" [class.open]="faq.isOpen">+</span>
+            </button>
+            <div 
+              class="accordion-content" 
+              [class.open]="faq.isOpen"
+              [id]="'accordion-content-' + i"
+              [attr.aria-hidden]="!faq.isOpen">
+              <div class="accordion-body">
+                <p class="m-0">{{ faq.content | translate }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}
 
 <div #myModal class="modal" [style.display]="modalVisible ? 'block' : 'none'">
   <span (click)="closeModal()" class="close">&times;</span>

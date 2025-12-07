@@ -412,13 +412,9 @@
 
       <label>{{ 'Dietetics.detailedForm.questions.urineFrequency' | translate }}</label>
       <div class="radio-group">
-        <label>
-          <input type="radio" [value]="'Dietetics.detailedForm.options.urineHold'" formControlName="urineFrequency" />
-          {{ 'Dietetics.detailedForm.options.urineHold' | translate }}
-        </label>
-        <label>
-          <input type="radio" [value]="'Dietetics.detailedForm.options.urineFrequent'" formControlName="urineFrequency" />
-          {{ 'Dietetics.detailedForm.options.urineFrequent' | translate }}
+        <label *ngFor="let option of urineFrequencyOptions">
+          <input type="radio" [value]="option" formControlName="urineFrequency" />
+          {{ option | translate }}
         </label>
       </div>
 

@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NutritionConsultService } from '../../services/consult.service';
 import { DetailedConsultService } from '../../services/detailed-consult.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dietetics',
@@ -11,12 +12,13 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './dietetics.component.html',
   styleUrl: './dietetics.component.scss'
 })
-export class DieteticsComponent {
+export class DieteticsComponent implements OnDestroy {
   consultForm: FormGroup;
   detailedForm: FormGroup;
   sampleRequestForm: FormGroup;
   activeTab: 'basic' | 'detailed' | 'sample' = 'basic';
   syncBasicInfo: boolean = false;
+  private subscriptions: Subscription[] = [];
 
   // options
   alcohol = ['Dietetics.options.beer', 'Dietetics.options.wine','Dietetics.options.liquor', 'Dietetics.options.none']
@@ -134,6 +136,10 @@ export class DieteticsComponent {
     'Dietetics.detailedForm.options.hospital6Months',
     'Dietetics.detailedForm.options.hospital1Year',
     'Dietetics.detailedForm.options.hospitalRegular'
+  ];
+  urineFrequencyOptions = [
+    'Dietetics.detailedForm.options.urineHold',
+    'Dietetics.detailedForm.options.urineFrequent'
   ];
 
   constructor(
@@ -283,27 +289,36 @@ export class DieteticsComponent {
     
     // Listen to changes in each form and sync if checkbox is checked
     basicInfoFields.forEach(field => {
-      this.consultForm.get(field)?.valueChanges.subscribe(value => {
+      const consultSub = this.consultForm.get(field)?.valueChanges.subscribe(value => {
         if (this.syncBasicInfo) {
           this.detailedForm.patchValue({ [field]: value }, { emitEvent: false });
           this.sampleRequestForm.patchValue({ [field]: value }, { emitEvent: false });
         }
       });
+      if (consultSub) this.subscriptions.push(consultSub);
 
-      this.detailedForm.get(field)?.valueChanges.subscribe(value => {
+      const detailedSub = this.detailedForm.get(field)?.valueChanges.subscribe(value => {
         if (this.syncBasicInfo) {
           this.consultForm.patchValue({ [field]: value }, { emitEvent: false });
           this.sampleRequestForm.patchValue({ [field]: value }, { emitEvent: false });
         }
       });
+      if (detailedSub) this.subscriptions.push(detailedSub);
 
-      this.sampleRequestForm.get(field)?.valueChanges.subscribe(value => {
+      const sampleSub = this.sampleRequestForm.get(field)?.valueChanges.subscribe(value => {
         if (this.syncBasicInfo) {
           this.consultForm.patchValue({ [field]: value }, { emitEvent: false });
           this.detailedForm.patchValue({ [field]: value }, { emitEvent: false });
         }
       });
+      if (sampleSub) this.subscriptions.push(sampleSub);
     });
+  }
+
+  ngOnDestroy(): void {
+    // Unsubscribe from all subscriptions to prevent memory leaks
+    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this.subscriptions = [];
   }
 
   onSyncBasicInfoChange(checked: boolean) {

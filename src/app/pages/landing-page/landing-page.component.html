@@ -2,7 +2,7 @@
 
 <section id="home" class="product-section justify-center">
   <div class="slideshow-container" >
-    <img [src]="currentImageUrl" alt="Slideshow image" class="slideshow-image">
+    <img [src]="currentImageUrl" alt="Slideshow image" class="slideshow-image" (click)="openImageModal()" style="cursor: pointer;">
     <button class="prev-button z-10" (click)="prevSlide()">&#10094;</button>
     <button class="next-button z-10" (click)="nextSlide()">&#10095;</button>
 
@@ -12,6 +12,14 @@
       </span>
     </div>
     <a href='/products' class="slider-button rounded-1 p-2">{{'Button.learnMore' | translate}}</a>
+  </div>
+
+  <!-- Image Modal -->
+  <div class="image-modal" *ngIf="modalVisible" (click)="closeImageModal()">
+    <div class="image-modal-content" (click)="$event.stopPropagation()">
+      <button class="image-modal-close" (click)="closeImageModal()" aria-label="Close modal">&times;</button>
+      <img [src]="modalImageUrl" alt="Enlarged slideshow image" class="image-modal-image">
+    </div>
   </div>
 
 </section>

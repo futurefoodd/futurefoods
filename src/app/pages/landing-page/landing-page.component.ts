@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import {  AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
@@ -60,6 +60,8 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   public currentImageIndex = 0;
   public currentImageUrl: string = '';
+  public modalVisible: boolean = false;
+  public modalImageUrl: string = '';
   
   public testimonyData = [
     {
@@ -155,6 +157,39 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   public openWhatsAppTwoProducts(): void {
     const message = 'Hello! I\'m interested in purchasing 2 Pro-Collagen Soft Pastilles boxes (RM240.00 - Best Value Offer). Can you help me complete my order?';
     this.whatsappService.openWhatsApp('landing', message);
+  }
+
+  /**
+   * Opens the image modal with the current image
+   */
+  public openImageModal(): void {
+    this.modalImageUrl = this.currentImageUrl;
+    this.modalVisible = true;
+    // Prevent body scroll when modal is open
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  /**
+   * Closes the image modal
+   */
+  public closeImageModal(): void {
+    this.modalVisible = false;
+    // Restore body scroll
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  /**
+   * Handles keyboard events for modal (ESC to close)
+   */
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscapeKey(event: KeyboardEvent): void {
+    if (this.modalVisible) {
+      this.closeImageModal();
+    }
   }
 
 }

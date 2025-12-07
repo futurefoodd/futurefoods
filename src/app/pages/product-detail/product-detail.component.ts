@@ -186,8 +186,7 @@ export class ProductDetailComponent implements OnInit {
     if (this.product && this.product[0]) {
       const productName = this.product[0].name;
       const price = this.getSingleProductTotal();
-      const message = `Hello! I'm interested in purchasing 1 ${productName} box (${price}). Can you help me complete my order?`;
-      this.whatsappService.openWhatsApp('product', message);
+      this.whatsappService.openProductSinglePurchase(productName, price);
     } else {
       this.whatsappService.openWhatsApp('product');
     }
@@ -200,8 +199,7 @@ export class ProductDetailComponent implements OnInit {
     if (this.product && this.product[0]) {
       const productName = this.product[0].name;
       const total = this.getTwoProductTotal();
-      const message = `Hello! I'm interested in purchasing 2 ${productName} boxes (${total} - Best Value Offer). Can you help me complete my order?`;
-      this.whatsappService.openWhatsApp('product', message);
+      this.whatsappService.openProductTwoPurchase(productName, total);
     } else {
       this.whatsappService.openWhatsApp('product');
     }

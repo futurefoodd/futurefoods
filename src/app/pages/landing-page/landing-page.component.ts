@@ -147,16 +147,14 @@ export class LandingPageComponent implements OnInit, OnDestroy {
    * Opens WhatsApp for single product purchase
    */
   public openWhatsAppSingleProduct(): void {
-    const message = 'Hello! I\'m interested in purchasing 1 Pro-Collagen Soft Pastilles box (RM150.00). Can you help me complete my order?';
-    this.whatsappService.openWhatsApp('landing', message);
+    this.whatsappService.openWhatsAppSingleProduct();
   }
 
   /**
    * Opens WhatsApp for two products purchase (best value)
    */
   public openWhatsAppTwoProducts(): void {
-    const message = 'Hello! I\'m interested in purchasing 2 Pro-Collagen Soft Pastilles boxes (RM240.00 - Best Value Offer). Can you help me complete my order?';
-    this.whatsappService.openWhatsApp('landing', message);
+    this.whatsappService.openWhatsAppTwoProducts();
   }
 
   /**

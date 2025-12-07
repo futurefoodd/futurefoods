@@ -9,10 +9,10 @@ export class WhatsAppService {
   
   // Default messages for different contexts
   private readonly defaultMessages = {
-    general: 'Hello! I\'m interested in your products. Can you help me?',
-    landing: 'Hello! I\'m interested in your Pro-Collagen Soft Pastilles. Can you help me with more information?',
-    product: 'Hello! I\'m interested in this product. Can you help me with more information and pricing?',
-    cart: 'Hello! I\'m ready to purchase these items. Can you help me complete my order?'
+    general: 'Hello! I\'m interested in your products.\nCan you help me?\nhttps://futurefoods.com.my',
+    landing: 'Hello! I\'m interested in your Pro-Collagen Soft Pastilles.\nCan you help me with more information?\nhttps://futurefoods.com.my',
+    product: 'Hello! I\'m interested in this product.\nCan you help me with more information and pricing?\nhttps://futurefoods.com.my',
+    cart: 'Hello! I\'m ready to purchase these items.\nCan you help me complete my order?\nhttps://futurefoods.com.my'
   };
 
   /**
@@ -26,7 +26,7 @@ export class WhatsAppService {
     
     // Add product name to the message if provided
     if (productName && !customMessage) {
-      message = `Hello! I'm interested in ${productName}. Can you help me with more information and pricing?`;
+      message = `Hello! I'm interested in ${productName}. Can you help me with more information and pricing?\nhttps://futurefoods.com.my`;
     }
     
     // Format the message for WhatsApp
@@ -48,9 +48,9 @@ export class WhatsAppService {
     
     if (!message) {
       if (productPrice) {
-        message = `Hello! I'm interested in ${productName} (${productPrice}). Can you help me with more information and how to purchase?`;
+        message = `Hello! I'm interested in ${productName} (${productPrice}). Can you help me with more information and how to purchase?\nhttps://futurefoods.com.my`;
       } else {
-        message = `Hello! I'm interested in ${productName}. Can you help me with more information and pricing?`;
+        message = `Hello! I'm interested in ${productName}. Can you help me with more information and pricing?\nhttps://futurefoods.com.my`;
       }
     }
     
@@ -68,9 +68,9 @@ export class WhatsAppService {
     
     if (!message) {
       if (totalPrice) {
-        message = `Hello! I have ${itemCount} item(s) in my cart totaling ${totalPrice}. Can you help me complete my purchase?`;
+        message = `Hello! I have ${itemCount} item(s) in my cart totaling ${totalPrice}. Can you help me complete my purchase?\nhttps://futurefoods.com.my`;
       } else {
-        message = `Hello! I have ${itemCount} item(s) in my cart. Can you help me complete my purchase?`;
+        message = `Hello! I have ${itemCount} item(s) in my cart. Can you help me complete my purchase?\nhttps://futurefoods.com.my`;
       }
     }
     
@@ -83,5 +83,41 @@ export class WhatsAppService {
    */
   openGeneralInquiry(customMessage?: string): void {
     this.openWhatsApp('general', customMessage);
+  }
+
+  /**
+   * Opens WhatsApp for single product purchase
+   */
+  openWhatsAppSingleProduct(): void {
+    const message = 'Hello! I\'m interested in purchasing 1 Pro-Collagen Soft Pastilles box (RM150.00). Can you help me complete my order?\nhttps://futurefoods.com.my';
+    this.openWhatsApp('landing', message);
+  }
+
+  /**
+   * Opens WhatsApp for two products purchase (best value)
+   */
+  openWhatsAppTwoProducts(): void {
+    const message = 'Hello! I\'m interested in purchasing 2 Pro-Collagen Soft Pastilles boxes (RM250.00 - Best Value Offer). Can you help me complete my order?\nhttps://futurefoods.com.my';
+    this.openWhatsApp('landing', message);
+  }
+
+  /**
+   * Opens WhatsApp for single product purchase with dynamic product name and price
+   * @param productName - Name of the product
+   * @param price - Price of the product
+   */
+  openProductSinglePurchase(productName: string, price: string): void {
+    const message = `Hello! I'm interested in purchasing 1 ${productName} box (${price}). Can you help me complete my order?\nhttps://futurefoods.com.my`;
+    this.openWhatsApp('product', message);
+  }
+
+  /**
+   * Opens WhatsApp for two products purchase with dynamic product name and total
+   * @param productName - Name of the product
+   * @param total - Total price for two products
+   */
+  openProductTwoPurchase(productName: string, total: string): void {
+    const message = `Hello! I'm interested in purchasing 2 ${productName} boxes (${total} - Best Value Offer). Can you help me complete my order?\nhttps://futurefoods.com.my`;
+    this.openWhatsApp('product', message);
   }
 }

@@ -80,8 +80,15 @@ export class LandingPageComponent implements OnInit, OnDestroy {
       id:3,
       title: 'Landing.Testimony.testimony_3.title',
       name: 'Landing.Testimony.testimony_3.name',
-      testimony: 'Landing.Testimony.testimony_2.description',
+      testimony: 'Landing.Testimony.testimony_3.description',
       image: 'https://via.placeholder.com/150/3357FF/FFFFFF?text=Emily',
+    },
+    {
+      id:4,
+      title: 'Landing.Testimony.testimony_4.title',
+      name: 'Landing.Testimony.testimony_4.name',
+      testimony: 'Landing.Testimony.testimony_4.description',
+      image: 'https://via.placeholder.com/150/FF6B9D/FFFFFF?text=Carine',
     }
 ]
 

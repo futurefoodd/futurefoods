@@ -8,6 +8,8 @@ import { CircularCarouselComponent } from '../../widgets/circular-carousel/circu
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
 import { FormsModule } from '@angular/forms';
 import { FaqComponent } from '../../widgets/faq/faq.component';
+import { ProductCarouselComponent } from '../../widgets/product-carousel/product-carousel.component';
+import { OfferPopupComponent } from '../../widgets/offer-popup/offer-popup.component';
 import { WhatsAppService } from '../../services/whatsapp.service';
 import { ScrollService } from '../../services/scroll.service';
 import { UUID } from 'crypto';
@@ -15,7 +17,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent, TranslatePipe],
+  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent, ProductCarouselComponent, OfferPopupComponent, TranslatePipe],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })

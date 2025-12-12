@@ -66,6 +66,18 @@
           "title": "Pro-Collagen Soft Pastilles",
           "description":"Penyerapan nutrien yang lebih pantas, Membolehkan sintesis kolagen & elastin semula jadi, Menyuburkan probiotik usus, Mengurangkan sensitiviti kulit dan Menguatkan kuku, Keselesaan otot & sendi yang lebih baik, Melegakan luka mulut & kerengsaan tekak."
         },
+        "OfferPopup":{
+          "limitedTimeOffer": "Tawaran Masa Terhad!",
+          "title": "Tawaran Istimewa",
+          "subtitle": "Dapatkan nilai terbaik untuk Pro-Collagen Soft Pastilles",
+          "bestValue": "Nilai Terbaik",
+          "products": "Produk",
+          "product": "Produk",
+          "perUnit": "seunit",
+          "save": "Jimat",
+          "total": "Jumlah",
+          "viewAllProducts": "Lihat Semua Produk"
+        },
         "Comparison":{
           "title": "Apa yang dilakukan oleh pastil lembut ini untuk anda:",
           "description": "Kelegahan yang lembut, berasaskan tumbuhan, dan direka untuk menyokong penyembuhan semula jadi kulit anda dari dalam. Tiada bahan kimia sintetik, hanya penjagaan kaya nutrien yang membantu kulit anda berseri membuatkan anda berasa yakin."
@@ -200,6 +212,69 @@
           "title": "Pastil Lembut Vegan",
           "description": "Pastil Lembut Vegan, Botol Kaca dengan 60 biji"
         },
+        "FAQ": {
+          "question_1": {
+            "question": "Q.1 Berapa cepat saya boleh mengalami penurunan berat badan yang selamat (membakar lemak badan)?",
+            "answer": "Keto Grains Breakfast adalah diet nenek moyang kami. Bercakap dengan Doktor anda dan sertakan makanan bebas Gluten berasaskan tumbuhan yang berkhasiat ini ke dalam pelan diet rendah karbohidrat anda. Selepas 2 minggu, anda boleh menjangkakan penurunan berat badan 5kg dan selepas 30 hari penurunan berat badan 11kg."
+          },
+          "question_2": {
+            "question": "Q.2 Bagaimanakah Keto Grains Breakfast membantu menurunkan gula dalam darah? | Bagaimanakah Vegan Keto Meal mengurangkan rintangan insulin?",
+            "answer": "Keto Grains Breakfast dan Vegan Keto Meal mempunyai 12 gram Serat Larut dan 3 gram Kanji Rintang Jenis 2 setiap hidangan. Keto Grains Breakfast dan Vegan Keto Meal mempunyai Indeks Glisemik 37 - 42. Kedua-dua jenis serat makanan melambatkan penyerapan glukosa dan meningkatkan metabolisme."
+          },
+          "question_3": {
+            "question": "Q.3 Siapa yang perlu mengambil Keto Grains Breakfast / Vegan Keto Meal?",
+            "answer": "Individu dengan kenaikan berat badan secara tiba-tiba, sembelit, pra-diabetes, kawalan diabetes yang lemah, hati berlemak, tekanan darah tinggi, tidak dapat menurunkan lemak perut, tenaga rendah yang kerap dan masalah ketidaksuburan"
+          },
+          "question_4": {
+            "question": "Q.4 Berapa banyak Keto Grains Breakfast / Vegan Keto Meal untuk diambil setiap hari?",
+            "answer": "Nasihat Klinik;\n\nDi bawah 80kg ambil 3 sudu besar. setiap hidangan pada hari selang. (30g)\n\nDi atas 81kg ambil 4 sudu besar. setiap hari."
+          },
+          "question_5": {
+            "question": "Q.5 Berapa lama saya perlu mengambil Keto Grains Breakfast / Vegan Keto Meal?",
+            "answer": "Setiap kursus rawatan dan pelan makan direka untuk 21 hari. Untuk hasil terbaik ulangi selama 3 kitaran"
+          },
+          "question_6": {
+            "question": "Q.6 Apakah hasil atau keputusan kesihatan yang boleh saya jangkakan?",
+            "answer": "Bergantung pada komposisi badan individu, tahap toleransi rasa dan penyakit anda mungkin menjangkakan pergerakan usus yang teratur, kawalan gula dalam darah yang lebih baik, kurang lapar, tahap kolesterol yang lebih rendah, tahap tenaga yang lebih tinggi dan kekuatan otot yang bertambah baik."
+          },
+          "question_7": {
+            "question": "Q.7 Apakah jenis topping yang boleh saya tambah untuk menikmati rasa yang saya suka?",
+            "answer": "Pilihan Topping;\n\n50ml susu Badam atau Walnut tanpa gula\n\n2 sudu besar. Nata de Coco atau Jeli Rumput yang dibilas\n\n3 Kurma Madinah atau 1 sudu besar. Biji Labu\n\n1 Epal hijau atau Pir hijau atau Jambu atau Buah Naga"
+          },
+          "question_8": {
+            "question": "Q.8 Bolehkah saya menjangkakan untuk mendapat jisim otot tanpa lemak dengan hanya protein berasaskan tumbuhan?",
+            "answer": "Klinik kami telah mencatatkan peningkatan 3% dalam jisim otot tanpa lemak selepas menyelesaikan pelan makan terapeutik 90 hari.\n\nIndividu yang menyelesaikan > 5000 langkah sehari atau senaman gim 3 kali seminggu boleh menjangkakan peningkatan 5% dalam jisim otot tanpa lemak"
+          },
+          "question_9": {
+            "question": "Q.9 Adakah Keto Grains Breakfast / Vegan Keto Meal mampu milik?",
+            "answer": "Kos setiap hidangan sarapan sihat ialah RM9.27. Apabila dibandingkan dengan makanan penjaja Cina rendah nutrisi biasa, makanan segera atau sarapan barat atau makanan mamak, makanan berasaskan tumbuhan ini lebih selamat dan mampu milik."
+          },
+          "question_10": {
+            "question": "Q.10 Adakah ia serupa dengan Pengganti Makanan dan Protein Shake yang popular?",
+            "answer": "Ancient Keto Grains adalah lebih unggul dari segi nutrisi dan lebih selamat tetapi kos 30% lebih rendah daripada pengganti makanan yang dijual oleh MLM atau protein shake yang dijual di kedai organik atau kesihatan."
+          },
+          "question_11": {
+            "question": "Q.11 Adakah ia serupa dengan Multi Grains di Kedai Organik?",
+            "answer": "Ancient Keto Grains adalah formulasi siap makan bebas Gluten-Lektin-Soya dan Kacang.\n\nCampuran Multigrain selalunya tidak bebas Gluten atau Soya atau Kacang dan mempunyai Maltodekstrin dan pemanis tiruan."
+          },
+          "question_12": {
+            "question": "Q.12 Bagaimanakah Keto Grains Breakfast / Vegan Keto Meal mendorong Ketosis Nutrisi?",
+            "answer": "Ketosis Nutrisi adalah ketosis sebenar, Keto Grains adalah makanan termogenik padat nutrien; makanan ini memerlukan lebih banyak tenaga metabolik untuk dicerna daripada kalori yang diperoleh (defisit akaun dalam pertukaran tenaga) mendorong badan ke dalam lipolisis (pembakaran lemak)"
+          },
+          "question_13": {
+            "question": "Q.13 Mengapakah Keto Grains Breakfast / Vegan Keto Meal adalah Diet Keto?",
+            "answer": "Makanan paleo organik ini mempunyai kurang daripada 5g karbohidrat tersedia setiap hidangan. Ia adalah makanan termogenik oleh itu anda akan mengalami peningkatan dalam kadar metabolik basal, penurunan lemak badan secara beransur-ansur 30 - 50 gram sehari selepas hari ke-5, tahap tenaga yang lebih tinggi terutamanya menjelang petang dan kejelasan mental yang lebih baik disebabkan peningkatan badan keton dalam aliran darah anda."
+          },
+          "question_14": {
+            "question": "Q.14 Mengapakah Keto Grains dinilai sebagai 'makanan sebenar pertama hari' oleh Doktor Penjagaan Primer dan banyak Klinik Amalan Umum?",
+            "answer": "Anda memperoleh nilai harian serat makanan larut, ALA Omega 3, mineral surih, protein tumbuhan yang mencukupi dan polifenol dan fitosterol."
+          },
+          "question_15": {
+            "question": "Q.15 Bilakah penyelidikan perubatan mengenai keberkesanan Makanan Berasaskan Tumbuhan selesai?",
+            "answer": "Pada 2015 ujian produk dijalankan oleh 3 doktor ke atas 18 pesakit dengan hasil yang menjanjikan. Pada 2017 formulasi Keto Grains yang dipertingkatkan diuji secara klinikal dengan penyertaan 133 pesakit selama 18 bulan.\n\nKeputusan ujian menunjukkan Keto Grains Vegan Meal mempunyai Indeks Glisemik 37 - 42, dan adalah terapeutik untuk pesakit dengan intoleransi makanan (alahan), sembelit, diabetes, hati berlemak, atrofi/kekejangan otot dan tenaga rendah (fibromyalgia)\n\nNaratif oleh\n\nDr Keshu A\n\nAhli Pemakanan Penyelidikan Klinikal\n\nKaunselor Perubatan\n\nKlinik Utara Dietetics"
+          }
+        }
+      },
       "Tour":{
       "header":"Jelajah",
       "subHeader": "Loji Formulasi Makanan Fungsian | FSSC ISO22000"

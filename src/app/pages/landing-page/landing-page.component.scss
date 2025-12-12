@@ -392,6 +392,23 @@ p {
   }
 }
 
+.product-carousel-section {
+  padding: 80px 50px;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 40px 16px;
+  }
+}
+
 .faq-section {
   padding: 100px 50px;
   

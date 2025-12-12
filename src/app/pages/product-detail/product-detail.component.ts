@@ -96,6 +96,8 @@ export class ProductDetailComponent implements OnInit {
       if (this.product && this.product[0] && this.product[0].video_url) {
         this.videoPoster = this.constructImageUrl(this.product[0].video_url);
       }
+
+      console.log(this.isProCollagen());
       }else{
         this.product = undefined
       }
@@ -206,8 +208,19 @@ export class ProductDetailComponent implements OnInit {
   }
 
 
-  hasPromo(){
-   return this.product && this.product[0] && this.product[0].promo_price ? true : false;
+  // hasPromo(){
+  //  return this.product && this.product[0] && this.product[0].promo_price ? true : false;
+  // }
+
+  /**
+   * Checks if the current product is a Pro Collagen product
+   */
+  isProCollagen(): boolean {
+    if (!this.product || !this.product[0] || !this.product[0].name) {
+      return false;
+    }
+    const productID = this.product[0].id;
+    return productID ==='fa07877b-6016-4d09-88d9-4ab000619e62';
   }
 
   /**

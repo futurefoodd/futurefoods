@@ -6,7 +6,7 @@
 </div>
 <p-galleria [value]="item" [thumbnailsPosition]="position" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }" [numVisible]="5" >
     <ng-template pTemplate="item" let-item>
-        <img [src]="item.itemImageSrc" style="width: 100%; display: block" />
+        <img [src]="item.itemImageSrc" style="width: 100%; display: block; cursor: pointer;" (click)="onImageClick(item.itemImageSrc)" />
     </ng-template>
     <ng-template pTemplate="thumbnail" let-item>
         <div class="grid gap-4 justify-center">

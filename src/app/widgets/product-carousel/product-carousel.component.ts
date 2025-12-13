@@ -181,5 +181,36 @@ export class ProductCarouselComponent implements OnInit {
     // Redirect to product detail page
     await this.navigateProductDetail(product.id as UUID);
   }
+
+  /**
+   * Opens WhatsApp for Charming Cottage contact
+   */
+  openWhatsAppForContact(): void {
+    const phoneNumber = '+60122942947'; // Format: +60 (Malaysia) + 122942947
+    const message = 'Hello! I\'m interested in placing an order for Christmas promo products. Can you help me with more information and pricing?\nhttps://futurefoods.com.my';
+    this.whatsappService.openWhatsApp('general', message, undefined, phoneNumber);
+  }
+
+  /**
+   * Opens Facebook page for Charming Cottage
+   * TODO: Replace with actual Facebook URL
+   */
+  openFacebook(): void {
+    const facebookUrl = 'https://www.facebook.com/charmingcottage88/'; // TODO: Replace with actual URL
+    if (isPlatformBrowser(this.platformId)) {
+      window.open(facebookUrl, '_blank');
+    }
+  }
+
+  /**
+   * Opens Instagram page for Charming Cottage
+   * TODO: Replace with actual Instagram URL
+   */
+  openInstagram(): void {
+    const instagramUrl = 'https://www.instagram.com/charmingcottage'; // TODO: Replace with actual URL
+    if (isPlatformBrowser(this.platformId)) {
+      window.open(instagramUrl, '_blank');
+    }
+  }
 }
 

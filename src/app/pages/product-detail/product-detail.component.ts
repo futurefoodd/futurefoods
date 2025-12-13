@@ -1,4 +1,4 @@
-import { Component, OnInit, model, ViewChild, ElementRef, PLATFORM_ID, inject } from '@angular/core';
+import { Component, OnInit, model, ViewChild, ElementRef, PLATFORM_ID, inject, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
@@ -9,6 +9,9 @@ import { productImage } from '../../core/model/product.model';
 import { WhatsAppService } from '../../services/whatsapp.service';
 import { environment } from '../../../environments/environment';
 import { VideoPlayerComponent, VideoSource } from '../../components/video-player/video-player.component';
+import * as fs from 'fs'
+import * as path from 'path'
+
 
 
 // type productImage = {
@@ -33,12 +36,16 @@ export class ProductDetailComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
   product: any = { 0: { name: '', price: '', description_1: '', description_2: '', status: 'sale' } };
   imageObject: productImage[] = []
+  
+  // Image modal properties
+  imageModalVisible: boolean = false;
+  modalImageUrl: string = '';
 
   baseUrl:string = environment.apiHost
 
   productSpecification:any
 
-  nutrientsTableImage: any
+  nutrientsTableImage: string | undefined = undefined
   expanded = false;
 
   unitName:string= "box"
@@ -117,7 +124,11 @@ export class ProductDetailComponent implements OnInit {
       this.unitQuantity= quantity
     }
   }
+  
+  
+  // hasNutrientsTableImage(){
 
+  // }
 
 
   toggle() {
@@ -175,9 +186,11 @@ export class ProductDetailComponent implements OnInit {
     if (this.product && this.product[0]) {
       const productName = this.product[0].name;
       const productPrice = this.getFormattedPrice();
-      this.whatsappService.openProductInquiry(productName, productPrice);
+      this.whatsappService.openProductInquiry(this.product[0].name, this.product[0].price, undefined, this.product[0].pic);
+
     } else {
       this.whatsappService.openWhatsApp('product');
+      // this.whatsappService.openProductInquiry(this.product[0].name, this.product[0].price, undefined, this.product[0].pic);
     }
   }
 
@@ -503,5 +516,38 @@ export class ProductDetailComponent implements OnInit {
 
   toggleFaqAccordion(index: number): void {
     this.ancestralKetoFaq[index].isOpen = !this.ancestralKetoFaq[index].isOpen;
+  }
+
+  /**
+   * Opens the image modal with the clicked image
+   */
+  openImageModal(imageSrc: string): void {
+    this.modalImageUrl = imageSrc;
+    this.imageModalVisible = true;
+    // Prevent body scroll when modal is open
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  /**
+   * Closes the image modal
+   */
+  closeImageModal(): void {
+    this.imageModalVisible = false;
+    // Restore body scroll
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  /**
+   * Handles keyboard events for modal (ESC to close)
+   */
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscapeKey(event: KeyboardEvent): void {
+    if (this.imageModalVisible) {
+      this.closeImageModal();
+    }
   }
 }

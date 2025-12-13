@@ -207,6 +207,15 @@
           }
     
         },
+        "ProductCarousel": {
+          "description1": "这个有意义的圣诞促销和新年礼物的超值优惠！！",
+          "description2": "这是我们向多年来一直非常支持我们的忠实客户和亲爱的朋友们表示感谢的方式！！库存有限，售完即止 😃😃",
+          "description3": "请致电或WhatsApp我们 Charming Cottage (Carol) @",
+          "description4": "现在下订单。",
+          "description5": "免费送货（适用条款和条件）或自取或送货服务可用。",
+          "description6": "期待并兴奋地很快听到你们的消息！！！",
+          "or": "或"
+        },
     
         "Tour":{
             "header":"参观",

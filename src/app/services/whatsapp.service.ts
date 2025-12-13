@@ -31,7 +31,7 @@ export class WhatsAppService {
     }
     
     // Use provided phone number or fall back to default
-    const numberToUse = phoneNumber || this.whatsappNumber;
+    const numberToUse = phoneNumber ?? this.whatsappNumber;
     
     // Format the message for WhatsApp
     const encodedMessage = encodeURIComponent(message);

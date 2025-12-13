@@ -11,6 +11,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class OfferPopupComponent implements OnInit, OnDestroy {
   showPopup: boolean = false;
   private readonly STORAGE_KEY = 'offer_popup_dismissed';
+  private readonly EXPIRATION_DAYS = 1; // Set expiration to 1 day
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object
@@ -18,8 +19,8 @@ export class OfferPopupComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Check if popup was previously dismissed
-      const dismissed = localStorage.getItem(this.STORAGE_KEY);
+      // Check if popup was previously dismissed and not expired
+      const dismissed = this.isPopupDismissed();
       if (!dismissed) {
         // Show popup after a short delay for better UX
         setTimeout(() => {
@@ -28,6 +29,30 @@ export class OfferPopupComponent implements OnInit, OnDestroy {
           document.body.style.overflow = 'hidden';
         }, 500);
       }
+    }
+  }
+
+  private isPopupDismissed(): boolean {
+    const stored = localStorage.getItem(this.STORAGE_KEY);
+    if (!stored) {
+      return false;
+    }
+
+    try {
+      const data = JSON.parse(stored);
+      const expirationTime = data.expirationTime;
+      
+      // Check if expired
+      if (Date.now() > expirationTime) {
+        localStorage.removeItem(this.STORAGE_KEY);
+        return false;
+      }
+      
+      return true;
+    } catch (e) {
+      // If parsing fails, treat as not dismissed (handles old format)
+      localStorage.removeItem(this.STORAGE_KEY);
+      return false;
     }
   }
 
@@ -40,8 +65,13 @@ export class OfferPopupComponent implements OnInit, OnDestroy {
   closePopup(): void {
     this.showPopup = false;
     if (isPlatformBrowser(this.platformId)) {
-      // Save dismissal to localStorage
-      localStorage.setItem(this.STORAGE_KEY, 'true');
+      // Save dismissal to localStorage with expiration (1 day)
+      const expirationTime = Date.now() + (this.EXPIRATION_DAYS * 24 * 60 * 60 * 1000);
+      const data = {
+        dismissed: true,
+        expirationTime: expirationTime
+      };
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
       // Restore body scroll
       document.body.style.overflow = '';
     }

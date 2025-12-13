@@ -22,6 +22,96 @@
     max-width: 1400px;
   }
 
+  .carousel-description {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #364A42ff;
+    line-height: 1.8;
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .phone-link {
+      color: #5D792Dff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #4a6124;
+        text-decoration: underline;
+      }
+    }
+
+    .whatsapp-link {
+      color: #25D366;
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      &:hover {
+        color: #128C7E;
+        text-decoration: underline;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        fill: currentColor;
+      }
+    }
+
+    .social-link {
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        fill: currentColor;
+      }
+    }
+
+    .facebook-link {
+      color: #1877F2;
+
+      &:hover {
+        color: #166FE5;
+        text-decoration: underline;
+      }
+    }
+
+    .instagram-link {
+      color: #E4405F;
+
+      &:hover {
+        color: #C13584;
+        text-decoration: underline;
+      }
+    }
+  }
+
   .product-card {
     cursor: pointer;
     border: 1px solid #e5e7eb;
@@ -306,6 +396,16 @@
     .carousel-title {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
+    }
+
+    .carousel-description {
+      margin-top: 2rem;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+
+      p {
+        margin-bottom: 0.75rem;
+      }
     }
 
     .product-card {

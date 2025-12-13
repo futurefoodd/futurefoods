@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, Input, Output, EventEmitter, PLATFORM_ID, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 // import { PhotoService } from '@/service/photoservice';
 import { GalleriaModule } from 'primeng/galleria';
@@ -15,6 +15,11 @@ export class FlickityCarouselComponent  {
     // @Input() items: Array<any> = []
   position: 'left' | 'right' | 'top' | 'bottom' = 'bottom';
   @Input() item: productImage[] = [];
+  @Output() imageClick = new EventEmitter<string>();
+
+  onImageClick(imageSrc: string): void {
+    this.imageClick.emit(imageSrc);
+  }
 
   positionOptions = [
     {

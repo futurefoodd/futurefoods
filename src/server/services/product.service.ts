@@ -14,7 +14,7 @@ export const getAllProducts = async () => {
   try{
     const { data:products, error } = await supabase
     .from('Products')
-    .select('id,name,price,product_rating, image_folder_path')
+    .select('id,name,price,product_rating, image_folder_path, promo_price, status, pic')
     .order('created_at', {ascending:false})
   
     if (error) {
@@ -41,7 +41,11 @@ export const getAllProducts = async () => {
     //   image:image
     // }
   });
-  const images = await Promise.all(imagePromises);
+  // Use Promise.allSettled to handle individual image failures gracefully
+  const imageResults = await Promise.allSettled(imagePromises);
+  const images = imageResults.map(result => 
+    result.status === 'fulfilled' ? result.value : []
+  );
 
     // Map over the products again to add the resolved image URLs
     const productsWithImages = products.map((product, index) => {
@@ -65,37 +69,56 @@ const getProductImages = async (bucketName:string, folderPath:string | null | un
       console.warn('getProductImages called with empty folderPath');
       return [];
     }
+
+    // For mainImage, we can skip the list call and directly construct the URL
+    if (mainImage) {
+      const pathSegments = folderPath.split('/').filter(Boolean)
+      const mainImageName = pathSegments[pathSegments.length - 1]
+      const response = supabase
+        .storage
+        .from(bucketName).getPublicUrl(`${folderPath}/${mainImageName}_1.png`)
+      return [response.data.publicUrl]
+    }
+
+    // For non-main images, try to list the folder
     const { data, error } = await supabase.storage
       .from(bucketName)
       .list(folderPath); 
 
     if (error) {
-      console.error('Error retrieving imageList:', error);
-      throw new Error('Error retrieving imageList: ' + (error?.message ?? 'unknown'))
-    }
-
-    if(!mainImage){
+      // Check if it's a storage error that might return HTML
+      console.error('Error retrieving imageList for folder:', folderPath, 'Error:', error);
       
-      const plublicImageUrlArray = (data ?? []).map(el=>{
-        const resObject = supabase
-         .storage
-         .from(bucketName).getPublicUrl(`${folderPath}/${el.name}`)
-         return resObject.data.publicUrl
-       })
-      //  console.log('plublicImageUrlArray:', plublicImageUrlArray)
-       return plublicImageUrlArray
+      // If listing fails, try to return at least a default image or empty array
+      // Don't throw - return empty array to prevent breaking the entire product list
+      return [];
     }
-    const pathSegments = folderPath.split('/').filter(Boolean)
-    const mainImageName = pathSegments[pathSegments.length - 1]
-    // console.log('mainImageName',mainImageName)
-    const response = supabase
-      .storage
-      .from(bucketName).getPublicUrl(`${folderPath}/${mainImageName}_1.png`)
-      // console.log('response',[response.data.publicUrl])
-      return [response.data.publicUrl]
 
-  } catch (error) {
-    console.error('Unexpected server error:', error);
+    // If no data returned, return empty array
+    if (!data || data.length === 0) {
+      console.warn('No images found in folder:', folderPath);
+      return [];
+    }
+    
+    const plublicImageUrlArray = data.map(el=>{
+      const resObject = supabase
+       .storage
+       .from(bucketName).getPublicUrl(`${folderPath}/${el.name}`)
+       return resObject.data.publicUrl
+     })
+     return plublicImageUrlArray
+
+  } catch (error: any) {
+    // Catch any unexpected errors (like JSON parsing errors)
+    console.error('Unexpected server error in getProductImages:', error);
+    console.error('Error details:', {
+      message: error?.message,
+      name: error?.name,
+      folderPath,
+      bucketName,
+      mainImage
+    });
+    // Return empty array instead of throwing to prevent breaking the entire request
     return [];
   }
 }

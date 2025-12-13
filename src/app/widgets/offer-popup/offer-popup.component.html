@@ -1,0 +1,21 @@
+@if(showPopup) {
+  <div class="offer-popup-overlay" (click)="closePopup()">
+    <div class="offer-popup-content" (click)="$event.stopPropagation()">
+      <!-- Close Button -->
+      <button class="offer-popup-close" (click)="closePopup()" aria-label="Close popup">
+        &times;
+      </button>
+  
+      <!-- Limited Time Offer Badge -->
+      <div class="offer-popup-header">
+        <div class="offer-popup-badge">{{'Landing.OfferPopup.limitedTimeOffer' | translate}}</div>
+      </div>
+  
+      <!-- Christmas Offer Image -->
+      <div class="offer-popup-image-container">
+        <img src="christmas-offer-pop-up.png" alt="Christmas Special Offer" class="offer-popup-image" (click)="scrollToCarousel()">
+      </div>
+    </div>
+  </div>  
+}
+

@@ -20,8 +20,9 @@ export class WhatsAppService {
    * @param context - The context of the message (general, landing, product, cart)
    * @param customMessage - Optional custom message to override the default
    * @param productName - Optional product name to include in the message
+   * @param phoneNumber - Optional phone number to use instead of default
    */
-  openWhatsApp(context: 'general' | 'landing' | 'product' | 'cart' = 'general', customMessage?: string, productName?: string): void {
+  openWhatsApp(context: 'general' | 'landing' | 'product' | 'cart' = 'general', customMessage?: string, productName?: string, phoneNumber?: string): void {
     let message = customMessage || this.defaultMessages[context];
     
     // Add product name to the message if provided
@@ -29,9 +30,12 @@ export class WhatsAppService {
       message = `Hello! I'm interested in ${productName}. Can you help me with more information and pricing?\nhttps://futurefoods.com.my`;
     }
     
+    // Use provided phone number or fall back to default
+    const numberToUse = phoneNumber ?? this.whatsappNumber;
+    
     // Format the message for WhatsApp
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${this.whatsappNumber}?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/${numberToUse}?text=${encodedMessage}`;
     
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
@@ -42,8 +46,9 @@ export class WhatsAppService {
    * @param productName - Name of the product
    * @param productPrice - Price of the product (optional)
    * @param customMessage - Custom message (optional)
+   * @param phoneNumber - Optional phone number to use instead of default
    */
-  openProductInquiry(productName: string, productPrice?: string, customMessage?: string): void {
+  openProductInquiry(productName: string, productPrice?: string, customMessage?: string, phoneNumber?: string): void {
     let message = customMessage;
     
     if (!message) {
@@ -54,7 +59,7 @@ export class WhatsAppService {
       }
     }
     
-    this.openWhatsApp('product', message);
+    this.openWhatsApp('product', message, undefined, phoneNumber);
   }
 
   /**

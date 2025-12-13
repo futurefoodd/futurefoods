@@ -67,6 +67,18 @@
         "title": "Pro-Collagen Soft Pastilles",
         "description":"Faster nutrient absorption, Enables natural synthesis of collagen & elastin, Nourishes gut probiotics, Reduces skin sensitivity and Strengthens nails, Better muscle & joint comfort, Soothes mouth sores & throat irritation."
       },
+      "OfferPopup":{
+        "limitedTimeOffer": "Limited Time Offer!",
+        "title": "Special Offer",
+        "subtitle": "Get the best value on Pro-Collagen Soft Pastilles",
+        "bestValue": "Best Value",
+        "products": "Products",
+        "product": "Product",
+        "perUnit": "per unit",
+        "save": "Save",
+        "total": "Total",
+        "viewAllProducts": "View All Products"
+      },
       "Comparison":{
         "title": "What these soft pastilles do for you:",
         "description": "Relief that’s gentle, plant-based, and designed to support your skin’s natural healing from the inside. No synthetic chemicals, just nutrient-rich care that helps your skin glow making you feel confident.."
@@ -173,7 +185,7 @@
       },
       "veganSoftPastilles":{
         "title":"Vegan Soft Pastilles, Glass Bottle with 60 pcs",
-        "description":"Product Science that claims high-density pectin-based plant nutrients, that provide quicker absorption and energy refuel and for results you can truly feel. Discover Nutrient Synergy with Vegan Soft Pastilles that are tasty and easily melt in your mouth. Each delicious soft pastilles is also designed to enhance your skin’s natural glow, keep your nails healthy, and support better muscle and joint comfort, so that you can move with ease and confidence. ‘a reliable option away from animal-based collagen for you everyday wellness journey’, Dato Dr Nor Shahida, Clinical Researcher.",
+        "description":"Product Science that claims high-density pectin-based plant nutrients, that provide quicker absorption and energy refuel and for results you can truly feel. Discover Nutrient Synergy with Vegan Soft Pastilles that are tasty and easily melt in your mouth. Each delicious soft pastilles is also designed to enhance your skin’s natural glow, keep your nails healthy, and support better muscle and joint comfort, so that you can move with ease and confidence. ‘a reliable option away from animal-based collagen for you everyday wellness journey’.",
         "vegan":"Vegan",
         "functional":"Functional",
         "futureReadyNutrition": "Future-Ready Nutrition"
@@ -194,11 +206,82 @@
       }
 
     },
+    "ProductCarousel": {
+      "description1": "Great bargain for this meaningful Xmas promotions & new year gift!!",
+      "description2": "This is our way to say thank you to our loyal clients and beloved friends who are very supportive to us throughout these years!! Offer while stock last 😃😃",
+      "description3": "Ps call or WhatsApp us Charming Cottage (Carol) @",
+      "description4": "now to place your order.",
+      "description5": "Free delivery (T&C apply) or pickup or delivery services are available.",
+      "description6": "Looking forward and excited to hear from you guys soon!!!",
+      "or": "or"
+    },
 
     "ProductDetail": {
       "veganSoftPastilles": {
         "title": "Vegan Soft Pastilles",
         "description": "Vegan Soft Pastilles, Glass Bottle with 60 pcs"
+      },
+      "FAQ": {
+        "question_1": {
+          "question": "Q.1 How soon can I have safe weight loss (burn body fat)?",
+          "answer": "Keto Grains Breakfast is our ancestral diet. Speak with your Doctor and include this nutritious plant-based Gluten free meal into your low carb diet plan. After 2 weeks, you can expect 5kg weight loss and after 30 days 11kg weight loss."
+        },
+        "question_2": {
+          "question": "Q.2 How does Keto Grains Breakfast help lower blood sugar? | How does Vegan Keto Meal reduce insulin resistance?",
+          "answer": "Keto Grains Breakfast and Vegan Keto Meal have 12 gram Soluble Fibre and 3 grams Resistant Starch Type 2 per serving. Keto Grains Breakfast and Vegan Keto Meal have a Glyceamic Index of 37 - 42. Both type of dietary fibre slows down glucose absorption and increase metabolism."
+        },
+        "question_3": {
+          "question": "Q.3 Who needs to take Keto Grains Breakfast / Vegan Keto Meal?",
+          "answer": "Individuals with sudden weight gain, constipation, pre-diabetic, poor diabetes control, fatty liver, high blood pressure, unable to loose belly fat, frequent low energy and infertility issues"
+        },
+        "question_4": {
+          "question": "Q.4 How much Keto Grains Breakfast / Vegan Keto Meal to take per day?",
+          "answer": "Clinic Advice;\n\nBelow 80kg take 3 tbsp. per serving alternate days. (30g)\n\nAbove 81kg take 4 tbsp. daily."
+        },
+        "question_5": {
+          "question": "Q.5 How long should I take Keto Grains Breakfast / Vegan Keto Meal?",
+          "answer": "Each treatment course and eating plan is designed for 21 days. For best results repeat for 3 cycles"
+        },
+        "question_6": {
+          "question": "Q.6 What health outcomes or results can I expect?",
+          "answer": "Depending on the individual's body composition, taste tolerance level and illness you may expect regular bowel movements, better blood sugar control, less hunger, lower cholesterol levels, higher energy levels and improved muscle strength."
+        },
+        "question_7": {
+          "question": "Q.7 What type of toppings can I add to enjoy the taste I like?",
+          "answer": "Choice of Toppings;\n\n50ml unsweetened Almond or Walnut Milk\n\n2 tbsp. rinsed Nata de Coco or Grass Jelly\n\n3 Madinah Dates or 1 tbsp. Pumpkin Seeds\n\n1 green Apple or green Pear or Guava or Dragon Fruit"
+        },
+        "question_8": {
+          "question": "Q.8 Can I expect to gain lean muscle mass with only plant-based protein?",
+          "answer": "Our clinic has recorded 3% increase in lean muscle mass upon completing the 90 days therapeutic eating plan.\n\nIndividuals completing > 5000 steps per day or gym workouts 3 times per week can expect 5% increase in lean muscle mass"
+        },
+        "question_9": {
+          "question": "Q.9 Is Keto Grains Breakfast / Vegan Keto Meal affordable?",
+          "answer": "Cost per healthy breakfast serving is RM9.27. When compared to regular low nutrition Chinese hawker food, fast food or western breakfast or mamak meals this plant-based meals are safer and affordable."
+        },
+        "question_10": {
+          "question": "Q.10 Is it similar to popular Meal Replacements and Protein Shakes?",
+          "answer": "Ancient Keto Grains are nutritionally superior and safer but cost 30% less than meal replacements sold by MLM or protein shakes retailed in organic or wellness stores."
+        },
+        "question_11": {
+          "question": "Q.11 Is it similar to Multi Grains in Organic Stores?",
+          "answer": "Ancient Keto Grains is a Gluten-Lectin-Soy and Nut free ready to eat formulation.\n\nMultigrain mix are often not Gluten or Soy or Nut Free and have Maltodextrin and artificial sweeteners."
+        },
+        "question_12": {
+          "question": "Q.12 How does Keto Grains Breakfast / Vegan Keto Meal induce Nutritional Ketosis?",
+          "answer": "Nutritional Ketosis is true ketosis, Keto Grains is a nutrient dense thermogenic food; this meal requires more metabolic energy to digest than calories obtained (account deficit in energy exchange) prompting the body into lipolysis (fat burning)"
+        },
+        "question_13": {
+          "question": "Q.13 Why is Keto Grains Breakfast / Vegan Keto Meal a Keto Diet?",
+          "answer": "This organic paleo meal has less than 5g available carbohydrate per serving. It's a thermogenic meal thus you will experience increase in basal metabolic rate, gradual body fat loss of 30 - 50 grams per day after day 5, higher energy levels especially towards the evening and better mental clarity due to increased ketone bodies in your blood stream."
+        },
+        "question_14": {
+          "question": "Q.14 Why is Keto Grains rated as 'first real meal of the day' by Primary Care Physicians and many General Practice Clinics?",
+          "answer": "You obtain daily value of dietary soluble fibre, ALA Omega 3, trace minerals, adequate plant proteins and polyphenols and phytosterols."
+        },
+        "question_15": {
+          "question": "Q.15 When was the medical research into Plant-Based Meal's efficacy completed?",
+          "answer": "In 2015 product trials were conducted by 3 physicians on 18 patients with promising results. In 2017 the improved Keto Grains formulation was clinically test with the participation of 133 patient over 18 months.\n\nTrial results showed Keto Grains Vegan Meal has a Glycaemic Index of 37 - 42, and is therapeutic for patients with food intolerance (allergy), constipation, diabetes, fatty liver, muscle atrophy/cramps and low energy (fibromyalgia)\n\nNarrative by\n\nDr Keshu A\n\nClinical Research Nutritionist\n\nMedical Counsellor\n\nUtara Dietetics Clinic"
+        }
       }
     },
 

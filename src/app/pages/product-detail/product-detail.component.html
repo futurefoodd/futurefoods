@@ -1,7 +1,7 @@
 <!-- product-details.component.html -->
 <div class="product-container">
   @if (imageObject && imageObject.length > 0){
-    <app-flickity-carousel [item] ='imageObject'></app-flickity-carousel>
+    <app-flickity-carousel [item] ='imageObject' (imageClick)="openImageModal($event)"></app-flickity-carousel>
   }
   <div class="product-details-content">
     <!-- Product Status Tags -->
@@ -15,7 +15,7 @@
     <h1 class="product-title">{{product[0].name}}</h1>
 
     <!-- Special Offer Section -->
-    @if (hasPromo()) {
+    @if (isProCollagen()) {
       <div class="product-offer-section">
         <div class="limited-offer-container">
           <span class="limited-offer-badge" aria-label="Limited time offer">Limited Time Offer</span>
@@ -80,10 +80,11 @@
       <p class="product-price">{{getFormattedPrice()}}<span>@if(unitQuantity){
         /{{unitQuantity}}
       }
-       {{unitName}}</span> </p>
+       /{{unitName}}</span> </p>
     }
     <span></span>
-    <div class="product-description-wrapper" [class.expanded]="expanded">
+    <!-- <div class="product-description-wrapper" [class.expanded]="expanded"> -->
+    <div [class.expanded]="expanded">
       <h2>{{ product[0].description_title_1 }}</h2>
       <p class="product-description">
         {{ product[0].description_1 }}
@@ -95,9 +96,9 @@
       </p>
     </div>
     
-    <button class="toggle-btn" (click)="toggle()">
+    <!-- <button class="toggle-btn" (click)="toggle()">
       {{ expanded ? 'Show less' : 'Read more' }}
-    </button>
+    </button> -->
 
     <!-- <form #productForm="ngForm" (ngSubmit)="addToCart(productForm)"> -->
       <!-- <div class="quantity" style="width: fit-content; max-height: 50px;">
@@ -122,7 +123,7 @@
         <span *ngIf="quantityInput.errors?.['max']">Quantity cannot exceed 200</span>
       </div> -->
       
-      @if (!hasPromo()) {
+      @if (!isProCollagen()) {
         <div class="button-group">
           <button 
             class="buy-now-whatsapp p-3" 
@@ -254,62 +255,21 @@
    }
 
   <!-- Nutritional Information Section -->
-  <section class="info-section">
-    <div class="container">
-      <div class="info-content">
-        <div class="info-text">
-          <h2 class="section-title">Nutritional Information</h2>
-          <!-- <div class="nutrition-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Nutrient</th>
-                  <th>Per Serving (30g)</th>
-                  <th>% Daily Value*</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Calories</td>
-                  <td>120</td>
-                  <td>6%</td>
-                </tr>
-                <tr>
-                  <td>Protein</td>
-                  <td>8g</td>
-                  <td>16%</td>
-                </tr>
-                <tr>
-                  <td>Vitamin C</td>
-                  <td>1000mg</td>
-                  <td>1111%</td>
-                </tr>
-                <tr>
-                  <td>Omega-3 (ALA)</td>
-                  <td>200mg</td>
-                  <td>13%</td>
-                </tr>
-                <tr>
-                  <td>MCT Oil</td>
-                  <td>150mg</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Fiber</td>
-                  <td>5g</td>
-                  <td>18%</td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="nutrition-note">*Percent Daily Values are based on a 2,000 calorie diet.</p>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    <div class="flex justify-center nutrients-image-container">
-      <img [src]='nutrientsTableImage' class="nutrients-image">
-    </div>
-  </section> 
+   @if(nutrientsTableImage){
+
+     <section class="info-section">
+       <div class="container">
+         <div class="info-content">
+           <div class="info-text">
+             <h2 class="section-title">Nutritional Information</h2>
+           </div>
+         </div>
+       </div>
+       <div class="flex justify-center nutrients-image-container">
+         <img [src]='nutrientsTableImage' class="nutrients-image">
+       </div>
+     </section> 
+   }
 </div>
 
 <!-- FAQ Section for Ancestral Keto Diet Guide -->
@@ -348,4 +308,12 @@
   <span (click)="closeModal()" class="close">&times;</span>
   <img #modalImage class="modal-content" id="img01">
   <div #caption id="caption"></div>
+</div>
+
+<!-- Image Modal -->
+<div class="image-modal" *ngIf="imageModalVisible" (click)="closeImageModal()">
+  <div class="image-modal-content" (click)="$event.stopPropagation()">
+    <button class="image-modal-close" (click)="closeImageModal()" aria-label="Close modal">&times;</button>
+    <img [src]="modalImageUrl" alt="Enlarged product image" class="image-modal-image">
+  </div>
 </div>

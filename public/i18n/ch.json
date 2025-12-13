@@ -67,6 +67,18 @@
             "title": "Pro-Collagen Soft Pastilles",
             "description":"更快的营养吸收，实现天然胶原蛋白和弹性蛋白合成，滋养肠道益生菌，减少皮肤敏感性并强健指甲，改善肌肉和关节舒适度，缓解口腔溃疡和喉咙刺激。"
           },
+          "OfferPopup":{
+            "limitedTimeOffer": "限时优惠！",
+            "title": "特别优惠",
+            "subtitle": "获得 Pro-Collagen 软糖的最佳价值",
+            "bestValue": "最佳价值",
+            "products": "产品",
+            "product": "产品",
+            "perUnit": "每单位",
+            "save": "节省",
+            "total": "总计",
+            "viewAllProducts": "查看所有产品"
+          },
           "Comparison":{
             "title": "这些软糖为您做些什么：",
             "description": "温和的植物基缓解，旨在从内到外支持您的皮肤自然愈合。不含合成化学品，只有营养丰富的护理，帮助您的皮肤焕发光彩，让您感到自信。"
@@ -194,6 +206,15 @@
             "description2":"''……参考 2016 年康奈尔大学的 Vegan Allele 研究，古老谷物是我们的祖先为保持强壮而食用的，\"来自北方营养学与植物基研究诊所的临床研究营养师 Keshu 博士说。"
           }
     
+        },
+        "ProductCarousel": {
+          "description1": "这个有意义的圣诞促销和新年礼物的超值优惠！！",
+          "description2": "这是我们向多年来一直非常支持我们的忠实客户和亲爱的朋友们表示感谢的方式！！库存有限，售完即止 😃😃",
+          "description3": "请致电或WhatsApp我们 Charming Cottage (Carol) @",
+          "description4": "现在下订单。",
+          "description5": "免费送货（适用条款和条件）或自取或送货服务可用。",
+          "description6": "期待并兴奋地很快听到你们的消息！！！",
+          "or": "或"
         },
     
         "Tour":{
@@ -570,6 +591,68 @@
         "veganSoftPastilles": {
           "title": "素食软糖",
           "description": "素食软糖，玻璃瓶装 60 粒"
+        },
+        "FAQ": {
+          "question_1": {
+            "question": "Q.1 我多久可以安全减重（燃烧体脂）？",
+            "answer": "Keto Grains Breakfast 是我们的祖先饮食。与您的医生交谈，并将这种营养丰富的无麸质植物性膳食纳入您的低碳水化合物饮食计划。2周后，您可以预期减重5公斤，30天后减重11公斤。"
+          },
+          "question_2": {
+            "question": "Q.2 Keto Grains Breakfast 如何帮助降低血糖？| 纯素生酮餐如何减少胰岛素抵抗？",
+            "answer": "Keto Grains Breakfast 和纯素生酮餐每份含有12克可溶性纤维和3克抗性淀粉类型2。Keto Grains Breakfast 和纯素生酮餐的血糖指数为37-42。两种膳食纤维都会减慢葡萄糖吸收并增加新陈代谢。"
+          },
+          "question_3": {
+            "question": "Q.3 谁需要服用 Keto Grains Breakfast / 纯素生酮餐？",
+            "answer": "突然体重增加、便秘、糖尿病前期、糖尿病控制不佳、脂肪肝、高血压、无法减掉腹部脂肪、经常低能量和不育问题的个人"
+          },
+          "question_4": {
+            "question": "Q.4 每天应该服用多少 Keto Grains Breakfast / 纯素生酮餐？",
+            "answer": "临床建议；\n\n80公斤以下，每份3汤匙，隔天服用。(30g)\n\n81公斤以上，每天4汤匙。"
+          },
+          "question_5": {
+            "question": "Q.5 我应该服用 Keto Grains Breakfast / 纯素生酮餐多长时间？",
+            "answer": "每个治疗疗程和饮食计划设计为21天。为获得最佳效果，重复3个周期"
+          },
+          "question_6": {
+            "question": "Q.6 我可以期待什么健康结果或效果？",
+            "answer": "根据个人的身体成分、味觉耐受水平和疾病，您可能会期待规律的排便、更好的血糖控制、减少饥饿感、降低胆固醇水平、更高的能量水平和改善的肌肉力量。"
+          },
+          "question_7": {
+            "question": "Q.7 我可以添加什么类型的配料来享受我喜欢的味道？",
+            "answer": "配料选择；\n\n50ml 无糖杏仁或核桃奶\n\n2汤匙冲洗过的椰果或仙草\n\n3个麦地那枣或1汤匙南瓜籽\n\n1个青苹果或青梨或番石榴或火龙果"
+          },
+          "question_8": {
+            "question": "Q.8 仅使用植物性蛋白质，我可以期待增加瘦肌肉质量吗？",
+            "answer": "我们的诊所记录到，完成90天治疗性饮食计划后，瘦肌肉质量增加了3%。\n\n每天完成>5000步或每周3次健身房锻炼的个人可以期待瘦肌肉质量增加5%"
+          },
+          "question_9": {
+            "question": "Q.9 Keto Grains Breakfast / 纯素生酮餐是否负担得起？",
+            "answer": "每份健康早餐的成本为RM9.27。与常规低营养的中式小贩食品、快餐或西式早餐或mamak餐相比，这种植物性膳食更安全且负担得起。"
+          },
+          "question_10": {
+            "question": "Q.10 它是否类似于流行的代餐和蛋白质奶昔？",
+            "answer": "Ancient Keto Grains 在营养上更优越且更安全，但成本比MLM销售的代餐或有机或健康商店零售的蛋白质奶昔低30%。"
+          },
+          "question_11": {
+            "question": "Q.11 它是否类似于有机商店的多谷物？",
+            "answer": "Ancient Keto Grains 是一种无麸质-凝集素-大豆和坚果的即食配方。\n\n多谷物混合物通常不含麸质或大豆或坚果，并含有麦芽糊精和人造甜味剂。"
+          },
+          "question_12": {
+            "question": "Q.12 Keto Grains Breakfast / 纯素生酮餐如何诱导营养性酮症？",
+            "answer": "营养性酮症是真正的酮症，Keto Grains 是一种营养密集的生热食物；这顿饭需要比获得的卡路里更多的代谢能量来消化（能量交换中的账户赤字），促使身体进入脂肪分解（脂肪燃烧）"
+          },
+          "question_13": {
+            "question": "Q.13 为什么 Keto Grains Breakfast / 纯素生酮餐是生酮饮食？",
+            "answer": "这种有机古生代膳食每份含有少于5克可用碳水化合物。它是一种生热膳食，因此您将经历基础代谢率的增加，第5天后每天逐渐减少30-50克体脂，更高的能量水平，特别是在傍晚，以及由于血液中酮体增加而改善的精神清晰度。"
+          },
+          "question_14": {
+            "question": "Q.14 为什么 Keto Grains 被初级保健医生和许多全科诊所评为'一天的第一顿真正的饭'？",
+            "answer": "您获得每日价值的膳食可溶性纤维、ALA Omega 3、微量矿物质、充足的植物蛋白质以及多酚和植物甾醇。"
+          },
+          "question_15": {
+            "question": "Q.15 植物性膳食功效的医学研究何时完成？",
+            "answer": "2015年，3名医生对18名患者进行了产品试验，结果令人鼓舞。2017年，改进的Keto Grains配方进行了临床试验，有133名患者参与，历时18个月。\n\n试验结果显示，Keto Grains纯素餐的血糖指数为37-42，对食物不耐受（过敏）、便秘、糖尿病、脂肪肝、肌肉萎缩/痉挛和低能量（纤维肌痛）患者具有治疗作用\n\n叙述者\n\nKeshu A 博士\n\n临床研究营养师\n\n医疗顾问\n\nUtara Dietetics 诊所"
+          }
         }
       },
       "DoctorsForum": {

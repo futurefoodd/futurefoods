@@ -13,14 +13,6 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 
-
-// type productImage = {
-//   itemImageSrc: string | null,
-//   thumbnailImageSrc: string | null,
-//   alt:  string | null,
-//   title:  string | null
-// }
-
 @Component({
   selector: 'app-product-detail',
   imports: [CommonModule, FormsModule, TranslatePipe, FlickityCarouselComponent, VideoPlayerComponent],

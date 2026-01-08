@@ -67,6 +67,42 @@
         background: #059669;
       }
     }
+
+    .form-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      
+      button[type="submit"] {
+        background: #10b981;
+        color: white;
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    
+        &:hover {
+          background: #059669;
+        }
+      }
+    
+      button[type="button"] {
+        background: #fbbf24; // Yellow background
+        color: white;
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    
+        &:hover {
+          background: #f59e0b; // Darker yellow on hover
+        }
+      }
+    }
   }
   .info-image { display:flex; justify-content:start; align-items:center; height: 100%; width: 60%;}
 

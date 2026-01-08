@@ -253,8 +253,8 @@
                   "dietaryPatterns": "饮食模式",
                   "eatingStyle": "通常的饮食方式",
                   "waterIntake": "每日饮水量",
-                  "snacks": "咖啡/茶/含糖饮料/零食",
-                  "snackFrequency": "咖啡/茶/含糖饮料/零食频率",
+                  "snacks": "舒适饮品",
+                  "snackFrequency": "舒适饮品频率",
                   "primaryGoal": "主要目标",
                   "secondaryGoals": "次要目标",
                   "specificConcerns": "具体健康问题",
@@ -265,7 +265,8 @@
                   "foodAllergy": "食物过敏情况",
                   "medication": "目前服药情况",
                   "recentTravel": "近期海外旅行",
-                  "submit": "提交"
+                  "submit": "提交",
+                  "resetForm": "重置表单"
                 },
                 "options": {
                   "sedentary": "久坐 (<2000 步)",
@@ -292,8 +293,10 @@
                   "liquor": "烈酒",
                   "coffee": "咖啡",
                   "tea": "茶",
-                  "sugaryDrinks": "含糖饮料",
-                  "snacks": "零食",
+                  "chocolaty": "巧克力",
+                  "dairy": "乳制品",
+                  "sugaryDrink": "含糖饮料",
+                  "snacksPastry": "零食/糕点",
                   "briskWalk": "快走",
                   "yoga": "瑜伽",
                   "gymWorkout": "健身房锻炼",
@@ -355,8 +358,10 @@
                     "name": "姓名",
                     "email": "电子邮箱",
                     "contact": "联系电话",
-                    "address": "地址",
-                    "message": "留言",
+                    "address": "送货地址",
+                    "smokingHabits": "吸烟习惯",
+                    "smoker": "吸烟者",
+                    "vaper": "电子烟使用者",
                     "submit": "提交申请"
                   },
                   "questions": {

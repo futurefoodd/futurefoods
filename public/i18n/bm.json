@@ -319,8 +319,8 @@
           "dietaryPatterns": "Corak Pemakanan",
           "eatingStyle": "Gaya Makan Biasa",
           "waterIntake": "Pengambilan Air Harian",
-          "snacks": "Kopi / Teh / Minuman Manis / Snek",
-          "snackFrequency": "Kekerapan Kopi / Teh / Minuman Manis / Snek",
+          "snacks": "Minuman Selesa",
+          "snackFrequency": "Kekerapan Minuman Selesa",
           "primaryGoal": "Matlamat Utama",
           "secondaryGoals": "Matlamat Sekunder",
           "specificConcerns": "Kebimbangan Khusus",
@@ -331,7 +331,8 @@
           "foodAllergy": "Alahan Makanan",
           "medication": "Sedang Mengambil Ubat",
           "recentTravel": "Perjalanan Luar Negara Terkini",
-          "submit": "Hantar"
+          "submit": "Hantar",
+          "resetForm": "Set Semula Borang"
         },
         "options": {
           "sedentary": "Tidak Aktif (<2000 langkah)",
@@ -358,8 +359,10 @@
           "liquor": "Minuman Keras",
           "coffee": "Kopi",
           "tea": "Teh",
-          "sugaryDrinks": "Minuman Manis",
-          "snacks": "Snek",
+          "chocolaty": "Bercoklat",
+          "dairy": "Tenusu",
+          "sugaryDrink": "Minuman Manis",
+          "snacksPastry": "Snek/Pastri",
           "briskWalk": "Jalan Cepat",
           "yoga": "Yoga",
           "gymWorkout": "Senaman Gim",
@@ -421,8 +424,10 @@
             "name": "Nama",
             "email": "Emel",
             "contact": "Nombor Telefon",
-            "address": "Alamat",
-            "message": "Mesej",
+            "address": "Alamat Penghantaran",
+            "smokingHabits": "Tabiat Merokok",
+            "smoker": "Perokok",
+            "vaper": "Vaper",
             "submit": "Hantar Permintaan"
           },
           "questions": {

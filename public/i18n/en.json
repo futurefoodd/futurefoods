@@ -321,8 +321,8 @@
         "dietaryPatterns": "Dietary Patterns",
         "eatingStyle": "Usual Eating Style",
         "waterIntake": "Daily Water Intake",
-        "snacks": "Coffee / Tea / Sugary Drinks / Snacks",
-        "snackFrequency": "Coffee / Tea / Sugary Drinks / Snacks Frequency",
+        "snacks": "Comfort beverage",
+        "snackFrequency": "Comfort beverage Frequency",
         "primaryGoal": "Primary Goal",
         "secondaryGoals": "Secondary Goals",
         "specificConcerns": "Specific Concerns",
@@ -333,7 +333,8 @@
         "foodAllergy": "Any Food Allergy",
         "medication": "Presently on Medication",
         "recentTravel": "Recent Travel Abroad",
-        "submit": "Submit"
+        "submit": "Submit",
+        "resetForm": "Reset Form"
       },
       "options": {
         "sedentary": "Sedentary (<2000 steps)",
@@ -360,8 +361,10 @@
         "liquor": "Liquor",
         "coffee": "Coffee",
         "tea": "Tea",
-        "sugaryDrinks": "Sugary Drinks",
-        "snacks": "Snacks",
+        "chocolaty": "Chocolaty",
+        "dairy": "Dairy",
+        "sugaryDrink": "Sugary drink",
+        "snacksPastry": "Snacks/Pastry",
         "briskWalk": "Brisk Walk",
         "yoga": "Yoga",
         "gymWorkout": "Gym Workout",
@@ -423,8 +426,10 @@
           "name": "Name",
           "email": "Email",
           "contact": "Contact Number",
-          "address": "Address",
-          "message": "Message",
+          "address": "Delivery Address",
+          "smokingHabits": "Smoking habits",
+          "smoker": "Smoker",
+          "vaper": "Vaper",
           "submit": "Submit Request"
         },
         "questions": {

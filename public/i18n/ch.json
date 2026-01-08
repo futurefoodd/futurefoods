@@ -31,6 +31,13 @@
             "description": "了解Future Foods如何通过基于植物、有证据支持的功能性营养，为诊所、学校和社区健康项目提供支持的精髓故事。",
             "videoTitle": "通过Future Foods提升技能"
           },
+          "slidesSection": {
+            "heading": "请求研发支持",
+            "description": "浏览我们的教育幻灯片和资源",
+            "loading": "正在加载演示文稿...",
+            "errorHint": "请确保演示文稿文件可访问且URL正确。",
+            "downloadButton": "下载 PowerPoint 演示文稿"
+          },
           "highlights": {
             "heading": "您将学到什么"
           },

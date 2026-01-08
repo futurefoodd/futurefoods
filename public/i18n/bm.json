@@ -30,6 +30,13 @@
           "description": "Dapatkan kisah ringkas bagaimana Future Foods menyokong klinik, sekolah, dan program kesihatan komuniti dengan nutrisi fungsional berasaskan tumbuhan dan disokong bukti.",
           "videoTitle": "Tingkatkan Kemahiran dengan Future Foods"
         },
+        "slidesSection": {
+          "heading": "Permintaan untuk Sokongan Penyelidikan dan Pembangunan",
+          "description": "Lihat slaid pendidikan dan sumber kami",
+          "loading": "Memuatkan persembahan...",
+          "errorHint": "Sila pastikan fail persembahan boleh diakses dan URL adalah betul.",
+          "downloadButton": "Muat Turun Persembahan PowerPoint"
+        },
         "highlights": {
           "heading": "Apa yang anda akan pelajari"
         },

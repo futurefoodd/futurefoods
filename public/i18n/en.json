@@ -31,6 +31,13 @@
         "description": "Get the distilled story of how Future Foods supports clinics, schools, and community health programmes with plant-based, evidence-backed functional nutrition.",
         "videoTitle": "Upskill with Future Foods"
       },
+      "slidesSection": {
+        "heading": "Request for Research and Development Support",
+        "description": "Browse through our educational slides and resources",
+        "loading": "Loading presentation...",
+        "errorHint": "Please ensure the presentation file is accessible and the URL is correct.",
+        "downloadButton": "Download PowerPoint Presentation"
+      },
       "highlights": {
         "heading": "What you will learn"
       },

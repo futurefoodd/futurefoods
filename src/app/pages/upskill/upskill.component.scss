@@ -115,6 +115,204 @@
   }
 }
 
+.upskill-slides {
+  padding: clamp(64px, 14vw, 120px) 0;
+  background: #ffffff;
+
+  .upskill-slides__header {
+    text-align: center;
+    margin-bottom: clamp(32px, 6vw, 48px);
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      color: #0a5247;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: rgba(10, 82, 71, 0.75);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+  }
+
+  .upskill-slides__viewer-wrapper {
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .upskill-slides__viewer {
+    width: 100%;
+    min-height: 600px;
+    max-height: 80vh;
+    background: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(10, 82, 71, 0.1);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      min-height: 400px;
+      max-height: 60vh;
+    }
+  }
+
+  .upskill-slides__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: #fbf5ed;
+    border-radius: 8px;
+  }
+
+  .upskill-slides__control-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #0a5247;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #0a5247;
+
+    &:hover:not(:disabled) {
+      background: #0a5247;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      border-color: rgba(10, 82, 71, 0.3);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .upskill-slides__slide-info {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0a5247;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  .upskill-slides__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    gap: 1rem;
+    color: #0a5247;
+
+    p {
+      font-size: 1.1rem;
+      color: rgba(10, 82, 71, 0.75);
+    }
+  }
+
+  .upskill-slides__spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(10, 82, 71, 0.1);
+    border-top-color: #0a5247;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .upskill-slides__error {
+    text-align: center;
+    padding: 2rem;
+    background: #fff5f5;
+    border: 2px solid #ff5f2d;
+    border-radius: 8px;
+    color: #0a5247;
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .upskill-slides__error-hint {
+      font-size: 0.9rem;
+      color: rgba(10, 82, 71, 0.7);
+      margin-top: 0.5rem;
+    }
+  }
+
+  .upskill-slides__download-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .upskill-slides__download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem 2rem;
+    background: #0a5247;
+    color: #ffffff;
+    border: 2px solid #0a5247;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(10, 82, 71, 0.2);
+
+    &:hover {
+      background: #0d6b5d;
+      border-color: #0d6b5d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(10, 82, 71, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(10, 82, 71, 0.2);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .upskill-slides__powerpoint-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: #ff5f2d; /* PowerPoint orange color */
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .upskill-hero {
     text-align: center;
@@ -126,6 +324,43 @@
 
   .upskill-video__caption {
     padding: 0 1rem;
+  }
+
+  .upskill-slides {
+    .upskill-slides__viewer-wrapper {
+      padding: 0 1rem;
+    }
+
+    .upskill-slides__controls {
+      gap: 1rem;
+      padding: 0.75rem;
+    }
+
+    .upskill-slides__control-btn {
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .upskill-slides__slide-info {
+      font-size: 1rem;
+      min-width: 60px;
+    }
+
+    .upskill-slides__download-btn {
+      max-width: 100%;
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
 

@@ -222,6 +222,20 @@ export class ProductDetailComponent implements OnInit {
   }
 
   /**
+   * Opens WhatsApp for product inquiry with specific phone number and name
+   */
+  openWhatsAppWithNumber(phoneNumber: string, name: string): void {
+    if (this.product && this.product[0]) {
+      const productName = this.product[0].name;
+      const productPrice = this.getFormattedPrice();
+      const message = `Hello ${name}! I'm interested in ${productName} (${productPrice}). Can you help me with more information and how to purchase?\nhttps://futurefoods.com.my`;
+      this.whatsappService.openWhatsApp('product', message, undefined, phoneNumber);
+    } else {
+      this.whatsappService.openWhatsApp('product');
+    }
+  }
+
+  /**
    * Opens WhatsApp for single product purchase (special offer)
    */
   openWhatsAppSingleProduct(): void {
@@ -254,10 +268,9 @@ export class ProductDetailComponent implements OnInit {
    * Returns an array of objects with phone number and name
    */
   parsePicField(): Array<{phone: string, name: string}> {
-    if (!this.product || !this.product[0] || !this.product[0].pic) {
+    if (!this.product[0]?.pic) {
       return [];
     }
-
     const picValue = this.product[0].pic.toString().trim();
     if (!picValue) {
       return [];

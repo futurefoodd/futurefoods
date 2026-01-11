@@ -707,7 +707,8 @@ img {
   width: 100%;
   margin-top: auto;
   
-  .offer-button {
+  .offer-button,
+  .buy-now-whatsapp {
     width: 100%;
     
     span {
@@ -718,7 +719,8 @@ img {
   @media (max-width: 480px) {
     gap: 8px;
     
-    .offer-button span {
+    .offer-button span,
+    .buy-now-whatsapp span {
       font-size: 0.85rem;
     }
   }

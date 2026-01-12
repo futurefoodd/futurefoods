@@ -33,6 +33,47 @@ $dark-slate-gray: #364A42ff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.upskill-container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.upskill-hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, rgba(93, 121, 45, 0.12), rgba(10, 82, 71, 0.25));
+  color: #0a5247;
+  margin: -40px -40px 0 -40px;
+  border-radius: 12px 12px 0 0;
+
+  .upskill-title {
+    font-size: clamp(2.75rem, 6vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #0a5247;
+  }
+
+  .upskill-subtitle {
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
+    max-width: 540px;
+    color: rgba(10, 82, 71, 0.75);
+  }
+}
+
+.upskill-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 95, 45, 0.12);
+  color: #ff5f2d;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
 .intro-paragraph {
   font-size: 18px;
   color: #444;
@@ -77,6 +118,15 @@ $dark-slate-gray: #364A42ff;
 
   .content-section {
     padding: 20px;
+  }
+
+  .upskill-hero {
+    margin: -20px -20px 0 -20px;
+    text-align: center;
+
+    .upskill-subtitle {
+      margin: 0 auto;
+    }
   }
 
   .intro-paragraph {
@@ -465,6 +515,15 @@ $dark-slate-gray: #364A42ff;
 
 .privacy-note a:hover {
   text-decoration: underline;
+}
+
+// Participant consent statement - positioned below privacy note
+.consent-statement {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0.5rem 0 1rem 0;
+  text-align: center;
+  font-style: italic;
 }
 
 // Form buttons - matching dietetics style

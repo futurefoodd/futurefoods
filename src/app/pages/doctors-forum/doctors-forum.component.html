@@ -3,9 +3,19 @@
     <h1 class="page-heading">{{ 'DoctorsForum.heading' | translate }}</h1>
     
     <div class="content-section">
-      <p class="intro-paragraph">
-        {{ 'DoctorsForum.paragraph' | translate }}
-      </p>
+      <section class="upskill-hero">
+        <div class="upskill-container">
+          <div class="upskill-hero__content">
+            <span class="upskill-eyebrow">{{ 'DoctorsForum.eyebrow' | translate }}</span>
+            <h1 class="upskill-title">
+              {{ 'DoctorsForum.title' | translate }}
+            </h1>
+            <p class="upskill-subtitle">
+              {{ 'DoctorsForum.subtitle' | translate }}
+            </p>
+          </div>
+        </div>
+      </section>
       
       <!-- <div class="pdf-container">
         <iframe 
@@ -27,260 +37,260 @@
         <!-- Part A: Patient Information -->
         <section class="form-section-part">
           <div class="form-header">
-            <h2>Senior Doctor Product Trial</h2>
+            <h2>{{ 'DoctorsForum.form.partA.title' | translate }}</h2>
             <!-- <p class="form-subtitle">Primary Care and Family Medicine Cohort: 30 pax | 2026</p> -->
             <!-- <p class="form-subtitle">Clinic …………. Strictly Internal Document</p> -->
           </div>
 
           <div class="form-info-box">
-            <h3>Product Feasibility Assessment : Nutritional Soft Pastilles, 3g each</h3>
+            <h3>{{ 'DoctorsForum.form.partA.assessmentTitle' | translate }}</h3>
             <ul class="info-list">
-              <li><strong>Active Ingredient:</strong> 350mg NVC3</li>
-              <li><strong>Mode of Delivery:</strong> Buccal / Sublingual</li>
-              <li><strong>Dosage:</strong> 2 to 3 pastilles per day</li>
-              <li><strong>Duration:</strong> 2 weeks</li>
-              <li><strong>Functional Claim:</strong> Natural Anti-Inflammatory | Muscle Recovery</li>
-              <li><strong>Qualitative Methodology:</strong> Before-and-After Assessment Survey</li>
-              <li><strong>Quantitative Methodology:</strong> Selected Blood Assays</li>
+              <li><strong>{{ 'DoctorsForum.form.partA.activeIngredient' | translate }}</strong> 350mg NVC3</li>
+              <li><strong>{{ 'DoctorsForum.form.partA.modeOfDelivery' | translate }}</strong> Buccal / Sublingual</li>
+              <li><strong>{{ 'DoctorsForum.form.partA.dosage' | translate }}</strong> 2 to 3 pastilles per day</li>
+              <li><strong>{{ 'DoctorsForum.form.partA.duration' | translate }}</strong> 2 weeks</li>
+              <li><strong>{{ 'DoctorsForum.form.partA.functionalClaim' | translate }}</strong> Natural Anti-Inflammatory | Muscle Recovery</li>
+              <li><strong>{{ 'DoctorsForum.form.partA.qualitativeMethodology' | translate }}</strong> Before-and-After Assessment Survey</li>
+              <li><strong>{{ 'DoctorsForum.form.partA.quantitativeMethodology' | translate }}</strong> Selected Blood Assays</li>
             </ul>
             <div class="target-morbidity">
-              <p><strong>Target Musculoskeletal Morbidity:</strong> middle-aged (45-55) | older patients (56-65)</p>
+              <p><strong>{{ 'DoctorsForum.form.partA.targetMorbidity' | translate }}</strong> {{ 'DoctorsForum.form.partA.targetMorbidityAge' | translate }}</p>
               <ul>
-                <li>chronic pain, cramps, muscle weakness, joint stiffness, fall recovery, osteoporosis / oedema</li>
-                <li>sluggish digestion, bloating, reflux, bad breath (dysbiosis), gum swelling, constipation</li>
-                <li>fatigue, brain fog, sleepy, menopause</li>
-                <li>wrinkled skin, skin allergies, breakouts</li>
+                <li>{{ 'DoctorsForum.form.partA.morbidityList1' | translate }}</li>
+                <li>{{ 'DoctorsForum.form.partA.morbidityList2' | translate }}</li>
+                <li>{{ 'DoctorsForum.form.partA.morbidityList3' | translate }}</li>
+                <li>{{ 'DoctorsForum.form.partA.morbidityList4' | translate }}</li>
               </ul>
             </div>
           </div>
 
-          <h3 class="section-title">Patient Information (History)</h3>
+          <h3 class="section-title">{{ 'DoctorsForum.form.partA.participantInfo' | translate }}</h3>
           
           <div class="form-group">
-            <label for="name">Name:<span class="required-asterisk">*</span></label>
+            <label for="name">{{ 'DoctorsForum.form.partA.name' | translate }}<span class="required-asterisk">*</span></label>
             <input type="text" id="name" formControlName="name" class="form-input" [class.invalid]="isFieldInvalid('name')">
           </div>
 
           <div class="form-group">
-            <label for="rn">RN#:<span class="required-asterisk">*</span></label>
+            <label for="rn">{{ 'DoctorsForum.form.partA.rn' | translate }}<span class="required-asterisk">*</span></label>
             <input type="text" id="rn" formControlName="rn" class="form-input" [class.invalid]="isFieldInvalid('rn')">
           </div>
 
           <div class="form-group">
-            <label for="age">Age:<span class="required-asterisk">*</span></label>
+            <label for="age">{{ 'DoctorsForum.form.partA.age' | translate }}<span class="required-asterisk">*</span></label>
             <input type="number" id="age" formControlName="age" class="form-input" [class.invalid]="isFieldInvalid('age')">
           </div>
 
           <div class="form-group">
-            <label for="gender">Gender:<span class="required-asterisk">*</span></label>
+            <label for="gender">{{ 'DoctorsForum.form.partA.gender' | translate }}<span class="required-asterisk">*</span></label>
             <select id="gender" formControlName="gender" class="form-input" [class.invalid]="isFieldInvalid('gender')">
-              <option value="">Select...</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="">{{ 'DoctorsForum.form.partA.selectGender' | translate }}</option>
+              <option value="male">{{ 'DoctorsForum.form.partA.male' | translate }}</option>
+              <option value="female">{{ 'DoctorsForum.form.partA.female' | translate }}</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="bmi">BMI:<span class="required-asterisk">*</span></label>
+            <label for="bmi">{{ 'DoctorsForum.form.partA.bmi' | translate }}<span class="required-asterisk">*</span></label>
             <input type="text" id="bmi" formControlName="bmi" class="form-input" [class.invalid]="isFieldInvalid('bmi')">
           </div>
 
           <div class="form-group">
-            <label for="visitDate">Visit Date:<span class="required-asterisk">*</span></label>
+            <label for="visitDate">{{ 'DoctorsForum.form.partA.visitDate' | translate }}<span class="required-asterisk">*</span></label>
             <input type="date" id="visitDate" formControlName="visitDate" class="form-input" [class.invalid]="isFieldInvalid('visitDate')">
           </div>
 
           <div class="form-group">
-            <label for="caregiver">Caregiver:<span class="required-asterisk">*</span></label>
+            <label for="caregiver">{{ 'DoctorsForum.form.partA.caregiver' | translate }}<span class="required-asterisk">*</span></label>
             <input type="text" id="caregiver" formControlName="caregiver" class="form-input" [class.invalid]="isFieldInvalid('caregiver')">
           </div>
 
           <div class="form-group">
-            <label for="regularMedication">Regular Medication:<span class="required-asterisk">*</span></label>
+            <label for="regularMedication">{{ 'DoctorsForum.form.partA.regularMedication' | translate }}<span class="required-asterisk">*</span></label>
             <textarea id="regularMedication" formControlName="regularMedication" class="form-textarea" rows="3" [class.invalid]="isFieldInvalid('regularMedication')"></textarea>
           </div>
 
           <div class="form-group">
-            <label class="checkbox-label">Reason for Visit(s) (check all that apply):</label>
+            <label class="checkbox-label">{{ 'DoctorsForum.form.partA.reasonForVisit' | translate }}</label>
             <div class="checkbox-group" formGroupName="reasonsForVisit">
               <label class="checkbox-item">
                 <input type="checkbox" id="chronicPain" formControlName="chronicPain">
-                chronic pain
+                {{ 'DoctorsForum.form.partA.chronicPain' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="jointStiffness" formControlName="jointStiffness">
-                joint stiffness
+                {{ 'DoctorsForum.form.partA.jointStiffness' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="fallRecovery" formControlName="fallRecovery">
-                fall recovery
+                {{ 'DoctorsForum.form.partA.fallRecovery' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="muscleCramps" formControlName="muscleCramps">
-                muscle cramps
+                {{ 'DoctorsForum.form.partA.muscleCramps' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="muscleWeakness" formControlName="muscleWeakness">
-                muscle weakness
+                {{ 'DoctorsForum.form.partA.muscleWeakness' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="osteoporosis" formControlName="osteoporosis">
-                osteoporosis / oedema
+                {{ 'DoctorsForum.form.partA.osteoporosis' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="sluggishDigestion" formControlName="sluggishDigestion">
-                sluggish digestion
+                {{ 'DoctorsForum.form.partA.sluggishDigestion' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="reflux" formControlName="reflux">
-                reflux
+                {{ 'DoctorsForum.form.partA.reflux' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="bloating" formControlName="bloating">
-                bloating
+                {{ 'DoctorsForum.form.partA.bloating' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="badBreath" formControlName="badBreath">
-                bad breath (dysbiosis)
+                {{ 'DoctorsForum.form.partA.badBreath' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="gumIssues" formControlName="gumIssues">
-                gum issues
+                {{ 'DoctorsForum.form.partA.gumIssues' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="constipation" formControlName="constipation">
-                episodic constipation
+                {{ 'DoctorsForum.form.partA.constipation' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="dehydration" formControlName="dehydration">
-                dehydration
+                {{ 'DoctorsForum.form.partA.dehydration' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="fatigue" formControlName="fatigue">
-                fatigue
+                {{ 'DoctorsForum.form.partA.fatigue' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="sleepy" formControlName="sleepy">
-                sleepy
+                {{ 'DoctorsForum.form.partA.sleepy' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="perimenopause" formControlName="perimenopause">
-                peri-menopause
+                {{ 'DoctorsForum.form.partA.perimenopause' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="brainFog" formControlName="brainFog">
-                brain fog
+                {{ 'DoctorsForum.form.partA.brainFog' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="wrinkledSkin" formControlName="wrinkledSkin">
-                wrinkled skin
+                {{ 'DoctorsForum.form.partA.wrinkledSkin' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="skinAllergies" formControlName="skinAllergies">
-                skin allergies
+                {{ 'DoctorsForum.form.partA.skinAllergies' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="breakouts" formControlName="breakouts">
-                breakouts
+                {{ 'DoctorsForum.form.partA.breakouts' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="smokerCough" formControlName="smokerCough">
-                smoker / vapers cough
+                {{ 'DoctorsForum.form.partA.smokerCough' | translate }}
               </label>
               <label class="checkbox-item">
                 <input type="checkbox" id="others" formControlName="others">
-                others
+                {{ 'DoctorsForum.form.partA.others' | translate }}
               </label>
             </div>
           </div>
 
           <!-- Others Reason Field - Shows when "others" checkbox is checked -->
           <div class="form-group" *ngIf="getFormControl('reasonsForVisit.others')?.value">
-            <label for="othersReason">Please specify:<span class="required-asterisk">*</span></label>
-            <input type="text" id="othersReason" formControlName="othersReason" class="form-input" placeholder="Enter reason for visit" [class.invalid]="isFieldInvalid('othersReason')">
+            <label for="othersReason">{{ 'DoctorsForum.form.partA.pleaseSpecify' | translate }}<span class="required-asterisk">*</span></label>
+            <input type="text" id="othersReason" formControlName="othersReason" class="form-input" [placeholder]="'DoctorsForum.form.partA.enterReason' | translate" [class.invalid]="isFieldInvalid('othersReason')">
           </div>
         </section>
 
         <!-- Part B: After Intervention Assessment -->
         <section class="form-section-part">
           <div class="form-header">
-            <h2>Part B: After Intervention Assessment</h2>
-            <p class="form-subtitle">(Completed 3–4 weeks after product trial)</p>
+            <h2>{{ 'DoctorsForum.form.partB.title' | translate }}</h2>
+            <p class="form-subtitle">{{ 'DoctorsForum.form.partB.subtitle' | translate }}</p>
           </div>
 
           <!-- Symptom Change Table -->
           <div class="form-group">
-            <label class="section-label">1. Symptom Change (Compared to Before)<span class="required-asterisk">*</span></label>
+            <label class="section-label">{{ 'DoctorsForum.form.partB.symptomChange' | translate }}<span class="required-asterisk">*</span></label>
             <div class="table-responsive">
               <table class="symptom-table" formGroupName="symptomChanges">
                 <thead>
                   <tr>
-                    <th>Symptom</th>
-                    <th>Worse</th>
-                    <th>No Change</th>
-                    <th>Slightly Better</th>
-                    <th>Much Better</th>
+                    <th>{{ 'DoctorsForum.form.partB.symptom' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.worse' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.noChange' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.slightlyBetter' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.muchBetter' | translate }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Chronic pain</td>
+                    <td>{{ 'DoctorsForum.form.partB.chronicPain' | translate }}</td>
                     <td><input type="radio" formControlName="chronicPain" value="worse"></td>
                     <td><input type="radio" formControlName="chronicPain" value="noChange"></td>
                     <td><input type="radio" formControlName="chronicPain" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="chronicPain" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Muscle ache/weakness</td>
+                    <td>{{ 'DoctorsForum.form.partB.muscleAche' | translate }}</td>
                     <td><input type="radio" formControlName="muscleAche" value="worse"></td>
                     <td><input type="radio" formControlName="muscleAche" value="noChange"></td>
                     <td><input type="radio" formControlName="muscleAche" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="muscleAche" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Joint stiffness</td>
+                    <td>{{ 'DoctorsForum.form.partB.jointStiffness' | translate }}</td>
                     <td><input type="radio" formControlName="jointStiffness" value="worse"></td>
                     <td><input type="radio" formControlName="jointStiffness" value="noChange"></td>
                     <td><input type="radio" formControlName="jointStiffness" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="jointStiffness" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Energy/Fatigue</td>
+                    <td>{{ 'DoctorsForum.form.partB.energyFatigue' | translate }}</td>
                     <td><input type="radio" formControlName="energyFatigue" value="worse"></td>
                     <td><input type="radio" formControlName="energyFatigue" value="noChange"></td>
                     <td><input type="radio" formControlName="energyFatigue" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="energyFatigue" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Brain fog</td>
+                    <td>{{ 'DoctorsForum.form.partB.brainFog' | translate }}</td>
                     <td><input type="radio" formControlName="brainFog" value="worse"></td>
                     <td><input type="radio" formControlName="brainFog" value="noChange"></td>
                     <td><input type="radio" formControlName="brainFog" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="brainFog" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Sleep</td>
+                    <td>{{ 'DoctorsForum.form.partB.sleep' | translate }}</td>
                     <td><input type="radio" formControlName="sleep" value="worse"></td>
                     <td><input type="radio" formControlName="sleep" value="noChange"></td>
                     <td><input type="radio" formControlName="sleep" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="sleep" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Digestive symptoms</td>
+                    <td>{{ 'DoctorsForum.form.partB.digestiveSymptoms' | translate }}</td>
                     <td><input type="radio" formControlName="digestiveSymptoms" value="worse"></td>
                     <td><input type="radio" formControlName="digestiveSymptoms" value="noChange"></td>
                     <td><input type="radio" formControlName="digestiveSymptoms" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="digestiveSymptoms" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Skin allergies</td>
+                    <td>{{ 'DoctorsForum.form.partB.skinAllergies' | translate }}</td>
                     <td><input type="radio" formControlName="skinAllergies" value="worse"></td>
                     <td><input type="radio" formControlName="skinAllergies" value="noChange"></td>
                     <td><input type="radio" formControlName="skinAllergies" value="slightlyBetter"></td>
                     <td><input type="radio" formControlName="skinAllergies" value="muchBetter"></td>
                   </tr>
                   <tr>
-                    <td>Bad breath/oral health</td>
+                    <td>{{ 'DoctorsForum.form.partB.badBreath' | translate }}</td>
                     <td><input type="radio" formControlName="badBreath" value="worse"></td>
                     <td><input type="radio" formControlName="badBreath" value="noChange"></td>
                     <td><input type="radio" formControlName="badBreath" value="slightlyBetter"></td>
@@ -293,23 +303,24 @@
 
           <!-- Objective Follow-Up Scores -->
           <div class="form-group">
-            <label class="section-label">2. Objective Follow-Up Scores (Repeat rating from 1-5)<span class="required-asterisk">*</span></label>
+            <label class="section-label">{{ 'DoctorsForum.form.partB.objectiveScores' | translate }}<span class="required-asterisk">*</span></label>
+            <p>{{ 'DoctorsForum.form.partB.scoreLegend' | translate }}</p>
             <div class="table-responsive">
               <table class="scores-table" formGroupName="objectiveScores">
                 <thead>
                   <tr>
-                    <th>Symptom</th>
-                    <th>Before</th>
-                    <th>After</th>
+                    <th>{{ 'DoctorsForum.form.partB.symptom' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.before' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.after' | translate }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Pain</td>
+                    <td>{{ 'DoctorsForum.form.partB.pain' | translate }}</td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="painBefore" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'painBefore')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'painBefore')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'painBefore')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                     <td>
@@ -320,82 +331,82 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Fatigue</td>
+                    <td>{{ 'DoctorsForum.form.partB.fatigueScore' | translate }}</td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="fatigueBefore" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'fatigueBefore')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'fatigueBefore')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'fatigueBefore')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="fatigueAfter" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'fatigueAfter')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'fatigueAfter')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'fatigueAfter')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>Brain fog</td>
+                    <td>{{ 'DoctorsForum.form.partB.brainFogScore' | translate }}</td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="brainFogBefore" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'brainFogBefore')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'brainFogBefore')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'brainFogBefore')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="brainFogAfter" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'brainFogAfter')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'brainFogAfter')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'brainFogAfter')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>Strength/mobility</td>
+                    <td>{{ 'DoctorsForum.form.partB.strengthMobility' | translate }}</td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="strengthMobilityBefore" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'strengthMobilityBefore')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'strengthMobilityBefore')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'strengthMobilityBefore')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="strengthMobilityAfter" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'strengthMobilityAfter')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'strengthMobilityAfter')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'strengthMobilityAfter')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>Sleep quality</td>
+                    <td>{{ 'DoctorsForum.form.partB.sleepQuality' | translate }}</td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="sleepQualityBefore" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'sleepQualityBefore')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'sleepQualityBefore')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'sleepQualityBefore')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="sleepQualityAfter" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'sleepQualityAfter')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'sleepQualityAfter')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'sleepQualityAfter')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>Stress</td>
+                    <td>{{ 'DoctorsForum.form.partB.stress' | translate }}</td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="stressBefore" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'stressBefore')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'stressBefore')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'stressBefore')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="stressAfter" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'stressAfter')">
-                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'stressAfter')">Score cannot be more than 5</span>
+                        <span class="score-warning" *ngIf="isScoreExceedingMax('objectiveScores', 'stressAfter')">{{ 'DoctorsForum.form.partB.scoreWarning' | translate }}</span>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td>Digestive comfort</td>
+                    <td>{{ 'DoctorsForum.form.partB.digestiveComfort' | translate }}</td>
                     <td>
                       <div class="score-input-wrapper">
                         <input type="number" min="1" max="5" formControlName="digestiveComfortBefore" class="score-input" [class.invalid]="isScoreExceedingMax('objectiveScores', 'digestiveComfortBefore')">
@@ -416,44 +427,44 @@
 
           <!-- Lifestyle Improvements -->
           <div class="form-group">
-            <label class="section-label">3. Lifestyle Improvements<span class="required-asterisk">*</span></label>
+            <label class="section-label">{{ 'DoctorsForum.form.partB.lifestyleImprovements' | translate }}<span class="required-asterisk">*</span></label>
             <div class="table-responsive">
               <table class="lifestyle-table" formGroupName="lifestyleImprovements">
                 <thead>
                   <tr>
-                    <th>Item</th>
-                    <th>Yes</th>
-                    <th>No</th>
+                    <th>{{ 'DoctorsForum.form.partB.item' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.yes' | translate }}</th>
+                    <th>{{ 'DoctorsForum.form.partB.no' | translate }}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Reduced smoking/vaping</td>
+                    <td>{{ 'DoctorsForum.form.partB.reducedSmoking' | translate }}</td>
                     <td><input type="radio" formControlName="reducedSmoking" value="yes"></td>
                     <td><input type="radio" formControlName="reducedSmoking" value="no"></td>
                   </tr>
                   <tr>
-                    <td>Improved diet</td>
+                    <td>{{ 'DoctorsForum.form.partB.improvedDiet' | translate }}</td>
                     <td><input type="radio" formControlName="improvedDiet" value="yes"></td>
                     <td><input type="radio" formControlName="improvedDiet" value="no"></td>
                   </tr>
                   <tr>
-                    <td>Increased physical activity</td>
+                    <td>{{ 'DoctorsForum.form.partB.increasedActivity' | translate }}</td>
                     <td><input type="radio" formControlName="increasedActivity" value="yes"></td>
                     <td><input type="radio" formControlName="increasedActivity" value="no"></td>
                   </tr>
                   <tr>
-                    <td>Better sleep routine</td>
+                    <td>{{ 'DoctorsForum.form.partB.betterSleep' | translate }}</td>
                     <td><input type="radio" formControlName="betterSleep" value="yes"></td>
                     <td><input type="radio" formControlName="betterSleep" value="no"></td>
                   </tr>
                   <tr>
-                    <td>More consistent hydration</td>
+                    <td>{{ 'DoctorsForum.form.partB.consistentHydration' | translate }}</td>
                     <td><input type="radio" formControlName="consistentHydration" value="yes"></td>
                     <td><input type="radio" formControlName="consistentHydration" value="no"></td>
                   </tr>
                   <tr>
-                    <td>Reduced processed food/sugar</td>
+                    <td>{{ 'DoctorsForum.form.partB.reducedProcessedFood' | translate }}</td>
                     <td><input type="radio" formControlName="reducedProcessedFood" value="yes"></td>
                     <td><input type="radio" formControlName="reducedProcessedFood" value="no"></td>
                   </tr>
@@ -464,29 +475,29 @@
 
           <!-- Quality of Life -->
           <div class="form-group">
-            <label class="section-label">4. Quality of Life (QOL)<span class="required-asterisk">*</span></label>
+            <label class="section-label">{{ 'DoctorsForum.form.partB.qualityOfLife' | translate }}<span class="required-asterisk">*</span></label>
             <div class="qol-content">
-              <p class="qol-question">Compared to before intervention:</p>
+              <p class="qol-question">{{ 'DoctorsForum.form.partB.comparedToPre' | translate }}</p>
               <div class="radio-group">
                 <label class="radio-item">
                   <input type="radio" id="qolWorse" formControlName="qualityOfLife" value="muchWorse">
-                  Much worse
+                  {{ 'DoctorsForum.form.partB.muchWorse' | translate }}
                 </label>
                 <label class="radio-item">
                   <input type="radio" id="qolNoChange" formControlName="qualityOfLife" value="noChange">
-                  No change
+                  {{ 'DoctorsForum.form.partB.noChangeQOL' | translate }}
                 </label>
                 <label class="radio-item">
                   <input type="radio" id="qolSlight" formControlName="qualityOfLife" value="slightImprovement">
-                  Slight improvement
+                  {{ 'DoctorsForum.form.partB.slightImprovement' | translate }}
                 </label>
                 <label class="radio-item">
                   <input type="radio" id="qolModerate" formControlName="qualityOfLife" value="moderateImprovement">
-                  Moderate improvement
+                  {{ 'DoctorsForum.form.partB.moderateImprovement' | translate }}
                 </label>
                 <label class="radio-item">
                   <input type="radio" id="qolSignificant" formControlName="qualityOfLife" value="significantImprovement">
-                  Significant improvement
+                  {{ 'DoctorsForum.form.partB.significantImprovement' | translate }}
                 </label>
               </div>
             </div>
@@ -494,18 +505,18 @@
 
           <!-- Patient Feedback -->
           <div class="form-group">
-            <label class="section-label">5. Patient Feedback<span class="required-asterisk">*</span></label>
+            <label class="section-label">{{ 'DoctorsForum.form.partB.participantFeedback' | translate }}<span class="required-asterisk">*</span></label>
             <div class="feedback-content" formGroupName="patientFeedback">
               <div class="feedback-item">
-                <label for="alternativeSupplements">1. Can this soft pastille be an alternative to your current supplements?<span class="required-asterisk">*</span></label>
+                <label for="alternativeSupplements">{{ 'DoctorsForum.form.partB.alternativeSupplements' | translate }}<span class="required-asterisk">*</span></label>
                 <textarea id="alternativeSupplements" formControlName="alternativeToSupplements" class="form-textarea" rows="3"></textarea>
               </div>
               <div class="feedback-item">
-                <label for="simpleEasy">2. Is this soft pastille nutrition simple and easy to take?<span class="required-asterisk">*</span></label>
+                <label for="simpleEasy">{{ 'DoctorsForum.form.partB.simpleEasy' | translate }}<span class="required-asterisk">*</span></label>
                 <textarea id="simpleEasy" formControlName="simpleAndEasy" class="form-textarea" rows="3"></textarea>
               </div>
               <div class="feedback-item">
-                <label for="supportNeeded">3. What support would you like going forward?<span class="required-asterisk">*</span></label>
+                <label for="supportNeeded">{{ 'DoctorsForum.form.partB.supportNeeded' | translate }}<span class="required-asterisk">*</span></label>
                 <textarea id="supportNeeded" formControlName="supportNeeded" class="form-textarea" rows="3"></textarea>
               </div>
             </div>
@@ -513,18 +524,18 @@
 
           <!-- Clinician Notes -->
           <div class="form-group">
-            <label class="section-label">Clinician Notes (optional)</label>
+            <label class="section-label">{{ 'DoctorsForum.form.partB.clinicianNotes' | translate }}</label>
             <div class="clinician-content" formGroupName="clinicianNotes">
               <div class="clinician-item">
-                <label for="clinicalFindings">Summary of clinical findings:</label>
+                <label for="clinicalFindings">{{ 'DoctorsForum.form.partB.clinicalFindings' | translate }}</label>
                 <textarea id="clinicalFindings" formControlName="clinicalFindings" class="form-textarea" rows="3"></textarea>
               </div>
               <div class="clinician-item">
-                <label for="changesRecommended">Changes recommended:</label>
+                <label for="changesRecommended">{{ 'DoctorsForum.form.partB.changesRecommended' | translate }}</label>
                 <textarea id="changesRecommended" formControlName="changesRecommended" class="form-textarea" rows="3"></textarea>
               </div>
               <div class="clinician-item">
-                <label for="followUpDosage">Follow-up dosage:</label>
+                <label for="followUpDosage">{{ 'DoctorsForum.form.partB.followUpDosage' | translate }}</label>
                 <textarea id="followUpDosage" formControlName="followUpDosage" class="form-textarea" rows="3"></textarea>
               </div>
             </div>
@@ -537,9 +548,14 @@
             <strong>{{ 'Dietetics.privacyNote.pdpa' | translate }}</strong>.
           </p>
 
+          <!-- Participant Consent Statement -->
+          <p class="consent-statement">
+            {{ 'DoctorsForum.consentStatement.text' | translate }}
+          </p>
+
           <div class="form-buttons">
-            <button type="submit">Submit Assessment</button>
-            <button type="button" (click)="onResetForm()">Reset Form</button>
+            <button type="submit">{{ 'DoctorsForum.form.submit' | translate }}</button>
+            <button type="button" (click)="onResetForm()">{{ 'DoctorsForum.form.reset' | translate }}</button>
           </div>
         </section>
       </form>

@@ -315,7 +315,7 @@
    }
 
   <!-- Nutritional Information Section -->
-   @if(nutrientsTableImage){
+   @if(nutrientsTableImages && nutrientsTableImages.length > 0){
 
      <section class="info-section">
        <div class="container">
@@ -325,8 +325,10 @@
            </div>
          </div>
        </div>
-       <div class="flex justify-center nutrients-image-container">
-         <img [src]='nutrientsTableImage' class="nutrients-image">
+       <div class="flex justify-center nutrients-image-container items-center flex-col">
+         @for (imageUrl of nutrientsTableImages; track $index) {
+           <img [src]="imageUrl" [alt]="'Nutritional Information ' + ($index + 1)" class="nutrients-image mb-3">
+         }
        </div>
      </section> 
    }

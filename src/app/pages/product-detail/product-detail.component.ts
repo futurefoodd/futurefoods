@@ -37,7 +37,7 @@ export class ProductDetailComponent implements OnInit {
 
   productSpecification:any
 
-  nutrientsTableImage: string | undefined = undefined
+  nutrientsTableImages: string[] = []
   expanded = false;
 
   unitName:string= "box"
@@ -78,8 +78,22 @@ export class ProductDetailComponent implements OnInit {
         const product= await response.json()
         this.product = product.result
 
-        this.nutrientsTableImage = this.product[0].name + '.png'
-
+        // Get nutrients table images from product[0] array field
+        // Check for common field names: nutrients_table_images, nutrients_images, nutritional_images
+        const nutrientsImagesField = this.product[0].nutrients_table_images || 
+                                     this.product[0].nutrients_images || 
+                                     this.product[0].nutritional_images ||
+                                     this.product[0].nutrients_table_image_paths;
+        
+        if (Array.isArray(nutrientsImagesField) && nutrientsImagesField?.length > 0) {
+          // Convert paths to full Supabase URLs
+          this.nutrientsTableImages = nutrientsImagesField.map((path: string) => 
+            this.constructImageUrl(path)
+          );
+        } else {
+          this.nutrientsTableImages = [];
+        }
+        console.log(this.nutrientsTableImages)
         if (this.product && this.product[0] && !this.product[0].status) {
           this.product[0].status = 'available';
         }
@@ -486,8 +500,8 @@ export class ProductDetailComponent implements OnInit {
    * Supports both full URLs and relative paths (which will be converted to full Supabase URLs)
    */
   private initializeVideoSources(videoData: any): void {
-    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc';
-    
+    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public/videos/';
+    // https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public/videos/ancestral_video.mp4
     const constructVideoUrl = (pathOrUrl: string): string => {
       // If it's already a full URL, return as is
       if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
@@ -528,12 +542,23 @@ export class ProductDetailComponent implements OnInit {
    * Constructs full URL for images/posters from path or returns full URL as-is
    */
   private constructImageUrl(pathOrUrl: string): string {
-    // If it's already a full URL, return as is
+    if (!pathOrUrl) {
+      return '';
+    }
+    
+    // If it's already a full URL with protocol, return as is
     if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
       return pathOrUrl;
     }
+    
+    // If it starts with the domain but missing protocol, add https://
+    if (pathOrUrl.startsWith('cdotngdpjgeeybbfdoit.supabase.co')) {
+      return `https://${pathOrUrl}`;
+    }
+    
     // Otherwise, construct the full Supabase URL
-    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc';
+    // https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public/sakura/nutrients_1.png
+    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public';
     const cleanPath = pathOrUrl.startsWith('/') ? pathOrUrl.slice(1) : pathOrUrl;
     return `${supabaseBaseUrl}/${cleanPath}`;
   }

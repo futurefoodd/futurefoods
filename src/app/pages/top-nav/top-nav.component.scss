@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Color Variables
 $battleship-gray: #999A94ff;
 $silver: #BCBAB2ff;
@@ -41,7 +43,7 @@ body {
     transition: background-color 0.3s ease;
     
     &:hover {
-      background-color: darken($avocado, 10%);
+      background-color: color.adjust($avocado, $lightness: -10%);
     }
   }
 }
@@ -111,6 +113,12 @@ body {
     gap: 8px;
     font-weight: 600;
     color: $avocado;
+    
+    img {
+      width: 160px;
+      height: 90px;
+      object-fit: contain;
+    }
     
     span {
       font-size: 18px;

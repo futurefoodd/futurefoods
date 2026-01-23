@@ -578,6 +578,17 @@ export class ProductDetailComponent implements OnInit {
   }
 
   /**
+   * Checks if the current product is 21 Days Vegan Keto Meal
+   */
+  is21DaysKetoProduct(): boolean {
+    return this.product && this.product[0] && (
+      this.product[0].name === '21‑Days Vegan Keto Meal' || 
+      this.product[0].name === '21 Days Vegan Keto Meal' ||
+      this.product[0].id === '2242791e-fa44-4e02-a973-272ad58c2165'
+    );
+  }
+
+  /**
    * FAQ data for Ancestral Keto Diet Guide
    */
   ancestralKetoFaq = [

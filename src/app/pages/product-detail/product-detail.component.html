@@ -136,6 +136,14 @@
       <p class="product-description">
         {{ product[0].description_2 }}
       </p>
+      
+      @if (is21DaysKetoProduct() || isAncestralKetoProduct()) {
+        <p class="product-description">
+          <a href="https://sunstylefiles.com/21-days-ketogenic-meal" target="_blank" rel="noopener noreferrer" class="product-link">
+            21 days ketogenic meal for wellness
+          </a>
+        </p>
+      }
     </div>
     
     <!-- <button class="toggle-btn" (click)="toggle()">

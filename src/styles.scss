@@ -1,8 +1,10 @@
+@use "tailwindcss" as *;
+@use "@coreui/coreui/scss/coreui" as *;
+
 /* You can add global styles to this file, and also import other style files */
+// CSS imports (these are fine and come after @use)
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-@import "tailwindcss";
-@import "@coreui/coreui/scss/coreui";
 @import "primeicons/primeicons.css";
 
 /* SCSS HEX */

@@ -31,6 +31,9 @@ export class ProductListComponent implements OnInit {
 
   // environment: any
   products:any
+  
+  // Affiliate link for bundle product - update with your actual affiliate URL
+  affiliateLink: string = 'https://example.com/affiliate-link'; // TODO: Update with actual affiliate URL
 
   ngOnInit(){
     this.getAllProducts()
@@ -88,6 +91,12 @@ export class ProductListComponent implements OnInit {
   }
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  openAffiliateLink(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      window.open(this.affiliateLink, '_blank', 'noopener,noreferrer');
+    }
   }
 }
 

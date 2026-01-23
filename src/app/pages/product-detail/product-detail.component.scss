@@ -92,6 +92,22 @@
   color: var(--dark-slate-gray);
 }
 
+.product-link {
+  color: #5D792Dff;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #4a6124;
+    text-decoration: none;
+  }
+  
+  &:visited {
+    color: #5D792Dff;
+  }
+}
+
 
 /* The Modal (background) */
 .modal {

@@ -7,6 +7,8 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { DieteticsComponent } from './pages/dietetics/dietetics.component';
 import { TourComponent } from './pages/tour/tour.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
+import { RefundPolicyComponent } from './pages/refund-policy/refund-policy.component';
 import { UpskillComponent } from './pages/upskill/upskill.component';
 import { GutBrainAxisComponent } from './pages/gut-brain-axis/gut-brain-axis.component';
 import { DoctorsForumComponent } from './pages/doctors-forum/doctors-forum.component';
@@ -19,6 +21,8 @@ export const routes: Routes = [
   { path: 'dietetics', component: DieteticsComponent },
   { path: 'tour', component: TourComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
+  { path: 'refund-policy', component: RefundPolicyComponent },
   { path: 'upskill', component: UpskillComponent },
   { path: 'gut-brain-axis', component: GutBrainAxisComponent },
   { path: 'bio-therapeutics', component: BioTherapeuticsComponent },

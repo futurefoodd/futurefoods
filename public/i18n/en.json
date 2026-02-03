@@ -180,8 +180,57 @@
         "tour": "Tour",
         "dietetics":"Dietetics"
       },
+      "company":"Company",
+      "termsAndConditions":"Terms & Conditions",
+      "refundPolicy":"Refund Policy",
+      "privacyPolicy":"Privacy Policy",
+      "contact":"Contact",
+      "email":"Email",
+      "phone":"Phone",
       "clickForForm":"Click here for the form!",
       "allRightsReserved":"2025 Future Foods. All rights reserved."
+    },
+
+    "Legal": {
+      "lastUpdated":"Last updated:",
+      "termsTitle":"TERMS & CONDITIONS",
+      "terms": {
+        "section1":"1. Introduction",
+        "section2":"2. Eligibility",
+        "section3":"3. Products & Merchants",
+        "section4":"4. Nutritional & Health Disclaimer",
+        "section5":"5. Orders & Payments",
+        "section6":"6. Shipping & Delivery",
+        "section7":"7. Returns & Refunds",
+        "section8":"8. Third-Party Merchants",
+        "section9":"9. Intellectual Property",
+        "section10":"10. Limitation of Liability",
+        "section11":"11. Changes to Terms",
+        "section12":"12. Governing Law",
+        "section13":"13. Contact Information"
+      },
+      "termsContactPrompt":"For any questions regarding these Terms & Conditions, please contact:",
+      "refundTitle":"REFUND & RETURN POLICY",
+      "refund": {
+        "section1":"1. Eligibility for Returns",
+        "section2":"2. Non-Returnable Items",
+        "section3":"3. Return Process",
+        "section4":"4. Refund Method",
+        "section5":"5. Third-Party Merchant Products"
+      },
+      "refundContactPrompt":"For refund requests or questions about this policy:",
+      "privacyTitle":"PRIVACY POLICY",
+      "privacy": {
+        "section1":"1. Collection of Personal Data",
+        "section2":"2. Purpose of Collection",
+        "section3":"3. Disclosure of Personal Data",
+        "section4":"4. Data Protection",
+        "section5":"5. Data Retention",
+        "section6":"6. Your Rights Under PDPA 2010",
+        "section7":"7. Consent",
+        "section8":"8. Privacy Contact"
+      },
+      "privacyContactPrompt":"For any privacy-related matters, please contact:"
     },
 
     "ProductList": {

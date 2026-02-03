@@ -180,8 +180,57 @@
           "tour": "Jelajah",
           "dietetics":"Dietetik"
         },
+        "company":"Syarikat",
+        "termsAndConditions":"Terma & Syarat",
+        "refundPolicy":"Dasar Pemulangan",
+        "privacyPolicy":"Dasar Privasi",
+        "contact":"Hubungi",
+        "email":"E-mel",
+        "phone":"Telefon",
         "clickForForm":"Klik di sini untuk borang!",
         "allRightsReserved":"2025 Future Foods. Semua hak terpelihara."
+      },
+
+      "Legal": {
+        "lastUpdated":"Kemas kini terakhir:",
+        "termsTitle":"TERMA & SYARAT",
+        "terms": {
+          "section1":"1. Pengenalan",
+          "section2":"2. Kelayakan",
+          "section3":"3. Produk & Peniaga",
+          "section4":"4. Penafian Nutrisi & Kesihatan",
+          "section5":"5. Pesanan & Pembayaran",
+          "section6":"6. Penghantaran & Penghantaran",
+          "section7":"7. Pemulangan & Bayaran Balik",
+          "section8":"8. Peniaga Pihak Ketiga",
+          "section9":"9. Harta Intelek",
+          "section10":"10. Had Liabiliti",
+          "section11":"11. Perubahan kepada Terma",
+          "section12":"12. Undang-undang Berkuat Kuasa",
+          "section13":"13. Maklumat Perhubungan"
+        },
+        "termsContactPrompt":"Untuk sebarang pertanyaan mengenai Terma & Syarat ini, sila hubungi:",
+        "refundTitle":"DASAR PEMULANGAN & PEMULANGAN",
+        "refund": {
+          "section1":"1. Kelayakan untuk Pemulangan",
+          "section2":"2. Item Tidak Boleh Dipulangkan",
+          "section3":"3. Proses Pemulangan",
+          "section4":"4. Kaedah Bayaran Balik",
+          "section5":"5. Produk Peniaga Pihak Ketiga"
+        },
+        "refundContactPrompt":"Untuk permintaan bayaran balik atau pertanyaan tentang dasar ini:",
+        "privacyTitle":"DASAR PRIVASI",
+        "privacy": {
+          "section1":"1. Koleksi Data Peribadi",
+          "section2":"2. Tujuan Koleksi",
+          "section3":"3. Pendedahan Data Peribadi",
+          "section4":"4. Perlindungan Data",
+          "section5":"5. Pengekalan Data",
+          "section6":"6. Hak Anda Di Bawah PDPA 2010",
+          "section7":"7. Persetujuan",
+          "section8":"8. Hubungi Privasi"
+        },
+        "privacyContactPrompt":"Untuk sebarang perkara berkaitan privasi, sila hubungi:"
       },
   
       "ProductList": {

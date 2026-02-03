@@ -13,7 +13,7 @@ $apple-green: #AAAC25ff;
   
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 225px));
     gap: 40px;
     margin-bottom: 40px;
   }

@@ -181,8 +181,57 @@
             "tour": "参观",
             "dietetics":"营养学"
           },
+          "company":"公司",
+          "termsAndConditions":"条款与条件",
+          "refundPolicy":"退款政策",
+          "privacyPolicy":"隐私政策",
+          "contact":"联系方式",
+          "email":"电子邮件",
+          "phone":"电话",
           "clickForForm":"点击此处获取表格！",
           "allRightsReserved":"2025 Future Foods. 版权所有。"
+        },
+
+        "Legal": {
+          "lastUpdated":"最后更新：",
+          "termsTitle":"条款与条件",
+          "terms": {
+            "section1":"1. 简介",
+            "section2":"2. 资格",
+            "section3":"3. 产品与商家",
+            "section4":"4. 营养与健康免责声明",
+            "section5":"5. 订单与付款",
+            "section6":"6. 运输与配送",
+            "section7":"7. 退货与退款",
+            "section8":"8. 第三方商家",
+            "section9":"9. 知识产权",
+            "section10":"10. 责任限制",
+            "section11":"11. 条款变更",
+            "section12":"12. 管辖法律",
+            "section13":"13. 联系信息"
+          },
+          "termsContactPrompt":"如有关于本条款与条件的任何问题，请联系：",
+          "refundTitle":"退款与退货政策",
+          "refund": {
+            "section1":"1. 退货资格",
+            "section2":"2. 不可退货商品",
+            "section3":"3. 退货流程",
+            "section4":"4. 退款方式",
+            "section5":"5. 第三方商家产品"
+          },
+          "refundContactPrompt":"如需退款或有关本政策的咨询：",
+          "privacyTitle":"隐私政策",
+          "privacy": {
+            "section1":"1. 个人数据的收集",
+            "section2":"2. 收集目的",
+            "section3":"3. 个人数据的披露",
+            "section4":"4. 数据保护",
+            "section5":"5. 数据保留",
+            "section6":"6. 您在2010年个人数据保护法下的权利",
+            "section7":"7. 同意",
+            "section8":"8. 隐私联系"
+          },
+          "privacyContactPrompt":"如有任何与隐私相关的事宜，请联系："
         },
     
         "ProductList": {

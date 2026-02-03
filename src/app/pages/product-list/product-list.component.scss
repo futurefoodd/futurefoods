@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Color Variables (match landing page)
 $battleship-gray: #999A94ff;
 $silver: #BCBAB2ff;
@@ -142,7 +144,7 @@ $apple-green: #AAAC25ff;
 .info-cta {
   background-color: $avocado;
   color: #fff;
-  border: 1px solid darken($avocado, 10%);
+  border: 1px solid color.adjust($avocado, $lightness: -10%);
   padding: 12px 20px;
   margin-top: 12px;
   cursor: pointer;
@@ -153,7 +155,23 @@ $apple-green: #AAAC25ff;
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-    background-color: darken($avocado, 4%);
+    background-color: color.adjust($avocado, $lightness: -4%);
+  }
+}
+
+.product-link {
+  color: $avocado;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: color.adjust($avocado, $lightness: -15%);
+    text-decoration: none;
+  }
+  
+  &:visited {
+    color: $avocado;
   }
 }
 

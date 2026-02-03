@@ -9,9 +9,9 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './gut-brain-axis.component.scss'
 })
 export class GutBrainAxisComponent {
-  activeTab: 'talk' | 'science' = 'talk';
+  activeTab: 'talk' = 'talk';
 
-  setActiveTab(tab: 'talk' | 'science') {
+  setActiveTab(tab: 'talk') {
     this.activeTab = tab;
   }
 }

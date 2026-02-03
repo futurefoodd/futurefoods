@@ -65,10 +65,7 @@
         <label>{{'Dietetics.form.weight' | translate}}:<span style="color: red;">*</span></label>
         <input type="number" formControlName="weight" min="0" />
   
-        <label>{{'Dietetics.form.country' | translate}}:<span style="color: red;">*</span></label>
-        <input type="text" formControlName="country" />
-
-        <label>{{'Dietetics.form.referredBy' | translate}}:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.referredBy' | translate}}:</label>
         <div class="radio-group">
           <label *ngFor="let option of referredByOptions">
             <input type="radio" [value]="option" formControlName="referredBy" />
@@ -183,6 +180,7 @@
         <label><input type="radio" value="Often" formControlName="frequency" /> {{'Dietetics.options.often' | translate}}</label>
         <label><input type="radio" value="Sometimes" formControlName="frequency" /> {{'Dietetics.options.sometimes' | translate}}</label>
         <label><input type="radio" value="Rarely" formControlName="frequency" /> {{'Dietetics.options.rarely' | translate}}</label>
+        <label><input type="radio" value="None" formControlName="frequency" /> {{'Dietetics.options.none' | translate}}</label>
       </div>
     </ng-container>
   
@@ -239,7 +237,10 @@
   <strong>{{ 'Dietetics.privacyNote.pdpa' | translate }}</strong>.
 </p>
 
-      <button type="submit">{{ 'Dietetics.form.submit' | translate }}</button>
+      <div class="form-buttons">
+        <button type="submit">{{ 'Dietetics.form.submit' | translate }}</button>
+        <button type="button" (click)="onResetForm()">{{ 'Dietetics.form.resetForm' | translate }}</button>
+      </div>
     </form>
 
     <!-- Detailed Form Tab -->
@@ -273,10 +274,7 @@
         <label>{{'Dietetics.form.weight' | translate}}:<span style="color: red;">*</span></label>
         <input type="number" formControlName="weight" min="0" />
   
-        <label>{{'Dietetics.form.country' | translate}}:<span style="color: red;">*</span></label>
-        <input type="text" formControlName="country" />
-
-        <label>{{'Dietetics.form.referredBy' | translate}}:<span style="color: red;">*</span></label>
+        <label>{{'Dietetics.form.referredBy' | translate}}:</label>
         <div class="radio-group">
           <label *ngFor="let option of referredByOptions">
             <input type="radio" [value]="option" formControlName="referredBy" />
@@ -424,12 +422,15 @@
         <strong>{{ 'Dietetics.privacyNote.pdpa' | translate }}</strong>.
       </p>
       
-      <button type="button" (click)="onSubmitDetailedForm()">{{ 'Dietetics.form.submit' | translate }}</button>
+      <div class="form-buttons">
+        <button type="submit" (click)="onSubmit()">{{ 'Dietetics.form.submit' | translate }}</button>
+        <button type="button" (click)="onResetForm()">{{ 'Dietetics.form.resetForm' | translate }}</button>
+      </div>
     </form>
 
     <!-- Request for Sample Tab -->
     <div *ngIf="activeTab === 'sample'" class="sample-request-section">
-      <form [formGroup]="sampleRequestForm" (ngSubmit)="onSubmitSampleRequest()" *ngIf="sampleRequestForm">
+      <form [formGroup]="sampleRequestForm" (ngSubmit)="onSubmit()" *ngIf="sampleRequestForm">
         <!-- Basic Info -->
         <h3>{{ 'Dietetics.detailedForm.basicInformation' | translate }}</h3>
         <div class="form-section">
@@ -458,11 +459,8 @@
   
           <label>{{'Dietetics.form.weight' | translate}}:<span style="color: red;">*</span></label>
           <input type="number" formControlName="weight" min="0" />
-  
-          <label>{{'Dietetics.form.country' | translate}}:<span style="color: red;">*</span></label>
-          <input type="text" formControlName="country" />
 
-          <label>{{'Dietetics.form.referredBy' | translate}}:<span style="color: red;">*</span></label>
+          <label>{{'Dietetics.form.referredBy' | translate}}:</label>
           <div class="radio-group">
             <label *ngFor="let option of referredByOptions">
               <input type="radio" [value]="option" formControlName="referredBy" />
@@ -476,11 +474,15 @@
 
         <!-- Sample Request Specific Fields -->
         <div class="form-section">
-          <label>{{ 'Dietetics.detailedForm.sampleRequest.address' | translate }}:</label>
+          <label>{{ 'Dietetics.detailedForm.sampleRequest.address' | translate }}:<span style="color: red;">*</span></label>
           <textarea formControlName="address" rows="3"></textarea>
           
-          <label>{{ 'Dietetics.detailedForm.sampleRequest.message' | translate }}:</label>
-          <textarea formControlName="message" rows="4"></textarea>
+          <label>{{ 'Dietetics.detailedForm.sampleRequest.smokingHabits' | translate }}:<span style="color: red;">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" value="Smoker" formControlName="smokingHabits" /> {{ 'Dietetics.detailedForm.sampleRequest.smoker' | translate }}</label>
+            <label><input type="radio" value="Vaper" formControlName="smokingHabits" /> {{ 'Dietetics.detailedForm.sampleRequest.vaper' | translate }}</label>
+            <label><input type="radio" value="None" formControlName="smokingHabits" /> {{ 'Dietetics.options.none' | translate }}</label>
+          </div>
         </div>
         
         <p class="privacy-note">
@@ -489,7 +491,10 @@
           <strong>{{ 'Dietetics.privacyNote.pdpa' | translate }}</strong>.
         </p>
         
-        <button type="submit">{{ 'Dietetics.detailedForm.sampleRequest.submit' | translate }}</button>
+        <div class="form-buttons">
+          <button type="submit">{{ 'Dietetics.detailedForm.sampleRequest.submit' | translate }}</button>
+          <button type="button" (click)="onResetForm()">{{ 'Dietetics.form.resetForm' | translate }}</button>
+        </div>
       </form>
     </div>
   </div>

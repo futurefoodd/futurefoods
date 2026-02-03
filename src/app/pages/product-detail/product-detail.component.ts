@@ -13,14 +13,6 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 
-
-// type productImage = {
-//   itemImageSrc: string | null,
-//   thumbnailImageSrc: string | null,
-//   alt:  string | null,
-//   title:  string | null
-// }
-
 @Component({
   selector: 'app-product-detail',
   imports: [CommonModule, FormsModule, TranslatePipe, FlickityCarouselComponent, VideoPlayerComponent],
@@ -45,7 +37,7 @@ export class ProductDetailComponent implements OnInit {
 
   productSpecification:any
 
-  nutrientsTableImage: string | undefined = undefined
+  nutrientsTableImages: string[] = []
   expanded = false;
 
   unitName:string= "box"
@@ -86,15 +78,29 @@ export class ProductDetailComponent implements OnInit {
         const product= await response.json()
         this.product = product.result
 
-        this.nutrientsTableImage = this.product[0].name + '.png'
-
+        // Get nutrients table images from product[0] array field
+        // Check for common field names: nutrients_table_images, nutrients_images, nutritional_images
+        const nutrientsImagesField = this.product[0].nutrients_table_images || 
+                                     this.product[0].nutrients_images || 
+                                     this.product[0].nutritional_images ||
+                                     this.product[0].nutrients_table_image_paths;
+        
+        if (Array.isArray(nutrientsImagesField) && nutrientsImagesField?.length > 0) {
+          // Convert paths to full Supabase URLs
+          this.nutrientsTableImages = nutrientsImagesField.map((path: string) => 
+            this.constructImageUrl(path)
+          );
+        } else {
+          this.nutrientsTableImages = [];
+        }
+        console.log(this.nutrientsTableImages)
         if (this.product && this.product[0] && !this.product[0].status) {
           this.product[0].status = 'available';
         }
         
        this.createImageObject()
       this.productSpecification =this.createKeyValue(this.product[0].product_specification)
-      this.setUnitQuantity = '12'
+      this.parsePackagingType()
       
       // Initialize video sources if available in product data
       if (this.product && this.product[0] && this.product[0].video_url) {
@@ -104,7 +110,6 @@ export class ProductDetailComponent implements OnInit {
         this.videoPoster = this.constructImageUrl(this.product[0].video_url);
       }
 
-      console.log(this.isProCollagen());
       }else{
         this.product = undefined
       }
@@ -118,10 +123,46 @@ export class ProductDetailComponent implements OnInit {
   }
 
 
-  set setUnitQuantity(quantity: string){
-    if(this.product[0]?.name =="Sakura Pro Collagen Drink") {
-      this.unitName='Bottles'
-      this.unitQuantity= quantity
+  /**
+   * Parses the packaging_type field from API response
+   * Expected format: "12 bottles" or "30 pastilles" etc.
+   * Extracts quantity and unit name
+   */
+  parsePackagingType(): void {
+    if (!this.product || !this.product[0] || !this.product[0].packaging_type) {
+      // Default values if packaging_type is not available
+      this.unitName = 'box';
+      this.unitQuantity = '';
+      return;
+    }
+
+    const packagingType = this.product[0].packaging_type.toString().trim();
+    
+    if (!packagingType) {
+      this.unitName = 'box';
+      this.unitQuantity = '';
+      return;
+    }
+
+    // Parse format like "12 bottles", "30 pastilles", etc.
+    // Match number followed by space and text
+    const match = packagingType.match(/^(\d+)\s+(.+)$/i);
+    
+    if (match && match.length === 3) {
+      this.unitQuantity = match[1]; // Extract quantity (e.g., "12")
+      this.unitName = match[2]; // Extract unit name (e.g., "bottles")
+    } else {
+      // If format doesn't match expected pattern, try to extract just the unit name
+      // or use the whole string as unit name
+      const numberMatch = packagingType.match(/\d+/);
+      if (numberMatch) {
+        this.unitQuantity = numberMatch[0];
+        this.unitName = packagingType.replace(numberMatch[0], '').trim() || 'box';
+      } else {
+        // No number found, use entire string as unit name
+        this.unitName = packagingType;
+        this.unitQuantity = '';
+      }
     }
   }
   
@@ -195,13 +236,28 @@ export class ProductDetailComponent implements OnInit {
   }
 
   /**
+   * Opens WhatsApp for product inquiry with specific phone number and name
+   */
+  openWhatsAppWithNumber(phoneNumber: string, name: string): void {
+    if (this.product && this.product[0]) {
+      const productName = this.product[0].name;
+      const productPrice = this.getFormattedPrice();
+      const message = `Hello ${name}! I'm interested in ${productName} (${productPrice}). Can you help me with more information and how to purchase?\nhttps://futurefoods.com.my`;
+      this.whatsappService.openWhatsApp('product', message, undefined, phoneNumber);
+    } else {
+      this.whatsappService.openWhatsApp('product');
+    }
+  }
+
+  /**
    * Opens WhatsApp for single product purchase (special offer)
    */
   openWhatsAppSingleProduct(): void {
     if (this.product && this.product[0]) {
       const productName = this.product[0].name;
       const price = this.getSingleProductTotal();
-      this.whatsappService.openProductSinglePurchase(productName, price);
+      const phoneNumber = this.getPhoneNumber();
+      this.whatsappService.openProductSinglePurchase(productName, price, undefined, phoneNumber);
     } else {
       this.whatsappService.openWhatsApp('product');
     }
@@ -214,7 +270,82 @@ export class ProductDetailComponent implements OnInit {
     if (this.product && this.product[0]) {
       const productName = this.product[0].name;
       const total = this.getTwoProductTotal();
-      this.whatsappService.openProductTwoPurchase(productName, total);
+      const phoneNumber = this.getPhoneNumber();
+      this.whatsappService.openProductTwoPurchase(productName, total, undefined, phoneNumber);
+    } else {
+      this.whatsappService.openWhatsApp('product');
+    }
+  }
+
+  /**
+   * Parses the pic field to extract phone numbers and names
+   * Returns an array of objects with phone number and name
+   */
+  parsePicField(): Array<{phone: string, name: string}> {
+    if (!this.product[0]?.pic) {
+      return [];
+    }
+    const picValue = this.product[0].pic.toString().trim();
+    if (!picValue) {
+      return [];
+    }
+
+    // Phone number to name mapping
+    const phoneNameMap: {[key: string]: string} = {
+      '+60122942947': 'Charming Cottage (Carol)',
+      '+60126964997': 'Dhanesh'
+    };
+
+    // Split by comma and clean up
+    const numbers = picValue.split(',').map((num: string) => num.trim()).filter((num: string) => num);
+    
+    return numbers.map((phone: string) => ({
+      phone: phone,
+      name: phoneNameMap[phone] || phone
+    }));
+  }
+
+  /**
+   * Gets the first phone number from pic field, or returns default
+   */
+  getPhoneNumber(): string | undefined {
+    const parsed = this.parsePicField();
+    if (parsed.length > 0) {
+      return parsed[0].phone;
+    }
+    return undefined; // Will use default from service
+  }
+
+  /**
+   * Checks if there are multiple phone numbers in pic field
+   */
+  hasMultiplePhoneNumbers(): boolean {
+    return this.parsePicField().length > 1;
+  }
+
+  /**
+   * Opens WhatsApp for single product purchase with specific phone number and name
+   */
+  openWhatsAppSingleProductWithNumber(phoneNumber: string, name: string): void {
+    if (this.product && this.product[0]) {
+      const productName = this.product[0].name;
+      const price = this.getSingleProductTotal();
+      const message = `Hello ${name}! I'm interested in purchasing 1 ${productName} box (${price}). Can you help me complete my order?\nhttps://futurefoods.com.my`;
+      this.whatsappService.openWhatsApp('product', message, undefined, phoneNumber);
+    } else {
+      this.whatsappService.openWhatsApp('product');
+    }
+  }
+
+  /**
+   * Opens WhatsApp for two products purchase with specific phone number and name
+   */
+  openWhatsAppTwoProductsWithNumber(phoneNumber: string, name: string): void {
+    if (this.product && this.product[0]) {
+      const productName = this.product[0].name;
+      const total = this.getTwoProductTotal();
+      const message = `Hello ${name}! I'm interested in purchasing 2 ${productName} boxes (${total} - Best Value Offer). Can you help me complete my order?\nhttps://futurefoods.com.my`;
+      this.whatsappService.openWhatsApp('product', message, undefined, phoneNumber);
     } else {
       this.whatsappService.openWhatsApp('product');
     }
@@ -328,6 +459,23 @@ export class ProductDetailComponent implements OnInit {
   }
 
   /**
+   * Gets the formatted promo price
+   */
+  getFormattedPromoPrice(): string {
+    if (!this.product || !this.product[0] || !this.product[0].promo_price) {
+      return 'RM0.00';
+    }
+    return this.formatPrice(this.product[0].promo_price);
+  }
+
+  /**
+   * Checks if promo price is available
+   */
+  hasPromoPrice(): boolean {
+    return this.product && this.product[0] && this.product[0].promo_price !== undefined && this.product[0].promo_price !== null;
+  }
+
+  /**
    * Gets the appropriate button text based on product status
    */
   getButtonText(): string {
@@ -352,8 +500,8 @@ export class ProductDetailComponent implements OnInit {
    * Supports both full URLs and relative paths (which will be converted to full Supabase URLs)
    */
   private initializeVideoSources(videoData: any): void {
-    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc';
-    
+    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public/videos/';
+    // https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public/videos/ancestral_video.mp4
     const constructVideoUrl = (pathOrUrl: string): string => {
       // If it's already a full URL, return as is
       if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
@@ -394,12 +542,23 @@ export class ProductDetailComponent implements OnInit {
    * Constructs full URL for images/posters from path or returns full URL as-is
    */
   private constructImageUrl(pathOrUrl: string): string {
-    // If it's already a full URL, return as is
+    if (!pathOrUrl) {
+      return '';
+    }
+    
+    // If it's already a full URL with protocol, return as is
     if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
       return pathOrUrl;
     }
+    
+    // If it starts with the domain but missing protocol, add https://
+    if (pathOrUrl.startsWith('cdotngdpjgeeybbfdoit.supabase.co')) {
+      return `https://${pathOrUrl}`;
+    }
+    
     // Otherwise, construct the full Supabase URL
-    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc';
+    // https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public/sakura/nutrients_1.png
+    const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public';
     const cleanPath = pathOrUrl.startsWith('/') ? pathOrUrl.slice(1) : pathOrUrl;
     return `${supabaseBaseUrl}/${cleanPath}`;
   }
@@ -416,6 +575,17 @@ export class ProductDetailComponent implements OnInit {
    */
   isAncestralKetoProduct(): boolean {
     return this.product && this.product[0] && this.product[0].name === 'Ancestral Keto Diet Guide';
+  }
+
+  /**
+   * Checks if the current product is 21 Days Vegan Keto Meal
+   */
+  is21DaysKetoProduct(): boolean {
+    return this.product && this.product[0] && (
+      this.product[0].name === '21‑Days Vegan Keto Meal' || 
+      this.product[0].name === '21 Days Vegan Keto Meal' ||
+      this.product[0].id === '2242791e-fa44-4e02-a973-272ad58c2165'
+    );
   }
 
   /**

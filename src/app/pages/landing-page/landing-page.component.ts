@@ -8,8 +8,6 @@ import { CircularCarouselComponent } from '../../widgets/circular-carousel/circu
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
 import { FormsModule } from '@angular/forms';
 import { FaqComponent } from '../../widgets/faq/faq.component';
-import { ProductCarouselComponent } from '../../widgets/product-carousel/product-carousel.component';
-import { OfferPopupComponent } from '../../widgets/offer-popup/offer-popup.component';
 import { WhatsAppService } from '../../services/whatsapp.service';
 import { ScrollService } from '../../services/scroll.service';
 import { UUID } from 'crypto';
@@ -17,7 +15,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent, ProductCarouselComponent, OfferPopupComponent, TranslatePipe],
+  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent, TranslatePipe],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
@@ -157,6 +155,38 @@ export class LandingPageComponent implements OnInit, OnDestroy {
    */
   public openWhatsAppTwoProducts(): void {
     this.whatsappService.openWhatsAppTwoProducts();
+  }
+
+  /**
+   * Opens WhatsApp for single product purchase with Carol
+   */
+  public openWhatsAppSingleProductCarol(): void {
+    const message = 'Hello Charming Cottage (Carol)! I\'m interested in purchasing 1 Pro-Collagen Soft Pastilles box (RM150.00). Can you help me complete my order?\nhttps://futurefoods.com.my';
+    this.whatsappService.openWhatsApp('landing', message, undefined, '+60122942947');
+  }
+
+  /**
+   * Opens WhatsApp for single product purchase with Dhanesh
+   */
+  public openWhatsAppSingleProductDhanesh(): void {
+    const message = 'Hello Dhanesh! I\'m interested in purchasing 1 Pro-Collagen Soft Pastilles box (RM150.00). Can you help me complete my order?\nhttps://futurefoods.com.my';
+    this.whatsappService.openWhatsApp('landing', message, undefined, '+60126964997');
+  }
+
+  /**
+   * Opens WhatsApp for two products purchase with Carol
+   */
+  public openWhatsAppTwoProductsCarol(): void {
+    const message = 'Hello Charming Cottage (Carol)! I\'m interested in purchasing 2 Pro-Collagen Soft Pastilles boxes (RM250.00 - Best Value Offer). Can you help me complete my order?\nhttps://futurefoods.com.my';
+    this.whatsappService.openWhatsApp('landing', message, undefined, '+60122942947');
+  }
+
+  /**
+   * Opens WhatsApp for two products purchase with Dhanesh
+   */
+  public openWhatsAppTwoProductsDhanesh(): void {
+    const message = 'Hello Dhanesh! I\'m interested in purchasing 2 Pro-Collagen Soft Pastilles boxes (RM250.00 - Best Value Offer). Can you help me complete my order?\nhttps://futurefoods.com.my';
+    this.whatsappService.openWhatsApp('landing', message, undefined, '+60126964997');
   }
 
   /**

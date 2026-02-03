@@ -110,19 +110,23 @@ export class WhatsAppService {
    * Opens WhatsApp for single product purchase with dynamic product name and price
    * @param productName - Name of the product
    * @param price - Price of the product
+   * @param customMessage - Custom message (optional)
+   * @param phoneNumber - Optional phone number to use instead of default
    */
-  openProductSinglePurchase(productName: string, price: string): void {
-    const message = `Hello! I'm interested in purchasing 1 ${productName} box (${price}). Can you help me complete my order?\nhttps://futurefoods.com.my`;
-    this.openWhatsApp('product', message);
+  openProductSinglePurchase(productName: string, price: string, customMessage?: string, phoneNumber?: string): void {
+    const message = customMessage || `Hello! I'm interested in purchasing 1 ${productName} box (${price}). Can you help me complete my order?\nhttps://futurefoods.com.my`;
+    this.openWhatsApp('product', message, undefined, phoneNumber);
   }
 
   /**
    * Opens WhatsApp for two products purchase with dynamic product name and total
    * @param productName - Name of the product
    * @param total - Total price for two products
+   * @param customMessage - Custom message (optional)
+   * @param phoneNumber - Optional phone number to use instead of default
    */
-  openProductTwoPurchase(productName: string, total: string): void {
-    const message = `Hello! I'm interested in purchasing 2 ${productName} boxes (${total} - Best Value Offer). Can you help me complete my order?\nhttps://futurefoods.com.my`;
-    this.openWhatsApp('product', message);
+  openProductTwoPurchase(productName: string, total: string, customMessage?: string, phoneNumber?: string): void {
+    const message = customMessage || `Hello! I'm interested in purchasing 2 ${productName} boxes (${total} - Best Value Offer). Can you help me complete my order?\nhttps://futurefoods.com.my`;
+    this.openWhatsApp('product', message, undefined, phoneNumber);
   }
 }

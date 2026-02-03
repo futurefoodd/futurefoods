@@ -92,7 +92,7 @@ export class NutritionConsultService {
 
 
       const { data, error } = await this.supabase
-        .from('nutrition_consultations')
+        .from('unified_nutrition_consultations')
         .insert([
           {
             // Basic Info
@@ -103,7 +103,6 @@ export class NutritionConsultService {
             email: values.email,
             height_cm: values.height,
             weight_kg: values.weight,
-            country: values.country,
             referred_by: this.translateValue(values.referredBy),
 
             // Lifestyle & Habits
@@ -189,7 +188,6 @@ export class NutritionConsultService {
         sex: basicFormValues.sex || detailedFormValues?.sex || sampleRequestFormValues?.sex,
         height_cm: basicFormValues.height || detailedFormValues?.height || sampleRequestFormValues?.height,
         weight_kg: basicFormValues.weight || detailedFormValues?.weight || sampleRequestFormValues?.weight,
-        country: basicFormValues.country || detailedFormValues?.country || sampleRequestFormValues?.country,
         referred_by: this.translateValue(
           basicFormValues.referredBy || detailedFormValues?.referredBy || sampleRequestFormValues?.referredBy
         ),
@@ -267,7 +265,7 @@ export class NutritionConsultService {
         // SAMPLE REQUEST TAB SPECIFIC FIELDS (Nullable)
         // ============================================
         address: sampleRequestFormValues?.address || null,
-        message: sampleRequestFormValues?.message || null,
+        smoking_habits: sampleRequestFormValues?.smokingHabits ? this.translateValue(sampleRequestFormValues.smokingHabits) : null,
 
         // User ID
         user_id: currentUser.id

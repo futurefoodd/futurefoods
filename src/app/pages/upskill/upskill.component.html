@@ -32,6 +32,83 @@
   </div>
 </section>
 
+<section class="upskill-slides">
+  <div class="upskill-container">
+    <div class="upskill-slides__header">
+      <h2>{{ 'Upskill.slidesSection.heading' | translate }}</h2>
+      <p *ngIf="'Upskill.slidesSection.description' | translate as desc">{{ desc }}</p>
+    </div>
+
+    <!-- PowerPoint Preview - Commented out for now -->
+    <!-- <div class="upskill-slides__viewer-wrapper" *ngIf="pptxUrl">
+      <div class="upskill-slides__viewer" #pptxViewerContainer></div>
+      <div class="upskill-slides__controls" *ngIf="viewerInitialized">
+        <button 
+          type="button" 
+          class="upskill-slides__control-btn"
+          (click)="previousSlide()"
+          [disabled]="currentSlideIndex === 0"
+          [attr.aria-label]="'Previous slide'"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <span class="upskill-slides__slide-info">
+          {{ currentSlideIndex + 1 }} / {{ totalSlides }}
+        </span>
+        <button 
+          type="button" 
+          class="upskill-slides__control-btn"
+          (click)="nextSlide()"
+          [disabled]="currentSlideIndex >= totalSlides - 1"
+          [attr.aria-label]="'Next slide'"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="upskill-slides__error" *ngIf="loadError">
+        <p>{{ loadError }}</p>
+        <p class="upskill-slides__error-hint">{{ 'Upskill.slidesSection.errorHint' | translate }}</p>
+      </div>
+      <div class="upskill-slides__loading" *ngIf="isLoading">
+        <div class="upskill-slides__spinner"></div>
+        <p>{{ 'Upskill.slidesSection.loading' | translate }}</p>
+      </div>
+    </div> -->
+
+    <!-- Download Button -->
+    <div class="upskill-slides__download-wrapper" *ngIf="pptxUrl">
+      <button 
+        type="button" 
+        class="upskill-slides__download-btn"
+        (click)="downloadPptx()"
+        [attr.aria-label]="'Download PowerPoint presentation'"
+      >
+        <!-- PowerPoint Icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="upskill-slides__powerpoint-icon">
+          <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
+          <path d="M2 8h20"/>
+          <path d="M6 4v4"/>
+          <path d="M10 4v4"/>
+          <path d="M14 4v4"/>
+          <circle cx="8" cy="14" r="1"/>
+          <path d="M12 13l2 2 4-4"/>
+        </svg>
+        <!-- Download Icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>{{ 'Upskill.slidesSection.downloadButton' | translate }}</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- <section class="upskill-highlights">
   <div class="upskill-container">
     <h2>{{ 'Upskill.highlights.heading' | translate }}</h2>

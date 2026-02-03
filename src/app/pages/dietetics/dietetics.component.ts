@@ -22,7 +22,7 @@ export class DieteticsComponent implements OnDestroy {
 
   // options
   alcohol = ['Dietetics.options.beer', 'Dietetics.options.wine','Dietetics.options.liquor', 'Dietetics.options.none']
-  snacks = ['Dietetics.options.coffee', 'Dietetics.options.tea','Dietetics.options.sugaryDrinks', 'Dietetics.options.snacks']
+  snacks = ['Dietetics.options.coffee', 'Dietetics.options.tea', 'Dietetics.options.chocolaty', 'Dietetics.options.dairy', 'Dietetics.options.sugaryDrink', 'Dietetics.options.snacksPastry']
   exerciseOptions = ['Dietetics.options.briskWalk', 'Dietetics.options.yoga', 'Dietetics.options.gymWorkout', 'Dietetics.options.swimming', 'Dietetics.options.hiking', 'Dietetics.options.none'];
   jobOptions = ['Dietetics.options.nightShift', 'Dietetics.options.cleaningServices', 'Dietetics.options.frequentDeadlines', 'Dietetics.options.engineServices', 'Dietetics.options.na'];
   referredByOptions = [
@@ -142,10 +142,12 @@ export class DieteticsComponent implements OnDestroy {
     'Dietetics.detailedForm.options.urineFrequent'
   ];
 
+  
+
   constructor(
     private fb: FormBuilder, 
     private consultFormService: NutritionConsultService,
-    private detailedConsultService: DetailedConsultService
+    private detailedConsultService: DetailedConsultService,
   ) {
     this.consultForm = this.fb.group({
       name: ['', Validators.required],
@@ -155,8 +157,7 @@ export class DieteticsComponent implements OnDestroy {
       sex: ['', Validators.required],
       height: ['', Validators.required],
       weight: ['', Validators.required],
-      country: ['', Validators.required],
-      referredBy:['', Validators.required],
+      referredBy:[''],
       socialMediaId: [''],
       activityLevel: ['', Validators.required],
       exerciseRoutine: [[], Validators.required],
@@ -171,7 +172,7 @@ export class DieteticsComponent implements OnDestroy {
       dietaryPatterns: [[], Validators.required],
       eatingStyle: [[], Validators.required],
       waterIntake: ['', Validators.required],
-      // snackFrequency: ['', Validators.required],
+
       snackGroup: this.fb.group({
         types: [[], Validators.required],              // checkbox selections
         frequency: ['', Validators.required],        // radio choice
@@ -198,7 +199,6 @@ export class DieteticsComponent implements OnDestroy {
       sex: ['', Validators.required],
       height: ['', Validators.required],
       weight: ['', Validators.required],
-      country: ['', Validators.required],
       referredBy: ['', Validators.required],
       socialMediaId: [''],
       // Detailed form specific fields
@@ -230,12 +230,10 @@ export class DieteticsComponent implements OnDestroy {
       sex: ['', Validators.required],
       height: ['', Validators.required],
       weight: ['', Validators.required],
-      country: ['', Validators.required],
       referredBy: ['', Validators.required],
       socialMediaId: [''],
-      // Sample request specific fields
-      address: [''],
-      message: ['']
+      address: ['', Validators.required],
+      smokingHabits: ['', Validators.required]
     });
 
     // Set up value change listeners for syncing
@@ -258,31 +256,41 @@ export class DieteticsComponent implements OnDestroy {
     this.activeTab = tab;
   }
 
-  async onSubmitDetailedForm() {
-    if(this.detailedForm.value && Object.values(this.detailedForm.value).some(val => val !== '' && val !== null)) {
-      const detailedResult = await this.detailedConsultService.submitDetailedForm(this.detailedForm.value)
-      
-      if(detailedResult.success){
-        alert('Detailed form submitted successfully!');
-        this.detailedForm.reset()
-      } else {
-        alert('Detailed form submission failed!')
-        console.log('Detailed form error:', detailedResult.error)
-      }
-    } else {
-      alert('Please fill out at least one field in the detailed form!')
+  onResetForm() {
+    if (this.activeTab === 'basic') {
+      this.consultForm.reset();
+    } else if (this.activeTab === 'detailed') {
+      this.detailedForm.reset();
+    } else if (this.activeTab === 'sample') {
+      this.sampleRequestForm.reset();
     }
   }
 
-  async onSubmitSampleRequest() {
-    if(this.sampleRequestForm.valid){
-      // TODO: Implement sample request submission service
-      alert('Sample request submitted successfully!');
-      this.sampleRequestForm.reset()
-    } else {
-      alert('Please fill up the mandatory fields!')
-    }
-  }
+  // async onSubmitDetailedForm() {
+  //   if(this.detailedForm.value && Object.values(this.detailedForm.value).some(val => val !== '' && val !== null)) {
+  //     const detailedResult = await this.detailedConsultService.submitDetailedForm(this.detailedForm.value)
+      
+  //     if(detailedResult.success){
+  //       alert('Detailed form submitted successfully!');
+  //       this.detailedForm.reset()
+  //     } else {
+  //       alert('Detailed form submission failed!')
+  //       console.log('Detailed form error:', detailedResult.error)
+  //     }
+  //   } else {
+  //     alert('Please fill out at least one field in the detailed form!')
+  //   }
+  // }
+
+  // async onSubmitSampleRequest() {
+  //   if(this.sampleRequestForm.valid){
+  //     // TODO: Implement sample request submission service
+  //     alert('Sample request submitted successfully!');
+  //     this.sampleRequestForm.reset()
+  //   } else {
+  //     alert('Please fill up the mandatory fields!')
+  //   }
+  // }
 
   setupBasicInfoSync() {
     const basicInfoFields = ['name', 'age', 'contact', 'email', 'sex', 'height', 'weight', 'country', 'referredBy', 'socialMediaId'];
@@ -353,38 +361,40 @@ export class DieteticsComponent implements OnDestroy {
       }
     }
   }
-
-  async onSubmit() {
-    if(this.consultForm.valid){
-      // Submit basic form
-      const basicResult = await this.consultFormService.submitConsultForm(this.consultForm.value)
-      
-      if(basicResult.success){
-        // Submit detailed form if it has any data
-        if(this.detailedForm.value && Object.values(this.detailedForm.value).some(val => val !== '' && val !== null)) {
-          const detailedResult = await this.detailedConsultService.submitDetailedForm(this.detailedForm.value)
-          
-          if(detailedResult.success){
-            alert('Both forms submitted successfully!');
-            this.consultForm.reset()
-            this.detailedForm.reset()
-          } else {
-            alert('Basic form submitted, but detailed form submission failed!')
-            console.log('Detailed form error:', detailedResult.error)
-            this.consultForm.reset()
-          }
-        } else {
-          alert('Basic form submitted successfully!');
-          this.consultForm.reset()
-        }
-      } else {
-        alert('Form submission failed!')
-        console.log('Basic form error:', basicResult.error)
-      }
-    } else {
-      console.log(this.consultForm.value);
-      alert('Please fill up the mandatory fields!')
-    }
+  
+  private isSubmitting = false;
+  private resetAllForms(): void {
+    this.consultForm.reset();
+    this.detailedForm.reset();
+    this.sampleRequestForm.reset();
   }
 
+  async onSubmit() {
+  
+    if(this.isSubmitting) return;
+  
+    this.isSubmitting=true
+    const hasValidData: boolean = this.consultForm.valid || this.detailedForm.valid || this.sampleRequestForm.valid
+
+    try{
+
+      if(hasValidData){
+        const unifiedResult = await this.consultFormService.submitUnifiedConsultation(this.consultForm.value, this.detailedForm.value, this.sampleRequestForm.value)
+        if(unifiedResult.success){
+          alert('form submitted successfully!')
+         this.resetAllForms()
+        } else{
+          alert('form submission failed!')
+          console.log('Unified consultation error:', unifiedResult.error)
+        }
+      }else{
+        alert('Please fill up the mandatory fields!')
+      }
+
+    }catch(err){
+      console.error('Unified consultation error:', err)
+    }finally{
+      this.isSubmitting = false;
+    }
+  }
 }

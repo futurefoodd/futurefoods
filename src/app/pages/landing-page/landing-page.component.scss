@@ -1139,6 +1139,30 @@ a {
   }
 }
 
+.whatsapp-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  
+  .offer-button {
+    width: 100%;
+    
+    span {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    gap: 8px;
+    
+    .offer-button span {
+      font-size: 0.85rem;
+    }
+  }
+}
+
 .offer-rating-section {
   display: flex;
   justify-content: center;

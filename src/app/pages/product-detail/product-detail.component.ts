@@ -203,9 +203,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   createImageObject():void{
+    console.log(this.product[0].image)
     for (let i = 0; i < this.product[0].image.length; i += 2) {
-      const thumbnailImageSrc = this.product[0].image[i];
-      const itemImageSrc = this.product[0].image[i + 1];
+      const  itemImageSrc= this.product[0].image[i];
+      const  thumbnailImageSrc= this.product[0].image[i + 1];
   
       this.imageObject.push({
           itemImageSrc: itemImageSrc,
@@ -213,6 +214,8 @@ export class ProductDetailComponent implements OnInit {
           alt: null,
           title: null
       });
+
+      console.log(this.imageObject)
     }
   }
 

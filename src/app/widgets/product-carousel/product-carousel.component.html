@@ -44,14 +44,6 @@
                   <span class="rating-text">({{ getRating(product) }})</span>
                 </div>
               }
-              <div class="product-price-container">
-                @if (hasPromo(product)) {
-                  <span class="product-price-original">{{ formatPrice(product.price) }}</span>
-                  <span class="product-price-promo">{{ formatPrice(product.promo_price!) }}</span>
-                } @else {
-                  <span class="product-price">{{ formatPrice(product.price) }}</span>
-                }
-              </div>
               <!-- Action Buttons -->
               <div class="action-buttons">
               <!-- Cart Button -->

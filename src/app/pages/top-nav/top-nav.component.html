@@ -23,7 +23,7 @@
           </a>
           
           <div class="dropdown-menu" [class.show]="isDieteticsDropdownOpen">
-            <a class="dropdown-item" routerLink="/diet-plans" (click)="isMenuOpen = false">
+            <a class="dropdown-item" routerLink="/dual-therapy" (click)="isMenuOpen = false">
               <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
                 <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
               </svg>
@@ -82,7 +82,7 @@
 
           <!-- Accordion Content -->
           <div class="dietetics-subitems" [class.expanded]="isDieteticsExpanded">
-            <a class="dietetics-subitem" (click)="navigateToSubItem('/diet-plans', 'Top-nav.dieteticsMenu.dualTherapy'); $event.stopPropagation()">
+            <a class="dietetics-subitem" (click)="navigateToSubItem('/dual-therapy', 'Top-nav.dieteticsMenu.dualTherapy'); $event.stopPropagation()">
               <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
                 <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
               </svg>

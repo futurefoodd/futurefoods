@@ -13,6 +13,7 @@ import { UpskillComponent } from './pages/upskill/upskill.component';
 import { GutBrainAxisComponent } from './pages/gut-brain-axis/gut-brain-axis.component';
 import { DoctorsForumComponent } from './pages/doctors-forum/doctors-forum.component';
 import { BioTherapeuticsComponent } from './bio-therapeutics/bio-therapeutics.component';
+import { DualTherapyComponent } from './pages/dual-therapy/dual-therapy.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -24,6 +25,7 @@ export const routes: Routes = [
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'refund-policy', component: RefundPolicyComponent },
   { path: 'upskill', component: UpskillComponent },
+  { path: 'dual-therapy', component: DualTherapyComponent },
   { path: 'gut-brain-axis', component: GutBrainAxisComponent },
   { path: 'bio-therapeutics', component: BioTherapeuticsComponent },
   { path: 'doctors-forum', component: DoctorsForumComponent },

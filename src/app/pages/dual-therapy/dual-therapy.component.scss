@@ -1,0 +1,32 @@
+.page {
+  padding: 90px 0;
+  background: #f9f9f9;
+  min-height: calc(100vh - 200px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #364A42;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}

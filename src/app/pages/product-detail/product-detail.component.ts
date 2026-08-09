@@ -36,6 +36,7 @@ export class ProductDetailComponent implements OnInit {
   baseUrl:string = environment.apiHost
 
   productSpecification:any
+  productSpecificationImage: string = ''
 
   nutrientsTableImages: string[] = []
   expanded = false;
@@ -100,6 +101,7 @@ export class ProductDetailComponent implements OnInit {
         
        this.createImageObject()
       this.productSpecification =this.createKeyValue(this.product[0].product_specification)
+      this.productSpecificationImage = this.resolveProductSpecificationImage()
       this.parsePackagingType()
       
       // Initialize video sources if available in product data
@@ -564,6 +566,43 @@ export class ProductDetailComponent implements OnInit {
     const supabaseBaseUrl = 'https://cdotngdpjgeeybbfdoit.supabase.co/storage/v1/object/public/nvc/public';
     const cleanPath = pathOrUrl.startsWith('/') ? pathOrUrl.slice(1) : pathOrUrl;
     return `${supabaseBaseUrl}/${cleanPath}`;
+  }
+
+  /**
+   * Resolves the Product Specifications image from the product payload.
+   * Accepts a single path/URL or an array (first entry is used) and
+   * converts relative paths to full Supabase URLs.
+   */
+  private resolveProductSpecificationImage(): string {
+    const imageField = this.product?.[0]?.product_specification_image ||
+                       this.product?.[0]?.specification_image ||
+                       this.product?.[0]?.spec_image;
+
+    if (!imageField) {
+      return '';
+    }
+
+    const pathOrUrl = Array.isArray(imageField) ? imageField[0] : imageField;
+
+    if (typeof pathOrUrl !== 'string' || !pathOrUrl.trim()) {
+      return '';
+    }
+
+    return this.constructImageUrl(pathOrUrl.trim());
+  }
+
+  /**
+   * Checks if a Product Specifications image is available
+   */
+  hasProductSpecificationImage(): boolean {
+    return !!this.productSpecificationImage;
+  }
+
+  /**
+   * Falls back to the placeholder when the specification image fails to load
+   */
+  onProductSpecificationImageError(): void {
+    this.productSpecificationImage = '';
   }
 
   /**

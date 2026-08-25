@@ -7,6 +7,10 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Server, // ⚡ Render dynamically
   },
   {
+    path: 'announcements/:id',
+    renderMode: RenderMode.Server, // ⚡ Render dynamically
+  },
+  {
     path: '**',
     renderMode: RenderMode.Prerender
   }

@@ -2,7 +2,8 @@
 {
 "Button":{
       "buyNow": "Buy Now",
-      "learnMore": "Learn More"
+      "learnMore": "Learn More",
+      "back": "Back"
     },
 
     "Top-nav":{
@@ -73,6 +74,19 @@
         "limitedTimeOffer": "Limited Time Offer!",
         "title": "Pro-Collagen Soft Pastilles",
         "description":"Faster nutrient absorption, Enables natural synthesis of collagen & elastin, Nourishes gut probiotics, Reduces skin sensitivity and Strengthens nails, Better muscle & joint comfort, Soothes mouth sores & throat irritation."
+      },
+      "Announcement":{
+        "title": "Upcoming Announcements & Events",
+        "event1": {
+          "title": "Health Begins In Your Gut - Rotary Club of Damansara Uptown",
+          "date": "Saturday, 29 August 2026",
+          "description": "🌿 HEALTH BEGINS IN YOUR GUT 🌿\nUnlock the Gut–Brain Connection for Better Health & Wellbeing\n\nJoin us for an afternoon of wellness, fellowship and practical health insights.\n\n🎤 Featured Speaker: Dr Keshu A.\nNutrition & Wellbeing Counsellor\n\n📅 Saturday, 29 August 2026\n🕚 11.30am – 2.00pm\n📍 Omni Tea House\n7 & 9, Jalan SS23/15, Taman Sea, Petaling Jaya\n\n✨ Highlights\n* 🍽️ Lunch & Fellowship\n* 🤝 Discover Rotary by Jeremy Jones (Membership Chair / President-Elect)\n* 🎤 Health Talk & Q&A\n* 🎁 Health Care Gift (1st come, 1st served, while stocks last)\n\n👨‍👩‍👧‍👦 Bring a Friend! Family and friends are welcome.\n\n💰 RM38 per person (Lunch included)\n\n💳 Payment:\nRotary Club of Damansara Uptown (CIMB)\nA/C No.: 8011 3867 59\n\n📝 Register & Upload Your Payment Slip:\nhttps://forms.gle/G2fk54qmqHRGJoFf8\n\nHealthy Members • Stronger Fellowship • Create Lasting Impact 💙💛"
+        },
+        "event2": {
+          "title": "NICE 26 - National Innovation and Commercialisation Expo",
+          "date": "26 – 28 August 2026",
+          "description": "Visit us at Sepri Natural Products' booth, 26-28 August 2026, 9:00 AM - 5:00 PM daily at Kuala Lumpur Convention Centre (KLCC). Theme: Mission to Market Malaysia to the World - Matching Investors."
+        }
       },
       "OfferPopup":{
         "limitedTimeOffer": "Limited Time Offer!",

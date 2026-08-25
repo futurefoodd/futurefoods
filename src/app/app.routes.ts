@@ -14,11 +14,13 @@ import { GutBrainAxisComponent } from './pages/gut-brain-axis/gut-brain-axis.com
 import { DoctorsForumComponent } from './pages/doctors-forum/doctors-forum.component';
 import { BioTherapeuticsComponent } from './bio-therapeutics/bio-therapeutics.component';
 import { DualTherapyComponent } from './pages/dual-therapy/dual-therapy.component';
+import { AnnouncementDetailComponent } from './pages/announcement-detail/announcement-detail.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'products', component: ProductListComponent },
   { path: 'product-detail/:id', component: ProductDetailComponent },
+  { path: 'announcements/:id', component: AnnouncementDetailComponent },
   { path: 'dietetics', component: DieteticsComponent },
   { path: 'tour', component: TourComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },

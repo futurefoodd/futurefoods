@@ -1,0 +1,18 @@
+@if (announcement) {
+  <div class="announcement-detail-page">
+    <div class="container mx-auto">
+      <a routerLink="/" fragment="announcements" class="back-link">&#8592; {{ 'Button.back' | translate }}</a>
+
+      <div class="announcement-detail-content">
+        <div class="announcement-detail-image">
+          <img [src]="announcement.image" [alt]="announcement.titleKey | translate">
+        </div>
+        <div class="announcement-detail-text">
+          <span class="announcement-detail-date">{{ announcement.dateKey | translate }}</span>
+          <h1>{{ announcement.titleKey | translate }}</h1>
+          <p>{{ announcement.descriptionKey | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+}

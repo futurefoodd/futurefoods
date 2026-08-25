@@ -106,6 +106,34 @@
   </div>
 </section>
 
+<section id="announcements" class="announcement-section">
+  <div class="container mx-auto">
+    <h2 class="section-title">{{'Landing.Announcement.title' | translate}}</h2>
+    <div class="announcement-grid">
+      <a routerLink="/announcements/rotary-health-talk" class="announcement-card" role="button" tabindex="0" [attr.aria-label]="'Landing.Announcement.event1.title' | translate">
+        <div class="announcement-image">
+          <img src="rotary2.jpeg" alt="{{'Landing.Announcement.event1.title' | translate}}" class="placeholder-image">
+        </div>
+        <div class="announcement-content">
+          <span class="announcement-date">{{'Landing.Announcement.event1.date' | translate}}</span>
+          <h3>{{'Landing.Announcement.event1.title' | translate}}</h3>
+          <p>{{'Landing.Announcement.event1.description' | translate}}</p>
+        </div>
+      </a>
+      <a routerLink="/announcements/nice-26-expo" class="announcement-card" role="button" tabindex="0" [attr.aria-label]="'Landing.Announcement.event2.title' | translate">
+        <div class="announcement-image">
+          <img src="nice.jpeg" alt="{{'Landing.Announcement.event2.title' | translate}}" class="placeholder-image">
+        </div>
+        <div class="announcement-content">
+          <span class="announcement-date">{{'Landing.Announcement.event2.date' | translate}}</span>
+          <h3>{{'Landing.Announcement.event2.title' | translate}}</h3>
+          <p>{{'Landing.Announcement.event2.description' | translate}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- <section id="about" class="about-section">
   <div class="container mx-auto">
     <div class="about-content">

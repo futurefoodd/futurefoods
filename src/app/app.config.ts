@@ -6,7 +6,7 @@ import {provideTranslateHttpLoader} from "@ngx-translate/http-loader";
 import {provideHttpClient, withFetch} from "@angular/common/http";
 
 import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay, withNoIncrementalHydration } from '@angular/platform-browser';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 
@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
-    provideClientHydration(withEventReplay()), provideAnimationsAsync(),  providePrimeNG({
+    provideClientHydration(withEventReplay(), withNoIncrementalHydration()), provideAnimationsAsync(),  providePrimeNG({
     theme: {
         preset: Aura
     }

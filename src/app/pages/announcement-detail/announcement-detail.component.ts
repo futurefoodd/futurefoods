@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -31,6 +31,7 @@ const ANNOUNCEMENTS: Announcement[] = [
   selector: 'app-announcement-detail',
   imports: [RouterLink, TranslatePipe],
   templateUrl: './announcement-detail.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './announcement-detail.component.scss'
 })
 export class AnnouncementDetailComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, OnInit, model, ViewChild, ElementRef, PLATFORM_ID, inject, HostListener } from '@angular/core';
+import { Component, OnInit, model, ViewChild, ElementRef, PLATFORM_ID, inject, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
@@ -18,6 +18,7 @@ import * as path from 'path'
   imports: [FormsModule, TranslatePipe, FlickityCarouselComponent, VideoPlayerComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: []
 })
 export class ProductDetailComponent implements OnInit {

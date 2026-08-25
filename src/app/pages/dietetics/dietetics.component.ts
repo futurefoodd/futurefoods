@@ -1,5 +1,5 @@
 
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NutritionConsultService } from '../../services/consult.service';
 import { DetailedConsultService } from '../../services/detailed-consult.service';
@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-dietetics',
   imports: [FormsModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './dietetics.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './dietetics.component.scss'
 })
 export class DieteticsComponent implements OnDestroy {

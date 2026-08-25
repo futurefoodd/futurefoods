@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UUID } from 'crypto';
@@ -21,6 +21,7 @@ type Product = {
   standalone: true,
   imports: [RouterModule, TranslatePipe],
   templateUrl: './product-list.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './product-list.component.scss'
 })
 export class ProductListComponent implements OnInit {

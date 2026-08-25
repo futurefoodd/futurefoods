@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Inject, Input, Output, EventEmitter, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, Input, Output, EventEmitter, PLATFORM_ID, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 // import { PhotoService } from '@/service/photoservice';
 import { GalleriaModule } from 'primeng/galleria';
@@ -9,6 +9,7 @@ import { productImage } from '../../core/model/product.model';
   selector: 'app-flickity-carousel',
   imports: [GalleriaModule, FormsModule],
   templateUrl: './flickity-carousel.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './flickity-carousel.component.scss'
 })
 export class FlickityCarouselComponent  {

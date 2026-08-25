@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -6,6 +6,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-gut-brain-axis',
   imports: [TranslatePipe],
   templateUrl: './gut-brain-axis.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './gut-brain-axis.component.scss'
 })
 export class GutBrainAxisComponent {

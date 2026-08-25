@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 // import { Product } from '@/domain/product';
 import { ProductService } from './productservice';
 import { Carousel } from 'primeng/carousel';
@@ -25,6 +25,7 @@ interface Product {
   imports: [Carousel, ButtonModule, Tag, CommonModule],
   providers: [ProductService],
   templateUrl: './circular-carousel.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './circular-carousel.component.scss'
 })
 export class CircularCarouselComponent {

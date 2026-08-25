@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TopNavComponent } from './pages/top-nav/top-nav.component';
 import { FooterComponent } from './pages/footer/footer.component';
@@ -11,6 +11,7 @@ import { UserService } from './services/userService.service';
   selector: 'app-root',
   imports: [RouterOutlet, TopNavComponent, FooterComponent, WhatsappButtonComponent],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -10,6 +10,7 @@ import { DoctorsForumService } from '../../services/doctors-forum.service';
   standalone: true,
   imports: [ReactiveFormsModule, TranslatePipe],
   templateUrl: './doctors-forum.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './doctors-forum.component.scss'
 })
 export class DoctorsForumComponent {

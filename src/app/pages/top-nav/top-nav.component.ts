@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { inject } from '@angular/core';
 import {TranslatePipe, TranslateService} from '@ngx-translate/core';
@@ -9,6 +9,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
   selector: 'app-top-nav',
   imports: [RouterModule, TranslatePipe],
   templateUrl: './top-nav.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './top-nav.component.scss'
 })
 export class TopNavComponent {

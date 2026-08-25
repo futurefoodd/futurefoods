@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ChangeDetectionStrategy } from '@angular/core';
 
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import {  AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
@@ -17,6 +17,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
   selector: 'app-landing-page',
   imports: [RouterModule, ImageCompareModule, FormsModule, FaqComponent, TranslatePipe],
   templateUrl: './landing-page.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent implements OnInit, OnDestroy {

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import {  AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -15,7 +15,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ RouterModule, ImageCompareModule, FormsModule, CommonModule, FaqComponent, TranslatePipe],
+  imports: [RouterModule, ImageCompareModule, FormsModule, FaqComponent, TranslatePipe],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
@@ -216,7 +216,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
    * Handles keyboard events for modal (ESC to close)
    */
   @HostListener('document:keydown.escape', ['$event'])
-  handleEscapeKey(event: KeyboardEvent): void {
+  handleEscapeKey(event: Event): void {
     if (this.modalVisible) {
       this.closeImageModal();
     }

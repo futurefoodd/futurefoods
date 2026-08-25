@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, PLATFORM_ID, Inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UUID } from 'crypto';
 import { RequestService } from '../../services/requestService.service';
@@ -19,7 +19,7 @@ type Product = {
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslatePipe],
+  imports: [RouterModule, TranslatePipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })

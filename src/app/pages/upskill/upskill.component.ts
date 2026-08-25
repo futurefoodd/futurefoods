@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { VideoPlayerComponent, VideoSource } from '../../components/video-player/video-player.component';
@@ -9,7 +9,7 @@ declare const PptxViewJS: any;
 @Component({
   selector: 'app-upskill',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, VideoPlayerComponent],
+  imports: [TranslatePipe, VideoPlayerComponent],
   templateUrl: './upskill.component.html',
   styleUrl: './upskill.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

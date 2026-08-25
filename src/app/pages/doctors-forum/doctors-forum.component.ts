@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -8,7 +8,7 @@ import { DoctorsForumService } from '../../services/doctors-forum.service';
 @Component({
   selector: 'app-doctors-forum',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TranslatePipe],
+  imports: [ReactiveFormsModule, TranslatePipe],
   templateUrl: './doctors-forum.component.html',
   styleUrl: './doctors-forum.component.scss'
 })

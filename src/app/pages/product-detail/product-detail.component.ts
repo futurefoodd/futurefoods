@@ -1,7 +1,7 @@
 import { Component, OnInit, model, ViewChild, ElementRef, PLATFORM_ID, inject, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
-import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import { TranslatePipe } from '@ngx-translate/core';
 import { FlickityCarouselComponent } from '../../widgets/flickity-carousel/flickity-carousel.component';
@@ -15,7 +15,7 @@ import * as path from 'path'
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, FormsModule, TranslatePipe, FlickityCarouselComponent, VideoPlayerComponent],
+  imports: [FormsModule, TranslatePipe, FlickityCarouselComponent, VideoPlayerComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
   providers: []
@@ -757,7 +757,7 @@ export class ProductDetailComponent implements OnInit {
    * Handles keyboard events for modal (ESC to close)
    */
   @HostListener('document:keydown.escape', ['$event'])
-  handleEscapeKey(event: KeyboardEvent): void {
+  handleEscapeKey(event: Event): void {
     if (this.imageModalVisible) {
       this.closeImageModal();
     }

@@ -10,7 +10,7 @@ import {
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 export interface VideoSource {
   src: string;
@@ -20,7 +20,7 @@ export interface VideoSource {
 @Component({
   selector: 'app-video-player',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './video-player.component.html',
   styleUrl: './video-player.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -176,7 +176,7 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
 
   @HostListener('document:keydown.enter', ['$event'])
   @HostListener('document:keydown.space', ['$event'])
-  handleKeyboardPlay(event: KeyboardEvent): void {
+  handleKeyboardPlay(event: Event): void {
     if (!this.isBrowser || !this.videoEl) {
       return;
     }

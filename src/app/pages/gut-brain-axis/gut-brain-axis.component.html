@@ -1,11 +1,11 @@
 <main class="page">
   <div class="container">
     <h1 class="main-title">{{ 'GutBrainAxis.mainTitle' | translate }}</h1>
-    
+
     <div class="tabs-container">
       <!-- Left Side Tabs -->
       <div class="tabs-sidebar">
-        <button 
+        <button
           type="button"
           [class.active]="activeTab === 'talk'"
           (click)="setActiveTab('talk')">
@@ -16,153 +16,137 @@
       <!-- Right Side Content -->
       <div class="tabs-content">
         <!-- Gut-Brain Axis Talk Tab -->
-        <div *ngIf="activeTab === 'talk'" class="tab-panel">
-          <h2 class="article-title">{{ 'GutBrainAxis.articleTitle' | translate }}</h2>
-          
-          <div class="article-content">
-            <!-- Event Dates Section -->
-            <div class="event-dates">
-              <div class="event-date-item">
-                <p><strong>{{ 'GutBrainAxis.events.event1' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event1Location' | translate }}</p>
+        @if (activeTab === 'talk') {
+          <div class="tab-panel">
+            <h2 class="article-title">{{ 'GutBrainAxis.articleTitle' | translate }}</h2>
+            <div class="article-content">
+              <!-- Event Dates Section -->
+              <div class="event-dates">
+                <div class="event-date-item">
+                  <p><strong>{{ 'GutBrainAxis.events.event1' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event1Location' | translate }}</p>
+                </div>
+                <div class="event-date-item">
+                  <p><strong>{{ 'GutBrainAxis.events.event2' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event2Location' | translate }}</p>
+                  <span class="separator">|</span>
+                  <p><strong>{{ 'GutBrainAxis.events.event3' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event3Location' | translate }}</p>
+                </div>
+                <div class="event-date-item">
+                  <p><strong>{{ 'GutBrainAxis.events.event4' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event4Location' | translate }}</p>
+                  <span class="separator">|</span>
+                  <p><strong>{{ 'GutBrainAxis.events.event5' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event5Location' | translate }}</p>
+                </div>
+                <div class="event-date-item">
+                  <p><strong>{{ 'GutBrainAxis.events.event6' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event6Location' | translate }}</p>
+                  <span class="separator">|</span>
+                  <p><strong>{{ 'GutBrainAxis.events.event7' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event7Location' | translate }}</p>
+                </div>
               </div>
-              <div class="event-date-item">
-                <p><strong>{{ 'GutBrainAxis.events.event2' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event2Location' | translate }}</p>
-                <span class="separator">|</span>
-                <p><strong>{{ 'GutBrainAxis.events.event3' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event3Location' | translate }}</p>
-              </div>
-              <div class="event-date-item">
-                <p><strong>{{ 'GutBrainAxis.events.event4' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event4Location' | translate }}</p>
-                <span class="separator">|</span>
-                <p><strong>{{ 'GutBrainAxis.events.event5' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event5Location' | translate }}</p>
-              </div>
-              <div class="event-date-item">
-                <p><strong>{{ 'GutBrainAxis.events.event6' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event6Location' | translate }}</p>
-                <span class="separator">|</span>
-                <p><strong>{{ 'GutBrainAxis.events.event7' | translate }}</strong> &#64; {{ 'GutBrainAxis.events.event7Location' | translate }}</p>
-              </div>
-            </div>
-
-            <!-- Main Article Content -->
-            <div class="article-body">
-              <h2 class="article-heading">
-                {{ 'GutBrainAxis.article.heading' | translate }}
-                <span class="meta-analysis">{{ 'GutBrainAxis.article.metaAnalysis' | translate }}</span>
-              </h2>
-
-              <p class="article-paragraph">
-                {{ 'GutBrainAxis.article.paragraph1' | translate }}
-              </p>
-
-              <p class="article-paragraph">
-                {{ 'GutBrainAxis.article.paragraph2' | translate }}
-              </p>
-
-              <p class="article-paragraph">
-                {{ 'GutBrainAxis.article.paragraph3' | translate }}
-              </p>
-
-              <p class="article-paragraph">
-                {{ 'GutBrainAxis.article.paragraph4' | translate }}
-              </p>
-
-              <p class="article-paragraph">
-                {{ 'GutBrainAxis.article.paragraph5' | translate }}
-              </p>
-
-              <p class="article-paragraph">
-                {{ 'GutBrainAxis.article.paragraph6' | translate }}
-              </p>
-
-              <p class="article-paragraph">
-                {{ 'GutBrainAxis.article.paragraph7' | translate }}
-              </p>
-
-              <!-- Product Information Section -->
-              <div class="product-section">
-                <h3 class="section-title">{{ 'GutBrainAxis.article.productTitle' | translate }}</h3>
+              <!-- Main Article Content -->
+              <div class="article-body">
+                <h2 class="article-heading">
+                  {{ 'GutBrainAxis.article.heading' | translate }}
+                  <span class="meta-analysis">{{ 'GutBrainAxis.article.metaAnalysis' | translate }}</span>
+                </h2>
                 <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.productDescription' | translate }}
+                  {{ 'GutBrainAxis.article.paragraph1' | translate }}
                 </p>
                 <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.productIngredients' | translate }}
-                </p>
-              </div>
-
-              <!-- Key Components Section -->
-              <div class="components-section">
-                <h3 class="component-title">{{ 'GutBrainAxis.article.resistantStarchTitle' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.resistantStarchContent' | translate }}
-                </p>
-
-                <h3 class="component-title">{{ 'GutBrainAxis.article.omega3Title' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.omega3Content' | translate }}
+                  {{ 'GutBrainAxis.article.paragraph2' | translate }}
                 </p>
                 <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.omega3Content2' | translate }}
-                </p>
-
-                <h3 class="component-title">{{ 'GutBrainAxis.article.vitaminsTitle' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.vitaminsContent' | translate }}
-                </p>
-
-                <h3 class="component-title">{{ 'GutBrainAxis.article.probioticsTitle' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.probioticsContent' | translate }}
-                </p>
-              </div>
-
-              <!-- Dosage Section -->
-              <div class="dosage-section">
-                <h3 class="section-title">{{ 'GutBrainAxis.article.dosageTitle' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.dosageChildren' | translate }}
+                  {{ 'GutBrainAxis.article.paragraph3' | translate }}
                 </p>
                 <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.dosageAdhd' | translate }}
+                  {{ 'GutBrainAxis.article.paragraph4' | translate }}
                 </p>
                 <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.dosageOlderAdults' | translate }}
+                  {{ 'GutBrainAxis.article.paragraph5' | translate }}
                 </p>
                 <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.dosageRecovering' | translate }}
-                </p>
-              </div>
-
-              <!-- Oral Hygiene Section -->
-              <div class="oral-hygiene-section">
-                <h3 class="section-title">{{ 'GutBrainAxis.article.oralHygieneTitle' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.oralHygieneContent' | translate }}
+                  {{ 'GutBrainAxis.article.paragraph6' | translate }}
                 </p>
                 <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.oralHygieneContent2' | translate }}
+                  {{ 'GutBrainAxis.article.paragraph7' | translate }}
                 </p>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.oralHygieneContent3' | translate }}
-                </p>
-              </div>
-
-              <!-- Mechanism of Action Section -->
-              <div class="mechanism-section">
-                <h3 class="section-title">{{ 'GutBrainAxis.article.mechanismTitle' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.mechanismContent' | translate }}
-                </p>
-              </div>
-
-              <!-- Research & Development Section -->
-              <div class="research-section">
-                <h3 class="section-title">{{ 'GutBrainAxis.article.researchTitle' | translate }}</h3>
-                <p class="article-paragraph">
-                  {{ 'GutBrainAxis.article.researchContent' | translate }}
-                </p>
+                <!-- Product Information Section -->
+                <div class="product-section">
+                  <h3 class="section-title">{{ 'GutBrainAxis.article.productTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.productDescription' | translate }}
+                  </p>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.productIngredients' | translate }}
+                  </p>
+                </div>
+                <!-- Key Components Section -->
+                <div class="components-section">
+                  <h3 class="component-title">{{ 'GutBrainAxis.article.resistantStarchTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.resistantStarchContent' | translate }}
+                  </p>
+                  <h3 class="component-title">{{ 'GutBrainAxis.article.omega3Title' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.omega3Content' | translate }}
+                  </p>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.omega3Content2' | translate }}
+                  </p>
+                  <h3 class="component-title">{{ 'GutBrainAxis.article.vitaminsTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.vitaminsContent' | translate }}
+                  </p>
+                  <h3 class="component-title">{{ 'GutBrainAxis.article.probioticsTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.probioticsContent' | translate }}
+                  </p>
+                </div>
+                <!-- Dosage Section -->
+                <div class="dosage-section">
+                  <h3 class="section-title">{{ 'GutBrainAxis.article.dosageTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.dosageChildren' | translate }}
+                  </p>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.dosageAdhd' | translate }}
+                  </p>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.dosageOlderAdults' | translate }}
+                  </p>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.dosageRecovering' | translate }}
+                  </p>
+                </div>
+                <!-- Oral Hygiene Section -->
+                <div class="oral-hygiene-section">
+                  <h3 class="section-title">{{ 'GutBrainAxis.article.oralHygieneTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.oralHygieneContent' | translate }}
+                  </p>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.oralHygieneContent2' | translate }}
+                  </p>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.oralHygieneContent3' | translate }}
+                  </p>
+                </div>
+                <!-- Mechanism of Action Section -->
+                <div class="mechanism-section">
+                  <h3 class="section-title">{{ 'GutBrainAxis.article.mechanismTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.mechanismContent' | translate }}
+                  </p>
+                </div>
+                <!-- Research & Development Section -->
+                <div class="research-section">
+                  <h3 class="section-title">{{ 'GutBrainAxis.article.researchTitle' | translate }}</h3>
+                  <p class="article-paragraph">
+                    {{ 'GutBrainAxis.article.researchContent' | translate }}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        }
 
       </div>
     </div>

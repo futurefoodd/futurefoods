@@ -107,6 +107,6 @@ export class CircularCarouselComponent {
           case 'OUTOFSTOCK':
               return 'danger';
       }
-      return '';
+      return undefined;
   }
 }

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NutritionConsultService } from '../../services/consult.service';
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dietetics',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslatePipe],
+  imports: [FormsModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './dietetics.component.html',
   styleUrl: './dietetics.component.scss'
 })

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { inject } from '@angular/core';
@@ -7,7 +7,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-top-nav',
-  imports: [CommonModule, RouterModule, TranslatePipe],
+  imports: [RouterModule, TranslatePipe],
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.scss'
 })

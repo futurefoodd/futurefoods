@@ -1,149 +1,155 @@
 <!-- Navigation Bar -->
 <nav class="navbar_">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <a class="logo-icon" routerLink="/">
-          <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#5D792D"/>
-          </svg> -->
-          <img src="nvc_icon.png" width="160" height="90" loading="eager" fetchpriority="high" alt="NVC Logo">
-        </a>
-      </div>
-      <div class="nav-menu" [class.active]="isMenuOpen" (closeMenu)="isMenuOpen = false">
-        <a routerLink="/" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.home' | translate}}</a>
-        <a routerLink="/products" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.products' | translate}}</a>
-        <a routerLink="/doctors-forum" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.doctorsForum' | translate}}</a>
-        
-        <!-- Desktop Dietetics Dropdown -->
-        <div class="dietetics-dropdown desktop-only" (mouseenter)="showDieteticsDropdown()" (mouseleave)="hideDieteticsDropdown()">
-          <a class="nav-link cursor-pointer dietetics-trigger">
-            {{'Top-nav.dietetics' | translate}} <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none">
-              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          
-          <div class="dropdown-menu" [class.show]="isDieteticsDropdownOpen">
-            <a class="dropdown-item" routerLink="/dual-therapy" (click)="isMenuOpen = false">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.dualTherapy' | translate}}</span>
-            </a>
-            <a class="dropdown-item" routerLink="/gut-brain-axis" (click)="isMenuOpen = false">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.gutBrain' | translate}}</span>
-            </a>
-            <a class="dropdown-item" routerLink="/bio-therapeutics" (click)="isMenuOpen = false">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.bioTherapeutics' | translate}}</span>
-            </a>
-            <a class="dropdown-item" routerLink="/about-dietetics" (click)="isMenuOpen = false">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.ketosis' | translate}}</span>
-            </a>
-            <a class="dropdown-item" routerLink="/dietetics" (click)="isMenuOpen = false">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.consult' | translate}}</span>
-            </a>
-          </div>
-        </div>
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a class="logo-icon" routerLink="/">
+        <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#5D792D"/>
+      </svg> -->
+      <img src="nvc_icon.png" width="160" height="90" loading="eager" fetchpriority="high" alt="NVC Logo">
+    </a>
+  </div>
+  <div class="nav-menu" [class.active]="isMenuOpen" (closeMenu)="isMenuOpen = false">
+    <a routerLink="/" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.home' | translate}}</a>
+    <a routerLink="/products" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.products' | translate}}</a>
+    <a routerLink="/doctors-forum" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.doctorsForum' | translate}}</a>
 
-        <!-- Mobile Dietetics Accordion -->
-        <div class="dietetics-accordion mobile-only">
-          <!-- Breadcrumb Navigation -->
-          <div class="breadcrumb-container" *ngIf="showBreadcrumb" (click)="$event.stopPropagation()">
-            <button class="breadcrumb-back" (click)="goBack(); $event.stopPropagation()" aria-label="Go back">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 18l-6-6 6-6"/>
-              </svg>
-            </button>
-            <div class="breadcrumb-path">
-              <span *ngFor="let crumb of currentBreadcrumb; let last = last">
-                {{ crumb }}<span *ngIf="!last"> > </span>
-              </span>
-            </div>
-          </div>
+    <!-- Desktop Dietetics Dropdown -->
+    <div class="dietetics-dropdown desktop-only" (mouseenter)="showDieteticsDropdown()" (mouseleave)="hideDieteticsDropdown()">
+      <a class="nav-link cursor-pointer dietetics-trigger">
+        {{'Top-nav.dietetics' | translate}} <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none">
+        <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
 
-          <!-- Accordion Trigger -->
-          <a class="nav-link cursor-pointer dietetics-trigger-mobile" (click)="toggleDieteticsAccordion(); $event.stopPropagation()">
-            {{'Top-nav.dietetics' | translate}}
-            <svg class="accordion-arrow" [class.expanded]="isDieteticsExpanded" viewBox="0 0 24 24" fill="none">
-              <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+    <div class="dropdown-menu" [class.show]="isDieteticsDropdownOpen">
+      <a class="dropdown-item" routerLink="/dual-therapy" (click)="isMenuOpen = false">
+        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
+        </svg>
+        <span class="dropdown-text">{{'Top-nav.dieteticsMenu.dualTherapy' | translate}}</span>
+      </a>
+      <a class="dropdown-item" routerLink="/gut-brain-axis" (click)="isMenuOpen = false">
+        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+        </svg>
+        <span class="dropdown-text">{{'Top-nav.dieteticsMenu.gutBrain' | translate}}</span>
+      </a>
+      <a class="dropdown-item" routerLink="/bio-therapeutics" (click)="isMenuOpen = false">
+        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
+        </svg>
+        <span class="dropdown-text">{{'Top-nav.dieteticsMenu.bioTherapeutics' | translate}}</span>
+      </a>
+      <a class="dropdown-item" routerLink="/about-dietetics" (click)="isMenuOpen = false">
+        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+        </svg>
+        <span class="dropdown-text">{{'Top-nav.dieteticsMenu.ketosis' | translate}}</span>
+      </a>
+      <a class="dropdown-item" routerLink="/dietetics" (click)="isMenuOpen = false">
+        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+          <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
+        </svg>
+        <span class="dropdown-text">{{'Top-nav.dieteticsMenu.consult' | translate}}</span>
+      </a>
+    </div>
+  </div>
 
-          <!-- Accordion Content -->
-          <div class="dietetics-subitems" [class.expanded]="isDieteticsExpanded">
-            <a class="dietetics-subitem" (click)="navigateToSubItem('/dual-therapy', 'Top-nav.dieteticsMenu.dualTherapy'); $event.stopPropagation()">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.dualTherapy' | translate}}</span>
-            </a>
-            <a class="dietetics-subitem" (click)="navigateToSubItem('/gut-brain-axis', 'Top-nav.dieteticsMenu.gutBrain'); $event.stopPropagation()">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.gutBrain' | translate}}</span>
-            </a>
-            <a class="dietetics-subitem" (click)="navigateToSubItem('/health-assessment', 'Top-nav.dieteticsMenu.bioTherapeutics'); $event.stopPropagation()">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.bioTherapeutics' | translate}}</span>
-            </a>
-            <a class="dietetics-subitem" (click)="navigateToSubItem('/about-dietetics', 'Top-nav.dieteticsMenu.ketosis'); $event.stopPropagation()">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.ketosis' | translate}}</span>
-            </a>
-            <a class="dietetics-subitem" (click)="navigateToSubItem('/dietetics', 'Top-nav.dieteticsMenu.consult'); $event.stopPropagation()">
-              <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
-              </svg>
-              <span class="dropdown-text">{{'Top-nav.dieteticsMenu.consult' | translate}}</span>
-            </a>
-          </div>
-        </div>
-        <a routerLink="/upskill" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.upskill' | translate}}</a>
-        <a routerLink="/tour" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.tour' | translate}}</a>
-        <div class="flex language">
-
-          <a (click)="useLanguage('en')" class="nav-link cursor-pointer">EN</a>
-          |
-          <a (click)="useLanguage('bm')" class="nav-link cursor-pointer">BM</a>
-          |
-          <a (click)="useLanguage('ch')" class="nav-link cursor-pointer">CN</a>
-        </div>
-        <!-- <a [routerLink]="'/cart'" class="nav-link hidden cart-icon relative">
-          <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 4.58011L3.88304 1.09945V1H15.2164L18 4.58011M1 4.58011V17.2099C1 18.2044 1.89474 19 2.88889 19H16.1111C17.1053 19 18 18.2044 18 17.2099V4.58011M1 4.58011H18M13.3275 8.16022C13.3275 10.1492 11.6374 11.7403 9.54971 11.7403C7.46199 11.7403 5.67251 10.1492 5.67251 8.16022" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+  <!-- Mobile Dietetics Accordion -->
+  <div class="dietetics-accordion mobile-only">
+    <!-- Breadcrumb Navigation -->
+    @if (showBreadcrumb) {
+      <div class="breadcrumb-container" (click)="$event.stopPropagation()">
+        <button class="breadcrumb-back" (click)="goBack(); $event.stopPropagation()" aria-label="Go back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
           </svg>
-          <span class="cart-count" *ngIf="items.length > 0">{{ items.length }}</span>
-        </a> -->
-      </div>
-      <div class="flex language-mobile">
-
-        <a (click)="useLanguage('en')" class="nav-link cursor-pointer">EN</a>
-        |
-        <a (click)="useLanguage('bm')" class="nav-link cursor-pointer">BM</a>
-        |
-        <a (click)="useLanguage('ch')" class="nav-link cursor-pointer">CN</a>
-      </div>
-
-      <div class="nav-toggle" (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        </button>
+        <div class="breadcrumb-path">
+          @for (crumb of currentBreadcrumb; track crumb; let last = $last) {
+            <span>
+              {{ crumb }}@if (!last) {
+              <span> > </span>
+            }
+          </span>
+        }
       </div>
     </div>
-  </nav>
+  }
+
+  <!-- Accordion Trigger -->
+  <a class="nav-link cursor-pointer dietetics-trigger-mobile" (click)="toggleDieteticsAccordion(); $event.stopPropagation()">
+    {{'Top-nav.dietetics' | translate}}
+    <svg class="accordion-arrow" [class.expanded]="isDieteticsExpanded" viewBox="0 0 24 24" fill="none">
+      <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <!-- Accordion Content -->
+  <div class="dietetics-subitems" [class.expanded]="isDieteticsExpanded">
+    <a class="dietetics-subitem" (click)="navigateToSubItem('/dual-therapy', 'Top-nav.dieteticsMenu.dualTherapy'); $event.stopPropagation()">
+      <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
+      </svg>
+      <span class="dropdown-text">{{'Top-nav.dieteticsMenu.dualTherapy' | translate}}</span>
+    </a>
+    <a class="dietetics-subitem" (click)="navigateToSubItem('/gut-brain-axis', 'Top-nav.dieteticsMenu.gutBrain'); $event.stopPropagation()">
+      <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+      </svg>
+      <span class="dropdown-text">{{'Top-nav.dieteticsMenu.gutBrain' | translate}}</span>
+    </a>
+    <a class="dietetics-subitem" (click)="navigateToSubItem('/health-assessment', 'Top-nav.dieteticsMenu.bioTherapeutics'); $event.stopPropagation()">
+      <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
+      </svg>
+      <span class="dropdown-text">{{'Top-nav.dieteticsMenu.bioTherapeutics' | translate}}</span>
+    </a>
+    <a class="dietetics-subitem" (click)="navigateToSubItem('/about-dietetics', 'Top-nav.dieteticsMenu.ketosis'); $event.stopPropagation()">
+      <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+      </svg>
+      <span class="dropdown-text">{{'Top-nav.dieteticsMenu.ketosis' | translate}}</span>
+    </a>
+    <a class="dietetics-subitem" (click)="navigateToSubItem('/dietetics', 'Top-nav.dieteticsMenu.consult'); $event.stopPropagation()">
+      <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="currentColor"/>
+      </svg>
+      <span class="dropdown-text">{{'Top-nav.dieteticsMenu.consult' | translate}}</span>
+    </a>
+  </div>
+</div>
+<a routerLink="/upskill" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.upskill' | translate}}</a>
+<a routerLink="/tour" class="nav-link" (click)="isMenuOpen = false">{{'Top-nav.tour' | translate}}</a>
+<div class="flex language">
+
+  <a (click)="useLanguage('en')" class="nav-link cursor-pointer">EN</a>
+  |
+  <a (click)="useLanguage('bm')" class="nav-link cursor-pointer">BM</a>
+  |
+  <a (click)="useLanguage('ch')" class="nav-link cursor-pointer">CN</a>
+</div>
+<!-- <a [routerLink]="'/cart'" class="nav-link hidden cart-icon relative">
+<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 4.58011L3.88304 1.09945V1H15.2164L18 4.58011M1 4.58011V17.2099C1 18.2044 1.89474 19 2.88889 19H16.1111C17.1053 19 18 18.2044 18 17.2099V4.58011M1 4.58011H18M13.3275 8.16022C13.3275 10.1492 11.6374 11.7403 9.54971 11.7403C7.46199 11.7403 5.67251 10.1492 5.67251 8.16022" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="cart-count" *ngIf="items.length > 0">{{ items.length }}</span>
+</a> -->
+</div>
+<div class="flex language-mobile">
+
+  <a (click)="useLanguage('en')" class="nav-link cursor-pointer">EN</a>
+  |
+  <a (click)="useLanguage('bm')" class="nav-link cursor-pointer">BM</a>
+  |
+  <a (click)="useLanguage('ch')" class="nav-link cursor-pointer">CN</a>
+</div>
+
+<div class="nav-toggle" (click)="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</div>
+</nav>

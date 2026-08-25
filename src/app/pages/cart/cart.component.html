@@ -1,35 +1,37 @@
 
 <!-- <main class="page"> -->
-  <section class="container cart">
-    <h2 class="section-title">Shopping Cart</h2>
-    
-    <div class="cart-content" *ngIf="items.length > 0; else emptyCart">
+<section class="container cart">
+  <h2 class="section-title">Shopping Cart</h2>
+
+  @if (items.length > 0) {
+    <div class="cart-content">
       <!-- Cart Items -->
       <div class="cart-items">
-        <div class="cart-item" *ngFor="let item of items">
-          <div class="item-image">
-            <img [src]="item.image" [alt]="item.name">
+        @for (item of items; track item) {
+          <div class="cart-item">
+            <div class="item-image">
+              <img [src]="item.image" [alt]="item.name">
+            </div>
+            <div class="item-details">
+              <h3 class="item-name">{{ item.name }}</h3>
+              <div class="item-price">${{ item.price | number:'1.2-2' }}</div>
+            </div>
+            <div class="item-quantity">
+              <button class="qty-btn" (click)="updateQuantity(item, -1)" [disabled]="item.quantity <= 1">-</button>
+              <span class="qty-value">{{ item.quantity }}</span>
+              <button class="qty-btn" (click)="updateQuantity(item, 1)">+</button>
+            </div>
+            <div class="item-total">
+              ${{ (item.price * item.quantity) | number:'1.2-2' }}
+            </div>
+            <button class="remove-btn" (click)="removeItem(item.id)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
           </div>
-          <div class="item-details">
-            <h3 class="item-name">{{ item.name }}</h3>
-            <div class="item-price">${{ item.price | number:'1.2-2' }}</div>
-          </div>
-          <div class="item-quantity">
-            <button class="qty-btn" (click)="updateQuantity(item, -1)" [disabled]="item.quantity <= 1">-</button>
-            <span class="qty-value">{{ item.quantity }}</span>
-            <button class="qty-btn" (click)="updateQuantity(item, 1)">+</button>
-          </div>
-          <div class="item-total">
-            ${{ (item.price * item.quantity) | number:'1.2-2' }}
-          </div>
-          <button class="remove-btn" (click)="removeItem(item.id)">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </button>
-        </div>
+        }
       </div>
-
       <!-- Cart Summary -->
       <aside class="cart-summary">
         <h3 class="summary-title">Order Summary</h3>
@@ -49,15 +51,15 @@
         <a routerLink="/products" class="continue-shopping">Continue Shopping</a>
       </aside>
     </div>
+  } @else {
+    <div class="empty-cart">
+      <div class="empty-icon">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added any products to your cart yet.</p>
+      <a routerLink="/products" class="shop-now-btn">Start Shopping</a>
+    </div>
+  }
 
-    <!-- Empty Cart -->
-    <ng-template #emptyCart>
-      <div class="empty-cart">
-        <div class="empty-icon">🛒</div>
-        <h3>Your cart is empty</h3>
-        <p>Looks like you haven't added any products to your cart yet.</p>
-        <a routerLink="/products" class="shop-now-btn">Start Shopping</a>
-      </div>
-    </ng-template>
-  </section>
+  <!-- Empty Cart -->
+</section>
 <!-- </main> -->

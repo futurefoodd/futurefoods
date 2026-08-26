@@ -7,11 +7,9 @@ import {provideHttpClient, withFetch} from "@angular/common/http";
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay, withNoIncrementalHydration } from '@angular/platform-browser';
-import { providePrimeNG } from 'primeng/config';
-import Aura from '@primeuix/themes/aura';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), 
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
     provideRouter(
       routes,
       withInMemoryScrolling({
@@ -19,11 +17,7 @@ export const appConfig: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
-    provideClientHydration(withEventReplay(), withNoIncrementalHydration()), provideAnimationsAsync(),  providePrimeNG({
-    theme: {
-        preset: Aura
-    }
-}),
+    provideClientHydration(withEventReplay(), withNoIncrementalHydration()), provideAnimationsAsync(),
 provideHttpClient(
   withFetch()
 ),

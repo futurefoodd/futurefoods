@@ -28,7 +28,6 @@
     "@ngx-translate/core": "^17.0.0",
     "@ngx-translate/http-loader": "^17.0.0",
     "@popperjs/core": "~2.11.8",
-    "@primeuix/themes": "^3.0.0",
     "@supabase/supabase-js": "^2.55.0",
     "@tailwindcss/postcss": "^4.1.11",
     "dotenv": "^17.2.1",
